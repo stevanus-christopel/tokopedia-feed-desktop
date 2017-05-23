@@ -1,0 +1,476 @@
+.btn,
+div.hopscotch-bubble .hopscotch-nav-button {
+    display: inline-block;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 9px 14px;
+    line-height: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 3px;
+    background-image: none;
+    background-color: #EDEDED;
+    border: 1px solid #BDBDBD;
+    color: #606060;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.maincontent-admin .btn {
+    padding: 4px 10px;
+}
+
+div.hopscotch-bubble .hopscotch-nav-button {
+    height: 26px;
+    line-height: 24px;
+    padding: 0 10px;
+}
+
+.w-52 {
+    width: 52px;
+}
+
+.w-75 {
+    width: 75px;
+}
+
+.input-date .btn {
+    border-radius: 0 2px 2px 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 1px solid #CCC;
+}
+
+.btn:hover,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled] {
+    background-color: #E6E6E6;
+    outline: none;
+    background-image: none;
+    color: #606060;
+}
+
+.btn:active,
+.btn.active {
+    background-image: none;
+    outline: 0;
+    opacity: 0.8;
+}
+
+.tp-promo-add .btn {
+    padding: 7px 17px;
+}
+
+.btn-wishlist-alt {
+    color: #8A8A8A;
+    border: solid 1px #DDD;
+    background-color: #FFF;
+    background-image: none;
+    transition: all 0.3s ease;
+}
+
+.btn-wishlist-alt:hover {
+    color: #FFB300;
+    border: solid 1px #FFB300;
+    background-color: #FFF;
+    background-image: none;
+}
+
+.btn-wishlist-alt:active {
+    box-shadow: none;
+}
+
+.btn-wishlist-alt.active,
+
+/* Tambahan Gold Button */
+
+.btn-secondary {
+    color: #FFF;
+    border: solid 1px #FFB300;
+    background-color: #FFB300;
+    background-image: none;
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    color: #333;
+    background-color: #FFB300;
+}
+
+
+/* End */
+
+.btn-wishlist-alt:hover > .icon-heart-alt {
+    color: #FFB300;
+}
+
+.btn-green {
+    background: #008000;
+    color: #FFF;
+    border: 0;
+}
+
+.btn-green:hover {
+    background: #066906;
+    color: #FFF;
+}
+
+a.btn-block,
+button.btn-block,
+span.btn-block {
+    display: block;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn-block + .btn-block {
+    margin-top: 5px;
+}
+
+.btn-small.active,
+.btn-small:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-small {
+    padding: 2px 10px;
+    font-size: 11px;
+}
+
+.btn-small [class^="icon-"],
+.btn-small [class*=" icon-"] {
+    margin-top: 0;
+}
+
+.btn-large {
+    padding: 11px 19px;
+    font-size: 15px;
+}
+
+.btn-large [class^="icon-"],
+.btn-large [class*=" icon-"] {
+    margin-top: 4px;
+}
+
+.btn-mini [class^="icon-"],
+.btn-mini [class*=" icon-"] {
+    margin-top: -1px;
+}
+
+.btn-mini {
+    padding: 0 6px;
+    font-size: 10.5px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+
+/* === Action === */
+
+.btn-action,
+.btn-action-alt,
+.btn-fav-alt,
+.btn-primary,
+.landing-page_btn-buyer,
+div.hopscotch-bubble .hopscotch-nav-button,
+div.hopscotch-bubble .hopscotch-nav-button.next {
+    color: #FFF;
+    background-color: #42B549;
+    border: 1px solid #42B549;
+    font-weight: 600;
+}
+
+.btn-action:hover,
+.btn-action:focus,
+.btn-action-alt:hover,
+.btn-action-alt:focus,
+.product-box-content .btn-fav-alt:hover,
+.product-box-content .btn-fav-alt:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.landing-page_btn-buyer:hover,
+.landing-page_btn-buyer:focus,
+div.hopscotch-bubble .hopscotch-nav-button:hover,
+div.hopscotch-bubble .hopscotch-nav-button:focus,
+div.hopscotch-bubble .hopscotch-nav-button.next:hover,
+div.hopscotch-bubble .hopscotch-nav-button.next:focus {
+    background-color: #4FA149;
+    border-color: #4FA149;
+    color: #FFF;
+}
+
+
+/* === Buy === */
+
+.btn-buy {
+    color: #FFF;
+    background-color: #F26039;
+    border: 1px solid #BB4A2B;
+}
+
+.new-btn-orange,
+.btn-buy-alt {
+    background-color: #FF5722;
+    color: #FFF;
+}
+
+.btn-search-wrapper {
+    display: table-cell;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    position: relative;
+    z-index: 20;
+}
+
+.btn-search {
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 0 2px 2px 0;
+    border: 1px solid #CCC;
+    z-index: 2;
+}
+
+.btn-buy-alt,
+.btn-warning,
+.landing-page_btn-seller {
+    padding: 10px 17px;
+    border: none;
+    color: #FFF;
+    background-color: #FF5722;
+    background-image: none;
+}
+
+.btn-buy-alt:hover,
+.new-btn-orange:hover,
+.btn-warning:hover,
+.landing-page_btn-seller:hover {
+    color: #FFF;
+    background-color: #EF430C;
+    background-image: none;
+}
+
+.btn-buy:hover,
+.btn-buy:focus,
+.btn-buy:active,
+.btn-buy.active,
+.btn-buy.disabled,
+.btn-buy[disabled] {
+    background-color: #DF5936;
+    color: #FFF;
+}
+
+
+/* === Dispute === */
+
+.btn-dispute {
+    background-color: #DD3448;
+    color: #FFF;
+    border: 1px solid #881220;
+    transition: all 0.3s ease;
+}
+
+.btn-dispute:hover,
+.btn-dispute:focus,
+.btn-dispute:active,
+.btn-dispute.active,
+.btn-dispute.disabled,
+.btn-dispute[disabled] {
+    background-color: #C82E41;
+    color: #FFF;
+}
+
+.btn.disabled,
+.btn[disabled],
+.btn:disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.26);
+    border-color: transparent;
+    cursor: not-allowed;
+}
+
+
+/* === Facebook === */
+
+.btn-facebook {
+    color: #FFF;
+    background-color: #3a589b;
+    border-color: #3a589b;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.btn-facebook.disabled,
+.btn-facebook[disabled] {
+    background-color: #2E6597;
+    border-color: #2E6597;
+    color: #FFF;
+}
+
+
+/* === Yahoo === */
+
+.btn-yahoo {
+    color: #FFF;
+    background-color: #8b2491;  
+    border-color: #8b2491; 
+    background-image: none;
+}
+
+.btn-yahoo:hover,
+.btn-yahoo:focus,
+.btn-yahoo:active,
+.btn-yahoo.active,
+.btn-yahoo.disabled,
+.btn-yahoo[disabled] {
+    background-color: #522675;
+    border-color: #522675; 
+    color: #FFF;
+    background-image: none;
+}
+
+
+/* === Second === */
+
+.btn-second,
+.btn-edit-alt,
+.btn-favorited,
+div.hopscotch-bubble .hopscotch-nav-button.prev {
+    background-color: #FFF;
+    color: rgba(0, 0, 0, 0.54);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.btn-second:hover,
+.btn-second:focus,
+.btn-second:active,
+.btn-second.active,
+.btn-edit-alt:hover,
+.btn-edit-alt:focus,
+.btn-edit-alt:active,
+.btn-edit-alt.active,
+a.btn-favorited:hover,
+button.btn-favorited:focus,
+a.btn-favorited:active,
+button.btn-favorited.active,
+div.hopscotch-bubble .hopscotch-nav-button.prev:hover,
+div.hopscotch-bubble .hopscotch-nav-button.prev:focus {
+    background-color: #F5F5F5;
+    color: rgba(0, 0, 0, 0.54);
+    outline: 0;
+}
+
+.btn-group > .btn-switch {
+    padding: 0;
+    width: 98px;
+    height: 32px;
+    line-height: 32px;
+    color: #42B549;
+    border: 1px solid #42B549;
+    background: #FFF;
+}
+
+.btn-group > .btn-switch.switch-lang:hover {
+    background-color: #F3FEF3;
+}
+
+.btn-group > .btn-switch.switch-lang:active {
+    color: #42B549;
+}
+
+.btn-switch.active,
+.btn-switch.disabled,
+.btn-switch[disabled] {
+    color: #FFF;
+    background-color: #4D9C46;
+}
+
+.btn-switch:active,
+.btn-switch.active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    cursor: default;
+}
+
+.btn-otp {
+    padding: 7px 10px !important;
+}
+
+
+/*
+     Author: Boy
+*/
+
+.btn-group > .btn {
+    border-radius: 0;
+    outline: none;
+    margin-left: -1px;
+}
+
+.btn-group > .btn:first-child {
+    border-radius: 3px 0 0 3px;
+    margin-left: 0;
+}
+
+.btn-group > .btn:last-child {
+    border-radius: 0 3px 3px 0;
+    background: #FFF;
+}
+
+.btn-group--cashback > .btn:last-child {
+    background: #EDEDED;
+}
+
+.btn-group > .btn.active,
+.btn-group > .btn:active {
+    color: white;
+    background-color: #42B549;
+    border-color: #42B549;
+}
+
+/* ===== EOF_ Buttons ===== */
+
+/* Search Button on Official Store */
+
+#s_filter .btn,
+.official-shop-filter #siteSearchSubmit {
+    padding: 7px 14px;
+}
+
+.new-btn-search {
+    height: 36px!important;
+    z-index: 2!important;
+    padding: 0px 15px!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-color: rgb(255, 87, 34)!important;
+    border-image: initial!important;
+    border-radius: 0px 3px 3px 0px!important;
+    background-color: #FF5722!important;
+    color: #FFF!important;
+    width: 74px;
+}
+.new-btn-search:hover {
+    color: #FFF!important;
+    background-color: #EF430C!important;
+    background-image: none!important;
+}
+
+/* ===== EOF_ Buttons ===== */
