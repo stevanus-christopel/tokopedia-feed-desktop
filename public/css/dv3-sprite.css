@@ -1,0 +1,876 @@
+.site-logo,
+.image-biznet-logo,
+.image-operator,
+.callbacks_nav,
+.image-gold-merchant,
+.image-gold-merchant-mute,
+.image-return-product,
+.image-return-product-mute,
+.rating-star0,
+.rating-star1,
+.rating-star2,
+.rating-star3,
+.rating-star4,
+.rating-star5,
+.badge-medal1,
+.badge-medal2,
+.badge-medal3,
+.badge-medal4,
+.badge-medal5,
+.badge-trophy1,
+.badge-trophy2,
+.badge-trophy3,
+.badge-trophy4,
+.badge-trophy5,
+.badge-diamond1,
+.badge-diamond2,
+.badge-diamond3,
+.badge-diamond4,
+.badge-diamond5,
+.badge-smile-good-mute,
+.badge-smile-good,
+.badge-smile-neutral-mute,
+.badge-smile-neutral,
+.badge-smile-bad-mute,
+.badge-smile-bad,
+.image-reason-buy,
+.ad-symbol,
+.ad-symbol2,
+.stat-off,
+.stat-on,
+.stat-disabled,
+.hotlist-ribbon,
+.badge-smile-good-sm,
+.badge-smile-null-sm,
+.smiley-shop-buyer-sm,
+.badge-smile-neutral-sm,
+.smiley-shop-buyer-sm,
+.badge-smile-bad-sm,
+.smiley-shop-buyer-sm,
+.rating-1,
+.badge-speed-sangat-lambat,
+.badge-speed-lambat,
+.badge-speed-sedang,
+.badge-speed-cepat,
+.badge-speed-sangat-cepat,
+.badge-speed-null {
+    background: url("../img/newtkpd/dv3-sprite2.png") no-repeat transparent;
+    display: inline-block;
+}
+.site-logo {
+    background-position: -1px -1px;
+    width: 145px;
+    height: 31px;
+    display: block;
+}
+.ad-symbol {
+    background-position: -155px -163px;
+    width: 19px;
+    height: 19px;
+}
+.ad-symbol2 {
+    background-position: -154px -180px;
+    width: 19px;
+    height: 19px;
+}
+.stat-off {
+    background-position: -96px -53px;
+    width: 7px;
+    height: 7px;
+}
+.stat-on {
+    background-position: -109px -53px;
+    width: 7px;
+    height: 7px;
+}
+.stat-disabled {
+    background-position: -122px -53px;
+    width: 7px;
+    height: 7px;
+}
+.image-biznet-logo {
+    background-position: 1px -38px;
+    width: 57px;
+    height: 35px;
+}
+.image-operator {
+    background-position: -164px 1px;
+    width: 40px;
+    height: 64px;
+    margin: 0.5px 10px 0 10px;
+}
+.image-gold-merchant {
+    background-position: -205px -43px;
+    width: 19px;
+    height: 19px;
+}
+.image-gold-merchant-mute {
+    background-position: -225px -43px;
+    width: 19px;
+    height: 19px;
+}
+.rating-1 {
+    width: 14px;
+    height: 18px;
+    margin-left: 2px;
+}
+.rating-star0,
+.rating-star1,
+.rating-star2,
+.rating-star3,
+.rating-star4,
+.rating-star5 {
+    width: 75px;
+    height: 14px;
+}
+.rating-1 {
+    background-position: 0px -78px;
+}
+.rating-star0 {
+    background-position: -164px -66px;
+}
+.rating-star1 {
+    background-position: -1px -84px;
+}
+.rating-star2 {
+    background-position: -83px -84px;
+}
+.rating-star3 {
+    background-position: -164px -84px;
+}
+.rating-star4 {
+    background-position: -1px -102px;
+}
+.rating-star5 {
+    background-position: -83px -102px;
+}
+.badge-medal1,
+.badge-medal2,
+.badge-medal3,
+.badge-medal4,
+.badge-medal5 {
+    background-position: -164px -102px;
+    height: 14px;
+}
+.badge-medal1 {
+    width: 14px;
+}
+.badge-medal2 {
+    width: 30px;
+}
+.badge-medal3 {
+    width: 45px;
+}
+.badge-medal4 {
+    width: 60px;
+}
+.badge-medal5 {
+    width: 75px;
+}
+.badge-trophy1,
+.badge-trophy2,
+.badge-trophy3,
+.badge-trophy4,
+.badge-trophy5 {
+    background-position: -1px -120px;
+    height: 15px;
+}
+.badge-trophy1 {
+    width: 14px;
+}
+.badge-trophy2 {
+    width: 30px;
+}
+.badge-trophy3 {
+    width: 45px;
+}
+.badge-trophy4 {
+    width: 60px;
+}
+.badge-trophy5 {
+    width: 75px;
+}
+.badge-diamond1,
+.badge-diamond2,
+.badge-diamond3,
+.badge-diamond4,
+.badge-diamond5 {
+    background-position: -83px -120px;
+    height: 13px;
+}
+.badge-diamond1 {
+    width: 14px;
+}
+.badge-diamond2 {
+    width: 30px;
+}
+.badge-diamond3 {
+    width: 45px;
+}
+.badge-diamond4 {
+    width: 60px;
+}
+.badge-diamond5 {
+    width: 76px;
+}
+.badge-smile-good-mute,
+.badge-smile-good,
+.badge-smile-neutral-mute,
+.badge-smile-neutral,
+.badge-smile-bad-mute,
+.badge-smile-bad {
+    width: 15px;
+    height: 16px;
+}
+.badge-smile-good-mute {
+    background-position: -164px -119px;
+}
+.badge-smile-good {
+    background-position: -184px -119px;
+}
+.badge-smile-neutral-mute {
+    background-position: -204px -119px;
+}
+.badge-smile-neutral {
+    background-position: -224px -119px;
+}
+.badge-smile-bad-mute {
+    background-position: -1px -138px;
+}
+.badge-smile-bad {
+    background-position: -20px -138px;
+}
+.image-reason-buy {
+    width: 64px;
+    height: 74px;
+    background-position: -174px -138px;
+    float: right;
+    margin-top: 15px;
+}
+.hotlist-ribbon {
+    width: 91px;
+    height: 28px;
+    background-position: 0 -174px;
+}
+.image-return-product {
+    background-position: -56px -49px;
+    width: 15px;
+    height: 13px;
+}
+.image-return-product-mute {
+    background-position: -75px -49px;
+    width: 15px;
+    height: 13px;
+}
+.badge-smile-neutral-sm {
+    background-position: -243px -94px;
+    width: 12px;
+    height: 10px;
+}
+.badge-smile-good-sm {
+    background-position: -243px -81px;
+    width: 12px;
+    height: 10px;
+}
+.badge-smile-null-sm {
+    background-position: -242px -107px;
+    width: 12px;
+    height: 10px;
+}
+.badge-smile-bad-sm {
+    background-position: -243px -68px;
+    width: 12px;
+    height: 10px;
+}
+.badge-speed-sangat-lambat {
+    width: 19px;
+    height: 17px;
+    background-position: -41px -138px;
+}
+.badge-speed-lambat {
+    width: 19px;
+    height: 17px;
+    background-position: -63px -138px;
+}
+.badge-speed-sedang {
+    width: 19px;
+    height: 17px;
+    background-position: -85px -138px;
+}
+.badge-speed-cepat {
+    width: 19px;
+    height: 17px;
+    background-position: -107px -138px;
+}
+.badge-speed-sangat-cepat {
+    width: 19px;
+    height: 17px;
+    background-position: -129px -138px;
+}
+.badge-speed-null {
+    width: 19px;
+    height: 17px;
+    background-position: -151px -138px;
+}
+
+.alert-info-2 {
+    background-color: #D6F9FF;
+    border-color: #bce8f1
+}
+.free-return-merchant,
+.free-return-merchant-sm {
+    background: url(../img/newtkpd/dv3-sprite2.png) no-repeat;
+    display: inline-block
+}
+.free-return-merchant-sm {
+    background-position: -44px -204px;
+    width: 25px;
+    height: 25px
+}
+.free-return-merchant {
+    background-position: -1px -102px;
+    background-size: 138px 152px;
+    width: 19px;
+    height: 19px
+}
+/*category before login start*/
+.sprite-cat-home {
+    background: url('../img/newtkpd/img_sprite_marketplace@2xv2.png') no-repeat;
+    background-size: 178px 295px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+}
+.sprite-digital-cat-home{
+    background: url('../img/newtkpd/img_sprite_digital@2xv4.png') no-repeat;
+    background-size: 178px 295px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    float: left 
+}
+.sprite-product-automotive-home {
+    background-position: -31px -58px;
+}
+.sprite-product-photography-home {
+    background-position: -1px -58px;
+}
+.sprite-product-electronics-home {
+    background-position: -150px -29px;
+}
+.sprite-product-notebook-home {
+    background-position: -90px -29px;
+}
+.sprite-product-pc-home {
+    background-position: -120px -29px;
+}
+.sprite-product-phone-tablet-home {
+    background-position: -60px -29px;
+}
+.sprite-etc-home {
+    background-position: -60px -118px;
+}
+.sprite-product-sports-home {
+    background-position: -61px -58px;
+}
+.sprite-product-fashion-home {
+    background-position: -90px 0px;
+}
+.sprite-product-clothing-home {
+    background-position: -104px -41px;
+}
+.sprite-product-beauty-home {
+    background-position: -149px 0px;
+}
+.sprite-product-health-home {
+    background-position: 0px -29px;
+}
+.sprite-product-home-appliances-home {
+    background-position: -120px -58px;
+}
+.sprite-product-kitchen-dining-home {
+    background-position: -150px -58px;
+}
+.sprite-product-baby-home {
+    background-position: -29px -29px;
+}
+.sprite-product-office-stationery-home {
+    background-position: -1px -88px;
+}
+.sprite-product-gift-home {
+    background-position: -31px -88px;
+}
+.sprite-product-toys-hobbies-home {
+    background-position: -61px -88px;
+}
+.sprite-product-food-beverages-home {
+    background-position: -89px -88px;
+}
+.sprite-product-books-home {
+    background-position: -120px -88px;
+}
+.sprite-product-softwares-home {
+    background-position: -150px -88px;
+}
+.sprite-product-movies-games-music-home {
+    background-position: -90px -58px;
+}
+.sprite-product-recharge-home {
+    background-position: 0px 0px;
+}
+.sprite-product-data-plan-home {
+    background-position: -90px 0px;
+}
+.sprite-product-token-listrik-home {
+    background-position: -30px 0px;
+}
+.sprite-product-train-home {
+    background-position: -61px 0px;
+}
+.sprite-product-bpjs-home{
+    background-position: -120px 0px;
+}
+.sprite-product-game-home {
+    background-position: -149px 0px;
+}
+.sprite-product-fashion-muslim-home {
+    background-position: 0px 0px;
+}
+.sprite-product-fashion-woman-home {
+    background-position: -30px 0px;
+}
+.sprite-product-fashion-man-home {
+    background-position: -60px 0px;
+}
+.sprite-product-fashion-kid-home {
+    background-position: -120px 0px;
+}
+.sprite-product-saldo-home {
+    background-position: 0px -29px;
+}
+.sprite-product-pdam-home {
+    background-position: -31px -29px;
+}
+.sprite-product-installment-credit-home {
+    background-position: -60px -29px;
+}
+.sprite-product-donation-home {
+    background-position: -90px -29px;
+}
+.sprite-product-credit-card-home {
+    background-position: -120px -30px;
+}
+.sprite-product-cable-tv-home {
+    background-position: -150px -29px;
+}
+.sprite-product-postpaid-home {
+    background-position: -86px -58px;
+}
+.sprite-product-telephone-home {
+    background-position: -31px -58px;
+}
+.sprite-product-everything-else-home {
+    background-size: -60px -118px;
+}
+.sprite-product-streaming-home {
+    background-position: -120px -59px;
+}
+.sprite-product-tokocash-home {
+    background-position: 0 -87px;
+}
+.sprite-product-mitratoppers-home {
+    background-position: -31px -87px;
+}
+.sprite-product-loan-home {
+    background-position: -60px -87px;
+}
+.sprite-product-gas-home {
+    background-position: -150px -58px;
+}
+
+.cat-new-label {
+    color: white;
+    font-size: 8px;
+    font-weight: bold;
+    margin: 0px 9px 8px 10px;
+    padding: 2px 3px 2px 3px !important;
+    line-height: 20px;
+    border-radius: 2px;
+    background-color: #EA212D !important;
+    letter-spacing: .04em;
+}
+
+
+/* Ratings Product start*/
+.star_0 {
+    background: url(../img/star-0.png) transparent no-repeat;
+}
+
+.star_1 {
+    background: url(../img/star-1.png) transparent no-repeat;
+}
+
+.star_2 {
+    background: url(../img/star-2.png) transparent no-repeat;
+}
+
+.star_3 {
+    background: url(../img/star-3.png) transparent no-repeat;
+}
+
+.star_4 {
+    background: url(../img/star-4.png) transparent no-repeat;
+}
+
+.star_5 {
+    background: url(../img/star-5.png) transparent no-repeat;
+}
+
+.star_0,
+.star_1,
+.star_2,
+.star_3,
+.star_4,
+.star_5 {
+    display: inline-block;
+    width: 74px;
+    height: 14px;
+    vertical-align: middle;
+    background-size: 68px 15px;
+}
+/* Ratings Product end*/
+
+
+/*new sprite header start*/
+.sprite-header {
+    background: url('../img/icon_sprite_header@2x.png') no-repeat;
+    background-size: 115px 35px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    float: left;
+}
+
+.sprite-header-notif{
+    background-position: -8px -8px;
+}
+
+.sprite-header-shop{
+    background-position: -34px -8px;
+}
+
+.sprite-header-cart{
+    background-position: -62px -8px;
+}
+
+.sprite-header-expander{
+    border: 0;
+    text-indent: -9999px;
+    z-index: 999;
+    background-position: -126px -11px;
+    background-size: 164px 50px;
+    width: 27px;
+    height: 27px;
+    margin: 17px 0 15px 0;
+}
+
+/*new sprite header end*/
+/*new sprite tabs start*/
+.sprite-tab {
+    background: url('../img/icon_sprite_tab@2new.png') no-repeat;
+    background-size: 215px 80px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    float: left;
+}
+
+.sprite-tab-feed {
+    background-position: -12px -46px;
+}
+
+.active .sprite-tab-feed,
+a:hover .sprite-tab-feed,
+a:active .sprite-tab-feed,
+a:focus .sprite-tab-feed {
+    background-position: -12px -12px;
+}
+
+.sprite-tab-wishlist {
+    background-position: -46px -46px;
+}
+
+.active .sprite-tab-wishlist,
+a:hover .sprite-tab-wishlist,
+a:active .sprite-tab-wishlist,
+a:focus .sprite-tab-wishlist  {
+    background-position: -46px -12px;
+}
+
+.sprite-tab-hotlist {
+    background-position: -80px -46px;
+}
+
+.active .sprite-tab-hotlist,
+a:hover .sprite-tab-hotlist,
+a:active .sprite-tab-hotlist,
+a:focus .sprite-tab-hotlist {
+    background-position: -80px -12px;
+}
+
+.sprite-tab-favorite {
+    background-position: -115px -46px;
+}
+
+.active .sprite-tab-favorite,
+a:hover .sprite-tab-favorite,
+a:active .sprite-tab-favorite,
+a:focus .sprite-tab-favorite{
+    background-position: -115px -12px;
+}
+
+.sprite-tab-official {
+    background-position: -148px -46px;
+}
+
+.active .sprite-tab-official,
+a:hover .sprite-tab-official,
+a:active .sprite-tab-official,
+a:focus .sprite-tab-official {
+    background-position: -148px -12px;
+}
+
+.sprite-tab-recent {
+    background-position: -181px -46px;
+}
+
+.active .sprite-tab-recent,
+a:hover .sprite-tab-recent,
+a:active .sprite-tab-recent,
+a:focus .sprite-tab-recent {
+    background-position: -181px -12px;
+}
+/*new sprite tabs start*/
+/*new sprite category dropdown after login start*/
+.sprite-cat {
+    background: url('../img/newtkpd/img_sprite_marketplace@2xv2.png') no-repeat;
+    background-size: 140px 233px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    float: left;
+}
+.sprite-digital-cat {
+    background: url('../img/newtkpd/img_sprite_digital@2xv4.png') no-repeat;
+    background-size: 140px 233px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    float: left;
+}
+.sprite-product-automotive {
+    background-position: -23px -47px;
+}
+.sprite-product-photography {
+    background-position: 0px -47px;
+}
+.sprite-product-electronics {
+    background-position: -116px -23px;
+}
+.sprite-product-notebook {
+    background-position: -69px -23px;
+}
+.sprite-product-pc {
+    background-position: -93px -23px;
+}
+.sprite-product-phone-tablet {
+    background-position: -46px -23px;
+}
+.sprite-etc {
+    background-position: -46px -93px;
+}
+.sprite-product-sports {
+    background-position: -46px -47px;
+}
+.sprite-product-fashion {
+    background-position: -70px 0px;
+}
+.sprite-product-clothing {
+    background-position: -104px -41px;
+}
+.sprite-product-beauty {
+    background-position: -116px 0px;
+}
+.sprite-product-health {
+    background-position: 1px -23px;
+}
+.sprite-product-home-appliances {
+    background-position: -93px -47px;
+}
+.sprite-product-kitchen-dining {
+    background-position: -116px -47px;
+}
+.sprite-product-baby {
+    background-position: -22px -23px;
+}
+.sprite-product-office-stationery {
+    background-position: 1px -69px;
+}
+.sprite-product-gift {
+    background-position: -23px -70px;
+}
+.sprite-product-toys-hobbies {
+    background-position: -46px -70px;
+}
+.sprite-product-food-beverages {
+    background-position: -69px -71px;
+}
+.sprite-product-books {
+    background-position: -92px -69px;
+}
+.sprite-product-softwares {
+    background-position: -116px -70px;
+}
+.sprite-product-movies-games-music {
+    background-position: -69px -47px;
+}
+.sprite-product-recharge {
+    background-position: 0px 0px;
+}
+.sprite-product-data-plan {
+    background-position: -70px 0px;
+}
+.sprite-product-token-listrik {
+    background-position: -23px 0px;
+}
+.sprite-product-train {
+    background-position: -46px 0px;
+}
+.sprite-product-bpjs {
+    background-position: -93px 0px;
+}
+.sprite-product-game {
+    background-position: -116px 0px;
+}
+.sprite-product-fashion-muslim {
+    background-position: 0px 0px;
+}
+.sprite-product-fashion-woman {
+    background-position: -23px 0px;
+}
+.sprite-product-fashion-man {
+    background-position: -46px 0px;
+}
+.sprite-product-fashion-kid {
+    background-position: -93px 0px;
+}
+.sprite-product-saldo {
+    background-position: 1px -23px;
+}
+.sprite-product-pdam {
+    background-position: -22px -23px;
+}
+.sprite-product-installment-credit {
+    background-position: -46px -23px;
+}
+.sprite-product-donation{
+    background-position: -69px -23px;
+}
+.sprite-product-credit-card{
+    background-position: -93px -23px;
+}
+.sprite-product-cable-tv{
+    background-position: -116px -23px;
+}
+.sprite-product-postpaid {
+    background-position: -69px -47px;
+}
+.sprite-product-telephone {
+    background-position: -23px -47px;
+}
+.sprite-product-everything-else{
+    background-position: -46px -93px;
+}
+.sprite-product-streaming {
+    background-position: -93px -47px;
+}
+.sprite-product-tokocash {
+    background-position: 1px -70px;
+}
+.sprite-product-mitratoppers {
+    background-position: -23px -69px;
+}
+.sprite-product-loan {
+    background-position: -46px -69px;
+}
+.sprite-product-gas {
+    background-position: -116px -47px;
+}
+/*new sprite category dropdown after login end*/
+.cat-new-label {
+    color: white;
+    font-size: 8px;
+    font-weight: bold;
+    margin: 0px 9px 8px 10px;
+    padding: 2px 3px 2px 3px !important;
+    line-height: 20px;
+    border-radius: 2px;
+    background-color: #EA212D !important;
+    letter-spacing: .04em;
+}
+
+/*new sprite header start*/
+.sprite-header-search{
+    top: 8px;
+    left: 18px;
+    width: 20px;
+    height: 20px;
+    background-position: -78px 2px;
+    background-size: 96px 16px;
+    position: absolute;
+    z-index: 3;
+}
+/*new sprite header end*/
+
+/* Ratings Product start*/
+.star_0 {
+    background: url("../img/star-0-new.png") transparent no-repeat;
+}
+.star_1 {
+    background: url("../img/star-1-new.png") transparent no-repeat;
+}
+.star_2 {
+    background: url("../img/star-2-new.png") transparent no-repeat;
+}
+.star_3 {
+    background: url("../img/star-3-new.png") transparent no-repeat;
+}
+.star_4 {
+    background: url("../img/star-4-new.png") transparent no-repeat;
+}
+.star_5 {
+    background: url("../img/star-5-new.png") transparent no-repeat;
+}
+.star_0,
+.star_1,
+.star_2,
+.star_3,
+.star_4,
+.star_5 {
+    display: inline-block;
+    width: 74px;
+    height: 14px;
+    vertical-align: middle;
+    background-size: 68px 15px;
+}
+/* Ratings Product end*/
+
+.image-official-store {
+    background: url("../img/official_store/badge_official.png") transparent no-repeat;
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+    background-size: 19px 19px;
+    vertical-align: middle;
+}

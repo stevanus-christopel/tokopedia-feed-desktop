@@ -1,0 +1,256 @@
+.fs-11 {
+    font-size: 11px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.p-15 {
+    padding: 15px;
+}
+
+.font-green {
+    color: #009933;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-line-through {
+    text-decoration: line-through;
+}
+
+.hr-dahsed__a7 {
+    border-top: 1px dashed #A7A7A7;
+}
+
+.border-left-e {
+    border-left: 1px solid #eeeeee;
+}
+
+.box-lm {
+    padding: 0 0 0 45px;
+    border-left: 1px solid #ddd;
+}
+
+.icon-arrow-down__rotate {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg); /* Standard syntax */
+}
+
+/*Badge*/
+.badge-wrapper {
+    position: absolute;
+    display: inline-block;
+    top: -2px;
+    right: 0;
+    width: 42px;
+    text-align: right;
+}
+
+.badge-disabled {
+    filter: grayscale(100%); /* Firefox 10+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+    -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+    -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+}
+
+/*Grid*/
+.shop-grid-alt .shop-alt-wrapper a img.img-loyal-merchant {
+    width: auto;
+}
+
+.user-friendlist ul li img.img-loyal-merchant , 
+.user-friendlist-all ul li img.img-loyal-merchant , 
+.user-box ul li img.img-loyal-merchant {
+    padding: 0;
+    border: none;
+    width: auto;
+    height: auto;
+}
+
+/*Table*/
+.bg-blue-light {
+    background-color: #d9edf7;
+}
+
+/*Modal dialogue*/
+.mr-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3000;
+    /*display: block;*/
+    overflow: hidden;
+    text-align: center;
+}
+
+    .mr-modal--desktop {
+        z-index: 3000; 
+        display: block;
+    }
+
+    /*Modal*/
+    .mr-wrap {
+        margin: 10% auto 40px auto;
+        z-index: 2999;
+    }
+
+    .mr-overlay {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.9);
+        position: fixed;
+    }
+
+        .mr-overlay--desktop {
+            z-index: 2999;
+            opacity: 0.5;
+        }
+
+    /* Content styles */
+    .mr-header {
+        margin: 0;
+        padding: 15px;
+        text-align: center;
+        background: rgba(29,191,29,1);
+        border-radius: 3px 3px 0 0;
+        color: #FFFFFF;
+    }
+
+    .mr-header--merchant {
+        background: #0CAA55;
+    }
+
+    .mr-header--buyer {
+        background: #2AB4C1;
+    }
+
+        .mr-header__title {
+            font-size: 2.8em;
+            font-weight: 700;
+            line-height: 1.2em;
+            margin: 0 0 5px 0;
+            color: #FFFFFF;
+        }
+
+        .mr-header__sub-title {
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0;
+            color: #FFFFFF;
+            line-height: 25px;
+        }
+
+    .mr-content {
+        background: #FFFFFF;
+        position: relative;
+        border-radius: 0 0 3px 3px;
+        padding: 15px;
+    }
+
+    .mr-content button {
+        display: block;
+        margin: 0 auto;
+        font-size: 0.8em;
+    }
+
+    .close-top {
+        font-size: 25px;
+        color: #fff;
+        z-index: 1001;
+        right: 5px;
+        top: 5px;
+        padding: 5px;
+        cursor: pointer;
+        position: absolute;
+    }
+
+        .close-top--desktop {
+            font-size: 14px;
+            color: #333333;
+            right: -8px;
+            top: -10px;
+            padding: 1px 7px;
+            background-color: #FFF;
+            border-radius: 50%;
+        }
+
+    /*Button Social*/
+    .mr-rounded {
+        border-radius: 50px;
+        padding: 4px 6px;
+    }
+
+/*Badges catalogue m*/
+.lm-active {
+    width: 40px!important;
+}
+
+/*Desktop*/
+/*home after login*/
+.badge-right .image-gold-merchant {
+    margin: 0;
+}
+
+@media (min-width: 640px){
+    .mr-wrap {
+        width: 506px;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .mr-wrap {
+        width: 485px;
+    }
+
+    .badge-mr-modal {
+        display: none;
+    }
+
+    .mr-header, 
+    .mr-content {
+        display: table-cell;
+        padding: 10px 15px;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .mr-header {
+        border-radius: 3px 0 0 3px;
+        width: 45%;
+    }
+
+    .mr-content {
+        border-radius: 0 3px 3px 0;
+        background: #FFFFFF;
+    }
+
+    .mr-header__title {
+        font-size: 2em;
+        line-height: 1em;
+    }
+
+    .mr-header__sub-title {
+        font-size: 15px;
+        line-height: 16px;
+    }
+
+}
