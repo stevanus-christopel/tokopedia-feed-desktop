@@ -13,10 +13,12 @@ gulp.task("sass", function(){
     gulp.src(sassFiles)
 		.pipe(sass({ style: 'expanded' }))
 					.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
-		.pipe(gulp.dest('./src/routes/Feed/components'))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss())
 		.pipe(gulp.dest('./src/routes/Feed/components'));
+	
+	gulp.src(sassFiles)
+		.pipe(sass({ style: 'expanded' }))
+					.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
+		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task("watch", function(){
