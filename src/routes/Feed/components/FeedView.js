@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './FeedView.css';
 
 class FeedView extends Component {
 
@@ -10,7 +11,7 @@ class FeedView extends Component {
     return (
       <div>
           <h1>Hello</h1>
-          <p>This is feed plus page.. Still on progress.</p>
+          <p className='feed__title'>This is feed plus page.. Still on progress.</p>
       </div>
     );
   }

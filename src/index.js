@@ -9,7 +9,7 @@ ReactDOM.render(
   <Router>
     <Route path="/" component={Feed} />
   </Router>,
-  document.getElementById('root')
+  document.getElementById('feed-root')
 );
 
 registerServiceWorker();
