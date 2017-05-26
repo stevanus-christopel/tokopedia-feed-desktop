@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import './FeedView.css';
 
-class FeedView extends Component {
+import FeedProduct from './FeedProduct'
 
+class FeedView extends Component {
   constructor (props) {
     super(props)
   }
 
   render() {
     return (
-      <div>
-          <h1>Hello</h1>
-          <p className='feed__title'>This is feed plus page.. Still on progress.</p>
+      <div className='feed'>
+        <div className='feed__main-content'>
+          <FeedProduct />
+        </div>
+        <div className='feed__right-sidebar'>
+        </div>
       </div>
     );
   }
