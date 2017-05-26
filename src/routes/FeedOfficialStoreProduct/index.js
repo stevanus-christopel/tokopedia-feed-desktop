@@ -1,4 +1,4 @@
 import React, { Component } from 'react';
-import FeedStore from './components/FeedStore';
+import FeedOfficialStoreProduct from './components/FeedOfficialStoreProduct';
 
-export default FeedStore;
+export default FeedOfficialStoreProduct;

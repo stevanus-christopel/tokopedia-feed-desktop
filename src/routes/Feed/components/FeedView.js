@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './FeedView.css';
+import FeedOfficialStore from './../../FeedOfficialStoreProduct'
 
 import FeedEmpty from './FeedEmpty'
 import FeedProduct from './FeedProduct'
@@ -15,6 +16,7 @@ class FeedView extends Component {
         <div className='feed__main-content'>
           <FeedEmpty />
           <FeedProduct />
+          <FeedOfficialStore />
         </div>
         <div className='feed__right-sidebar'>
         </div>
