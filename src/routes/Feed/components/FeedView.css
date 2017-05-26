@@ -1,3 +1,29 @@
-.feed__title {
-  background-color: lightblue;
+.feed__main-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 560px;
   padding: 10px; }
+
+.feed__right-sidebar {
+  display: inline-block;
+  padding: 10px; }
+
+.feed-product {
+  border: 1px solid #E0E0E0; }
+  .feed-product__header {
+    padding: 10px; }
+  .feed-product__seller-photo {
+    display: inline-block;
+    vertical-align: middle; }
+    .feed-product__seller-photo img {
+      width: 50px;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px; }
+  .feed-product__seller-activity {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 8px; }
+    .feed-product__seller-activity--time {
+      font-size: 11px;
+      line-height: 14px;
+      color: rgba(0, 0, 0, 0.54); }

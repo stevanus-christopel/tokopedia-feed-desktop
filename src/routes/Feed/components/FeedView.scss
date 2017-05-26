@@ -1,6 +1,44 @@
 .feed {
-	&__title {
-		background-color: lightblue;
+	&__main-content {
+		display: inline-block;
+		vertical-align: top;
+		width: 560px;
 		padding: 10px;
+	}
+
+	&__right-sidebar {
+		display: inline-block;
+		padding: 10px;
+	}
+}
+
+.feed-product{
+	border: 1px solid #E0E0E0;
+
+	&__header {
+		padding: 10px;
+	}
+
+	&__seller-photo {
+		display: inline-block;
+		vertical-align: middle;
+
+		& img {
+			width: 50px;
+			border: 1px solid #E0E0E0;
+			border-radius: 3px;
+		}
+	}
+
+	&__seller-activity {
+		display: inline-block;
+		vertical-align: middle;
+		padding-left: 8px;
+
+		&--time {
+			font-size: 11px;
+			line-height: 14px;
+			color: rgba(0, 0, 0, 0.54);
+		}
 	}
 }
