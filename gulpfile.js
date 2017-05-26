@@ -9,6 +9,7 @@ var gulp = require("gulp"),//http://gulpjs.com/
 	log = util.log;
 
 var sassFiles = "./src/routes/Feed/components/FeedView.scss";
+var sassFiles2 = "./src//components/FeedInspiration/FeedInspiration.scss";
 
 gulp.task("sass", function() {
 	log("Generate CSS files " + (new Date()).toString());
@@ -23,9 +24,22 @@ gulp.task("sass", function() {
 	.pipe(gulp.dest('./dist'));
 });
 
+gulp.task("sass", function() {
+	log("Generate CSS files " + (new Date()).toString());
+	gulp.src(sassFiles2)
+	.pipe(sass({ style: 'expanded' }))
+	.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
+	.pipe(gulp.dest('./src/components/FeedInspiration'));
+
+	gulp.src(sassFiles2)
+	.pipe(sass({ style: 'expanded' }))
+				.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
+	.pipe(gulp.dest('./dist'));
+});
+
 gulp.task("watch", function() {
 	log("Watching scss files for modifications");
-	gulp.watch(sassFiles, ["sass"]);
+	gulp.watch(sassFiles2, ["sass"]);
 });
 
 gulp.task("bundle", function() {

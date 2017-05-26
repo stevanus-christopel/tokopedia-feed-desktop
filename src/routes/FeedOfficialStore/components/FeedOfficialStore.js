@@ -8,7 +8,7 @@ class FeedOfficialStore extends Component {
 
   render() {
     return (
-      <div className='feed-official-store'>
+      <div className='feed-official-store mb-20'>
 				<h1 className='fw-600 fs-16 lh-16 feed-official-store__title'>Official Store</h1>
 				<div className='row-fluid feed-official-store__showcase'>
 					<div className='span4 feed-official-store__items'>

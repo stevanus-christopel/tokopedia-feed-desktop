@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './FeedView.css';
-import FeedOfficialStore from './../../FeedOfficialStoreProduct'
 
 import FeedEmpty from './FeedEmpty'
 import FeedProduct from './FeedProduct'
 import FeedOfficialStoreProduct from '../../FeedOfficialStoreProduct'
-import FeedStore from '../../FeedStore'
+import FeedInspiration from '../../../components/FeedInspiration'
 
 class FeedView extends Component {
   constructor (props) {
@@ -18,9 +17,10 @@ class FeedView extends Component {
         <div className='feed__main-content'>
           <FeedEmpty />
           <FeedProduct />
-          <FeedOfficialStore />
+          <FeedOfficialStoreProduct />
           <FeedProduct />
-          <FeedStore />
+          <FeedOfficialStoreProduct />
+          <FeedInspiration />
         </div>
         <div className='feed__right-sidebar'>
         </div>

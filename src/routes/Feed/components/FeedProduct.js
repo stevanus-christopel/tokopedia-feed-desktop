@@ -25,7 +25,7 @@ class FeedProduct extends Component {
 
         <div className='feed-product__content'>					
           <div className='row-fluid'>
-            <div className='span6 feed-product__items feed-product__items--no-border'>
+            <div className='span6 feed-product__items'>
               <img src="http://placehold.it/300x300" className='feed-product__image'/>
               <div className='feed-product__details'>
                 <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -33,13 +33,13 @@ class FeedProduct extends Component {
                   Dr.Kevin Stylish and Comfortable Men Sne
                   </div>
                 </div>
-                <div className='pb-20 feed-product__items--price'>
+                <div className='feed-product__items--price'>
                   <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
                 </div>
               </div>
             </div>
 
-            <div className='span6 feed-product__items feed-product__items--left-border'>
+            <div className='span6 feed-product__items'>
               <img src="http://placehold.it/300x300" className='feed-product__image'/>
               <div className='feed-product__details'>
                 <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -47,7 +47,7 @@ class FeedProduct extends Component {
                   Dr.Kevin Stylish and Comfortable Men Sne
                   </div>
                 </div>
-                <div className='pb-20 feed-product__items--price'>
+                <div className='feed-product__items--price'>
                   <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
                 </div>
               </div>
