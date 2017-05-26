@@ -13,7 +13,7 @@ class FeedStore extends Component {
 
   render() {
     return (
-			<div className='span7 feed-official-store'>
+			<div className='feed-official-store mb-20'>
 			<h1 className='fw-normal fs-16 lh-20 pt-50 feed-official-store__title--text'>Produk Terpilih dari Official Store</h1>
 				<div className='feed-official-store__frame'>
 					<div className='feed-official-store__content'>					

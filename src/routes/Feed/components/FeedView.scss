@@ -52,6 +52,7 @@
 
 .feed-product{
 	border: 1px solid #E0E0E0;
+	margin-bottom: 20px;
 
 	&__header {
 		padding: 10px;
@@ -81,5 +82,27 @@
 			line-height: 1rem;
 			color: rgba(0, 0, 0, 0.38);
 		}
+	}
+
+	&__content {
+		& .row-fluid .span6 {
+			box-sizing: border-box;
+			margin: 0;
+			width: 50%;
+		}
+	}
+
+	&__items {
+		margin: auto 0;
+		padding: 8px;
+		border-right: 1px solid #E0E0E0;
+
+		&:last-child {
+		border-right: 1px solid #FFF;
+		}
+	}
+
+	&__details {
+		margin-top: 6px;
 	}
 }
