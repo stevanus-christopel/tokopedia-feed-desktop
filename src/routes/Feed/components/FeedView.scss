@@ -21,7 +21,7 @@
 
 	&__seller-photo {
 		display: inline-block;
-		vertical-align: top;
+		vertical-align: middle;
 
 		& img {
 			width: 50px;
@@ -32,11 +32,12 @@
 
 	&__seller-activity {
 		display: inline-block;
-		vertical-align: top;
+		vertical-align: middle;
 		padding-left: 8px;
 
 		&--time {
 			font-size: 11px;
+			line-height: 14px;
 			color: rgba(0, 0, 0, 0.54);
 		}
 	}

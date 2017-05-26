@@ -14,15 +14,16 @@
     padding: 10px; }
   .feed-product__seller-photo {
     display: inline-block;
-    vertical-align: top; }
+    vertical-align: middle; }
     .feed-product__seller-photo img {
       width: 50px;
       border: 1px solid #E0E0E0;
       border-radius: 3px; }
   .feed-product__seller-activity {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     padding-left: 8px; }
     .feed-product__seller-activity--time {
       font-size: 11px;
+      line-height: 14px;
       color: rgba(0, 0, 0, 0.54); }

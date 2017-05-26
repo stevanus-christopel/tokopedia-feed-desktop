@@ -18,8 +18,7 @@ class FeedProduct extends Component {
             <div className='feed-product__seller-activity'>
               <span className='fw-600'>Nana Shop Ekstraordinari </span>
               ubah <span className='fw-600'>1 produk</span>
-              <br />
-              <span className='feed-product__seller-activity--time'>3 jam</span>
+              <div className='feed-product__seller-activity--time'>3 jam</div>
             </div>
             <div className='feed-product__seller-share'></div>
           </div>
