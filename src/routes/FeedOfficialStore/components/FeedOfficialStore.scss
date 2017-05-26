@@ -1,0 +1,36 @@
+$color-border-grey: #E0E0E0;
+
+.feed-official-store {
+	border: 1px solid $color-border-grey;
+
+	&__title {
+		padding: 16px;
+		border-bottom: 1px solid $color-border-grey;
+	}
+
+	&__items-image {
+		padding: 8px;
+	}
+	
+	&__link-more {
+			height: 45px;
+			line-height: 50px;
+	}
+}
+
+.feed-official-store__showcase {
+	border-bottom: 1px solid $color-border-grey;
+	.feed-official-store{
+		&__items {
+			margin: 0;
+			width: 33.3%;
+			border-right: 1px solid $color-border-grey;
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		
+
+	}
+}
