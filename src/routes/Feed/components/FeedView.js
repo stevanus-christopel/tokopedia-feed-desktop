@@ -4,6 +4,8 @@ import FeedOfficialStore from './../../FeedOfficialStoreProduct'
 
 import FeedEmpty from './FeedEmpty'
 import FeedProduct from './FeedProduct'
+import FeedOfficialStoreProduct from '../../FeedOfficialStoreProduct'
+import FeedStore from '../../FeedStore'
 
 class FeedView extends Component {
   constructor (props) {
@@ -17,6 +19,8 @@ class FeedView extends Component {
           <FeedEmpty />
           <FeedProduct />
           <FeedOfficialStore />
+          <FeedProduct />
+          <FeedStore />
         </div>
         <div className='feed__right-sidebar'>
         </div>
