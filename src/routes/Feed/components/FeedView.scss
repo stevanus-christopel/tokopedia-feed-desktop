@@ -3,12 +3,50 @@
 		display: inline-block;
 		vertical-align: top;
 		width: 560px;
-		padding: 10px;
+		padding: 20px;
 	}
 
 	&__right-sidebar {
 		display: inline-block;
-		padding: 10px;
+		padding: 20px;
+	}
+}
+
+.feed-empty {
+	border: 1px solid #E0E0E0;
+	padding: 35px;
+	padding-right: 30px;
+	margin-bottom: 20px;
+
+	&__image {
+		display: inline-block;
+		vertical-align: middle;
+		width: 165px;
+
+		& img {
+			width: 165px;
+		}
+	}
+
+	&__text {
+		display: inline-block;
+		vertical-align: middle;
+		width: 55%;
+		margin-left: 40px;
+
+		& h5 {
+			margin-bottom: 6px;
+		}
+
+		& p {
+			margin-bottom: 12px;
+			color: rgba(0, 0, 0, 0.54);
+		}
+
+		& button {
+			width: 200px;
+			padding: 9px;
+		}
 	}
 }
 
@@ -17,6 +55,7 @@
 
 	&__header {
 		padding: 10px;
+		border-bottom: 1px solid #E0E0E0;
 	}
 
 	&__seller-photo {
@@ -24,21 +63,23 @@
 		vertical-align: middle;
 
 		& img {
-			width: 50px;
+			width: 52px;
 			border: 1px solid #E0E0E0;
 			border-radius: 3px;
+			box-sizing: border-box;
 		}
 	}
 
 	&__seller-activity {
 		display: inline-block;
 		vertical-align: middle;
-		padding-left: 8px;
+		padding-left: 10px;
+		font-size: 14px;
 
 		&--time {
 			font-size: 11px;
-			line-height: 14px;
-			color: rgba(0, 0, 0, 0.54);
+			line-height: 1rem;
+			color: rgba(0, 0, 0, 0.38);
 		}
 	}
 }

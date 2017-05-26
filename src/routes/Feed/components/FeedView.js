@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './FeedView.css';
 
+import FeedEmpty from './FeedEmpty'
 import FeedProduct from './FeedProduct'
 
 class FeedView extends Component {
@@ -12,6 +13,7 @@ class FeedView extends Component {
     return (
       <div className='feed'>
         <div className='feed__main-content'>
+          <FeedEmpty />
           <FeedProduct />
         </div>
         <div className='feed__right-sidebar'>
