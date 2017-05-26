@@ -1,0 +1,26 @@
+$color-border-grey: #E0E0E0;
+
+.feed-hot-lists {
+	&-showcases {
+
+	}
+
+	&-full {
+		border: 1px solid $color-border-grey;
+	}
+
+	&__items {
+		width: 50%;
+	}
+}
+
+.feed-hot-lists-showcases {
+	.feed-hot-lists__items {
+		width: 50%;
+		border-right: 1px solid $color-border-grey;
+	}
+	&:last-child {
+		border-right: none;
+	}
+	
+}
