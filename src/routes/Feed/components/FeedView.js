@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../FeedView.css';
 
 import FeedEmpty from '../../../components/FeedEmpty'
+import FeedSearchShop from '../../../components/FeedSearchShop'
 import FeedProduct from '../../../components/FeedProduct'
 import FeedHotList from '../../../components/FeedHotList'
 import FeedOfficialStore from '../../../components/FeedOfficialStore'
@@ -22,6 +23,7 @@ class FeedView extends Component {
           <FeedProduct />
           <FeedOfficialStoreProduct />
           <FeedProduct />
+          <FeedSearchShop />
           <FeedOfficialStore />
           <FeedInspiration />
           <FeedTopAdsProduct />
