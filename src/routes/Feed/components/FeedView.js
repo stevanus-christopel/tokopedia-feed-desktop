@@ -7,6 +7,7 @@ import FeedHotList from '../../../components/FeedHotList'
 import FeedOfficialStore from '../../../components/FeedOfficialStore'
 import FeedOfficialStoreProduct from '../../../components/FeedOfficialStoreProduct'
 import FeedInspiration from '../../../components/FeedInspiration'
+import FeedTopAdsProduct from '../../../components/FeedTopAdsProduct'
 
 class FeedView extends Component {
   constructor (props) {
@@ -23,6 +24,7 @@ class FeedView extends Component {
           <FeedProduct />
           <FeedOfficialStore />
           <FeedInspiration />
+          <FeedTopAdsProduct />
         </div>
         <div className='feed__right-sidebar'>
           <FeedHotList />

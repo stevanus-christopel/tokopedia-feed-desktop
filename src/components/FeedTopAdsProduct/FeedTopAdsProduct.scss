@@ -1,0 +1,48 @@
+.feed-topads-product {
+	border: 1px solid #E0E0E0;
+	margin-bottom: 20px;
+
+	&__header {
+		padding: 16px;
+		border-bottom: 1px solid #E0E0E0;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.38);
+
+        & img {
+            height: 13px;
+            position: relative;
+            bottom: 2px;
+            left: 5px;
+        }
+	}
+
+	&__content {
+		& .row-fluid .span4 {
+			box-sizing: border-box;
+			margin: 0;
+			width: 33.33%;
+
+            &:last-child {
+			    width: 33.34%;
+            }
+		}
+	}
+
+    &__items {
+		margin: auto 0;
+        padding: 8px;
+		border-right: 1px solid #E0E0E0;
+
+        &--border-bottom {
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+		&:last-child {
+		    border-right: 1px solid #FFF;
+		}
+    }
+
+	&__details {
+		margin-top: 6px;
+	}
+}
