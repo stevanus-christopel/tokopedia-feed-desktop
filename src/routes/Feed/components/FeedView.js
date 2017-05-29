@@ -3,7 +3,7 @@ import '../FeedView.css';
 
 import FeedEmpty from '../../../components/FeedEmpty'
 import FeedProduct from '../../../components/FeedProduct'
-import FeedHotList from '../../FeedHotList'
+import FeedHotList from '../../../components/FeedHotList'
 import FeedOfficialStore from '../../../components/FeedOfficialStore'
 import FeedOfficialStoreProduct from '../../../components/FeedOfficialStoreProduct'
 import FeedInspiration from '../../../components/FeedInspiration'

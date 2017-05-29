@@ -8,31 +8,25 @@ var gulp = require("gulp"),//http://gulpjs.com/
 	concat = require('gulp-concat');//https://www.npmjs.com/package/gulp-concat
 	log = util.log;
 
-var sassFiles = "./src/**/*.scss";
+var sassFiles = "./src/routes/**/*/*.scss";
 
 gulp.task("sass", function() {
 	log("Generate CSS files " + (new Date()).toString());
-	
 	gulp.src(sassFiles)
 	.pipe(sass({ style: 'expanded' }))
 	.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
-	.pipe(gulp.dest('./src/routes/Feed'));
-
-	gulp.src(sassFiles)
-	.pipe(sass({ style: 'expanded' }))
-	.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
-	.pipe(gulp.dest('./dist'));
-});
+	.pipe(gulp.dest('./src/routes/'));
+})
 
 gulp.task("watch", function() {
 	log("Watching scss files for modifications");
 	gulp.watch(sassFiles, ["sass"]);
-});
+})
 
 gulp.task("bundle", function() {
 	log("Bundling css files");
-	gulp.src(['./public/css/*.css', './src/routes/Feed/FeedView.css'])
-    .pipe(concatCss("dv3-feed.css"))
+	gulp.src(['./public/css/*.css', './src/routes/**/*/*.css'])
+    .pipe(concatCss("dv3-feeds.css"))
     .pipe(gulp.dest('./dist'));
 
 	log("Bundling all js files from routes");
