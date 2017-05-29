@@ -19,6 +19,6 @@
     .feed-empty__text p {
       margin-bottom: 12px;
       color: rgba(0, 0, 0, 0.54); }
-    .feed-empty__text button {
+    .feed-empty__text button.btn {
       width: 200px;
       padding: 9px; }

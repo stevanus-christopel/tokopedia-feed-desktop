@@ -19,6 +19,6 @@
     .feed-search-shop__text p {
       margin-bottom: 12px;
       color: rgba(0, 0, 0, 0.54); }
-    .feed-search-shop__text button {
+    .feed-search-shop__text button.btn {
       width: 200px;
       padding: 9px; }
