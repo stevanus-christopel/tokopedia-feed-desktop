@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../FeedView.css';
 
 import FeedEmpty from '../../../components/FeedEmpty'
-import FeedProduct from './FeedProduct'
+import FeedProduct from '../../../components/FeedProduct'
 import FeedHotList from '../../FeedHotList'
 import FeedOfficialStoreProduct from '../../FeedOfficialStoreProduct'
 import FeedInspiration from '../../../components/FeedInspiration'

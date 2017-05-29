@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../FeedView.css';
+import './FeedProduct.css';
 
-import tokopediaAvatar from '../assets/tokopedia-avatar-square.png'
+import tokopediaAvatar from './assets/tokopedia-avatar-square.png'
 
 class FeedProduct extends Component {
   constructor (props) {
