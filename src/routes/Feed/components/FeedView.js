@@ -4,7 +4,7 @@ import '../FeedView.css';
 import FeedEmpty from '../../../components/FeedEmpty'
 import FeedProduct from '../../../components/FeedProduct'
 import FeedHotList from '../../FeedHotList'
-import FeedOfficialStoreProduct from '../../FeedOfficialStoreProduct'
+import FeedOfficialStoreProduct from '../../../components/FeedOfficialStoreProduct'
 import FeedInspiration from '../../../components/FeedInspiration'
 
 class FeedView extends Component {
