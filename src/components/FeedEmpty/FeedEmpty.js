@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../FeedView.css';
+import './FeedEmpty.css';
 
-import emptyState from '../assets/empty-state.png'
+import emptyState from './assets/empty-state.png'
 
 class FeedEmpty extends Component {
   constructor (props) {

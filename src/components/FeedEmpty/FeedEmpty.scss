@@ -1,0 +1,37 @@
+.feed-empty {
+	border: 1px solid #E0E0E0;
+	padding: 35px;
+	padding-right: 30px;
+	margin-bottom: 20px;
+
+	&__image {
+		display: inline-block;
+		vertical-align: middle;
+		width: 165px;
+
+		& img {
+			width: 165px;
+		}
+	}
+
+	&__text {
+		display: inline-block;
+		vertical-align: middle;
+		width: 55%;
+		margin-left: 40px;
+
+		& h5 {
+			margin-bottom: 6px;
+		}
+
+		& p {
+			margin-bottom: 12px;
+			color: rgba(0, 0, 0, 0.54);
+		}
+
+		& button {
+			width: 200px;
+			padding: 9px;
+		}
+	}
+}

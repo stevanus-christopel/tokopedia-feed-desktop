@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../FeedView.css';
 
-import FeedEmpty from './FeedEmpty'
+import FeedEmpty from '../../../components/FeedEmpty'
 import FeedProduct from './FeedProduct'
 import FeedHotList from '../../FeedHotList'
 import FeedOfficialStoreProduct from '../../FeedOfficialStoreProduct'

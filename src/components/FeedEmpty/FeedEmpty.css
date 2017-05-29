@@ -1,0 +1,24 @@
+.feed-empty {
+  border: 1px solid #E0E0E0;
+  padding: 35px;
+  padding-right: 30px;
+  margin-bottom: 20px; }
+  .feed-empty__image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 165px; }
+    .feed-empty__image img {
+      width: 165px; }
+  .feed-empty__text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 55%;
+    margin-left: 40px; }
+    .feed-empty__text h5 {
+      margin-bottom: 6px; }
+    .feed-empty__text p {
+      margin-bottom: 12px;
+      color: rgba(0, 0, 0, 0.54); }
+    .feed-empty__text button {
+      width: 200px;
+      padding: 9px; }
