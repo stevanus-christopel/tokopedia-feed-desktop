@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './FeedEmpty.css';
+import getImage from '../../lib/utils.js';
 
 import emptyState from './assets/empty-state.png'
 
@@ -8,7 +9,7 @@ var FeedEmpty = React.createClass({
     return (
       <div className='feed-empty'>
         <div className='feed-empty__image'>
-            <img alt='' src={emptyState} />
+            <img alt='' src={getImage('empty-state.png')} />
         </div>
         <div className='feed-empty__text'>
             <h5 className='fs-14 fw-600'>Oops, feed masih kosong</h5>

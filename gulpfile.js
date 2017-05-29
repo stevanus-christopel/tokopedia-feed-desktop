@@ -36,7 +36,7 @@ gulp.task("bundle", function() {
 	log('Bundling all js files from routes');
 	gulp.src(['./src/routes/**/*.js', './src/components/**/*.js'])
 	.pipe(babel({ presets: ['react'] }))
-    .pipe(concat('feed.js'))
+    .pipe(concat('dv3-feed.js'))
 	.pipe(deleteLines({ 'filters': [/import/g] }))
 	.pipe(deleteLines({ 'filters': [/export/g] }))
     .pipe(gulp.dest('./dist/'));

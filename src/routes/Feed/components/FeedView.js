@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../FeedView.css';
+import getImage from '../../../lib/utils.js';
 
 import FeedEmpty from '../../../components/FeedEmpty'
 import FeedSearchShop from '../../../components/FeedSearchShop'
