@@ -3,6 +3,7 @@ var gulp = require("gulp"),//http://gulpjs.com/
 	sass = require("gulp-sass"),//https://www.npmjs.org/package/gulp-sass
 	autoprefixer = require('gulp-autoprefixer'),//https://www.npmjs.org/package/gulp-autoprefixer
 	minifycss = require('gulp-minify-css'),//https://www.npmjs.org/package/gulp-minify-css
+	flatten = require('gulp-flatten');//https://www.npmjs.com/package/gulp-flatten
 	concat = require('gulp-concat'),//https://www.npmjs.com/package/gulp-concat
 	babel = require('gulp-babel'),
 	deleteLines = require('gulp-delete-lines'),//https://www.npmjs.com/package/gulp-delete-lines
@@ -33,7 +34,7 @@ gulp.task("bundle", function() {
     .pipe(concat('dv3-feed.css'))
     .pipe(gulp.dest('./dist'));
 
-	log('Bundling all js files from routes');
+	log('Bundling all js files');
 	gulp.src(['./src/routes/**/*.js', './src/components/**/*.js'])
 	.pipe(babel({ presets: ['react'] }))
     .pipe(concat('dv3-feed.js'))
@@ -41,6 +42,11 @@ gulp.task("bundle", function() {
 	.pipe(deleteLines({ 'filters': [/export/g] }))
     .pipe(gulp.dest('./dist/'));
 
+	log('Move img to /public/img')
+	gulp.src(['./src/routes/**/*.{jpg,png,svg}', './src/components/**/*.{jpg,png,svg}'])
+	.pipe(flatten())
+	.pipe(gulp.dest('./public/img/'))
+	
 	log('Done bundling');
 })
 
