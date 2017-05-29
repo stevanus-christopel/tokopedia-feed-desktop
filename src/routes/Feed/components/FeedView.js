@@ -4,6 +4,7 @@ import '../FeedView.css';
 import FeedEmpty from '../../../components/FeedEmpty'
 import FeedProduct from '../../../components/FeedProduct'
 import FeedHotList from '../../FeedHotList'
+import FeedOfficialStore from '../../../components/FeedOfficialStore'
 import FeedOfficialStoreProduct from '../../../components/FeedOfficialStoreProduct'
 import FeedInspiration from '../../../components/FeedInspiration'
 
@@ -20,7 +21,7 @@ class FeedView extends Component {
           <FeedProduct />
           <FeedOfficialStoreProduct />
           <FeedProduct />
-          <FeedOfficialStoreProduct />
+          <FeedOfficialStore />
           <FeedInspiration />
         </div>
         <div className='feed__right-sidebar'>
