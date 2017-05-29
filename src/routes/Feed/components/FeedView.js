@@ -9,6 +9,8 @@ import FeedOfficialStore from '../../../components/FeedOfficialStore'
 import FeedOfficialStoreProduct from '../../../components/FeedOfficialStoreProduct'
 import FeedInspiration from '../../../components/FeedInspiration'
 import FeedTopAdsProduct from '../../../components/FeedTopAdsProduct'
+import FeedSellerStory from '../../../components/FeedSellerStory'
+import FeedTokopediaStory from '../../../components/FeedTokopediaStory'
 
 class FeedView extends Component {
   constructor (props) {
@@ -27,6 +29,8 @@ class FeedView extends Component {
           <FeedOfficialStore />
           <FeedInspiration />
           <FeedTopAdsProduct />
+          <FeedTokopediaStory />
+          <FeedSellerStory />
         </div>
         <div className='feed__right-sidebar'>
           <FeedHotList />

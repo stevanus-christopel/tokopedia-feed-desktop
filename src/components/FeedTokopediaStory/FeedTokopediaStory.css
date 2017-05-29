@@ -1,0 +1,28 @@
+.feed-tokopedia-story {
+  border: 1px solid #E0E0E0;
+  margin-bottom: 20px; }
+  .feed-tokopedia-story__header {
+    padding: 16px 10px;
+    border-bottom: 1px solid #E0E0E0;
+    font-weight: 600;
+    font-size: 16px; }
+  .feed-tokopedia-story__card {
+    margin: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px; }
+  .feed-tokopedia-story__image {
+    width: 100%; }
+  .feed-tokopedia-story__text {
+    padding: 16px 10px; }
+    .feed-tokopedia-story__text-left {
+      display: inline-block;
+      vertical-align: middle;
+      width: 80%;
+      font-size: 13px;
+      line-height: 18px;
+      color: rgba(0, 0, 0, 0.7);
+      font-weight: bold; }
+    .feed-tokopedia-story__text-right {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20%; }
