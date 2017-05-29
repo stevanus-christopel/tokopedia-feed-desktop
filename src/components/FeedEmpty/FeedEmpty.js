@@ -3,12 +3,8 @@ import './FeedEmpty.css';
 
 import emptyState from './assets/empty-state.png'
 
-class FeedEmpty extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedEmpty = React.createClass({
+  render: function() {
     return (
       <div className='feed-empty'>
         <div className='feed-empty__image'>
@@ -22,6 +18,6 @@ class FeedEmpty extends Component {
       </div>
     );
   }
-}
+})
 
 export default FeedEmpty;

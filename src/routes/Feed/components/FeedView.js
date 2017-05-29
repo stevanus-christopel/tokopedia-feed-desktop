@@ -12,12 +12,8 @@ import FeedTopAdsProduct from '../../../components/FeedTopAdsProduct'
 import FeedSellerStory from '../../../components/FeedSellerStory'
 import FeedTokopediaStory from '../../../components/FeedTokopediaStory'
 
-class FeedView extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedView = React.createClass({
+  render: function() {
     return (
       <div className='feed'>
         <div className='feed__main-content'>
@@ -38,6 +34,6 @@ class FeedView extends Component {
       </div>
     );
   }
-}
+})
 
 export default FeedView;

@@ -3,12 +3,8 @@ import './FeedTopAdsProduct.css';
 
 import iconInfo from './assets/icon-info.png'
 
-class FeedTopAdsProduct extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedTopAdsProduct = React.createClass({
+  render: function() {
     return (
         <div className='feed-topads-product'>
             <div className='feed-topads-product__header'>
@@ -109,6 +105,6 @@ class FeedTopAdsProduct extends Component {
         </div>
     );
   }
-}
+})
 
 export default FeedTopAdsProduct;

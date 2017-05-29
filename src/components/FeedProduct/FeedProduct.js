@@ -3,12 +3,8 @@ import './FeedProduct.css';
 
 import tokopediaAvatar from './assets/tokopedia-avatar-square.png'
 
-class FeedProduct extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedProduct = React.createClass({
+  render: function() {
     return (
       <div className='feed-product'>
         <div className='feed-product__header'>
@@ -57,6 +53,6 @@ class FeedProduct extends Component {
       </div>
     );
   }
-}
+})
 
 export default FeedProduct;

@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import './FeedInspiration.css';
 
-class FeedInspiration extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedInspiration = React.createClass({
+  render: function() {
     return (
       <div className='feed-inspiration'>
         <div className='feed-inspiration__header'>
@@ -106,6 +102,6 @@ class FeedInspiration extends Component {
       </div>
     );
   }
-}
+})
 
 export default FeedInspiration;

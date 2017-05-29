@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import './FeedHotlist.css';
 
-class FeedHotList extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedHotlist = React.createClass({
+  render: function() {
     return (
       <div>
 				<div className='feed-hot-lists-full'>
@@ -43,6 +39,6 @@ class FeedHotList extends Component {
       </div>
     );
   }
-}
+})
 
-export default FeedHotList;
+export default FeedHotlist;

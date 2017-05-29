@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
 import './FeedOfficialStoreProduct.css';
 
-class FeedStore extends Component {
-
-  constructor (props) {
-    super(props)
-  }
-
-	componentDidMount() {
-
-  }
-
-  render() {
+var FeedOfficialStoreProduct = React.createClass({
+  render: function() {
     return (
 			<div className='feed-official-store-product mb-20'>
 			<h1 className='fw-normal fs-16 lh-20 pt-50 feed-official-store-product__title--text'>Produk Terpilih dari Official Store</h1>
@@ -168,6 +159,6 @@ class FeedStore extends Component {
 			</div>
     );
   }
-}
+})
 
-export default FeedStore;
+export default FeedOfficialStoreProduct;

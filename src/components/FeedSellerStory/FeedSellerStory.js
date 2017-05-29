@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import './FeedSellerStory.css';
 
-class FeedSellerStory extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedSellerStory = React.createClass({
+  render: function() {
     return (
       <div className='feed-seller-story'>
         <div className='feed-seller-story__header'>
@@ -24,6 +20,6 @@ class FeedSellerStory extends Component {
       </div>
     );
   }
-}
+})
 
 export default FeedSellerStory;

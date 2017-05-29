@@ -3,12 +3,8 @@ import './FeedSearchShop.css';
 
 import searchShop from './assets/search-shop.png'
 
-class FeedSearchShop extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedSearchShop = React.createClass({
+  render: function() {
     return (
       <div className='feed-search-shop'>
         <div className='feed-search-shop__image'>
@@ -22,6 +18,6 @@ class FeedSearchShop extends Component {
       </div>
     );
   }
-}
+})
 
 export default FeedSearchShop;

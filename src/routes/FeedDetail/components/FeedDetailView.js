@@ -4,12 +4,8 @@ import '../FeedDetailView.css';
 import FeedHotList from '../../../components/FeedHotList'
 import FeedProductDetail from '../../../components/FeedProductDetail'
 
-class FeedDetailView extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedDetailView = React.createClass({
+  render: function() {
     return (
       <div className='feed-detail'>
         <div className='feed-detail__main-content'>
@@ -21,6 +17,6 @@ class FeedDetailView extends Component {
       </div>
     );
   }
-}
+})
 
 export default FeedDetailView;

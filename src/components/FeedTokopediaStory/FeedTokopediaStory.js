@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import './FeedTokopediaStory.css';
 
-class FeedTokopediaStory extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
+var FeedTokopediaStory = React.createClass({
+  render: function() {
     return (
       <div className='feed-tokopedia-story'>
         <div className='feed-tokopedia-story__header'>
@@ -26,6 +22,6 @@ class FeedTokopediaStory extends Component {
       </div>
     );
   }
-}
+})
 
 export default FeedTokopediaStory;
