@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './FeedView.css';
+import '../FeedView.css';
 
 import tokopediaAvatar from '../assets/tokopedia-avatar-square.png'
 

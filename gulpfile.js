@@ -8,43 +8,30 @@ var gulp = require("gulp"),//http://gulpjs.com/
 	concat = require('gulp-concat');//https://www.npmjs.com/package/gulp-concat
 	log = util.log;
 
-var sassFiles = "./src/routes/Feed/components/FeedView.scss";
-var sassFiles2 = "./src//components/FeedInspiration/FeedInspiration.scss";
+var sassFiles = "./src/**/*.scss";
 
 gulp.task("sass", function() {
 	log("Generate CSS files " + (new Date()).toString());
+	
 	gulp.src(sassFiles)
 	.pipe(sass({ style: 'expanded' }))
 	.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
-	.pipe(gulp.dest('./src/routes/Feed/components'));
+	.pipe(gulp.dest('./src/routes/Feed'));
 
 	gulp.src(sassFiles)
 	.pipe(sass({ style: 'expanded' }))
-				.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
-	.pipe(gulp.dest('./dist'));
-});
-
-gulp.task("sass", function() {
-	log("Generate CSS files " + (new Date()).toString());
-	gulp.src(sassFiles2)
-	.pipe(sass({ style: 'expanded' }))
 	.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
-	.pipe(gulp.dest('./src/components/FeedInspiration'));
-
-	gulp.src(sassFiles2)
-	.pipe(sass({ style: 'expanded' }))
-				.pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
 	.pipe(gulp.dest('./dist'));
 });
 
 gulp.task("watch", function() {
 	log("Watching scss files for modifications");
-	gulp.watch(sassFiles2, ["sass"]);
+	gulp.watch(sassFiles, ["sass"]);
 });
 
 gulp.task("bundle", function() {
 	log("Bundling css files");
-	gulp.src(['./public/css/*.css', './src/routes/Feed/components/FeedView.css'])
+	gulp.src(['./public/css/*.css', './src/routes/Feed/FeedView.css'])
     .pipe(concatCss("dv3-feed.css"))
     .pipe(gulp.dest('./dist'));
 

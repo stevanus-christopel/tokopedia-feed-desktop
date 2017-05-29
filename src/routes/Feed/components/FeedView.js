@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './FeedView.css';
+import '../FeedView.css';
 
 import FeedEmpty from './FeedEmpty'
 import FeedProduct from './FeedProduct'

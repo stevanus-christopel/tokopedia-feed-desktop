@@ -1,0 +1,13 @@
+.feed-detail {
+	&__main-content {
+		display: inline-block;
+		vertical-align: top;
+		width: 560px;
+		padding: 20px;
+	}
+
+	&__right-sidebar {
+		display: inline-block;
+		padding: 20px;
+	}
+}

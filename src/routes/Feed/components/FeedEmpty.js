@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './FeedView.css';
+import '../FeedView.css';
 
 import emptyState from '../assets/empty-state.png'
 
