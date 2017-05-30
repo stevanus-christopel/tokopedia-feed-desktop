@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './FeedProductDetail.css';
-
-import tokopediaAvatar from './assets/tokopedia-avatar-square.png'
+import getImage from '../../lib/utils.js';
 
 var FeedProductDetail = React.createClass({
   render: function() {
@@ -9,7 +8,7 @@ var FeedProductDetail = React.createClass({
       <div className='feed-product-detail'>
         <div className='feed-product-detail__header'>
           <div className='feed-product-detail__seller-photo'>
-            <img alt='' src={ tokopediaAvatar } />
+            <img alt='' src={getImage('tokopedia-avatar-square.png')}/>
           </div>
           <div className='feed-product-detail__seller-activity'>
             <span className='fw-600'>Nana Shop Ekstraordinari </span>

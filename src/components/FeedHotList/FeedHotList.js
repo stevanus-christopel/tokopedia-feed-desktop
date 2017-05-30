@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './FeedHotlist.css';
+import getImage from '../../lib/utils.js';
 
 var FeedHotlist = React.createClass({
   render: function() {

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './FeedSearchShop.css';
-
-import searchShop from './assets/search-shop.png'
+import getImage from '../../lib/utils.js';
 
 var FeedSearchShop = React.createClass({
   render: function() {
     return (
       <div className='feed-search-shop'>
         <div className='feed-search-shop__image'>
-            <img alt='' src={searchShop} />
+            <img alt='' src={getImage('search-shop.png')} />
         </div>
         <div className='feed-search-shop__text'>
             <h5 className='fs-14 fw-600'>Mau lihat update produk lebih banyak?</h5>

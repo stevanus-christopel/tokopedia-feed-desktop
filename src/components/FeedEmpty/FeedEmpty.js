@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './FeedEmpty.css';
 import getImage from '../../lib/utils.js';
 
-import emptyState from './assets/empty-state.png'
-
 var FeedEmpty = React.createClass({
   render: function() {
     return (

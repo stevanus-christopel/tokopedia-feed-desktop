@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './FeedTopAdsProduct.css';
-
-import iconInfo from './assets/icon-info.png'
+import getImage from '../../lib/utils.js';
 
 var FeedTopAdsProduct = React.createClass({
   render: function() {
@@ -9,7 +8,7 @@ var FeedTopAdsProduct = React.createClass({
         <div className='feed-topads-product'>
             <div className='feed-topads-product__header'>
                 Promoted
-                <img alt='' src={iconInfo} />
+                <img alt='' src={getImage('icon-info.png')} />
             </div>
 
             <div className='feed-topads-product__content'>					

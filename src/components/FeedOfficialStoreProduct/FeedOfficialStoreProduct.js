@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './FeedOfficialStoreProduct.css';
+import getImage from '../../lib/utils.js';
 
 var FeedOfficialStoreProduct = React.createClass({
   render: function() {
