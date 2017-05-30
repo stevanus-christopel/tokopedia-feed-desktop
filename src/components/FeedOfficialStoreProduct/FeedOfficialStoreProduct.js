@@ -5,8 +5,11 @@ import getImage from '../../lib/utils.js';
 var FeedOfficialStoreProduct = React.createClass({
   render: function() {
     return (
-			<div className='feed-official-store-product mb-20'>
-			<h1 className='fw-normal fs-16 lh-20 pt-50 feed-official-store-product__title--text'>Produk Terpilih dari Official Store</h1>
+		<div>
+			<div className='feed-official-store-product__banner-image'>
+				<img src="http://placehold.it/560x149" alt=""/>
+			</div>
+			<div className='pt-0 mb-20 feed-official-store-product mb-20'>
 				<div className='feed-official-store-product__frame'>
 					<div className='feed-official-store-product__content'>					
 						<div className='row-fluid feed-official-store-product__row'>
@@ -158,6 +161,7 @@ var FeedOfficialStoreProduct = React.createClass({
 					</div>
 				</div>
 			</div>
+		</div>
     );
   }
 })
