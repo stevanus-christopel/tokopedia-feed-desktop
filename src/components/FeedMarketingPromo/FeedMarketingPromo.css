@@ -1,0 +1,97 @@
+.feed-marketing-promo {
+  border: 1px solid #E0E0E0;
+  max-width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
+  .feed-marketing-promo__seller-photo img {
+    width: 52px;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  .feed-marketing-promo__seller-activity {
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 14px; }
+    .feed-marketing-promo__seller-activity--time {
+      line-height: 1rem;
+      color: rgba(0, 0, 0, 0.38); }
+  .feed-marketing-promo__content {
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    overflow-x: hidden; }
+  .feed-marketing-promo__content-items {
+    margin: 0;
+    position: relative;
+    min-width: auto;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    transition-timing-function: ease-out;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out; }
+  .feed-marketing-promo__content-container {
+    width: 490px;
+    padding-left: 10px;
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative; }
+  .feed-marketing-promo__content-frame {
+    padding: 0 10px; }
+  .feed-marketing-promo__content-list {
+    width: 488px;
+    height: 266px;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
+  .feed-marketing-promo__content-details {
+    padding: 10px; }
+  .feed-marketing-promo__content-title {
+    width: 261px;
+    color: rgba(0, 0, 0, 0.7); }
+  .feed-marketing-promo__content-promo {
+    color: rgba(0, 0, 0, 0.38); }
+  .feed-marketing-promo__code-box {
+    padding: 8px 18px;
+    border-radius: 2px;
+    border: 1px dashed #E0E0E0; }
+  .feed-marketing-promo__code-text {
+    color: rgba(0, 0, 0, 0.7); }
+  .feed-marketing-promo__btn-save-promo {
+    width: 51px;
+    height: 40px; }
+  .feed-marketing-promo__btn-container {
+    padding: 41px 8px 19px 5px; }
+  .feed-marketing-promo__arrow--right {
+    position: absolute;
+    z-index: 999;
+    width: 32px;
+    top: 45%;
+    right: 5px; }
+  .feed-marketing-promo__arrow--left {
+    position: absolute;
+    z-index: 999;
+    width: 32px;
+    top: 45%;
+    left: 5px; }

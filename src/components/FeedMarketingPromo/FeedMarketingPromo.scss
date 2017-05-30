@@ -1,0 +1,132 @@
+$color-border-grey: #E0E0E0;
+
+.feed-marketing-promo {
+	border: 1px solid $color-border-grey;
+
+	max-width: 100%;
+	height: 100%;
+  position:relative;
+  overflow:hidden;
+
+	&__seller-photo {
+		& img {
+			width: 52px;
+			border: 1px solid $color-border-grey;
+			border-radius: 3px;
+			box-sizing: border-box;
+		}
+	}
+
+	&__seller-activity {
+		display: inline-block;
+		padding-left: 10px;
+		font-size: 14px;
+
+		&--time {
+			line-height: 1rem;
+			color: rgba(0, 0, 0, 0.38);
+		}
+	}
+
+	&__content {
+		position:relative;
+		transition: all 0.5s;
+		display: -ms-flexbox;
+		display: flex;
+		overflow-x: hidden;
+	}
+
+	&__content-items {
+		margin: 0;
+		position: relative;
+		min-width: auto;
+		height: 100%;
+		z-index: 1;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		box-sizing: content-box;
+		transition-timing-function: ease-out;
+			-webkit-transition-timing-function: ease-out;
+			-moz-transition-timing-function: ease-out;
+			-ms-transition-timing-function: ease-out;
+			-o-transition-timing-function: ease-out;
+	}
+
+	&__content-container {
+		width: 490px;
+		padding-left: 10px;
+		-webkit-flex-shrink: 0;
+		-ms-flex: 0 0 auto;
+		flex-shrink: 0;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		position: relative;
+	}
+
+	&__content-frame {
+		padding: 0 10px;
+	}
+
+	&__content-list {
+		width: 488px;
+		height: 266px;
+		border: 1px solid $color-border-grey;
+		border-radius: 2px;
+		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+	}
+
+	&__content-details {
+		padding: 10px;
+	}
+
+	&__content-title {
+		width: 261px;
+		color: rgba(0, 0, 0, 0.7);
+	}
+
+	&__content-promo {
+		color: rgba(0, 0, 0, 0.38);
+	}
+
+	&__code-box {
+		padding: 8px 18px;
+		border-radius: 2px;
+		border: 1px dashed $color-border-grey;
+	}
+
+	&__code-text {
+		color: rgba(0, 0, 0, 0.7);
+	}
+
+	&__btn-save-promo {
+		width: 51px;
+		height: 40px;
+	}
+
+	&__btn-container {
+		padding: 41px 8px 19px 5px;
+	}
+
+	&__arrow--right {
+		position: absolute;
+    z-index: 999;
+    width: 32px;
+    top: 45%;
+    right: 5px;
+	}
+
+	&__arrow--left {
+		position: absolute;
+    z-index: 999;
+    width: 32px;
+    top: 45%;
+    left: 5px;
+	}
+}
