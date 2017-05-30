@@ -22,7 +22,8 @@ $color-black-primary: rgba(0, 0, 0, 0.7);
 	padding: 8px;
 
 	&__frame {
-		border: 1px solid $color-border-grey;
+		background-color: #FFFFFF;
+		// border: 1px solid $color-border-grey;
 	}
 
 	&__row {
@@ -61,7 +62,7 @@ $color-black-primary: rgba(0, 0, 0, 0.7);
 		}
 
 		&__image {
-			max-width: 160px;
+			max-width: 164px;
 			padding-bottom: 6px;
 
 			&-container-store {
@@ -79,16 +80,6 @@ $color-black-primary: rgba(0, 0, 0, 0.7);
 			height: 45px;
 			line-height: 45px;
 			text-align: center;
-		}
-	}
-}
-
-@media (max-width: 1200px) {
-	.feed-official-store-product {
-		.feed-official-store-product {
-			&__image {
-				max-width: 144px;
-			}
 		}
 	}
 }
