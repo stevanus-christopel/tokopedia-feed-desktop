@@ -1,3 +1,61 @@
+var FeedView = React.createClass({
+  displayName: 'FeedView',
+
+  render: function () {
+    return React.createElement(
+      'div',
+      { className: 'feed' },
+      React.createElement(
+        'div',
+        { className: 'feed__main-content' },
+        React.createElement(FeedEmpty, null),
+        React.createElement(FeedProduct, { productCount: 2 }),
+        React.createElement(FeedProduct, { productCount: 3 }),
+        React.createElement(FeedOfficialStoreProduct, null),
+        React.createElement(FeedProduct, { productCount: 4 }),
+        React.createElement(FeedProduct, { productCount: 5 }),
+        React.createElement(FeedProduct, { productCount: 6 }),
+        React.createElement(FeedSearchShop, null),
+        React.createElement(FeedProduct, { productCount: 7 }),
+        React.createElement(FeedOfficialStore, null),
+        React.createElement(FeedInspiration, null),
+        React.createElement(FeedTopAdsProduct, null),
+        React.createElement(FeedTokopediaStory, null),
+        React.createElement(FeedSellerStory, null)
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed__right-sidebar' },
+        React.createElement(FeedHotList, null)
+      )
+    );
+  }
+});
+
+
+
+var FeedDetailView = React.createClass({
+  displayName: 'FeedDetailView',
+
+  render: function () {
+    return React.createElement(
+      'div',
+      { className: 'feed-detail' },
+      React.createElement(
+        'div',
+        { className: 'feed-detail__main-content' },
+        React.createElement(FeedProductDetail, null)
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-detail__right-sidebar' },
+        React.createElement(FeedHotList, null)
+      )
+    );
+  }
+});
+
+
 var FeedEmpty = React.createClass({
   displayName: 'FeedEmpty',
 
@@ -88,71 +146,6 @@ var FeedHotlist = React.createClass({
 				'div',
 				{ className: 'row-fluid' },
 				React.createElement('img', { src: 'http://placehold.it/319x100', className: 'pt-20' })
-			)
-		);
-	}
-});
-
-
-
-var FeedOfficialStore = React.createClass({
-	displayName: 'FeedOfficialStore',
-
-	render: function () {
-		return React.createElement(
-			'div',
-			{ className: 'feed-official-store mb-20' },
-			React.createElement(
-				'h1',
-				{ className: 'fw-600 fs-16 lh-16 feed-official-store__title' },
-				'Official Store'
-			),
-			React.createElement(
-				'div',
-				{ className: 'row-fluid feed-official-store__showcase' },
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row-fluid feed-official-store__showcase' },
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'ta-center row-fluid feed-official-store__link-more' },
-				React.createElement(
-					'a',
-					{ href: '#' },
-					'Lihat Semua'
-				)
 			)
 		);
 	}
@@ -352,317 +345,581 @@ var FeedInspiration = React.createClass({
 
 
 
+var FeedOfficialStore = React.createClass({
+	displayName: 'FeedOfficialStore',
+
+	render: function () {
+		return React.createElement(
+			'div',
+			{ className: 'feed-official-store mb-20' },
+			React.createElement(
+				'h1',
+				{ className: 'fw-600 fs-16 lh-16 feed-official-store__title' },
+				'Official Store'
+			),
+			React.createElement(
+				'div',
+				{ className: 'row-fluid feed-official-store__showcase' },
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'row-fluid feed-official-store__showcase' },
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'ta-center row-fluid feed-official-store__link-more' },
+				React.createElement(
+					'a',
+					{ href: '#' },
+					'Lihat Semua'
+				)
+			)
+		);
+	}
+});
+
+
+
+
+var FeedMarketingPromo = React.createClass({
+	displayName: 'FeedMarketingPromo',
+
+	render: function () {
+		return React.createElement(
+			'div',
+			{ className: 'mb-20 feed-marketing-promo' },
+			React.createElement(
+				'div',
+				{ className: 'p-10 feed-marketing-promo__header' },
+				React.createElement(
+					'div',
+					{ className: 'va-middle inline-block feed-marketing-promo__seller-photo' },
+					React.createElement('img', { src: tokopediaAvatar })
+				),
+				React.createElement(
+					'div',
+					{ className: 'va-middle feed-marketing-promo__seller-activity' },
+					React.createElement(
+						'span',
+						{ className: 'fw-600' },
+						'Tokopedia '
+					),
+					React.createElement(
+						'div',
+						{ className: 'fs-11 feed-marketing-promo__seller-activity--time' },
+						'Promo'
+					)
+				),
+				React.createElement('div', { className: 'feed-marketing-promo__seller-share' })
+			),
+			React.createElement(
+				'div',
+				{ className: 'feed-marketing-promo__content' },
+				React.createElement(
+					'div',
+					{ className: 'feed-marketing-promo__arrow--left' },
+					React.createElement('img', { src: arrowRight })
+				),
+				React.createElement(
+					'div',
+					{ className: 'feed-marketing-promo__arrow--right' },
+					React.createElement('img', { src: arrowRight })
+				),
+				React.createElement(
+					'div',
+					{ className: 'row-fluid feed-marketing-promo__content-items' },
+					React.createElement(
+						'div',
+						{ className: 'feed-marketing-promo__content-container' },
+						React.createElement(
+							'div',
+							{ className: 'feed-marketing-promo__content-frame' },
+							React.createElement(
+								'div',
+								{ className: 'feed-marketing-promo__content-list' },
+								React.createElement('img', { src: 'https://placehold.it/488x169', className: 'feed-marketing-promo__content-image' }),
+								React.createElement(
+									'div',
+									{ className: 'row-fluid' },
+									React.createElement(
+										'div',
+										{ className: 'pull-left feed-marketing-promo__content-details' },
+										React.createElement(
+											'div',
+											{ className: 'fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title' },
+											'Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%'
+										),
+										React.createElement(
+											'h3',
+											{ className: 'fs-12 fw-normal feed-marketing-promo__content-promo' },
+											React.createElement(
+												'span',
+												null,
+												'Periode: '
+											),
+											'25 Januari 2017'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'pull-left pt-20 pl-15 feed-marketing-promo__code-container' },
+										React.createElement(
+											'span',
+											{ className: 'fs-12 fw-normal' },
+											'Kode :'
+										),
+										React.createElement(
+											'div',
+											{ className: 'feed-marketing-promo__code-box' },
+											React.createElement(
+												'span',
+												{ className: 'fs-13 fw-600 feed-marketing-promo__code-text' },
+												'XLPROMO41A'
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'pull-left feed-marketing-promo__btn-container' },
+										React.createElement(
+											'button',
+											{ className: 'btn btn-action feed-marketing-promo__btn-save-promo' },
+											'Salin'
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row-fluid feed-marketing-promo__content-items' },
+					React.createElement(
+						'div',
+						{ className: 'feed-marketing-promo__content-container' },
+						React.createElement(
+							'div',
+							{ className: 'feed-marketing-promo__content-frame' },
+							React.createElement(
+								'div',
+								{ className: 'feed-marketing-promo__content-list' },
+								React.createElement('img', { src: 'https://placehold.it/488x169', className: 'feed-marketing-promo__content-image' }),
+								React.createElement(
+									'div',
+									{ className: 'row-fluid' },
+									React.createElement(
+										'div',
+										{ className: 'pull-left feed-marketing-promo__content-details' },
+										React.createElement(
+											'div',
+											{ className: 'fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title' },
+											'Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%'
+										),
+										React.createElement(
+											'h3',
+											{ className: 'fs-12 fw-normal feed-marketing-promo__content-promo' },
+											React.createElement(
+												'span',
+												null,
+												'Periode: '
+											),
+											'25 Januari 2017'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'pull-left pt-20 pl-15 feed-marketing-promo__code-container' },
+										React.createElement(
+											'span',
+											{ className: 'fs-12 fw-normal' },
+											'Kode :'
+										),
+										React.createElement(
+											'div',
+											{ className: 'feed-marketing-promo__code-box' },
+											React.createElement(
+												'span',
+												{ className: 'fs-13 fw-600 feed-marketing-promo__code-text' },
+												'XLPROMO41A'
+											)
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'pull-left feed-marketing-promo__btn-container' },
+										React.createElement(
+											'button',
+											{ className: 'btn btn-action feed-marketing-promo__btn-save-promo' },
+											'Salin'
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'ta-center p-10 feed-marketing-promo__footer' },
+				React.createElement(
+					'a',
+					{ href: '#' },
+					'Lihat semua promo'
+				)
+			)
+		);
+	}
+});
+
+
+
 var FeedOfficialStoreProduct = React.createClass({
 	displayName: 'FeedOfficialStoreProduct',
 
 	render: function () {
 		return React.createElement(
 			'div',
-			{ className: 'feed-official-store-product mb-20' },
+			null,
 			React.createElement(
-				'h1',
-				{ className: 'fw-normal fs-16 lh-20 pt-50 feed-official-store-product__title--text' },
-				'Produk Terpilih dari Official Store'
+				'div',
+				{ className: 'feed-official-store-product__banner-image' },
+				React.createElement('img', { src: 'http://placehold.it/560x149', alt: '' })
 			),
 			React.createElement(
 				'div',
-				{ className: 'feed-official-store-product__frame' },
+				{ className: 'pt-0 mb-20 feed-official-store-product mb-20' },
 				React.createElement(
 					'div',
-					{ className: 'feed-official-store-product__content' },
+					{ className: 'feed-official-store-product__frame' },
 					React.createElement(
 						'div',
-						{ className: 'row-fluid feed-official-store-product__row' },
+						{ className: 'feed-official-store-product__content' },
 						React.createElement(
 							'div',
-							{ className: 'span4 feed-official-store-product__items' },
+							{ className: 'row-fluid feed-official-store-product__row' },
 							React.createElement(
 								'div',
-								{ className: 'feed-official-store-product__items-details' },
-								React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+								{ className: 'span4 feed-official-store-product__items' },
 								React.createElement(
 									'div',
-									{ className: 'feed-official-store-product__details' },
+									{ className: 'feed-official-store-product__items-details' },
+									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
 									React.createElement(
 										'div',
-										{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
+										{ className: 'feed-official-store-product__details' },
 										React.createElement(
 											'div',
-											{ className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-											'Dr.Kevin Stylish and Comfortable Men Sne'
-										)
-									),
-									React.createElement(
-										'div',
-										{ className: 'pb-20 feed-official-store-product__items--price' },
-										React.createElement(
-											'label',
-											{ className: 'fs-12 fw-600 orange-red' },
-											'Rp 249.950'
-										)
-									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'feed-official-store-product__items--store' },
-								React.createElement(
-									'div',
-									{ className: 'span4 feed-official-store-product__image-container-store' },
-									React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'span8 pt-15' },
-									React.createElement(
-										'label',
-										{ className: 'fs-11 text-black07' },
-										' Dr. Kevin Shoes'
-									)
-								)
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'span4 feed-official-store-product__items' },
-							React.createElement(
-								'div',
-								{ className: 'feed-official-store-product__items-details' },
-								React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
-								React.createElement(
-									'div',
-									{ className: 'feed-official-store-product__details' },
-									React.createElement(
-										'div',
-										{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
-										'Cincin tunangan kawin pernikahan berlian'
-									),
-									React.createElement(
-										'div',
-										{ className: 'pb-20 feed-official-store-product__items--price' },
-										React.createElement(
-											'label',
-											{ className: 'fs-12 fw-600 orange-red' },
-											'Rp 3.999.000'
-										)
-									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'feed-official-store-product__items--store' },
-								React.createElement(
-									'div',
-									{ className: 'span4 feed-official-store-product__image-container-store' },
-									React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'span8 pt-15' },
-									React.createElement(
-										'label',
-										{ className: 'fs-11 text-black07' },
-										' Tiaria'
-									)
-								)
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'span4 feed-official-store-product__items' },
-							React.createElement(
-								'div',
-								{ className: 'feed-official-store-product__items-details' },
-								React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
-								React.createElement(
-									'div',
-									{ className: 'feed-official-store-product__details' },
-									React.createElement(
-										'div',
-										{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
-										'Anker powercore 13400 mah premium black'
-									),
-									React.createElement(
-										'div',
-										{ className: 'pb-20 feed-official-store-product__items--price' },
-										React.createElement(
-											'label',
-											{ className: 'fs-12 fw-600 orange-red' },
-											'Rp 944.800'
-										)
-									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'feed-official-store-product__items--store' },
-								React.createElement(
-									'div',
-									{ className: 'span4 feed-official-store-product__image-container-store' },
-									React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'span8 pt-15' },
-									React.createElement(
-										'label',
-										{ className: 'fs-11 text-black07' },
-										' Anker Indonesia'
-									)
-								)
-							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'row-fluid feed-official-store-product__row' },
-						React.createElement(
-							'div',
-							{ className: 'span4 feed-official-store-product__items' },
-							React.createElement(
-								'div',
-								{ className: 'feed-official-store-product__items-details' },
-								React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
-								React.createElement(
-									'div',
-									{ className: 'feed-official-store-product__details' },
-									React.createElement(
-										'div',
-										{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
+											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
+											React.createElement(
+												'div',
+												{ className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+												'Dr.Kevin Stylish and Comfortable Men Sne'
+											)
+										),
 										React.createElement(
 											'div',
-											{ className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-											'Dr.Kevin Stylish and Comfortable Men Sne'
+											{ className: 'pb-20 feed-official-store-product__items--price' },
+											React.createElement(
+												'label',
+												{ className: 'fs-12 fw-600 orange-red' },
+												'Rp 249.950'
+											)
 										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'feed-official-store-product__items--store' },
+									React.createElement(
+										'div',
+										{ className: 'span4 feed-official-store-product__image-container-store' },
+										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
-										{ className: 'pb-20 feed-official-store-product__items--price' },
+										{ className: 'span8 pt-15' },
 										React.createElement(
 											'label',
-											{ className: 'fs-12 fw-600 orange-red' },
-											'Rp 249.950'
+											{ className: 'fs-11 text-black07' },
+											' Dr. Kevin Shoes'
 										)
 									)
 								)
 							),
 							React.createElement(
 								'div',
-								{ className: 'feed-official-store-product__items--store' },
+								{ className: 'span4 feed-official-store-product__items' },
 								React.createElement(
 									'div',
-									{ className: 'span4 feed-official-store-product__image-container-store' },
-									React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+									{ className: 'feed-official-store-product__items-details' },
+									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement(
+										'div',
+										{ className: 'feed-official-store-product__details' },
+										React.createElement(
+											'div',
+											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
+											'Cincin tunangan kawin pernikahan berlian'
+										),
+										React.createElement(
+											'div',
+											{ className: 'pb-20 feed-official-store-product__items--price' },
+											React.createElement(
+												'label',
+												{ className: 'fs-12 fw-600 orange-red' },
+												'Rp 3.999.000'
+											)
+										)
+									)
 								),
 								React.createElement(
 									'div',
-									{ className: 'span8 pt-15' },
+									{ className: 'feed-official-store-product__items--store' },
 									React.createElement(
-										'label',
-										{ className: 'fs-11 text-black07' },
-										' Dr. Kevin Shoes'
+										'div',
+										{ className: 'span4 feed-official-store-product__image-container-store' },
+										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'span8 pt-15' },
+										React.createElement(
+											'label',
+											{ className: 'fs-11 text-black07' },
+											' Tiaria'
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'span4 feed-official-store-product__items' },
+								React.createElement(
+									'div',
+									{ className: 'feed-official-store-product__items-details' },
+									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement(
+										'div',
+										{ className: 'feed-official-store-product__details' },
+										React.createElement(
+											'div',
+											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
+											'Anker powercore 13400 mah premium black'
+										),
+										React.createElement(
+											'div',
+											{ className: 'pb-20 feed-official-store-product__items--price' },
+											React.createElement(
+												'label',
+												{ className: 'fs-12 fw-600 orange-red' },
+												'Rp 944.800'
+											)
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'feed-official-store-product__items--store' },
+									React.createElement(
+										'div',
+										{ className: 'span4 feed-official-store-product__image-container-store' },
+										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'span8 pt-15' },
+										React.createElement(
+											'label',
+											{ className: 'fs-11 text-black07' },
+											' Anker Indonesia'
+										)
 									)
 								)
 							)
 						),
 						React.createElement(
 							'div',
-							{ className: 'span4 feed-official-store-product__items' },
+							{ className: 'row-fluid feed-official-store-product__row' },
 							React.createElement(
 								'div',
-								{ className: 'feed-official-store-product__items-details' },
-								React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+								{ className: 'span4 feed-official-store-product__items' },
 								React.createElement(
 									'div',
-									{ className: 'feed-official-store-product__details' },
+									{ className: 'feed-official-store-product__items-details' },
+									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
 									React.createElement(
 										'div',
-										{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
-										'Cincin tunangan kawin pernikahan berlian'
+										{ className: 'feed-official-store-product__details' },
+										React.createElement(
+											'div',
+											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
+											React.createElement(
+												'div',
+												{ className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+												'Dr.Kevin Stylish and Comfortable Men Sne'
+											)
+										),
+										React.createElement(
+											'div',
+											{ className: 'pb-20 feed-official-store-product__items--price' },
+											React.createElement(
+												'label',
+												{ className: 'fs-12 fw-600 orange-red' },
+												'Rp 249.950'
+											)
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'feed-official-store-product__items--store' },
+									React.createElement(
+										'div',
+										{ className: 'span4 feed-official-store-product__image-container-store' },
+										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
-										{ className: 'pb-20 feed-official-store-product__items--price' },
+										{ className: 'span8 pt-15' },
 										React.createElement(
 											'label',
-											{ className: 'fs-12 fw-600 orange-red' },
-											'Rp 3.999.000'
+											{ className: 'fs-11 text-black07' },
+											' Dr. Kevin Shoes'
 										)
 									)
 								)
 							),
 							React.createElement(
 								'div',
-								{ className: 'feed-official-store-product__items--store' },
+								{ className: 'span4 feed-official-store-product__items' },
 								React.createElement(
 									'div',
-									{ className: 'span4 feed-official-store-product__image-container-store' },
-									React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+									{ className: 'feed-official-store-product__items-details' },
+									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement(
+										'div',
+										{ className: 'feed-official-store-product__details' },
+										React.createElement(
+											'div',
+											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
+											'Cincin tunangan kawin pernikahan berlian'
+										),
+										React.createElement(
+											'div',
+											{ className: 'pb-20 feed-official-store-product__items--price' },
+											React.createElement(
+												'label',
+												{ className: 'fs-12 fw-600 orange-red' },
+												'Rp 3.999.000'
+											)
+										)
+									)
 								),
 								React.createElement(
 									'div',
-									{ className: 'span8 pt-15' },
+									{ className: 'feed-official-store-product__items--store' },
 									React.createElement(
-										'label',
-										{ className: 'fs-11 text-black07' },
-										' Tiaria'
+										'div',
+										{ className: 'span4 feed-official-store-product__image-container-store' },
+										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'span8 pt-15' },
+										React.createElement(
+											'label',
+											{ className: 'fs-11 text-black07' },
+											' Tiaria'
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'span4 feed-official-store-product__items' },
+								React.createElement(
+									'div',
+									{ className: 'feed-official-store-product__items-details' },
+									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement(
+										'div',
+										{ className: 'feed-official-store-product__details' },
+										React.createElement(
+											'div',
+											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
+											'Anker powercore 13400 mah premium black'
+										),
+										React.createElement(
+											'div',
+											{ className: 'pb-20 feed-official-store-product__items--price' },
+											React.createElement(
+												'label',
+												{ className: 'fs-12 fw-600 orange-red' },
+												'Rp 944.800'
+											)
+										)
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'feed-official-store-product__items--store' },
+									React.createElement(
+										'div',
+										{ className: 'span4 feed-official-store-product__image-container-store' },
+										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+									),
+									React.createElement(
+										'div',
+										{ className: 'span8 pt-15' },
+										React.createElement(
+											'label',
+											{ className: 'fs-11 text-black07' },
+											' Anker Indonesia'
+										)
 									)
 								)
 							)
 						),
 						React.createElement(
 							'div',
-							{ className: 'span4 feed-official-store-product__items' },
+							{ className: 'ta-center row-fluid feed-official-store-product__link-more' },
 							React.createElement(
-								'div',
-								{ className: 'feed-official-store-product__items-details' },
-								React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
-								React.createElement(
-									'div',
-									{ className: 'feed-official-store-product__details' },
-									React.createElement(
-										'div',
-										{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
-										'Anker powercore 13400 mah premium black'
-									),
-									React.createElement(
-										'div',
-										{ className: 'pb-20 feed-official-store-product__items--price' },
-										React.createElement(
-											'label',
-											{ className: 'fs-12 fw-600 orange-red' },
-											'Rp 944.800'
-										)
-									)
-								)
-							),
-							React.createElement(
-								'div',
-								{ className: 'feed-official-store-product__items--store' },
-								React.createElement(
-									'div',
-									{ className: 'span4 feed-official-store-product__image-container-store' },
-									React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
-								),
-								React.createElement(
-									'div',
-									{ className: 'span8 pt-15' },
-									React.createElement(
-										'label',
-										{ className: 'fs-11 text-black07' },
-										' Anker Indonesia'
-									)
-								)
+								'a',
+								{ href: '#' },
+								'Lihat Semua'
 							)
-						)
-					),
-					React.createElement(
-						'div',
-						{ className: 'ta-center row-fluid feed-official-store-product__link-more' },
-						React.createElement(
-							'a',
-							{ href: '#' },
-							'Lihat Semua'
 						)
 					)
 				)
@@ -700,7 +957,8 @@ var FeedProduct = React.createClass({
           React.createElement(
             'span',
             { className: 'fw-600' },
-            '2 produk'
+            this.props.productCount,
+            ' produk'
           ),
           React.createElement(
             'div',
@@ -713,7 +971,7 @@ var FeedProduct = React.createClass({
       React.createElement(
         'div',
         { className: 'feed-product__content' },
-        React.createElement(
+        this.props.productCount <= 2 ? React.createElement(
           'div',
           { className: 'row-fluid' },
           React.createElement(
@@ -770,7 +1028,539 @@ var FeedProduct = React.createClass({
               )
             )
           )
-        )
+        ) : this.props.productCount === 3 ? React.createElement(
+          'div',
+          { className: 'row-fluid' },
+          React.createElement(
+            'div',
+            { className: 'span4 feed-product__items' },
+            React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Dr.Kevin Stylish and Comfortable Men Sne'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 249.950'
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'span4 feed-product__items' },
+            React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Dr.Kevin Stylish and Comfortable Men Sne'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 249.950'
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'span4 feed-product__items' },
+            React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Dr.Kevin Stylish and Comfortable Men Sne'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 249.950'
+                )
+              )
+            )
+          )
+        ) : this.props.productCount === 4 ? React.createElement(
+          'div',
+          null,
+          React.createElement(
+            'div',
+            { className: 'row-fluid' },
+            React.createElement(
+              'div',
+              { className: 'span6 feed-product__items' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span6 feed-product__items' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'row-fluid' },
+            React.createElement(
+              'div',
+              { className: 'span6 feed-product__items feed-product__items--border-top' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span6 feed-product__items feed-product__items--border-top' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            )
+          )
+        ) : this.props.productCount === 5 ? React.createElement(
+          'div',
+          null,
+          React.createElement(
+            'div',
+            { className: 'row-fluid' },
+            React.createElement(
+              'div',
+              { className: 'span6 feed-product__items' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span6 feed-product__items' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'row-fluid' },
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            )
+          )
+        ) : this.props.productCount >= 6 ? React.createElement(
+          'div',
+          null,
+          React.createElement(
+            'div',
+            { className: 'row-fluid' },
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'row-fluid' },
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'span4 feed-product__items feed-product__items--border-top' },
+              this.props.productCount > 6 && React.createElement(
+                'div',
+                { className: 'feed-product__items--overlay' },
+                React.createElement(
+                  'span',
+                  null,
+                  '+',
+                  this.props.productCount - 6
+                )
+              ),
+              React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' }),
+              React.createElement(
+                'div',
+                { className: 'feed-product__details' },
+                React.createElement(
+                  'div',
+                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  React.createElement(
+                    'div',
+                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                    'Dr.Kevin Stylish and Comfortable Men Sne'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'feed-product__items--price' },
+                  React.createElement(
+                    'label',
+                    { className: 'fs-12 fw-600 orange-red' },
+                    'Rp 249.950'
+                  )
+                )
+              )
+            )
+          )
+        ) : React.createElement('div', null)
       )
     );
   }
@@ -1119,59 +1909,3 @@ var FeedTopAdsProduct = React.createClass({
     }
 });
 
-
-
-
-
-var FeedDetailView = React.createClass({
-  displayName: 'FeedDetailView',
-
-  render: function () {
-    return React.createElement(
-      'div',
-      { className: 'feed-detail' },
-      React.createElement(
-        'div',
-        { className: 'feed-detail__main-content' },
-        React.createElement(FeedProductDetail, null)
-      ),
-      React.createElement(
-        'div',
-        { className: 'feed-detail__right-sidebar' },
-        React.createElement(FeedHotList, null)
-      )
-    );
-  }
-});
-
-
-
-var FeedView = React.createClass({
-  displayName: 'FeedView',
-
-  render: function () {
-    return React.createElement(
-      'div',
-      { className: 'feed' },
-      React.createElement(
-        'div',
-        { className: 'feed__main-content' },
-        React.createElement(FeedEmpty, null),
-        React.createElement(FeedProduct, null),
-        React.createElement(FeedOfficialStoreProduct, null),
-        React.createElement(FeedProduct, null),
-        React.createElement(FeedSearchShop, null),
-        React.createElement(FeedOfficialStore, null),
-        React.createElement(FeedInspiration, null),
-        React.createElement(FeedTopAdsProduct, null),
-        React.createElement(FeedTokopediaStory, null),
-        React.createElement(FeedSellerStory, null)
-      ),
-      React.createElement(
-        'div',
-        { className: 'feed__right-sidebar' },
-        React.createElement(FeedHotList, null)
-      )
-    );
-  }
-});
