@@ -8,6 +8,7 @@ import FeedProduct from '../../../components/FeedProduct'
 import FeedHotList from '../../../components/FeedHotList'
 import FeedOfficialStore from '../../../components/FeedOfficialStore'
 import FeedOfficialStoreProduct from '../../../components/FeedOfficialStoreProduct'
+import FeedMarketingPromo from '../../../components/FeedMarketingPromo'
 import FeedInspiration from '../../../components/FeedInspiration'
 import FeedTopAdsProduct from '../../../components/FeedTopAdsProduct'
 import FeedSellerStory from '../../../components/FeedSellerStory'
@@ -22,6 +23,7 @@ var FeedView = React.createClass({
           <FeedProduct productCount={2} />
           <FeedProduct productCount={3} />
           <FeedOfficialStoreProduct />
+          <FeedMarketingPromo />
           <FeedProduct productCount={4} />
           <FeedProduct productCount={5} />
           <FeedProduct productCount={6} />
