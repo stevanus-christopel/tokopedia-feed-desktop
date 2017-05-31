@@ -11,7 +11,7 @@ var FeedTokopediaStory = React.createClass({
         </div>
         <div className='feed-tokopedia-story__card'>
             <div className='feed-tokopedia-story__image'>
-                <img alt='' src='http://placehold.it/560x200' />
+                <img alt='' src={getImage('seputar-toped.png')} />
             </div>
             <div className='feed-tokopedia-story__text'>
                 <div className='feed-tokopedia-story__text-left'>
