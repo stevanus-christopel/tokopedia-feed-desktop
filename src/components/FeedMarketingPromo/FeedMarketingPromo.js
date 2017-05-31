@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './FeedMarketingPromo.css';
 import getImage from '../../lib/utils.js';
 
-import tokopediaAvatar from './assets/tokopedia-avatar-square.png'
-import arrowRight from './assets/group-32.png'
-
 var FeedMarketingPromo = React.createClass({
   render: function() {
     return (
@@ -12,7 +9,7 @@ var FeedMarketingPromo = React.createClass({
 				
 				<div className='p-10 feed-marketing-promo__header'>
           <div className='va-middle inline-block feed-marketing-promo__seller-photo'>
-            <img src={ tokopediaAvatar } />
+            <img src={getImage('tokopedia-avatar-square.png')} />
           </div>
           <div className='va-middle feed-marketing-promo__seller-activity'>
             <span className='fw-600'>Tokopedia </span>
@@ -22,11 +19,11 @@ var FeedMarketingPromo = React.createClass({
         </div>
 
 				<div className='feed-marketing-promo__content'>
-					<div className='feed-marketing-promo__arrow--left'>
-						<img src={arrowRight}/>
+					<div className='feed-marketing-promo__arrow--left hidden'>
+						<img src={getImage('group-32.png')}/>
 					</div>
 					<div className='feed-marketing-promo__arrow--right'>
-						<img src={arrowRight}/>
+						<img src={getImage('group-32.png')}/>
 					</div>
 
           <div className='row-fluid feed-marketing-promo__content-items'>
