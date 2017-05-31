@@ -37,7 +37,7 @@ var FeedProduct = React.createClass({
             <div>
               <div className='row-fluid'>
                 <div className='span6 feed-product__items feed-product__items--border-bottom'>
-                  <img src="http://placehold.it/300x300" className='feed-product__image'/>
+                  <img src={getImage('product-0.jpg')} className='feed-product__image'/>
                 </div>
                 <div className='span6 feed-product__items feed-product__items--border-bottom'>
                   <img src="http://placehold.it/300x300" className='feed-product__image'/>
@@ -48,11 +48,11 @@ var FeedProduct = React.createClass({
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Dr.Kevin Stylish and Comfortable Men Sne
+                      Sajadah Travel Tiara 024 Blue - Ramadhan Fashion
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+                      <label className='fs-12 fw-600 orange-red'>Rp 89.100</label>
                     </div>
                   </div>
                 </div>

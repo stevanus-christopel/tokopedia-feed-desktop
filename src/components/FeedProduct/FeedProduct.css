@@ -80,6 +80,8 @@
       border-top: 1px solid #E0E0E0; }
     .feed-product__items--border-bottom {
       border-bottom: 1px solid #E0E0E0; }
+      .feed-product__items--border-bottom img {
+        width: 300px; }
     .feed-product__items--overlay {
       position: absolute;
       top: 0;
