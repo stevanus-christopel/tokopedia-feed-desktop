@@ -1,0 +1,32 @@
+.feed-topads-shop {
+  border: 1px solid #E0E0E0;
+  padding: 10px; }
+  .feed-topads-shop__text-promoted {
+    color: rgba(0, 0, 0, 0.38); }
+  .feed-topads-shop__header {
+    font-size: 12px; }
+  .feed-topads-shop__text-promoted img {
+    height: 13px;
+    position: relative;
+    bottom: 2px;
+    left: 5px; }
+  .feed-topads-shop__seller-photo img {
+    width: 52px;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  .feed-topads-shop__seller-activity {
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 14px; }
+    .feed-topads-shop__seller-activity--time {
+      line-height: 1rem;
+      color: rgba(0, 0, 0, 0.38); }
+  .feed-topads-shop__image {
+    border-radius: 2px; }
+    .feed-topads-shop__image--big {
+      width: 264px; }
+
+.feed-topads-shop__content div .feed-topads-shop__showcases {
+  margin-left: 8px; }

@@ -9,6 +9,7 @@ import FeedHotList from '../../../components/FeedHotList'
 import FeedOfficialStore from '../../../components/FeedOfficialStore'
 import FeedOfficialStoreProduct from '../../../components/FeedOfficialStoreProduct'
 import FeedMarketingPromo from '../../../components/FeedMarketingPromo'
+import FeedTopAdsShop from '../../../components/FeedTopAdsShop'
 import FeedInspiration from '../../../components/FeedInspiration'
 import FeedTopAdsProduct from '../../../components/FeedTopAdsProduct'
 import FeedSellerStory from '../../../components/FeedSellerStory'
@@ -20,6 +21,7 @@ var FeedView = React.createClass({
       <div className='feed'>
         <div className='feed__main-content'>
           <FeedEmpty />
+          <FeedTopAdsShop />
           <FeedProduct productCount={1} />
           <FeedProduct productCount={2} />
           <FeedOfficialStoreProduct />
