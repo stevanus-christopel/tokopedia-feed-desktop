@@ -13,6 +13,7 @@ var FeedView = React.createClass({
         'div',
         { className: 'feed__main-content' },
         React.createElement(FeedEmpty, null),
+        React.createElement(FeedTopAdsShop, null),
         React.createElement(FeedProduct, { productCount: 1 }),
         React.createElement(FeedProduct, { productCount: 2 }),
         React.createElement(FeedOfficialStoreProduct, null),
@@ -1976,5 +1977,93 @@ var FeedTopAdsProduct = React.createClass({
             )
         );
     }
+});
+
+
+
+var FeedTopAdsShop = React.createClass({
+  displayName: 'FeedTopAdsShop',
+
+  render: function () {
+    return React.createElement(
+      'div',
+      { className: 'mb-20 feed-topads-shop' },
+      React.createElement(
+        'div',
+        { className: 'fs-12 pb-10 feed-topads-shop__header' },
+        React.createElement(
+          'div',
+          { className: 'pb-10 feed-topads-shop__text-promoted' },
+          'Promoted ',
+          React.createElement('img', { alt: '', src: getImage('icon-info.png') })
+        ),
+        React.createElement(
+          'div',
+          { className: 'va-middle inline-block feed-topads-shop__seller-photo' },
+          React.createElement('img', { src: getImage('tokopedia-avatar-square.png') })
+        ),
+        React.createElement(
+          'div',
+          { className: 'va-middle feed-topads-shop__seller-activity' },
+          React.createElement(
+            'span',
+            { className: 'fw-600' },
+            'Makeup Forever '
+          ),
+          React.createElement(
+            'div',
+            { className: 'fs-11 feed-topads-shop__seller-activity--time' },
+            'Bukan Produk Biasa'
+          )
+        ),
+        React.createElement('div', { className: 'feed-topads-shop__seller-share' })
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-topads-shop__content' },
+        React.createElement(
+          'div',
+          { className: 'row-fluid' },
+          React.createElement(
+            'div',
+            { className: 'span6 feed-topads-shop__items' },
+            React.createElement('img', { src: getImage('tas-1.jpg'), className: 'feed-topads-shop__image feed-topads-shop__image--big' })
+          ),
+          React.createElement(
+            'div',
+            { className: 'span6 feed-topads-shop__showcases' },
+            React.createElement(
+              'div',
+              { className: 'pb-5 row-fluid' },
+              React.createElement(
+                'div',
+                { className: 'span6 feed-topads-shop__items' },
+                React.createElement('img', { src: getImage('tas-2.jpg'), className: 'feed-topads-shop__image' })
+              ),
+              React.createElement(
+                'div',
+                { className: 'span6 feed-topads-shop__items' },
+                React.createElement('img', { src: getImage('tas-3.jpg'), className: 'feed-topads-shop__image' })
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'row-fluid' },
+              React.createElement(
+                'div',
+                { className: 'span6 feed-topads-shop__items' },
+                React.createElement('img', { src: getImage('tas-4.jpg'), className: 'feed-topads-shop__image' })
+              ),
+              React.createElement(
+                'div',
+                { className: 'span6 feed-topads-shop__items' },
+                React.createElement('img', { src: getImage('tas-5.jpg'), className: 'feed-topads-shop__image' })
+              )
+            )
+          )
+        )
+      )
+    );
+  }
 });
 
