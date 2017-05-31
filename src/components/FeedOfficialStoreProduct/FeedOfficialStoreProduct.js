@@ -6,8 +6,8 @@ var FeedOfficialStoreProduct = React.createClass({
   render: function() {
     return (
 		<div>
-			<div className='feed-official-store-product__banner-image'>
-				<img src="http://placehold.it/560x149" alt=""/>
+			<div className='feed-official-store-product__banner-image-container'>
+				<img className='feed-official-store-product__banner-image'src={getImage('banner-149.jpg')} alt=""/>
 			</div>
 			<div className='pt-0 mb-20 feed-official-store-product mb-20'>
 				<div className='feed-official-store-product__frame'>
@@ -15,68 +15,68 @@ var FeedOfficialStoreProduct = React.createClass({
 						<div className='row-fluid feed-official-store-product__row'>
 							<div className='span4 feed-official-store-product__items'>
 								<div className='feed-official-store-product__items-details'>
-									<img src="http://placehold.it/300x300" className='feed-official-store-product__image'/>
+									<img src={getImage('topi-toped.jpg')} className='feed-official-store-product__image'/>
 									<div className='feed-official-store-product__details'>
 										<div className='fs-12 fw-600 lh-17 feed-official-store-product__items--name'>
 											<div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-											Dr.Kevin Stylish and Comfortable Men Sne
+											Topi Tokopedia - Model Topi Baseball
 											</div>
 										</div>
 										<div className='pb-20 feed-official-store-product__items--price'>
-											<label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+											<label className='fs-12 fw-600 orange-red'>Rp 25.000</label>
 										</div>
 									</div>
 								</div>
 								<div className='feed-official-store-product__items--store'>
 									<div className='span4 feed-official-store-product__image-container-store'>
-										<img src="http://placehold.it/30x30" className='feed-official-store-product__image-store'/>
+										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
 									<div className='span8 pt-15'>
-										<label className='fs-11 text-black07'> Dr. Kevin Shoes</label>
+										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
 							</div>
 
 							<div className='span4 feed-official-store-product__items'>
 								<div className='feed-official-store-product__items-details'>
-									<img src="http://placehold.it/300x300" className='feed-official-store-product__image'/>
+									<img src={getImage('topintotebag-toped.jpg')} className='feed-official-store-product__image'/>
 									<div className='feed-official-store-product__details'>
 										<div className='fs-12 fw-600 lh-17 feed-official-store-product__items--name'>
-											Cincin tunangan kawin pernikahan berlian
+											Paket Topi & Tote Bag Tokopedia
 										</div>
 										<div className='pb-20 feed-official-store-product__items--price'>
-											<label className='fs-12 fw-600 orange-red'>Rp 3.999.000</label>
+											<label className='fs-12 fw-600 orange-red'>Rp 90.500</label>
 										</div>
 									</div>
 								</div>
 								<div className='feed-official-store-product__items--store'>
 									<div className='span4 feed-official-store-product__image-container-store'>
-										<img src="http://placehold.it/30x30" className='feed-official-store-product__image-store'/>
+										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
 									<div className='span8 pt-15'>
-										<label className='fs-11 text-black07'> Tiaria</label>
+										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
 							</div>
 
 							<div className='span4 feed-official-store-product__items'>
 								<div className='feed-official-store-product__items-details'>
-									<img src="http://placehold.it/300x300" className='feed-official-store-product__image'/>
+									<img src={getImage('btlsofa-toped.jpg')} className='feed-official-store-product__image'/>
 									<div className='feed-official-store-product__details'>
 										<div className='fs-12 fw-600 lh-17 feed-official-store-product__items--name'>
-											Anker powercore 13400 mah premium black
+											Bantal Sofa Tokopedia
 										</div>
 										<div className='pb-20 feed-official-store-product__items--price'>
-											<label className='fs-12 fw-600 orange-red'>Rp 944.800</label>
+											<label className='fs-12 fw-600 orange-red'>Rp 65.500</label>
 										</div>
 									</div>
 								</div>
 								<div className='feed-official-store-product__items--store'>
 									<div className='span4 feed-official-store-product__image-container-store'>
-										<img src="http://placehold.it/30x30" className='feed-official-store-product__image-store'/>
+										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
 									<div className='span8 pt-15'>
-										<label className='fs-11 text-black07'> Anker Indonesia</label>
+										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
 							</div>	
@@ -87,68 +87,68 @@ var FeedOfficialStoreProduct = React.createClass({
 						<div className='row-fluid feed-official-store-product__row'>
 							<div className='span4 feed-official-store-product__items'>
 								<div className='feed-official-store-product__items-details'>
-									<img src="http://placehold.it/300x300" className='feed-official-store-product__image'/>
+									<img src={getImage('usb-toped.jpg')} className='feed-official-store-product__image'/>
 									<div className='feed-official-store-product__details'>
 										<div className='fs-12 fw-600 lh-17 feed-official-store-product__items--name'>
 											<div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-											Dr.Kevin Stylish and Comfortable Men Sne
+											USB Flashdisk Tokopedia - 8GB
 											</div>
 										</div>
 											<div className='pb-20 feed-official-store-product__items--price'>
-												<label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+												<label className='fs-12 fw-600 orange-red'>Rp 65.000</label>
 											</div>
 									</div>
 								</div>
 								<div className='feed-official-store-product__items--store'>
 									<div className='span4 feed-official-store-product__image-container-store'>
-										<img src="http://placehold.it/30x30" className='feed-official-store-product__image-store'/>
+										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
 									<div className='span8 pt-15'>
-										<label className='fs-11 text-black07'> Dr. Kevin Shoes</label>
+										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
 							</div>
 
 							<div className='span4 feed-official-store-product__items'>
 								<div className='feed-official-store-product__items-details'>
-									<img src="http://placehold.it/300x300" className='feed-official-store-product__image'/>
+									<img src={getImage('totebag-toped.jpg')} className='feed-official-store-product__image'/>
 									<div className='feed-official-store-product__details'>
 										<div className='fs-12 fw-600 lh-17 feed-official-store-product__items--name'>
-											Cincin tunangan kawin pernikahan berlian
+											Tas Totebag Tokopedia
 										</div>
 										<div className='pb-20 feed-official-store-product__items--price'>
-											<label className='fs-12 fw-600 orange-red'>Rp 3.999.000</label>
+											<label className='fs-12 fw-600 orange-red'>Rp 80.500</label>
 										</div>
 									</div>
 								</div>
 								<div className='feed-official-store-product__items--store'>
 									<div className='span4 feed-official-store-product__image-container-store'>
-										<img src="http://placehold.it/30x30" className='feed-official-store-product__image-store'/>
+										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
 									<div className='span8 pt-15'>
-										<label className='fs-11 text-black07'> Tiaria</label>
+										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
 							</div>
 
 							<div className='span4 feed-official-store-product__items'>
 								<div className='feed-official-store-product__items-details'>
-									<img src="http://placehold.it/300x300" className='feed-official-store-product__image'/>
+									<img src={getImage('paket-toped.jpg')} className='feed-official-store-product__image'/>
 									<div className='feed-official-store-product__details'>
 										<div className='fs-12 fw-600 lh-17 feed-official-store-product__items--name'>
-											Anker powercore 13400 mah premium black
+											Paket Merchandise Tokopedia (Semua Produk)
 										</div>
 										<div className='pb-20 feed-official-store-product__items--price'>
-											<label className='fs-12 fw-600 orange-red'>Rp 944.800</label>
+											<label className='fs-12 fw-600 orange-red'>Rp 225.000</label>
 										</div>
 									</div>
 								</div>
 								<div className='feed-official-store-product__items--store'>
 									<div className='span4 feed-official-store-product__image-container-store'>
-										<img src="http://placehold.it/30x30" className='feed-official-store-product__image-store'/>
+										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
 									<div className='span8 pt-15'>
-										<label className='fs-11 text-black07'> Anker Indonesia</label>
+										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
 							</div>

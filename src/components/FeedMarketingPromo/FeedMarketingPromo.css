@@ -26,6 +26,8 @@
     display: -webkit-box;
     display: flex;
     overflow-x: hidden; }
+    .feed-marketing-promo__content-image {
+      height: 169px; }
   .feed-marketing-promo__content-items {
     margin: 0;
     position: relative;
