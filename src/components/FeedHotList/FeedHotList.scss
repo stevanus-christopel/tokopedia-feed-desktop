@@ -2,7 +2,14 @@ $color-border-grey: #E0E0E0;
 
 .feed-hot-lists {
 	&-showcases {
+		border-bottom: 1px solid $color-border-grey;
 
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	&__top-banner {
+		max-width: 317px;
 	}
 
 	&-full {
@@ -11,6 +18,7 @@ $color-border-grey: #E0E0E0;
 
 	&__items {
 		width: 50%;
+		max-width: 158.5px;
 	}
 }
 
@@ -18,9 +26,8 @@ $color-border-grey: #E0E0E0;
 	.feed-hot-lists__items {
 		width: 50%;
 		border-right: 1px solid $color-border-grey;
-	}
-	&:last-child {
-		border-right: none;
-	}
-	
+		&:last-child {
+			border-right: none;
+		}
+	}	
 }

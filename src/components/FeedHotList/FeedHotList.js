@@ -7,35 +7,35 @@ var FeedHotlist = React.createClass({
     return (
       <div>
 				<div className='feed-hot-lists-full'>
-					<div className='row-fluid'>
-						<img src='http://placehold.it/315x100'/>
+					<div className='row-fluid feed-hot-lists__top-banner'>
+						<img src={getImage('ramadhan-hotlist.png')}/>
 					</div>
 
 					<div className='row-fluid feed-hot-lists-showcases'>
 						<div className='span6 m-0 feed-hot-lists__items'>
-							<img src="http://placehold.it/157.5x157.5"/>
+							<img src={getImage('sunglasses-hl.png')}/>
 						</div>
 						<div className='span6 m-0 feed-hot-lists__items'>
-							<img src="http://placehold.it/157.5x157.5"/>
+							<img src={getImage('makeup-hl.png')}/>
 						</div>
 					</div>
 
 					<div className='row-fluid feed-hot-lists-showcases'>
 						<div className='span6 m-0 feed-hot-lists__items'>
-							<img src="http://placehold.it/157.5x157.5"/>
+							<img src={getImage('pashmina-hl.png')}/>
 						</div>
 						<div className='span6 m-0 feed-hot-lists__items'>
-							<img src="http://placehold.it/157.5x157.5"/>
+							<img src={getImage('aksesoris-hl.png')}/>
 						</div>
 					</div>
 				</div>
 
-				<div className='row-fluid'>
-					<img src='http://placehold.it/319x100' className='pt-20'/>
+				<div className='row-fluid feed-hot-lists__top-banner'>
+					<img src={getImage('kongkow-hotlist.png')} className='pt-20'/>
 				</div>
 
-				<div className='row-fluid'>
-					<img src='http://placehold.it/319x100' className='pt-20'/>
+				<div className='row-fluid feed-hot-lists__top-banner'>
+					<img src={getImage('tampil-hotlist.png')} className='pt-20'/>
 				</div>
       </div>
     );
