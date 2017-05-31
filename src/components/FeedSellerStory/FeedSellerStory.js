@@ -10,7 +10,7 @@ var FeedSellerStory = React.createClass({
           Kisah Sukses dari Penjual Tokopedia
         </div>
         <div className='feed-seller-story__image'>
-            <img alt='' src='http://placehold.it/560x200' />
+            <img alt='' src={getImage('seller-story.png')} />
         </div>
         <div className='feed-seller-story__text'>
             <div className='feed-seller-story__text-left'>
