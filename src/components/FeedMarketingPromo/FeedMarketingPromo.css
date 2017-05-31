@@ -97,3 +97,6 @@
     width: 32px;
     top: 45%;
     left: 5px; }
+
+.hidden {
+  visibility: hidden; }
