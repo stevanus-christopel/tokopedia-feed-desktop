@@ -33,7 +33,7 @@ var FeedMarketingPromo = React.createClass({
             <div className='feed-marketing-promo__content-container'>
 							<div className='feed-marketing-promo__content-frame'>
 								<div className='feed-marketing-promo__content-list'>
-									<img src='https://placehold.it/488x169' className='feed-marketing-promo__content-image'/>
+									<img src={getImage('promo-banner.jpg')} className='feed-marketing-promo__content-image'/>
 									<div className='row-fluid'>
 										<div className='pull-left feed-marketing-promo__content-details'>
 											<div className='fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title'>Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%</div>
@@ -59,7 +59,7 @@ var FeedMarketingPromo = React.createClass({
             <div className='feed-marketing-promo__content-container'>
 							<div className='feed-marketing-promo__content-frame'>
 								<div className='feed-marketing-promo__content-list'>
-									<img src='https://placehold.it/488x169' className='feed-marketing-promo__content-image'/>
+									<img src={getImage('banner-149.jpg')} className='feed-marketing-promo__content-image'/>
 									<div className='row-fluid'>
 										<div className='pull-left feed-marketing-promo__content-details'>
 											<div className='fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title'>Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%</div>
