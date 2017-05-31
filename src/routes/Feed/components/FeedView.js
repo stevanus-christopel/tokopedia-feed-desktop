@@ -19,10 +19,14 @@ var FeedView = React.createClass({
       <div className='feed'>
         <div className='feed__main-content'>
           <FeedEmpty />
-          <FeedProduct />
+          <FeedProduct productCount={2} />
+          <FeedProduct productCount={3} />
           <FeedOfficialStoreProduct />
-          <FeedProduct />
+          <FeedProduct productCount={4} />
+          <FeedProduct productCount={5} />
+          <FeedProduct productCount={6} />
           <FeedSearchShop />
+          <FeedProduct productCount={7} />
           <FeedOfficialStore />
           <FeedInspiration />
           <FeedTopAdsProduct />
