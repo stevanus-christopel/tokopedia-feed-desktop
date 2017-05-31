@@ -9,25 +9,25 @@ var FeedOfficialStore = React.createClass({
 				<h1 className='fw-600 fs-16 lh-16 feed-official-store__title'>Official Store</h1>
 				<div className='row-fluid feed-official-store__showcase'>
 					<div className='span4 feed-official-store__items'>
-						<img src='http://placehold.it/170x170' className='feed-official-store__items-image'/>
+						<img src={getImage('lg-logo.png')} className='feed-official-store__items-image'/>
 					</div>
 					<div className='span4 feed-official-store__items'>
-						<img src='http://placehold.it/170x170' className='feed-official-store__items-image'/>
+						<img src={getImage('garnier-logo.png')} className='feed-official-store__items-image'/>
 					</div>
 					<div className='span4 feed-official-store__items'>
-						<img src='http://placehold.it/170x170' className='feed-official-store__items-image'/>
+						<img src={getImage('garmin-logo.png')} className='feed-official-store__items-image'/>
 					</div>
 				</div>
 
 				<div className='row-fluid feed-official-store__showcase'>
 					<div className='span4 feed-official-store__items'>
-						<img src='http://placehold.it/170x170' className='feed-official-store__items-image'/>
+						<img src={getImage('microsoft-logo.png')} className='feed-official-store__items-image'/>
 					</div>
 					<div className='span4 feed-official-store__items'>
-						<img src='http://placehold.it/170x170' className='feed-official-store__items-image'/>
+						<img src={getImage('momnbab-logo.png')} className='feed-official-store__items-image'/>
 					</div>
 					<div className='span4 feed-official-store__items'>
-						<img src='http://placehold.it/170x170' className='feed-official-store__items-image'/>
+						<img src={getImage('makarizo-logo.png')} className='feed-official-store__items-image'/>
 					</div>
 				</div>
 
