@@ -14,43 +14,43 @@ var FeedTopAdsProduct = React.createClass({
             <div className='feed-topads-product__content'>					
                 <div className='row-fluid'>
                     <div className='span4 feed-topads-product__items feed-topads-product__items--border-bottom'>
-                    <img src="http://placehold.it/300x300" className='feed-topads-product__image'/>
+                    <img src={getImage('ta-1.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
                         <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                        Dr.Kevin Stylish and Comfortable Men Sne
+                        Amarylis 'Snowflake'
                         </div>
                         </div>
                         <div className='feed-topads-product__items--price'>
-                        <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+                        <label className='fs-12 fw-600 orange-red'>Rp 45.000</label>
                         </div>
                     </div>
                     </div>
 
                     <div className='span4 feed-topads-product__items feed-topads-product__items--border-bottom'>
-                    <img src="http://placehold.it/300x300" className='feed-topads-product__image'/>
+                    <img src={getImage('ta-2.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
                         <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                        Dr.Kevin Stylish and Comfortable Men Sne
+                        Aloe Vera Jumbo
                         </div>
                         </div>
                         <div className='feed-topads-product__items--price'>
-                        <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+                        <label className='fs-12 fw-600 orange-red'>Rp 60.000</label>
                         </div>
                     </div>
                     </div>
 
                     <div className='span4 feed-topads-product__items feed-topads-product__items--border-bottom'>
-                    <img src="http://placehold.it/300x300" className='feed-topads-product__image'/>
+                    <img src={getImage('ta-3.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
                         <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                        Dr.Kevin Stylish and Comfortable Men Sne
+                        Acalypha Wilkesiana Blaze
                         </div>
                         </div>
                         <div className='feed-topads-product__items--price'>
-                        <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+                        <label className='fs-12 fw-600 orange-red'>Rp 45.000</label>
                         </div>
                     </div>
                     </div>
@@ -58,43 +58,43 @@ var FeedTopAdsProduct = React.createClass({
 
                 <div className='row-fluid'>
                     <div className='span4 feed-topads-product__items'>
-                    <img src="http://placehold.it/300x300" className='feed-topads-product__image'/>
+                    <img src={getImage('ta-4.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
                         <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                        Dr.Kevin Stylish and Comfortable Men Sne
+                        Srikaya Australia Jumbo 60cm
                         </div>
                         </div>
                         <div className='feed-topads-product__items--price'>
-                        <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+                        <label className='fs-12 fw-600 orange-red'>Rp 95.000</label>
                         </div>
                     </div>
                     </div>
 
                     <div className='span4 feed-topads-product__items'>
-                    <img src="http://placehold.it/300x300" className='feed-topads-product__image'/>
+                    <img src={getImage('ta-5.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
                         <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                        Dr.Kevin Stylish and Comfortable Men Sne
+                        Jambu Air Dalhari 60cm
                         </div>
                         </div>
                         <div className='feed-topads-product__items--price'>
-                        <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+                        <label className='fs-12 fw-600 orange-red'>Rp 75.000</label>
                         </div>
                     </div>
                     </div>
 
                     <div className='span4 feed-topads-product__items'>
-                    <img src="http://placehold.it/300x300" className='feed-topads-product__image'/>
+                    <img src={getImage('ta-6.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
                         <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                        Dr.Kevin Stylish and Comfortable Men Sne
+                        Gowok (Kupa) 150cm
                         </div>
                         </div>
                         <div className='feed-topads-product__items--price'>
-                        <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+                        <label className='fs-12 fw-600 orange-red'>Rp 915.000</label>
                         </div>
                     </div>
                     </div>

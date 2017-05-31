@@ -28,3 +28,6 @@
       border-right: 1px solid #FFF; }
   .feed-topads-product__details {
     margin-top: 6px; }
+
+.detail__name {
+  height: 34px; }
