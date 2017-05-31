@@ -15,13 +15,50 @@ var FeedProduct = React.createClass({
             ubah <span className='fw-600'>{this.props.productCount} produk</span>
             <div className='feed-product__seller-activity--time'>3 jam</div>
           </div>
-          <div className='feed-product__seller-share'></div>
+          {
+            this.props.productCount > 1 ?
+            <div className='feed-product__seller-share'>
+              <button className='btn'>
+                <img alt='' src={getImage('icon-btn-share.png')} /> Bagikan
+              </button>
+            </div> :
+            <div className='feed-product__seller-buy'>
+              <button className='btn'>
+                Beli
+              </button>
+            </div>
+          }
         </div>
 
         <div className='feed-product__content'>		
 
           {
-            this.props.productCount <= 2 ?
+            this.props.productCount === 1 ?
+            <div>
+              <div className='row-fluid'>
+                <div className='span6 feed-product__items feed-product__items--border-bottom'>
+                  <img src="http://placehold.it/300x300" className='feed-product__image'/>
+                </div>
+                <div className='span6 feed-product__items feed-product__items--border-bottom'>
+                  <img src="http://placehold.it/300x300" className='feed-product__image'/>
+                </div>
+              </div>
+              <div className='row-fluid'>
+                <div className='span12 feed-product__items pt-0'>
+                  <div className='feed-product__details'>
+                    <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                      <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
+                      Dr.Kevin Stylish and Comfortable Men Sne
+                      </div>
+                    </div>
+                    <div className='feed-product__items--price'>
+                      <label className='fs-12 fw-600 orange-red'>Rp 249.950</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> :
+            this.props.productCount === 2 ?
             <div className='row-fluid'>
               <div className='span6 feed-product__items'>
                 <img src="http://placehold.it/300x300" className='feed-product__image'/>

@@ -1,3 +1,7 @@
+
+
+
+
 var FeedView = React.createClass({
   displayName: 'FeedView',
 
@@ -12,6 +16,7 @@ var FeedView = React.createClass({
         React.createElement(FeedProduct, { productCount: 2 }),
         React.createElement(FeedProduct, { productCount: 3 }),
         React.createElement(FeedOfficialStoreProduct, null),
+        React.createElement(FeedMarketingPromo, null),
         React.createElement(FeedProduct, { productCount: 4 }),
         React.createElement(FeedProduct, { productCount: 5 }),
         React.createElement(FeedProduct, { productCount: 6 }),
@@ -105,8 +110,8 @@ var FeedHotlist = React.createClass({
 				{ className: 'feed-hot-lists-full' },
 				React.createElement(
 					'div',
-					{ className: 'row-fluid' },
-					React.createElement('img', { src: 'http://placehold.it/315x100' })
+					{ className: 'row-fluid feed-hot-lists__top-banner' },
+					React.createElement('img', { src: getImage('ramadhan-hotlist.png') })
 				),
 				React.createElement(
 					'div',
@@ -114,12 +119,12 @@ var FeedHotlist = React.createClass({
 					React.createElement(
 						'div',
 						{ className: 'span6 m-0 feed-hot-lists__items' },
-						React.createElement('img', { src: 'http://placehold.it/157.5x157.5' })
+						React.createElement('img', { src: getImage('sunglasses-hl.png') })
 					),
 					React.createElement(
 						'div',
 						{ className: 'span6 m-0 feed-hot-lists__items' },
-						React.createElement('img', { src: 'http://placehold.it/157.5x157.5' })
+						React.createElement('img', { src: getImage('makeup-hl.png') })
 					)
 				),
 				React.createElement(
@@ -128,24 +133,24 @@ var FeedHotlist = React.createClass({
 					React.createElement(
 						'div',
 						{ className: 'span6 m-0 feed-hot-lists__items' },
-						React.createElement('img', { src: 'http://placehold.it/157.5x157.5' })
+						React.createElement('img', { src: getImage('pashmina-hl.png') })
 					),
 					React.createElement(
 						'div',
 						{ className: 'span6 m-0 feed-hot-lists__items' },
-						React.createElement('img', { src: 'http://placehold.it/157.5x157.5' })
+						React.createElement('img', { src: getImage('aksesoris-hl.png') })
 					)
 				)
 			),
 			React.createElement(
 				'div',
-				{ className: 'row-fluid' },
-				React.createElement('img', { src: 'http://placehold.it/319x100', className: 'pt-20' })
+				{ className: 'row-fluid feed-hot-lists__top-banner' },
+				React.createElement('img', { src: getImage('kongkow-hotlist.png'), className: 'pt-20' })
 			),
 			React.createElement(
 				'div',
-				{ className: 'row-fluid' },
-				React.createElement('img', { src: 'http://placehold.it/319x100', className: 'pt-20' })
+				{ className: 'row-fluid feed-hot-lists__top-banner' },
+				React.createElement('img', { src: getImage('tampil-hotlist.png'), className: 'pt-20' })
 			)
 		);
 	}
@@ -345,71 +350,6 @@ var FeedInspiration = React.createClass({
 
 
 
-var FeedOfficialStore = React.createClass({
-	displayName: 'FeedOfficialStore',
-
-	render: function () {
-		return React.createElement(
-			'div',
-			{ className: 'feed-official-store mb-20' },
-			React.createElement(
-				'h1',
-				{ className: 'fw-600 fs-16 lh-16 feed-official-store__title' },
-				'Official Store'
-			),
-			React.createElement(
-				'div',
-				{ className: 'row-fluid feed-official-store__showcase' },
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row-fluid feed-official-store__showcase' },
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'span4 feed-official-store__items' },
-					React.createElement('img', { src: 'http://placehold.it/170x170', className: 'feed-official-store__items-image' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'ta-center row-fluid feed-official-store__link-more' },
-				React.createElement(
-					'a',
-					{ href: '#' },
-					'Lihat Semua'
-				)
-			)
-		);
-	}
-});
-
-
-
 
 var FeedMarketingPromo = React.createClass({
 	displayName: 'FeedMarketingPromo',
@@ -467,7 +407,7 @@ var FeedMarketingPromo = React.createClass({
 							React.createElement(
 								'div',
 								{ className: 'feed-marketing-promo__content-list' },
-								React.createElement('img', { src: 'https://placehold.it/488x169', className: 'feed-marketing-promo__content-image' }),
+								React.createElement('img', { src: getImage('promo-banner.jpg'), className: 'feed-marketing-promo__content-image' }),
 								React.createElement(
 									'div',
 									{ className: 'row-fluid' },
@@ -534,7 +474,7 @@ var FeedMarketingPromo = React.createClass({
 							React.createElement(
 								'div',
 								{ className: 'feed-marketing-promo__content-list' },
-								React.createElement('img', { src: 'https://placehold.it/488x169', className: 'feed-marketing-promo__content-image' }),
+								React.createElement('img', { src: getImage('banner-149.jpg'), className: 'feed-marketing-promo__content-image' }),
 								React.createElement(
 									'div',
 									{ className: 'row-fluid' },
@@ -605,6 +545,71 @@ var FeedMarketingPromo = React.createClass({
 
 
 
+var FeedOfficialStore = React.createClass({
+	displayName: 'FeedOfficialStore',
+
+	render: function () {
+		return React.createElement(
+			'div',
+			{ className: 'feed-official-store mb-20' },
+			React.createElement(
+				'h1',
+				{ className: 'fw-600 fs-16 lh-16 feed-official-store__title' },
+				'Official Store'
+			),
+			React.createElement(
+				'div',
+				{ className: 'row-fluid feed-official-store__showcase' },
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: getImage('lg-logo.png'), className: 'feed-official-store__items-image' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: getImage('garnier-logo.png'), className: 'feed-official-store__items-image' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: getImage('garmin-logo.png'), className: 'feed-official-store__items-image' })
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'row-fluid feed-official-store__showcase' },
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: getImage('microsoft-logo.png'), className: 'feed-official-store__items-image' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: getImage('momnbab-logo.png'), className: 'feed-official-store__items-image' })
+				),
+				React.createElement(
+					'div',
+					{ className: 'span4 feed-official-store__items' },
+					React.createElement('img', { src: getImage('makarizo-logo.png'), className: 'feed-official-store__items-image' })
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'ta-center row-fluid feed-official-store__link-more' },
+				React.createElement(
+					'a',
+					{ href: '#' },
+					'Lihat Semua'
+				)
+			)
+		);
+	}
+});
+
+
+
 var FeedOfficialStoreProduct = React.createClass({
 	displayName: 'FeedOfficialStoreProduct',
 
@@ -614,8 +619,8 @@ var FeedOfficialStoreProduct = React.createClass({
 			null,
 			React.createElement(
 				'div',
-				{ className: 'feed-official-store-product__banner-image' },
-				React.createElement('img', { src: 'http://placehold.it/560x149', alt: '' })
+				{ className: 'feed-official-store-product__banner-image-container' },
+				React.createElement('img', { className: 'feed-official-store-product__banner-image', src: getImage('banner-149.jpg'), alt: '' })
 			),
 			React.createElement(
 				'div',
@@ -635,7 +640,7 @@ var FeedOfficialStoreProduct = React.createClass({
 								React.createElement(
 									'div',
 									{ className: 'feed-official-store-product__items-details' },
-									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement('img', { src: getImage('topi-toped.jpg'), className: 'feed-official-store-product__image' }),
 									React.createElement(
 										'div',
 										{ className: 'feed-official-store-product__details' },
@@ -645,7 +650,7 @@ var FeedOfficialStoreProduct = React.createClass({
 											React.createElement(
 												'div',
 												{ className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-												'Dr.Kevin Stylish and Comfortable Men Sne'
+												'Topi Tokopedia - Model Topi Baseball'
 											)
 										),
 										React.createElement(
@@ -654,7 +659,7 @@ var FeedOfficialStoreProduct = React.createClass({
 											React.createElement(
 												'label',
 												{ className: 'fs-12 fw-600 orange-red' },
-												'Rp 249.950'
+												'Rp 25.000'
 											)
 										)
 									)
@@ -665,7 +670,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									React.createElement(
 										'div',
 										{ className: 'span4 feed-official-store-product__image-container-store' },
-										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
@@ -673,7 +678,7 @@ var FeedOfficialStoreProduct = React.createClass({
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
-											' Dr. Kevin Shoes'
+											' Tokopedia'
 										)
 									)
 								)
@@ -684,14 +689,14 @@ var FeedOfficialStoreProduct = React.createClass({
 								React.createElement(
 									'div',
 									{ className: 'feed-official-store-product__items-details' },
-									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement('img', { src: getImage('topintotebag-toped.jpg'), className: 'feed-official-store-product__image' }),
 									React.createElement(
 										'div',
 										{ className: 'feed-official-store-product__details' },
 										React.createElement(
 											'div',
 											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
-											'Cincin tunangan kawin pernikahan berlian'
+											'Paket Topi & Tote Bag Tokopedia'
 										),
 										React.createElement(
 											'div',
@@ -699,7 +704,7 @@ var FeedOfficialStoreProduct = React.createClass({
 											React.createElement(
 												'label',
 												{ className: 'fs-12 fw-600 orange-red' },
-												'Rp 3.999.000'
+												'Rp 90.500'
 											)
 										)
 									)
@@ -710,7 +715,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									React.createElement(
 										'div',
 										{ className: 'span4 feed-official-store-product__image-container-store' },
-										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
@@ -718,7 +723,7 @@ var FeedOfficialStoreProduct = React.createClass({
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
-											' Tiaria'
+											' Tokopedia'
 										)
 									)
 								)
@@ -729,14 +734,14 @@ var FeedOfficialStoreProduct = React.createClass({
 								React.createElement(
 									'div',
 									{ className: 'feed-official-store-product__items-details' },
-									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement('img', { src: getImage('btlsofa-toped.jpg'), className: 'feed-official-store-product__image' }),
 									React.createElement(
 										'div',
 										{ className: 'feed-official-store-product__details' },
 										React.createElement(
 											'div',
 											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
-											'Anker powercore 13400 mah premium black'
+											'Bantal Sofa Tokopedia'
 										),
 										React.createElement(
 											'div',
@@ -744,7 +749,7 @@ var FeedOfficialStoreProduct = React.createClass({
 											React.createElement(
 												'label',
 												{ className: 'fs-12 fw-600 orange-red' },
-												'Rp 944.800'
+												'Rp 65.500'
 											)
 										)
 									)
@@ -755,7 +760,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									React.createElement(
 										'div',
 										{ className: 'span4 feed-official-store-product__image-container-store' },
-										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
@@ -763,7 +768,7 @@ var FeedOfficialStoreProduct = React.createClass({
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
-											' Anker Indonesia'
+											' Tokopedia'
 										)
 									)
 								)
@@ -778,7 +783,7 @@ var FeedOfficialStoreProduct = React.createClass({
 								React.createElement(
 									'div',
 									{ className: 'feed-official-store-product__items-details' },
-									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement('img', { src: getImage('usb-toped.jpg'), className: 'feed-official-store-product__image' }),
 									React.createElement(
 										'div',
 										{ className: 'feed-official-store-product__details' },
@@ -788,7 +793,7 @@ var FeedOfficialStoreProduct = React.createClass({
 											React.createElement(
 												'div',
 												{ className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-												'Dr.Kevin Stylish and Comfortable Men Sne'
+												'USB Flashdisk Tokopedia - 8GB'
 											)
 										),
 										React.createElement(
@@ -797,7 +802,7 @@ var FeedOfficialStoreProduct = React.createClass({
 											React.createElement(
 												'label',
 												{ className: 'fs-12 fw-600 orange-red' },
-												'Rp 249.950'
+												'Rp 65.000'
 											)
 										)
 									)
@@ -808,7 +813,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									React.createElement(
 										'div',
 										{ className: 'span4 feed-official-store-product__image-container-store' },
-										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
@@ -816,7 +821,7 @@ var FeedOfficialStoreProduct = React.createClass({
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
-											' Dr. Kevin Shoes'
+											' Tokopedia'
 										)
 									)
 								)
@@ -827,14 +832,14 @@ var FeedOfficialStoreProduct = React.createClass({
 								React.createElement(
 									'div',
 									{ className: 'feed-official-store-product__items-details' },
-									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement('img', { src: getImage('totebag-toped.jpg'), className: 'feed-official-store-product__image' }),
 									React.createElement(
 										'div',
 										{ className: 'feed-official-store-product__details' },
 										React.createElement(
 											'div',
 											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
-											'Cincin tunangan kawin pernikahan berlian'
+											'Tas Totebag Tokopedia'
 										),
 										React.createElement(
 											'div',
@@ -842,7 +847,7 @@ var FeedOfficialStoreProduct = React.createClass({
 											React.createElement(
 												'label',
 												{ className: 'fs-12 fw-600 orange-red' },
-												'Rp 3.999.000'
+												'Rp 80.500'
 											)
 										)
 									)
@@ -853,7 +858,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									React.createElement(
 										'div',
 										{ className: 'span4 feed-official-store-product__image-container-store' },
-										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
@@ -861,7 +866,7 @@ var FeedOfficialStoreProduct = React.createClass({
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
-											' Tiaria'
+											' Tokopedia'
 										)
 									)
 								)
@@ -872,14 +877,14 @@ var FeedOfficialStoreProduct = React.createClass({
 								React.createElement(
 									'div',
 									{ className: 'feed-official-store-product__items-details' },
-									React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-official-store-product__image' }),
+									React.createElement('img', { src: getImage('paket-toped.jpg'), className: 'feed-official-store-product__image' }),
 									React.createElement(
 										'div',
 										{ className: 'feed-official-store-product__details' },
 										React.createElement(
 											'div',
 											{ className: 'fs-12 fw-600 lh-17 feed-official-store-product__items--name' },
-											'Anker powercore 13400 mah premium black'
+											'Paket Merchandise Tokopedia (Semua Produk)'
 										),
 										React.createElement(
 											'div',
@@ -887,7 +892,7 @@ var FeedOfficialStoreProduct = React.createClass({
 											React.createElement(
 												'label',
 												{ className: 'fs-12 fw-600 orange-red' },
-												'Rp 944.800'
+												'Rp 225.000'
 											)
 										)
 									)
@@ -898,7 +903,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									React.createElement(
 										'div',
 										{ className: 'span4 feed-official-store-product__image-container-store' },
-										React.createElement('img', { src: 'http://placehold.it/30x30', className: 'feed-official-store-product__image-store' })
+										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
@@ -906,7 +911,7 @@ var FeedOfficialStoreProduct = React.createClass({
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
-											' Anker Indonesia'
+											' Tokopedia'
 										)
 									)
 								)
@@ -966,7 +971,16 @@ var FeedProduct = React.createClass({
             '3 jam'
           )
         ),
-        React.createElement('div', { className: 'feed-product__seller-share' })
+        React.createElement(
+          'div',
+          { className: 'feed-product__seller-share' },
+          React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
+          React.createElement(
+            'button',
+            { className: 'btn' },
+            'Bagikan'
+          )
+        )
       ),
       React.createElement(
         'div',
@@ -1663,7 +1677,7 @@ var FeedSellerStory = React.createClass({
       React.createElement(
         'div',
         { className: 'feed-seller-story__image' },
-        React.createElement('img', { alt: '', src: 'http://placehold.it/560x200' })
+        React.createElement('img', { alt: '', src: getImage('seller-story.png') })
       ),
       React.createElement(
         'div',
@@ -1699,7 +1713,7 @@ var FeedTokopediaStory = React.createClass({
         React.createElement(
           'div',
           { className: 'feed-tokopedia-story__image' },
-          React.createElement('img', { alt: '', src: 'http://placehold.it/560x200' })
+          React.createElement('img', { alt: '', src: getImage('seputar-toped.png') })
         ),
         React.createElement(
           'div',

@@ -32,7 +32,52 @@
 		}
 	}
 
+	&__seller-share {
+		display: inline-block;
+		vertical-align: middle;
+		float: right;
+		margin-top: 6px;
+
+		& img {
+			width: 11px;
+			position: relative;
+			bottom: 2px;
+			margin-right: 8px;
+		}
+
+		& button.btn {
+			padding: 9px 0;
+			font-size: 12px;
+			color: rgba(0, 0, 0, 0.54);
+			background-color: #FFF;
+			border: 1px solid #E0E0E0;
+			width: 100px;
+			font-weight: 600;
+			box-sizing: border-box;
+		}
+	}
+
+	&__seller-buy {
+		display: inline-block;
+		vertical-align: middle;
+		float: right;
+		margin-top: 6px;
+
+		& button.btn {
+			padding: 9px 0;
+			font-size: 12px;
+			color: #FFF;
+			background-color: #FF5722;
+			border: 1px solid #FF5722;
+			width: 100px;
+			font-weight: 600;
+			box-sizing: border-box;
+		}
+	}
+
 	&__content {
+		clear: both;
+
 		& .row-fluid .span6 {
 			box-sizing: border-box;
 			margin: 0;
@@ -57,6 +102,10 @@
 
 		&--border-top {
 			border-top: 1px solid #E0E0E0;
+		}
+
+		&--border-bottom {
+			border-bottom: 1px solid #E0E0E0;
 		}
 
 		&--overlay {
