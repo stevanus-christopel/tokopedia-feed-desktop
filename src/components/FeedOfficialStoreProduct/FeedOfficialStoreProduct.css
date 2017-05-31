@@ -8,7 +8,7 @@
   color: rgba(0, 0, 0, 0.7); }
 
 .feed-official-store-product {
-  background-color: #f0f8ff;
+  background-color: #006030;
   padding: 8px; }
   .feed-official-store-product__frame {
     background-color: #FFFFFF; }
@@ -26,6 +26,7 @@
     .feed-official-store-product .feed-official-store-product__items:last-child {
       border-right: none; }
     .feed-official-store-product .feed-official-store-product__items--name {
+      height: 34px;
       color: rgba(0, 0, 0, 0.7); }
     .feed-official-store-product .feed-official-store-product__items-details {
       padding: 8px 8px 0 8px; }
