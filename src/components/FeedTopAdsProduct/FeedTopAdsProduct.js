@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './FeedTopAdsProduct.css';
 import getImage from '../../lib/utils.js';
 
+import ButtonWishlist from '../ButtonWishlist';
+
 var FeedTopAdsProduct = React.createClass({
   render: function() {
     return (
@@ -14,6 +16,7 @@ var FeedTopAdsProduct = React.createClass({
             <div className='feed-topads-product__content'>					
                 <div className='row-fluid'>
                     <div className='span4 feed-topads-product__items feed-topads-product__items--border-bottom'>
+                    <ButtonWishlist checked={false} />
                     <img src={getImage('ta-1.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
@@ -28,6 +31,7 @@ var FeedTopAdsProduct = React.createClass({
                     </div>
 
                     <div className='span4 feed-topads-product__items feed-topads-product__items--border-bottom'>
+                    <ButtonWishlist checked={false} />
                     <img src={getImage('ta-2.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
@@ -42,6 +46,7 @@ var FeedTopAdsProduct = React.createClass({
                     </div>
 
                     <div className='span4 feed-topads-product__items feed-topads-product__items--border-bottom'>
+                    <ButtonWishlist checked={false} />
                     <img src={getImage('ta-3.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
@@ -58,6 +63,7 @@ var FeedTopAdsProduct = React.createClass({
 
                 <div className='row-fluid'>
                     <div className='span4 feed-topads-product__items'>
+                    <ButtonWishlist checked={false} />
                     <img src={getImage('ta-4.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
@@ -72,6 +78,7 @@ var FeedTopAdsProduct = React.createClass({
                     </div>
 
                     <div className='span4 feed-topads-product__items'>
+                    <ButtonWishlist checked={true} />
                     <img src={getImage('ta-5.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>
@@ -86,6 +93,7 @@ var FeedTopAdsProduct = React.createClass({
                     </div>
 
                     <div className='span4 feed-topads-product__items'>
+                    <ButtonWishlist checked={false} />
                     <img src={getImage('ta-6.jpg')} className='feed-topads-product__image'/>
                     <div className='feed-topads-product__details'>
                         <div className='fs-12 fw-600 lh-17 feed-topads-product__items--name'>

@@ -5,6 +5,22 @@
 var FeedView = React.createClass({
   displayName: 'FeedView',
 
+  componentDidMount: function () {
+    /*fetch('/graphql', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: FeedQuery
+        }),
+        credentials: 'include'
+      })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+      })*/
+  },
   render: function () {
     return React.createElement(
       'div',
@@ -61,6 +77,16 @@ var FeedDetailView = React.createClass({
     );
   }
 });
+
+
+var ButtonWishlist = React.createClass({
+  displayName: 'ButtonWishlist',
+
+  render: function () {
+    return React.createElement('img', { className: 'button-wishlist', alt: '', src: this.props.checked === true ? getImage('wishlist.png') : getImage('wishlist-empty.png') });
+  }
+});
+
 
 
 var FeedEmpty = React.createClass({
@@ -160,6 +186,7 @@ var FeedHotlist = React.createClass({
 
 
 
+
 var FeedInspiration = React.createClass({
   displayName: 'FeedInspiration',
 
@@ -181,6 +208,7 @@ var FeedInspiration = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom' },
+            React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-1.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -208,6 +236,7 @@ var FeedInspiration = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom' },
+            React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-2.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -235,6 +264,7 @@ var FeedInspiration = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom' },
+            React.createElement(ButtonWishlist, { checked: true }),
             React.createElement('img', { src: getImage('inspiration-3.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -266,6 +296,7 @@ var FeedInspiration = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-inspiration__items' },
+            React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-4.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -293,6 +324,7 @@ var FeedInspiration = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-inspiration__items' },
+            React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-5.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -320,6 +352,7 @@ var FeedInspiration = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-inspiration__items' },
+            React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-6.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -936,6 +969,7 @@ var FeedOfficialStoreProduct = React.createClass({
 
 
 
+
 var FeedProduct = React.createClass({
   displayName: 'FeedProduct',
 
@@ -1008,6 +1042,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span6 feed-product__items feed-product__items--border-bottom' },
+              React.createElement(ButtonWishlist, { checked: true }),
               React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' })
             )
           ),
@@ -1047,6 +1082,7 @@ var FeedProduct = React.createClass({
           React.createElement(
             'div',
             { className: 'span6 feed-product__items' },
+            React.createElement(ButtonWishlist, { checked: true }),
             React.createElement('img', { src: getImage('product-1.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1074,6 +1110,7 @@ var FeedProduct = React.createClass({
           React.createElement(
             'div',
             { className: 'span6 feed-product__items' },
+            React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('product-2.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1104,6 +1141,7 @@ var FeedProduct = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-product__items' },
+            React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('product-3.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1131,6 +1169,7 @@ var FeedProduct = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-product__items' },
+            React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('product-4.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1158,6 +1197,7 @@ var FeedProduct = React.createClass({
           React.createElement(
             'div',
             { className: 'span4 feed-product__items' },
+            React.createElement(ButtonWishlist, { checked: true }),
             React.createElement('img', { src: getImage('product-5.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1191,6 +1231,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span6 feed-product__items' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-6.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1218,6 +1259,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span6 feed-product__items' },
+              React.createElement(ButtonWishlist, { checked: true }),
               React.createElement('img', { src: getImage('product-7.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1249,6 +1291,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span6 feed-product__items feed-product__items--border-top' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-8.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1276,6 +1319,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span6 feed-product__items feed-product__items--border-top' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-9.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1310,6 +1354,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span6 feed-product__items' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-10.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1337,6 +1382,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span6 feed-product__items' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-11.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1368,6 +1414,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-12.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1395,6 +1442,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-13.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1422,6 +1470,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement(ButtonWishlist, { checked: true }),
               React.createElement('img', { src: getImage('product-14.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1456,6 +1505,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-15.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1483,6 +1533,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-16.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1510,6 +1561,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-17.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1541,6 +1593,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-18.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1568,6 +1621,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items feed-product__items--border-top' },
+              React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-19.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1595,7 +1649,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span4 feed-product__items feed-product__items--border-top' },
-              this.props.productCount > 6 && React.createElement(
+              this.props.productCount > 6 ? React.createElement(
                 'div',
                 { className: 'feed-product__items--overlay' },
                 React.createElement(
@@ -1604,7 +1658,7 @@ var FeedProduct = React.createClass({
                   '+',
                   this.props.productCount - 6
                 )
-              ),
+              ) : React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-20.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1788,6 +1842,7 @@ var FeedTokopediaStory = React.createClass({
 
 
 
+
 var FeedTopAdsProduct = React.createClass({
     displayName: 'FeedTopAdsProduct',
 
@@ -1810,6 +1865,7 @@ var FeedTopAdsProduct = React.createClass({
                     React.createElement(
                         'div',
                         { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom' },
+                        React.createElement(ButtonWishlist, { checked: false }),
                         React.createElement('img', { src: getImage('ta-1.jpg'), className: 'feed-topads-product__image' }),
                         React.createElement(
                             'div',
@@ -1837,6 +1893,7 @@ var FeedTopAdsProduct = React.createClass({
                     React.createElement(
                         'div',
                         { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom' },
+                        React.createElement(ButtonWishlist, { checked: false }),
                         React.createElement('img', { src: getImage('ta-2.jpg'), className: 'feed-topads-product__image' }),
                         React.createElement(
                             'div',
@@ -1864,6 +1921,7 @@ var FeedTopAdsProduct = React.createClass({
                     React.createElement(
                         'div',
                         { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom' },
+                        React.createElement(ButtonWishlist, { checked: false }),
                         React.createElement('img', { src: getImage('ta-3.jpg'), className: 'feed-topads-product__image' }),
                         React.createElement(
                             'div',
@@ -1895,6 +1953,7 @@ var FeedTopAdsProduct = React.createClass({
                     React.createElement(
                         'div',
                         { className: 'span4 feed-topads-product__items' },
+                        React.createElement(ButtonWishlist, { checked: false }),
                         React.createElement('img', { src: getImage('ta-4.jpg'), className: 'feed-topads-product__image' }),
                         React.createElement(
                             'div',
@@ -1922,6 +1981,7 @@ var FeedTopAdsProduct = React.createClass({
                     React.createElement(
                         'div',
                         { className: 'span4 feed-topads-product__items' },
+                        React.createElement(ButtonWishlist, { checked: true }),
                         React.createElement('img', { src: getImage('ta-5.jpg'), className: 'feed-topads-product__image' }),
                         React.createElement(
                             'div',
@@ -1949,6 +2009,7 @@ var FeedTopAdsProduct = React.createClass({
                     React.createElement(
                         'div',
                         { className: 'span4 feed-topads-product__items' },
+                        React.createElement(ButtonWishlist, { checked: false }),
                         React.createElement('img', { src: getImage('ta-6.jpg'), className: 'feed-topads-product__image' }),
                         React.createElement(
                             'div',

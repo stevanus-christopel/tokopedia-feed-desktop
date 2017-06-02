@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './FeedProduct.css';
 import getImage from '../../lib/utils.js';
 
+import ButtonWishlist from '../ButtonWishlist';
+
 var FeedProduct = React.createClass({
   render: function() {
     return (
@@ -40,6 +42,7 @@ var FeedProduct = React.createClass({
                   <img src={getImage('product-0.jpg')} className='feed-product__image'/>
                 </div>
                 <div className='span6 feed-product__items feed-product__items--border-bottom'>
+                  <ButtonWishlist checked={true} />
                   <img src="http://placehold.it/300x300" className='feed-product__image'/>
                 </div>
               </div>
@@ -61,6 +64,7 @@ var FeedProduct = React.createClass({
             this.props.productCount === 2 ?
             <div className='row-fluid'>
               <div className='span6 feed-product__items'>
+                <ButtonWishlist checked={true} />
                 <img src={getImage('product-1.jpg')} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -74,6 +78,7 @@ var FeedProduct = React.createClass({
                 </div>
               </div>
               <div className='span6 feed-product__items'>
+                <ButtonWishlist checked={false} />
                 <img src={getImage('product-2.jpg')} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -90,6 +95,7 @@ var FeedProduct = React.createClass({
             this.props.productCount === 3 ?
             <div className='row-fluid'>
               <div className='span4 feed-product__items'>
+                <ButtonWishlist checked={false} />
                 <img src={getImage('product-3.jpg')} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -103,6 +109,7 @@ var FeedProduct = React.createClass({
                 </div>
               </div>
               <div className='span4 feed-product__items'>
+                <ButtonWishlist checked={false} />
                 <img src={getImage('product-4.jpg')} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -116,6 +123,7 @@ var FeedProduct = React.createClass({
                 </div>
               </div>
               <div className='span4 feed-product__items'>
+                <ButtonWishlist checked={true} />
                 <img src={getImage('product-5.jpg')} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -133,6 +141,7 @@ var FeedProduct = React.createClass({
             <div>
               <div className='row-fluid'>
                 <div className='span6 feed-product__items'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-6.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -146,6 +155,7 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
                 <div className='span6 feed-product__items'>
+                  <ButtonWishlist checked={true} />
                   <img src={getImage('product-7.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -161,6 +171,7 @@ var FeedProduct = React.createClass({
               </div>
               <div className='row-fluid'>
                 <div className='span6 feed-product__items feed-product__items--border-top'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-8.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -174,6 +185,7 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
                 <div className='span6 feed-product__items feed-product__items--border-top'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-9.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -192,6 +204,7 @@ var FeedProduct = React.createClass({
             <div>
               <div className='row-fluid'>
                 <div className='span6 feed-product__items'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-10.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -205,6 +218,7 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
                 <div className='span6 feed-product__items'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-11.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -220,6 +234,7 @@ var FeedProduct = React.createClass({
               </div>
               <div className='row-fluid'>
                 <div className='span4 feed-product__items feed-product__items--border-top'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-12.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -233,6 +248,7 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
                 <div className='span4 feed-product__items feed-product__items--border-top'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-13.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -246,6 +262,7 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
                 <div className='span4 feed-product__items feed-product__items--border-top'>
+                  <ButtonWishlist checked={true} />
                   <img src={getImage('product-14.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -264,6 +281,7 @@ var FeedProduct = React.createClass({
             <div>
               <div className='row-fluid'>
                 <div className='span4 feed-product__items'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-15.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -277,6 +295,7 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
                 <div className='span4 feed-product__items'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-16.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -290,6 +309,7 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
                 <div className='span4 feed-product__items'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-17.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -305,6 +325,7 @@ var FeedProduct = React.createClass({
               </div>
               <div className='row-fluid'>
                 <div className='span4 feed-product__items feed-product__items--border-top'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-18.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -318,6 +339,7 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
                 <div className='span4 feed-product__items feed-product__items--border-top'>
+                  <ButtonWishlist checked={false} />
                   <img src={getImage('product-19.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
@@ -332,10 +354,11 @@ var FeedProduct = React.createClass({
                 </div>
                 <div className='span4 feed-product__items feed-product__items--border-top'>
                   {
-                    this.props.productCount > 6 &&
+                    this.props.productCount > 6 ?
                     <div className='feed-product__items--overlay'>
                       <span>+{ (this.props.productCount - 6) }</span>
-                    </div>
+                    </div> :
+                    <ButtonWishlist checked={false} />
                   }
                   <img src={getImage('product-20.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>

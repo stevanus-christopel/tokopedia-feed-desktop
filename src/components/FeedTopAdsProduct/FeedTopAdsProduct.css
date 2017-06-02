@@ -19,6 +19,7 @@
     .feed-topads-product__content .row-fluid .span4:last-child {
       width: 33.34%; }
   .feed-topads-product__items {
+    position: relative;
     margin: auto 0;
     padding: 8px;
     border-right: 1px solid #E0E0E0; }

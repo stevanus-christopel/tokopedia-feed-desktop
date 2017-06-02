@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './FeedInspiration.css';
 import getImage from '../../lib/utils.js';
 
+import ButtonWishlist from '../ButtonWishlist';
+
 var FeedInspiration = React.createClass({
   render: function() {
     return (
@@ -13,6 +15,7 @@ var FeedInspiration = React.createClass({
         <div className='feed-inspiration__content'>					
           <div className='row-fluid'>
             <div className='span4 feed-inspiration__items feed-inspiration__items--border-bottom'>
+              <ButtonWishlist checked={false} />
               <img src={getImage('inspiration-1.jpg')} className='feed-inspiration__image'/>
               <div className='feed-inspiration__details'>
                 <div className='fs-12 fw-600 lh-17 feed-inspiration__items--name'>
@@ -27,6 +30,7 @@ var FeedInspiration = React.createClass({
             </div>
 
             <div className='span4 feed-inspiration__items feed-inspiration__items--border-bottom'>
+              <ButtonWishlist checked={false} />
               <img src={getImage('inspiration-2.jpg')} className='feed-inspiration__image'/>
               <div className='feed-inspiration__details'>
                 <div className='fs-12 fw-600 lh-17 feed-inspiration__items--name'>
@@ -41,6 +45,7 @@ var FeedInspiration = React.createClass({
             </div>
 
             <div className='span4 feed-inspiration__items feed-inspiration__items--border-bottom'>
+              <ButtonWishlist checked={true} />
               <img src={getImage('inspiration-3.jpg')} className='feed-inspiration__image'/>
               <div className='feed-inspiration__details'>
                 <div className='fs-12 fw-600 lh-17 feed-inspiration__items--name'>
@@ -57,6 +62,7 @@ var FeedInspiration = React.createClass({
 
           <div className='row-fluid'>
             <div className='span4 feed-inspiration__items'>
+              <ButtonWishlist checked={false} />
               <img src={getImage('inspiration-4.jpg')} className='feed-inspiration__image'/>
               <div className='feed-inspiration__details'>
                 <div className='fs-12 fw-600 lh-17 feed-inspiration__items--name'>
@@ -71,6 +77,7 @@ var FeedInspiration = React.createClass({
             </div>
 
             <div className='span4 feed-inspiration__items'>
+              <ButtonWishlist checked={false} />
               <img src={getImage('inspiration-5.jpg')} className='feed-inspiration__image'/>
               <div className='feed-inspiration__details'>
                 <div className='fs-12 fw-600 lh-17 feed-inspiration__items--name'>
@@ -85,6 +92,7 @@ var FeedInspiration = React.createClass({
             </div>
 
             <div className='span4 feed-inspiration__items'>
+              <ButtonWishlist checked={false} />
               <img src={getImage('inspiration-6.jpg')} className='feed-inspiration__image'/>
               <div className='feed-inspiration__details'>
                 <div className='fs-12 fw-600 lh-17 feed-inspiration__items--name'>

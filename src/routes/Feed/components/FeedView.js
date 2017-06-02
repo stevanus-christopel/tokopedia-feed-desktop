@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FeedQuery } from '../../../queries'
 import '../FeedView.css';
 import getImage from '../../../lib/utils.js';
 
@@ -16,6 +17,22 @@ import FeedSellerStory from '../../../components/FeedSellerStory'
 import FeedTokopediaStory from '../../../components/FeedTokopediaStory'
 
 var FeedView = React.createClass({
+  componentDidMount: function(){
+    /*fetch('/graphql', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: FeedQuery
+        }),
+        credentials: 'include'
+      })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+      })*/
+  },
   render: function() {
     return (
       <div className='feed'>
