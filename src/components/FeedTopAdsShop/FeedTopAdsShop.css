@@ -23,6 +23,26 @@
     .feed-topads-shop__seller-activity--time {
       line-height: 1rem;
       color: rgba(0, 0, 0, 0.38); }
+  .feed-topads-shop__seller-share {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    margin-top: 6px; }
+    .feed-topads-shop__seller-share img {
+      width: 10px;
+      position: relative;
+      bottom: 1px;
+      margin-right: 8px; }
+    .feed-topads-shop__seller-share button.btn {
+      padding: 9px 0;
+      font-size: 12px;
+      color: #FFF;
+      background-color: #42B549;
+      border: 1px solid #E0E0E0;
+      width: 100px;
+      font-weight: 600;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box; }
   .feed-topads-shop__image {
     border-radius: 2px; }
     .feed-topads-shop__image--big {

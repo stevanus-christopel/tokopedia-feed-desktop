@@ -16,7 +16,12 @@ var FeedTopAdsShop = React.createClass({
                 <span className='fw-600'>Makeup Forever </span>
                 <div className='fs-11 feed-topads-shop__seller-activity--time'>Bukan Produk Biasa</div>
               </div>
-              <div className='feed-topads-shop__seller-share'></div>
+              <div className='feed-topads-shop__seller-share'>
+                <button className='btn'>
+                  <img alt='' src={getImage('icon-plus.png')} />
+                   Favoritkan
+                </button>
+              </div>
             </div>
 
             <div className='feed-topads-shop__content'>
