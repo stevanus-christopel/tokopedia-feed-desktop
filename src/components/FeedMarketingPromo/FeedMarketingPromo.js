@@ -36,7 +36,7 @@ var FeedMarketingPromo = React.createClass({
 											<div className='fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title'>Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%</div>
 											<h3 className='fs-12 fw-normal feed-marketing-promo__content-promo'><span>Periode: </span>25 Januari 2017</h3>
 										</div>
-										<div className='pull-left pt-20 pl-15 feed-marketing-promo__code-container'>
+										<div className='pull-left pt-15 pl-15 feed-marketing-promo__code-container'>
 											<span className='fs-12 fw-normal'>Kode :</span>
 											<div className='feed-marketing-promo__code-box'>
 												<span className='fs-13 fw-600 feed-marketing-promo__code-text'>XLPROMO41A</span>
