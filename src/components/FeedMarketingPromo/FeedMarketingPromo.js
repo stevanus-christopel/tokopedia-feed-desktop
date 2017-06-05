@@ -47,7 +47,7 @@ var FeedMarketingPromo = React.createClass({
           </div>
           <div className='feed-marketing-promo__seller-share'></div>
 					<div className='feed-marketing-promo__arrow--left hidden'>
-						<img src={getImage('group-32.png')}/>
+						<img src={getImage('arrow-promo.png')}/>
 					</div>
 					<div className='feed-marketing-promo__arrow--right'>
 						<img src={getImage('group-32.png')}/>

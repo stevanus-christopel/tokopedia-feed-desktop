@@ -93,13 +93,15 @@
     z-index: 999;
     width: 32px;
     top: 45%;
-    right: 5px; }
+    right: 5px;
+    cursor: pointer; }
   .feed-marketing-promo__arrow--left {
     position: absolute;
     z-index: 999;
     width: 32px;
     top: 45%;
-    left: 5px; }
+    left: 5px;
+    cursor: pointer; }
 
 .hidden {
   visibility: hidden; }
