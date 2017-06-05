@@ -82,12 +82,27 @@ var FeedDetailView = React.createClass({
 var ButtonShare = React.createClass({
   displayName: 'ButtonShare',
 
+  getInitialState: function () {
+    return {
+      isShowPopover: false
+    };
+  },
+  togglePopover: function () {
+    this.setState({
+      isShowPopover: !this.state.isShowPopover
+    });
+  },
   render: function () {
     return React.createElement(
-      'button',
-      { className: 'btn button-share' },
-      React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
-      ' Bagikan'
+      'div',
+      null,
+      React.createElement(
+        'button',
+        { className: 'btn button-share', onClick: () => this.togglePopover() },
+        React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
+        ' Bagikan'
+      ),
+      this.state.isShowPopover === true ? React.createElement('span', null) : React.createElement('span', null)
     );
   }
 });
@@ -97,8 +112,18 @@ var ButtonShare = React.createClass({
 var ButtonWishlist = React.createClass({
   displayName: 'ButtonWishlist',
 
+  getInitialState: function () {
+    return {
+      checked: this.props.checked
+    };
+  },
+  toggleCheck: function () {
+    this.setState({
+      checked: !this.state.checked
+    });
+  },
   render: function () {
-    return React.createElement('img', { className: 'button-wishlist', alt: '', src: this.props.checked === true ? getImage('wishlist.png') : getImage('wishlist-empty.png') });
+    return React.createElement('img', { className: 'button-wishlist', alt: '', onClick: () => this.toggleCheck(), src: this.state.checked === true ? getImage('wishlist.png') : getImage('wishlist-empty.png') });
   }
 });
 
