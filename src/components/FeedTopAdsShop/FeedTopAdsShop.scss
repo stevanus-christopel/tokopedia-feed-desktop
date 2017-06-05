@@ -39,7 +39,7 @@ $color-border-grey: #E0E0E0;
 		}
 	}
 
-	&__seller-share {
+	&__seller-favorite {
 		display: inline-block;
 		vertical-align: middle;
 		float: right;
@@ -57,7 +57,7 @@ $color-border-grey: #E0E0E0;
 			font-size: 12px;
 			color: #FFF;
 			background-color: #42B549;
-			border: 1px solid #E0E0E0;
+			border: 1px solid #42B549;
 			width: 100px;
 			font-weight: 600;
 			box-sizing: border-box;

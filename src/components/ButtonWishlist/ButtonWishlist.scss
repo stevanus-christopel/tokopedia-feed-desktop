@@ -4,4 +4,8 @@ img.button-wishlist {
     top: 0;
     height: 40px;
     width: 38px;
+
+    &:hover {
+        cursor: pointer;
+    } 
 }

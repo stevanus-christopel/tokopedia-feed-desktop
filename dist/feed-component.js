@@ -79,11 +79,51 @@ var FeedDetailView = React.createClass({
 });
 
 
+var ButtonShare = React.createClass({
+  displayName: 'ButtonShare',
+
+  getInitialState: function () {
+    return {
+      isShowPopover: false
+    };
+  },
+  togglePopover: function () {
+    this.setState({
+      isShowPopover: !this.state.isShowPopover
+    });
+  },
+  render: function () {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'button',
+        { className: 'btn button-share', onClick: () => this.togglePopover() },
+        React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
+        ' Bagikan'
+      ),
+      this.state.isShowPopover === true ? React.createElement('span', null) : React.createElement('span', null)
+    );
+  }
+});
+
+
+
 var ButtonWishlist = React.createClass({
   displayName: 'ButtonWishlist',
 
+  getInitialState: function () {
+    return {
+      checked: this.props.checked
+    };
+  },
+  toggleCheck: function () {
+    this.setState({
+      checked: !this.state.checked
+    });
+  },
   render: function () {
-    return React.createElement('img', { className: 'button-wishlist', alt: '', src: this.props.checked === true ? getImage('wishlist.png') : getImage('wishlist-empty.png') });
+    return React.createElement('img', { className: 'button-wishlist', alt: '', onClick: () => this.toggleCheck(), src: this.state.checked === true ? getImage('wishlist.png') : getImage('wishlist-empty.png') });
   }
 });
 
@@ -466,7 +506,7 @@ var FeedMarketingPromo = React.createClass({
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left pt-20 pl-15 feed-marketing-promo__code-container' },
+										{ className: 'pull-left pt-15 pl-15 feed-marketing-promo__code-container' },
 										React.createElement(
 											'span',
 											{ className: 'fs-12 fw-normal' },
@@ -1009,12 +1049,7 @@ var FeedProduct = React.createClass({
         this.props.productCount > 1 ? React.createElement(
           'div',
           { className: 'feed-product__seller-share' },
-          React.createElement(
-            'button',
-            { className: 'btn' },
-            React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
-            ' Bagikan'
-          )
+          React.createElement(ButtonShare, null)
         ) : React.createElement(
           'div',
           { className: 'feed-product__seller-buy' },
@@ -2077,7 +2112,16 @@ var FeedTopAdsShop = React.createClass({
             'Bukan Produk Biasa'
           )
         ),
-        React.createElement('div', { className: 'feed-topads-shop__seller-share' })
+        React.createElement(
+          'div',
+          { className: 'feed-topads-shop__seller-favorite' },
+          React.createElement(
+            'button',
+            { className: 'btn' },
+            React.createElement('img', { alt: '', src: getImage('icon-plus.png') }),
+            'Favoritkan'
+          )
+        )
       ),
       React.createElement(
         'div',

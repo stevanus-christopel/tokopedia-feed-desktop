@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './FeedProduct.css';
 import getImage from '../../lib/utils.js';
 
+import ButtonShare from '../ButtonShare';
 import ButtonWishlist from '../ButtonWishlist';
 
 var FeedProduct = React.createClass({
@@ -20,9 +21,7 @@ var FeedProduct = React.createClass({
           {
             this.props.productCount > 1 ?
             <div className='feed-product__seller-share'>
-              <button className='btn'>
-                <img alt='' src={getImage('icon-btn-share.png')} /> Bagikan
-              </button>
+              <ButtonShare />
             </div> :
             <div className='feed-product__seller-buy'>
               <button className='btn'>

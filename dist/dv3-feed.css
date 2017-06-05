@@ -18,12 +18,25 @@
   display: inline-block;
   padding: 20px; }
 
+button.button-share {
+  padding: 9px 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.54);
+  background-color: #FFF;
+  border: 1px solid #E0E0E0;
+  width: 100px;
+  font-weight: 600;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
 img.button-wishlist {
   position: absolute;
   right: 0;
   top: 0;
   height: 40px;
   width: 38px; }
+  img.button-wishlist:hover {
+    cursor: pointer; }
 
 .feed-empty {
   border: 1px solid #E0E0E0;
@@ -352,7 +365,7 @@ img.button-wishlist {
       border-top: 1px solid #E0E0E0; }
     .feed-product__items--border-bottom {
       border-bottom: 1px solid #E0E0E0; }
-      .feed-product__items--border-bottom img {
+      .feed-product__items--border-bottom img.feed-product__image {
         width: 300px; }
     .feed-product__items--overlay {
       position: absolute;
@@ -511,6 +524,26 @@ img.button-wishlist {
     .feed-topads-shop__seller-activity--time {
       line-height: 1rem;
       color: rgba(0, 0, 0, 0.38); }
+  .feed-topads-shop__seller-favorite {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    margin-top: 6px; }
+    .feed-topads-shop__seller-favorite img {
+      width: 10px;
+      position: relative;
+      bottom: 1px;
+      margin-right: 8px; }
+    .feed-topads-shop__seller-favorite button.btn {
+      padding: 9px 0;
+      font-size: 12px;
+      color: #FFF;
+      background-color: #42B549;
+      border: 1px solid #42B549;
+      width: 100px;
+      font-weight: 600;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box; }
   .feed-topads-shop__image {
     border-radius: 2px; }
     .feed-topads-shop__image--big {
