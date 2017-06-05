@@ -2087,7 +2087,16 @@ var FeedTopAdsShop = React.createClass({
             'Bukan Produk Biasa'
           )
         ),
-        React.createElement('div', { className: 'feed-topads-shop__seller-share' })
+        React.createElement(
+          'div',
+          { className: 'feed-topads-shop__seller-favorite' },
+          React.createElement(
+            'button',
+            { className: 'btn' },
+            React.createElement('img', { alt: '', src: getImage('icon-plus.png') }),
+            'Favoritkan'
+          )
+        )
       ),
       React.createElement(
         'div',
