@@ -2,29 +2,6 @@
 
 
 
-var FeedDetailView = React.createClass({
-  displayName: 'FeedDetailView',
-
-  render: function () {
-    return React.createElement(
-      'div',
-      { className: 'feed-detail' },
-      React.createElement(
-        'div',
-        { className: 'feed-detail__main-content' },
-        React.createElement(FeedProductDetail, null)
-      ),
-      React.createElement(
-        'div',
-        { className: 'feed-detail__right-sidebar' },
-        React.createElement(FeedHotList, null)
-      )
-    );
-  }
-});
-
-
-
 var FeedView = React.createClass({
   displayName: 'FeedView',
 
@@ -79,6 +56,29 @@ var FeedView = React.createClass({
 });
 
 
+
+var FeedDetailView = React.createClass({
+  displayName: 'FeedDetailView',
+
+  render: function () {
+    return React.createElement(
+      'div',
+      { className: 'feed-detail' },
+      React.createElement(
+        'div',
+        { className: 'feed-detail__main-content' },
+        React.createElement(FeedProductDetail, null)
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-detail__right-sidebar' },
+        React.createElement(FeedHotList, null)
+      )
+    );
+  }
+});
+
+
 var ButtonShare = React.createClass({
   displayName: 'ButtonShare',
 
@@ -88,15 +88,15 @@ var ButtonShare = React.createClass({
     };
   },
   togglePopover: function () {
-    this.setState({
-      isShowPopover: !this.state.isShowPopover
-    });
-
     if (!this.state.isShowPopover) {
       document.onclick = this.togglePopover;
     } else {
       document.onclick = null;
     }
+
+    this.setState({
+      isShowPopover: !this.state.isShowPopover
+    });
   },
   render: function () {
     return React.createElement(
@@ -105,7 +105,7 @@ var ButtonShare = React.createClass({
       React.createElement(
         'button',
         { className: 'btn button-share', onClick: () => this.togglePopover() },
-        React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
+        React.createElement('img', { className: 'button-share--icon', alt: '', src: getImage('icon-btn-share.png') }),
         ' Bagikan'
       ),
       this.state.isShowPopover === true ? React.createElement(
@@ -441,8 +441,38 @@ var FeedInspiration = React.createClass({
 
 
 
+var marketingPromoContainer = document.getElementsByClassName('feed-marketing-promo__content');
+var marketingPromoItems = document.getElementsByClassName('feed-marketing-promo__content-items');
+
+const SLIDE_CONTAINER = document.getElementsByClassName('feed-marketing-promo__content');
+
 var FeedMarketingPromo = React.createClass({
 	displayName: 'FeedMarketingPromo',
+
+
+	// sideScroll: function(element, direction, speed, distance, step) {
+	// 	var scrollAmount = 0;
+	//   var slideTimer = setInterval(function(){
+	//       if(direction == 'left'){
+	//           element.scrollLeft -= step;
+	//       } else {
+	// 				console.log(element)
+	// 				console.log(element.scrollLeft)
+	//           element.scrollLeft += step;
+	//       }
+	//       scrollAmount += step;
+	//       if(scrollAmount >= distance){
+	//           window.clearInterval(slideTimer);
+	//       }
+	//   }, speed);
+	// },
+	// slide: function() {
+	// 	console.log('kanan')
+	// 	this.sideScroll(document.getElementsByClassName('feed-marketing-promo__content'), 'right', 25, 100, 10)
+	// },
+	// slideBack: function() {
+	// 	this.sideScroll(document.getElementsByClassName('feed-marketing-promo__content'),'left',25,100,10);
+	// },
 
 	render: function () {
 		return React.createElement(
@@ -470,21 +500,21 @@ var FeedMarketingPromo = React.createClass({
 						'Promo'
 					)
 				),
-				React.createElement('div', { className: 'feed-marketing-promo__seller-share' })
-			),
-			React.createElement(
-				'div',
-				{ className: 'feed-marketing-promo__content' },
+				React.createElement('div', { className: 'feed-marketing-promo__seller-share' }),
 				React.createElement(
 					'div',
 					{ className: 'feed-marketing-promo__arrow--left hidden' },
-					React.createElement('img', { src: getImage('group-32.png') })
+					React.createElement('img', { src: getImage('arrow-promo.png') })
 				),
 				React.createElement(
 					'div',
 					{ className: 'feed-marketing-promo__arrow--right' },
 					React.createElement('img', { src: getImage('group-32.png') })
-				),
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'feed-marketing-promo__content' },
 				React.createElement(
 					'div',
 					{ className: 'row-fluid feed-marketing-promo__content-items' },
@@ -522,7 +552,7 @@ var FeedMarketingPromo = React.createClass({
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left pt-15 pl-15 feed-marketing-promo__code-container' },
+										{ className: 'pull-left pt-15 pl-10 feed-marketing-promo__code-container' },
 										React.createElement(
 											'span',
 											{ className: 'fs-12 fw-normal' },
@@ -589,7 +619,7 @@ var FeedMarketingPromo = React.createClass({
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left pt-20 pl-15 feed-marketing-promo__code-container' },
+										{ className: 'pull-left pt-15 pl-15 feed-marketing-promo__code-container' },
 										React.createElement(
 											'span',
 											{ className: 'fs-12 fw-normal' },
@@ -1823,6 +1853,7 @@ var FeedSearchShop = React.createClass({
 
 
 
+
 var FeedSellerStory = React.createClass({
   displayName: 'FeedSellerStory',
 
@@ -1848,11 +1879,16 @@ var FeedSellerStory = React.createClass({
           { className: 'feed-seller-story__text-left' },
           'Peter Chandra Mantan Pegawai Migas Beralih Menjadi Penjual Air Minum di Petamburan.'
         ),
-        React.createElement('div', { className: 'feed-seller-story__text-right' })
+        React.createElement(
+          'div',
+          { className: 'feed-seller-story__text-right' },
+          React.createElement(ButtonShare, null)
+        )
       )
     );
   }
 });
+
 
 
 
@@ -1884,7 +1920,11 @@ var FeedTokopediaStory = React.createClass({
             { className: 'feed-tokopedia-story__text-left' },
             'Saat Generasi Bangsa Bergerak Menuju Perubahan yang Fantastik Gemilang Cahaya'
           ),
-          React.createElement('div', { className: 'feed-tokopedia-story__text-right' })
+          React.createElement(
+            'div',
+            { className: 'feed-tokopedia-story__text-right' },
+            React.createElement(ButtonShare, null)
+          )
         )
       )
     );

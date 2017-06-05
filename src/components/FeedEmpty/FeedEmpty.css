@@ -1,5 +1,6 @@
 .feed-empty {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   padding: 35px;
   padding-right: 30px;
   margin-bottom: 20px; }

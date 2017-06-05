@@ -1,6 +1,7 @@
 .feed-seller-story {
   position: relative;
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   margin-bottom: 20px; }
   .feed-seller-story__header {
     padding: 16px 10px;

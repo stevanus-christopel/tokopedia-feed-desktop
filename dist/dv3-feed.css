@@ -18,7 +18,9 @@
   display: inline-block;
   padding: 20px; }
 
-button.button-share {
+button.button-share,
+.btn.button-share,
+.button-share {
   padding: 9px 0;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.54);
@@ -30,23 +32,35 @@ button.button-share {
           box-sizing: border-box; }
 
 .button-share__icon-container {
-  margin-top: 8px;
+  width: 245px;
+  margin-top: 12px;
   position: absolute;
   right: -80px;
   z-index: 10;
   padding: 10px 16px;
   background-color: #FFF;
   border: 1px solid #E0E0E0;
-  border-radius: 3px; }
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12); }
   .button-share__icon-container img.button-share--link {
     height: 34px;
     width: 34px;
     margin-right: 8px; }
     .button-share__icon-container img.button-share--link:last-child {
       margin-right: 0; }
+  .button-share__icon-container img.button-share--arrow {
+    width: 20px;
+    height: 13px;
+    position: absolute;
+    top: -11px;
+    left: 47%; }
 
-.button-share--arrow {
-  width: 20px; }
+.button-share--icon {
+  width: 11px;
+  position: relative;
+  bottom: 2px;
+  margin-right: 8px; }
 
 img.button-wishlist {
   position: absolute;
@@ -59,6 +73,7 @@ img.button-wishlist {
 
 .feed-empty {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   padding: 35px;
   padding-right: 30px;
   margin-bottom: 20px; }
@@ -105,6 +120,7 @@ img.button-wishlist {
 
 .feed-inspiration {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   margin-bottom: 20px; }
   .feed-inspiration__header {
     padding: 16px 10px;
@@ -132,6 +148,7 @@ img.button-wishlist {
 
 .feed-marketing-promo {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   max-width: 100%;
   height: 100%;
   position: relative;
@@ -157,7 +174,7 @@ img.button-wishlist {
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    overflow-x: hidden; }
+    overflow-x: scroll; }
     .feed-marketing-promo__content-image {
       height: 169px; }
   .feed-marketing-promo__content-items {
@@ -199,6 +216,9 @@ img.button-wishlist {
     border-radius: 2px;
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
             box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
+  .feed-marketing-promo__content-image {
+    -o-object-fit: contain;
+       object-fit: contain; }
   .feed-marketing-promo__content-details {
     padding: 10px; }
   .feed-marketing-promo__content-title {
@@ -216,25 +236,28 @@ img.button-wishlist {
     width: 51px;
     height: 40px; }
   .feed-marketing-promo__btn-container {
-    padding: 41px 8px 19px 5px; }
+    padding: 37px 8px 19px 5px; }
   .feed-marketing-promo__arrow--right {
     position: absolute;
     z-index: 999;
     width: 32px;
     top: 45%;
-    right: 5px; }
+    right: 5px;
+    cursor: pointer; }
   .feed-marketing-promo__arrow--left {
     position: absolute;
     z-index: 999;
     width: 32px;
     top: 45%;
-    left: 5px; }
+    left: 5px;
+    cursor: pointer; }
 
 .hidden {
   visibility: hidden; }
 
 .feed-official-store {
-  border: 1px solid #E0E0E0; }
+  border: 1px solid #E0E0E0;
+  border-radius: 3px; }
   .feed-official-store__title {
     padding: 16px 10px;
     border-bottom: 1px solid #E0E0E0; }
@@ -265,11 +288,15 @@ img.button-wishlist {
 
 .feed-official-store-product {
   background-color: #006030;
-  padding: 8px; }
+  padding: 8px;
+  border-radius: 0 0 3px 3px; }
   .feed-official-store-product__frame {
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    border-radius: 3px; }
   .feed-official-store-product__row {
     border-bottom: 1px solid #E0E0E0; }
+  .feed-official-store-product__banner-image {
+    border-radius: 3px 3px 0 0; }
   .feed-official-store-product .feed-official-store-product__title {
     background-color: #5A7CC2;
     border-radius: 3px 3px 0 0; }
@@ -304,6 +331,7 @@ img.button-wishlist {
 
 .feed-product {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   margin-bottom: 20px; }
   .feed-product__header {
     position: relative;
@@ -332,21 +360,6 @@ img.button-wishlist {
     vertical-align: middle;
     float: right;
     margin-top: 6px; }
-    .feed-product__seller-share img {
-      width: 11px;
-      position: relative;
-      bottom: 2px;
-      margin-right: 8px; }
-    .feed-product__seller-share button.btn {
-      padding: 9px 0;
-      font-size: 12px;
-      color: rgba(0, 0, 0, 0.54);
-      background-color: #FFF;
-      border: 1px solid #E0E0E0;
-      width: 100px;
-      font-weight: 600;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box; }
   .feed-product__seller-buy {
     display: inline-block;
     vertical-align: middle;
@@ -407,6 +420,7 @@ img.button-wishlist {
 
 .feed-search-shop {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   padding: 35px;
   padding-right: 30px;
   margin-bottom: 20px; }
@@ -431,7 +445,9 @@ img.button-wishlist {
       padding: 9px; }
 
 .feed-seller-story {
+  position: relative;
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   margin-bottom: 20px; }
   .feed-seller-story__header {
     padding: 16px 10px;
@@ -445,7 +461,7 @@ img.button-wishlist {
     .feed-seller-story__text-left {
       display: inline-block;
       vertical-align: middle;
-      width: 80%;
+      width: 75%;
       font-size: 13px;
       line-height: 18px;
       color: rgba(0, 0, 0, 0.7);
@@ -453,10 +469,12 @@ img.button-wishlist {
     .feed-seller-story__text-right {
       display: inline-block;
       vertical-align: middle;
-      width: 20%; }
+      text-align: right;
+      width: 25%; }
 
 .feed-tokopedia-story {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   margin-bottom: 20px; }
   .feed-tokopedia-story__header {
     padding: 16px 10px;
@@ -464,6 +482,7 @@ img.button-wishlist {
     font-weight: 600;
     font-size: 16px; }
   .feed-tokopedia-story__card {
+    position: relative;
     margin: 10px;
     border: 1px solid #E0E0E0;
     border-radius: 3px; }
@@ -474,7 +493,7 @@ img.button-wishlist {
     .feed-tokopedia-story__text-left {
       display: inline-block;
       vertical-align: middle;
-      width: 80%;
+      width: 75%;
       font-size: 13px;
       line-height: 18px;
       color: rgba(0, 0, 0, 0.7);
@@ -482,10 +501,12 @@ img.button-wishlist {
     .feed-tokopedia-story__text-right {
       display: inline-block;
       vertical-align: middle;
-      width: 20%; }
+      text-align: right;
+      width: 25%; }
 
 .feed-topads-product {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   margin-bottom: 20px; }
   .feed-topads-product__header {
     padding: 16px 10px;
@@ -521,6 +542,7 @@ img.button-wishlist {
 
 .feed-topads-shop {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   padding: 10px; }
   .feed-topads-shop__text-promoted {
     color: rgba(0, 0, 0, 0.38); }
