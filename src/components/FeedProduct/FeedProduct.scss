@@ -3,6 +3,7 @@
 	margin-bottom: 20px;
 
 	&__header {
+		position: relative;
 		padding: 10px;
 		border-bottom: 1px solid #E0E0E0;
 	}
@@ -37,24 +38,6 @@
 		vertical-align: middle;
 		float: right;
 		margin-top: 6px;
-
-		& img {
-			width: 11px;
-			position: relative;
-			bottom: 2px;
-			margin-right: 8px;
-		}
-
-		& button.btn {
-			padding: 9px 0;
-			font-size: 12px;
-			color: rgba(0, 0, 0, 0.54);
-			background-color: #FFF;
-			border: 1px solid #E0E0E0;
-			width: 100px;
-			font-weight: 600;
-			box-sizing: border-box;
-		}
 	}
 
 	&__seller-buy {

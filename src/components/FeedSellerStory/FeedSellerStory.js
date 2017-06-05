@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './FeedSellerStory.css';
 import getImage from '../../lib/utils.js';
 
+import ButtonShare from '../ButtonShare';
+
 var FeedSellerStory = React.createClass({
   render: function() {
     return (
@@ -16,7 +18,9 @@ var FeedSellerStory = React.createClass({
             <div className='feed-seller-story__text-left'>
               Peter Chandra Mantan Pegawai Migas Beralih Menjadi Penjual Air Minum di Petamburan.
             </div>
-            <div className='feed-seller-story__text-right'></div>
+            <div className='feed-seller-story__text-right'>
+                  <ButtonShare />
+            </div>
         </div>
       </div>
     );

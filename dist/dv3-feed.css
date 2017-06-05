@@ -29,6 +29,25 @@ button.button-share {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+.button-share__icon-container {
+  margin-top: 8px;
+  position: absolute;
+  right: -80px;
+  z-index: 10;
+  padding: 10px 16px;
+  background-color: #FFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 3px; }
+  .button-share__icon-container img.button-share--link {
+    height: 34px;
+    width: 34px;
+    margin-right: 8px; }
+    .button-share__icon-container img.button-share--link:last-child {
+      margin-right: 0; }
+
+.button-share--arrow {
+  width: 20px; }
+
 img.button-wishlist {
   position: absolute;
   right: 0;
@@ -287,6 +306,7 @@ img.button-wishlist {
   border: 1px solid #E0E0E0;
   margin-bottom: 20px; }
   .feed-product__header {
+    position: relative;
     padding: 10px;
     border-bottom: 1px solid #E0E0E0; }
   .feed-product__seller-photo {

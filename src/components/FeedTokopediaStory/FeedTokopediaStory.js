@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './FeedTokopediaStory.css';
 import getImage from '../../lib/utils.js';
 
+import ButtonShare from '../ButtonShare';
+
 var FeedTokopediaStory = React.createClass({
   render: function() {
     return (
@@ -17,7 +19,9 @@ var FeedTokopediaStory = React.createClass({
                 <div className='feed-tokopedia-story__text-left'>
                 Saat Generasi Bangsa Bergerak Menuju Perubahan yang Fantastik Gemilang Cahaya
                 </div>
-                <div className='feed-tokopedia-story__text-right'></div>
+                <div className='feed-tokopedia-story__text-right'>
+                  <ButtonShare />
+                </div>
             </div>
         </div>
       </div>

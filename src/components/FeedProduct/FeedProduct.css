@@ -2,6 +2,7 @@
   border: 1px solid #E0E0E0;
   margin-bottom: 20px; }
   .feed-product__header {
+    position: relative;
     padding: 10px;
     border-bottom: 1px solid #E0E0E0; }
   .feed-product__seller-photo {
@@ -27,21 +28,6 @@
     vertical-align: middle;
     float: right;
     margin-top: 6px; }
-    .feed-product__seller-share img {
-      width: 11px;
-      position: relative;
-      bottom: 2px;
-      margin-right: 8px; }
-    .feed-product__seller-share button.btn {
-      padding: 9px 0;
-      font-size: 12px;
-      color: rgba(0, 0, 0, 0.54);
-      background-color: #FFF;
-      border: 1px solid #E0E0E0;
-      width: 100px;
-      font-weight: 600;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box; }
   .feed-product__seller-buy {
     display: inline-block;
     vertical-align: middle;

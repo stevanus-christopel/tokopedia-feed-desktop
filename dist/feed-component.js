@@ -2,6 +2,29 @@
 
 
 
+var FeedDetailView = React.createClass({
+  displayName: 'FeedDetailView',
+
+  render: function () {
+    return React.createElement(
+      'div',
+      { className: 'feed-detail' },
+      React.createElement(
+        'div',
+        { className: 'feed-detail__main-content' },
+        React.createElement(FeedProductDetail, null)
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-detail__right-sidebar' },
+        React.createElement(FeedHotList, null)
+      )
+    );
+  }
+});
+
+
+
 var FeedView = React.createClass({
   displayName: 'FeedView',
 
@@ -56,29 +79,6 @@ var FeedView = React.createClass({
 });
 
 
-
-var FeedDetailView = React.createClass({
-  displayName: 'FeedDetailView',
-
-  render: function () {
-    return React.createElement(
-      'div',
-      { className: 'feed-detail' },
-      React.createElement(
-        'div',
-        { className: 'feed-detail__main-content' },
-        React.createElement(FeedProductDetail, null)
-      ),
-      React.createElement(
-        'div',
-        { className: 'feed-detail__right-sidebar' },
-        React.createElement(FeedHotList, null)
-      )
-    );
-  }
-});
-
-
 var ButtonShare = React.createClass({
   displayName: 'ButtonShare',
 
@@ -91,6 +91,12 @@ var ButtonShare = React.createClass({
     this.setState({
       isShowPopover: !this.state.isShowPopover
     });
+
+    if (!this.state.isShowPopover) {
+      document.onclick = this.togglePopover;
+    } else {
+      document.onclick = null;
+    }
   },
   render: function () {
     return React.createElement(
@@ -102,7 +108,17 @@ var ButtonShare = React.createClass({
         React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
         ' Bagikan'
       ),
-      this.state.isShowPopover === true ? React.createElement('span', null) : React.createElement('span', null)
+      this.state.isShowPopover === true ? React.createElement(
+        'div',
+        { className: 'button-share__icon-container' },
+        React.createElement('img', { className: 'button-share--arrow', alt: '', src: getImage('arrow-up.png') }),
+        React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-fb.png') }),
+        React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-twitter.png') }),
+        React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-g.png') }),
+        React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-wa.png') }),
+        React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-line.png') }),
+        React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-link.png') })
+      ) : React.createElement('span', null)
     );
   }
 });
