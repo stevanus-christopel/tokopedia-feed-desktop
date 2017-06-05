@@ -79,6 +79,21 @@ var FeedDetailView = React.createClass({
 });
 
 
+var ButtonShare = React.createClass({
+  displayName: 'ButtonShare',
+
+  render: function () {
+    return React.createElement(
+      'button',
+      { className: 'btn button-share' },
+      React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
+      ' Bagikan'
+    );
+  }
+});
+
+
+
 var ButtonWishlist = React.createClass({
   displayName: 'ButtonWishlist',
 
@@ -466,7 +481,7 @@ var FeedMarketingPromo = React.createClass({
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left pt-20 pl-15 feed-marketing-promo__code-container' },
+										{ className: 'pull-left pt-15 pl-15 feed-marketing-promo__code-container' },
 										React.createElement(
 											'span',
 											{ className: 'fs-12 fw-normal' },
@@ -1009,12 +1024,7 @@ var FeedProduct = React.createClass({
         this.props.productCount > 1 ? React.createElement(
           'div',
           { className: 'feed-product__seller-share' },
-          React.createElement(
-            'button',
-            { className: 'btn' },
-            React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
-            ' Bagikan'
-          )
+          React.createElement(ButtonShare, null)
         ) : React.createElement(
           'div',
           { className: 'feed-product__seller-buy' },

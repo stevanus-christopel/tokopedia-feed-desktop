@@ -24,6 +24,8 @@ img.button-wishlist {
   top: 0;
   height: 40px;
   width: 38px; }
+  img.button-wishlist:hover {
+    cursor: pointer; }
 
 .feed-empty {
   border: 1px solid #E0E0E0;
