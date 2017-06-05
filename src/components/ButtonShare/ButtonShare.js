@@ -26,7 +26,7 @@ var ButtonShare = React.createClass({
             <img className='button-share--icon' alt='' src={getImage('icon-btn-share.png')} /> Bagikan
         </button>
         {
-          this.state.isShowPopover === true ?
+          this.state.isShowPopover === true &&
           <div className='button-share__icon-container'>
             <img className='button-share--arrow' alt='' src={getImage('arrow-up.png')} />
             <img className='button-share--link' alt='' src={getImage('icon-fb.png')} />
@@ -36,8 +36,6 @@ var ButtonShare = React.createClass({
             <img className='button-share--link' alt='' src={getImage('icon-line.png')} />
             <img className='button-share--link' alt='' src={getImage('icon-link.png')} />
           </div>
-          :
-          <span></span>
         }
       </div>
     );
