@@ -25,7 +25,7 @@
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    overflow-x: hidden; }
+    overflow-x: auto; }
     .feed-marketing-promo__content-image {
       height: 169px; }
   .feed-marketing-promo__content-items {
@@ -84,7 +84,7 @@
     width: 51px;
     height: 40px; }
   .feed-marketing-promo__btn-container {
-    padding: 41px 8px 19px 5px; }
+    padding: 37px 8px 19px 5px; }
   .feed-marketing-promo__arrow--right {
     position: absolute;
     z-index: 999;

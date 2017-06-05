@@ -33,7 +33,11 @@ $color-border-grey: #E0E0E0;
 		transition: all 0.5s;
 		display: -ms-flexbox;
 		display: flex;
-		overflow-x: hidden;
+		// overflow-x: hidden;
+  // flex-wrap: nowrap;
+  overflow-x: scroll;
+  // -webkit-overflow-scrolling: touch;
+  // -ms-overflow-style: -ms-autohiding-scrollbar;
 
 		&-image {
 			height: 169px;
@@ -115,7 +119,7 @@ $color-border-grey: #E0E0E0;
 	}
 
 	&__btn-container {
-		padding: 41px 8px 19px 5px;
+		padding: 37px 8px 19px 5px;
 	}
 
 	&__arrow--right {
