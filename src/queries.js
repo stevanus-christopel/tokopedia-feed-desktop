@@ -1,4 +1,6 @@
-/*const FeedQuery = gql `
+import gql from 'graphql-tag'
+
+const FeedQuery = gql `
   query Query ($userID: Int!, $limit: Int!, $cursor: String){
       feed(limit: $limit, cursor: $cursor, userID: $userID) {
         data {
@@ -71,4 +73,4 @@
 
 export {
     FeedQuery
-}*/
+}
