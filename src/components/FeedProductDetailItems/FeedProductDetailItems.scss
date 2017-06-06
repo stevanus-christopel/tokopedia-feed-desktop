@@ -1,7 +1,13 @@
 $color-green: #42B549;
 $color-white: #FFFFFF;
 $color-border-grey: #E0E0E0;
+.feed-product-detail-frame {
+	border-bottom: 1px solid $color-border-grey;
 
+	&:last-child{
+		border-bottom: none;
+	}
+}
 .feed-product-detail-items {
 	&__image {
 			width: 130px;
@@ -34,6 +40,15 @@ $color-border-grey: #E0E0E0;
 	}
 
 	&__product-rating-stars {
-		width: 15px;
+		width: 12px;
+		height: 12px;
+		padding-left: 2px;
+		&:first-child {
+			padding-left: 0px;
+		}
 	}
+}
+
+.feed-product-detail-items__image-container img {
+	right: 20px;
 }

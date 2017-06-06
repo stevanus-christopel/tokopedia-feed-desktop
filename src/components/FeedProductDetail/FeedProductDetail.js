@@ -33,11 +33,113 @@ var FeedProductDetail = React.createClass({
         
         <div className='feed-product-detail__content'>
           <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
             cashback ={true}
             grosir ={true}
             preorder ={true}
             refund ={true}
             rating ={3}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={1}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={3}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={3}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={5}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={4}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={3}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={3}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={1}
+          />
+
+          <FeedProductDetailItems 
+            image = 'product-2.jpg'
+            productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            productPrice = '170.390'
+            cashback ={true}
+            grosir ={true}
+            preorder ={true}
+            refund ={true}
+            rating ={2}
           />
         </div>
 

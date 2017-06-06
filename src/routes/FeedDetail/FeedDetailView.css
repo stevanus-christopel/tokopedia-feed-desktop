@@ -7,3 +7,11 @@
 .feed-detail__right-sidebar {
   display: inline-block;
   padding: 20px; }
+
+.feed-detail__left-sidebar {
+  float: left;
+  display: inline-block;
+  padding: 20px; }
+  .feed-detail__left-sidebar img {
+    width: 7px;
+    margin-right: 5px; }

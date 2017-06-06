@@ -1,3 +1,8 @@
+.feed-product-detail-frame {
+  border-bottom: 1px solid #E0E0E0; }
+  .feed-product-detail-frame:last-child {
+    border-bottom: none; }
+
 .feed-product-detail-items__image {
   width: 130px;
   border: 1px solid #E0E0E0; }
@@ -24,4 +29,11 @@
   width: 17px; }
 
 .feed-product-detail-items__product-rating-stars {
-  width: 15px; }
+  width: 12px;
+  height: 12px;
+  padding-left: 2px; }
+  .feed-product-detail-items__product-rating-stars:first-child {
+    padding-left: 0px; }
+
+.feed-product-detail-items__image-container img {
+  right: 20px; }
