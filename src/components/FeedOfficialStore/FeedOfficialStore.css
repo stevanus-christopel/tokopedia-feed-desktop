@@ -1,5 +1,6 @@
 .feed-official-store {
-  border: 1px solid #E0E0E0; }
+  border: 1px solid #E0E0E0;
+  border-radius: 3px; }
   .feed-official-store__title {
     padding: 16px 10px;
     border-bottom: 1px solid #E0E0E0; }

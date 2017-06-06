@@ -2,29 +2,6 @@
 
 
 
-var FeedDetailView = React.createClass({
-  displayName: 'FeedDetailView',
-
-  render: function () {
-    return React.createElement(
-      'div',
-      { className: 'feed-detail' },
-      React.createElement(
-        'div',
-        { className: 'feed-detail__main-content' },
-        React.createElement(FeedProductDetail, null)
-      ),
-      React.createElement(
-        'div',
-        { className: 'feed-detail__right-sidebar' },
-        React.createElement(FeedHotList, null)
-      )
-    );
-  }
-});
-
-
-
 var FeedView = React.createClass({
   displayName: 'FeedView',
 
@@ -79,6 +56,29 @@ var FeedView = React.createClass({
 });
 
 
+
+var FeedDetailView = React.createClass({
+  displayName: 'FeedDetailView',
+
+  render: function () {
+    return React.createElement(
+      'div',
+      { className: 'feed-detail' },
+      React.createElement(
+        'div',
+        { className: 'feed-detail__main-content' },
+        React.createElement(FeedProductDetail, null)
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-detail__right-sidebar' },
+        React.createElement(FeedHotList, null)
+      )
+    );
+  }
+});
+
+
 var ButtonShare = React.createClass({
   displayName: 'ButtonShare',
 
@@ -88,15 +88,15 @@ var ButtonShare = React.createClass({
     };
   },
   togglePopover: function () {
-    this.setState({
-      isShowPopover: !this.state.isShowPopover
-    });
-
     if (!this.state.isShowPopover) {
       document.onclick = this.togglePopover;
     } else {
       document.onclick = null;
     }
+
+    this.setState({
+      isShowPopover: !this.state.isShowPopover
+    });
   },
   render: function () {
     return React.createElement(
@@ -105,10 +105,10 @@ var ButtonShare = React.createClass({
       React.createElement(
         'button',
         { className: 'btn button-share', onClick: () => this.togglePopover() },
-        React.createElement('img', { alt: '', src: getImage('icon-btn-share.png') }),
+        React.createElement('img', { className: 'button-share--icon', alt: '', src: getImage('icon-btn-share.png') }),
         ' Bagikan'
       ),
-      this.state.isShowPopover === true ? React.createElement(
+      this.state.isShowPopover === true && React.createElement(
         'div',
         { className: 'button-share__icon-container' },
         React.createElement('img', { className: 'button-share--arrow', alt: '', src: getImage('arrow-up.png') }),
@@ -118,7 +118,7 @@ var ButtonShare = React.createClass({
         React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-wa.png') }),
         React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-line.png') }),
         React.createElement('img', { className: 'button-share--link', alt: '', src: getImage('icon-link.png') })
-      ) : React.createElement('span', null)
+      )
     );
   }
 });
@@ -246,6 +246,84 @@ var FeedHotlist = React.createClass({
 var FeedInspiration = React.createClass({
   displayName: 'FeedInspiration',
 
+  getInitialState: function () {
+    return {
+      isShowWishlist1: false,
+      isShowWishlist2: false,
+      isShowWishlist3: false,
+      isShowWishlist4: false,
+      isShowWishlist5: false,
+      isShowWishlist6: false
+    };
+  },
+  showWishlist: function (elementNumber) {
+    switch (elementNumber) {
+      case 1:
+        this.setState({
+          isShowWishlist1: true
+        });
+        break;
+      case 2:
+        this.setState({
+          isShowWishlist2: true
+        });
+        break;
+      case 3:
+        this.setState({
+          isShowWishlist3: true
+        });
+        break;
+      case 4:
+        this.setState({
+          isShowWishlist4: true
+        });
+        break;
+      case 5:
+        this.setState({
+          isShowWishlist5: true
+        });
+        break;
+      case 6:
+        this.setState({
+          isShowWishlist6: true
+        });
+        break;
+    }
+  },
+  hideWishlist: function (elementNumber) {
+    switch (elementNumber) {
+      case 1:
+        this.setState({
+          isShowWishlist1: false
+        });
+        break;
+      case 2:
+        this.setState({
+          isShowWishlist2: false
+        });
+        break;
+      case 3:
+        this.setState({
+          isShowWishlist3: false
+        });
+        break;
+      case 4:
+        this.setState({
+          isShowWishlist4: false
+        });
+        break;
+      case 5:
+        this.setState({
+          isShowWishlist5: false
+        });
+        break;
+      case 6:
+        this.setState({
+          isShowWishlist6: false
+        });
+        break;
+    }
+  },
   render: function () {
     return React.createElement(
       'div',
@@ -263,8 +341,10 @@ var FeedInspiration = React.createClass({
           { className: 'row-fluid' },
           React.createElement(
             'div',
-            { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom' },
-            React.createElement(ButtonWishlist, { checked: false }),
+            { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom',
+              onMouseEnter: () => this.showWishlist(1),
+              onMouseLeave: () => this.hideWishlist(1) },
+            this.state.isShowWishlist1 && React.createElement(ButtonWishlist, { checked: true }),
             React.createElement('img', { src: getImage('inspiration-1.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -291,8 +371,10 @@ var FeedInspiration = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom' },
-            React.createElement(ButtonWishlist, { checked: false }),
+            { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom',
+              onMouseEnter: () => this.showWishlist(2),
+              onMouseLeave: () => this.hideWishlist(2) },
+            this.state.isShowWishlist2 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-2.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -319,8 +401,10 @@ var FeedInspiration = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom' },
-            React.createElement(ButtonWishlist, { checked: true }),
+            { className: 'span4 feed-inspiration__items feed-inspiration__items--border-bottom',
+              onMouseEnter: () => this.showWishlist(3),
+              onMouseLeave: () => this.hideWishlist(3) },
+            this.state.isShowWishlist3 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-3.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -351,8 +435,10 @@ var FeedInspiration = React.createClass({
           { className: 'row-fluid' },
           React.createElement(
             'div',
-            { className: 'span4 feed-inspiration__items' },
-            React.createElement(ButtonWishlist, { checked: false }),
+            { className: 'span4 feed-inspiration__items',
+              onMouseEnter: () => this.showWishlist(4),
+              onMouseLeave: () => this.hideWishlist(4) },
+            this.state.isShowWishlist4 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-4.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -379,8 +465,10 @@ var FeedInspiration = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'span4 feed-inspiration__items' },
-            React.createElement(ButtonWishlist, { checked: false }),
+            { className: 'span4 feed-inspiration__items',
+              onMouseEnter: () => this.showWishlist(5),
+              onMouseLeave: () => this.hideWishlist(5) },
+            this.state.isShowWishlist5 && React.createElement(ButtonWishlist, { checked: true }),
             React.createElement('img', { src: getImage('inspiration-5.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -407,8 +495,10 @@ var FeedInspiration = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'span4 feed-inspiration__items' },
-            React.createElement(ButtonWishlist, { checked: false }),
+            { className: 'span4 feed-inspiration__items',
+              onMouseEnter: () => this.showWishlist(6),
+              onMouseLeave: () => this.hideWishlist(6) },
+            this.state.isShowWishlist6 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('inspiration-6.jpg'), className: 'feed-inspiration__image' }),
             React.createElement(
               'div',
@@ -441,8 +531,38 @@ var FeedInspiration = React.createClass({
 
 
 
+var marketingPromoContainer = document.getElementsByClassName('feed-marketing-promo__content');
+var marketingPromoItems = document.getElementsByClassName('feed-marketing-promo__content-items');
+
+const SLIDE_CONTAINER = document.getElementsByClassName('feed-marketing-promo__content');
+
 var FeedMarketingPromo = React.createClass({
 	displayName: 'FeedMarketingPromo',
+
+
+	// sideScroll: function(element, direction, speed, distance, step) {
+	// 	var scrollAmount = 0;
+	//   var slideTimer = setInterval(function(){
+	//       if(direction == 'left'){
+	//           element.scrollLeft -= step;
+	//       } else {
+	// 				console.log(element)
+	// 				console.log(element.scrollLeft)
+	//           element.scrollLeft += step;
+	//       }
+	//       scrollAmount += step;
+	//       if(scrollAmount >= distance){
+	//           window.clearInterval(slideTimer);
+	//       }
+	//   }, speed);
+	// },
+	// slide: function() {
+	// 	console.log('kanan')
+	// 	this.sideScroll(document.getElementsByClassName('feed-marketing-promo__content'), 'right', 25, 100, 10)
+	// },
+	// slideBack: function() {
+	// 	this.sideScroll(document.getElementsByClassName('feed-marketing-promo__content'),'left',25,100,10);
+	// },
 
 	render: function () {
 		return React.createElement(
@@ -470,21 +590,21 @@ var FeedMarketingPromo = React.createClass({
 						'Promo'
 					)
 				),
-				React.createElement('div', { className: 'feed-marketing-promo__seller-share' })
-			),
-			React.createElement(
-				'div',
-				{ className: 'feed-marketing-promo__content' },
+				React.createElement('div', { className: 'feed-marketing-promo__seller-share' }),
 				React.createElement(
 					'div',
 					{ className: 'feed-marketing-promo__arrow--left hidden' },
-					React.createElement('img', { src: getImage('group-32.png') })
+					React.createElement('img', { src: getImage('arrow-promo.png') })
 				),
 				React.createElement(
 					'div',
 					{ className: 'feed-marketing-promo__arrow--right' },
 					React.createElement('img', { src: getImage('group-32.png') })
-				),
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'feed-marketing-promo__content' },
 				React.createElement(
 					'div',
 					{ className: 'row-fluid feed-marketing-promo__content-items' },
@@ -522,7 +642,7 @@ var FeedMarketingPromo = React.createClass({
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left pt-15 pl-15 feed-marketing-promo__code-container' },
+										{ className: 'pull-left pt-15 pl-10 feed-marketing-promo__code-container' },
 										React.createElement(
 											'span',
 											{ className: 'fs-12 fw-normal' },
@@ -589,7 +709,7 @@ var FeedMarketingPromo = React.createClass({
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left pt-20 pl-15 feed-marketing-promo__code-container' },
+										{ className: 'pull-left pt-15 pl-15 feed-marketing-promo__code-container' },
 										React.createElement(
 											'span',
 											{ className: 'fs-12 fw-normal' },
@@ -1029,6 +1149,84 @@ var FeedOfficialStoreProduct = React.createClass({
 var FeedProduct = React.createClass({
   displayName: 'FeedProduct',
 
+  getInitialState: function () {
+    return {
+      isShowWishlist1: false,
+      isShowWishlist2: false,
+      isShowWishlist3: false,
+      isShowWishlist4: false,
+      isShowWishlist5: false,
+      isShowWishlist6: false
+    };
+  },
+  showWishlist: function (elementNumber) {
+    switch (elementNumber) {
+      case 1:
+        this.setState({
+          isShowWishlist1: true
+        });
+        break;
+      case 2:
+        this.setState({
+          isShowWishlist2: true
+        });
+        break;
+      case 3:
+        this.setState({
+          isShowWishlist3: true
+        });
+        break;
+      case 4:
+        this.setState({
+          isShowWishlist4: true
+        });
+        break;
+      case 5:
+        this.setState({
+          isShowWishlist5: true
+        });
+        break;
+      case 6:
+        this.setState({
+          isShowWishlist6: true
+        });
+        break;
+    }
+  },
+  hideWishlist: function (elementNumber) {
+    switch (elementNumber) {
+      case 1:
+        this.setState({
+          isShowWishlist1: false
+        });
+        break;
+      case 2:
+        this.setState({
+          isShowWishlist2: false
+        });
+        break;
+      case 3:
+        this.setState({
+          isShowWishlist3: false
+        });
+        break;
+      case 4:
+        this.setState({
+          isShowWishlist4: false
+        });
+        break;
+      case 5:
+        this.setState({
+          isShowWishlist5: false
+        });
+        break;
+      case 6:
+        this.setState({
+          isShowWishlist6: false
+        });
+        break;
+    }
+  },
   render: function () {
     return React.createElement(
       'div',
@@ -1084,7 +1282,9 @@ var FeedProduct = React.createClass({
           null,
           React.createElement(
             'div',
-            { className: 'row-fluid' },
+            { className: 'row-fluid',
+              onMouseEnter: () => this.showWishlist(1),
+              onMouseLeave: () => this.hideWishlist(1) },
             React.createElement(
               'div',
               { className: 'span6 feed-product__items feed-product__items--border-bottom' },
@@ -1093,7 +1293,7 @@ var FeedProduct = React.createClass({
             React.createElement(
               'div',
               { className: 'span6 feed-product__items feed-product__items--border-bottom' },
-              React.createElement(ButtonWishlist, { checked: true }),
+              this.state.isShowWishlist1 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: 'http://placehold.it/300x300', className: 'feed-product__image' })
             )
           ),
@@ -1132,8 +1332,10 @@ var FeedProduct = React.createClass({
           { className: 'row-fluid' },
           React.createElement(
             'div',
-            { className: 'span6 feed-product__items' },
-            React.createElement(ButtonWishlist, { checked: true }),
+            { className: 'span6 feed-product__items',
+              onMouseEnter: () => this.showWishlist(1),
+              onMouseLeave: () => this.hideWishlist(1) },
+            this.state.isShowWishlist1 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('product-1.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1160,8 +1362,10 @@ var FeedProduct = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'span6 feed-product__items' },
-            React.createElement(ButtonWishlist, { checked: false }),
+            { className: 'span6 feed-product__items',
+              onMouseEnter: () => this.showWishlist(2),
+              onMouseLeave: () => this.hideWishlist(2) },
+            this.state.isShowWishlist2 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('product-2.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1191,8 +1395,10 @@ var FeedProduct = React.createClass({
           { className: 'row-fluid' },
           React.createElement(
             'div',
-            { className: 'span4 feed-product__items' },
-            React.createElement(ButtonWishlist, { checked: false }),
+            { className: 'span4 feed-product__items',
+              onMouseEnter: () => this.showWishlist(1),
+              onMouseLeave: () => this.hideWishlist(1) },
+            this.state.isShowWishlist1 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('product-3.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1219,8 +1425,10 @@ var FeedProduct = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'span4 feed-product__items' },
-            React.createElement(ButtonWishlist, { checked: false }),
+            { className: 'span4 feed-product__items',
+              onMouseEnter: () => this.showWishlist(2),
+              onMouseLeave: () => this.hideWishlist(2) },
+            this.state.isShowWishlist2 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('product-4.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1247,8 +1455,10 @@ var FeedProduct = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'span4 feed-product__items' },
-            React.createElement(ButtonWishlist, { checked: true }),
+            { className: 'span4 feed-product__items',
+              onMouseEnter: () => this.showWishlist(3),
+              onMouseLeave: () => this.hideWishlist(3) },
+            this.state.isShowWishlist3 && React.createElement(ButtonWishlist, { checked: false }),
             React.createElement('img', { src: getImage('product-5.jpg'), className: 'feed-product__image' }),
             React.createElement(
               'div',
@@ -1281,8 +1491,10 @@ var FeedProduct = React.createClass({
             { className: 'row-fluid' },
             React.createElement(
               'div',
-              { className: 'span6 feed-product__items' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span6 feed-product__items',
+                onMouseEnter: () => this.showWishlist(1),
+                onMouseLeave: () => this.hideWishlist(1) },
+              this.state.isShowWishlist1 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-6.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1309,8 +1521,10 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span6 feed-product__items' },
-              React.createElement(ButtonWishlist, { checked: true }),
+              { className: 'span6 feed-product__items',
+                onMouseEnter: () => this.showWishlist(2),
+                onMouseLeave: () => this.hideWishlist(2) },
+              this.state.isShowWishlist2 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-7.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1341,8 +1555,10 @@ var FeedProduct = React.createClass({
             { className: 'row-fluid' },
             React.createElement(
               'div',
-              { className: 'span6 feed-product__items feed-product__items--border-top' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span6 feed-product__items feed-product__items--border-top',
+                onMouseEnter: () => this.showWishlist(3),
+                onMouseLeave: () => this.hideWishlist(3) },
+              this.state.isShowWishlist3 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-8.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1369,8 +1585,10 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span6 feed-product__items feed-product__items--border-top' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span6 feed-product__items feed-product__items--border-top',
+                onMouseEnter: () => this.showWishlist(4),
+                onMouseLeave: () => this.hideWishlist(4) },
+              this.state.isShowWishlist4 && React.createElement(ButtonWishlist, { checked: true }),
               React.createElement('img', { src: getImage('product-9.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1404,8 +1622,10 @@ var FeedProduct = React.createClass({
             { className: 'row-fluid' },
             React.createElement(
               'div',
-              { className: 'span6 feed-product__items' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span6 feed-product__items',
+                onMouseEnter: () => this.showWishlist(1),
+                onMouseLeave: () => this.hideWishlist(1) },
+              this.state.isShowWishlist1 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-10.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1432,8 +1652,10 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span6 feed-product__items' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span6 feed-product__items',
+                onMouseEnter: () => this.showWishlist(2),
+                onMouseLeave: () => this.hideWishlist(2) },
+              this.state.isShowWishlist2 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-11.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1464,8 +1686,10 @@ var FeedProduct = React.createClass({
             { className: 'row-fluid' },
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items feed-product__items--border-top' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span4 feed-product__items feed-product__items--border-top',
+                onMouseEnter: () => this.showWishlist(3),
+                onMouseLeave: () => this.hideWishlist(3) },
+              this.state.isShowWishlist3 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-12.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1492,8 +1716,10 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items feed-product__items--border-top' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span4 feed-product__items feed-product__items--border-top',
+                onMouseEnter: () => this.showWishlist(4),
+                onMouseLeave: () => this.hideWishlist(4) },
+              this.state.isShowWishlist4 && React.createElement(ButtonWishlist, { checked: true }),
               React.createElement('img', { src: getImage('product-13.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1520,8 +1746,10 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items feed-product__items--border-top' },
-              React.createElement(ButtonWishlist, { checked: true }),
+              { className: 'span4 feed-product__items feed-product__items--border-top',
+                onMouseEnter: () => this.showWishlist(5),
+                onMouseLeave: () => this.hideWishlist(5) },
+              this.state.isShowWishlist5 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-14.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1555,8 +1783,10 @@ var FeedProduct = React.createClass({
             { className: 'row-fluid' },
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span4 feed-product__items',
+                onMouseEnter: () => this.showWishlist(1),
+                onMouseLeave: () => this.hideWishlist(1) },
+              this.state.isShowWishlist1 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-15.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1583,8 +1813,10 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span4 feed-product__items',
+                onMouseEnter: () => this.showWishlist(2),
+                onMouseLeave: () => this.hideWishlist(2) },
+              this.state.isShowWishlist2 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-16.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1611,8 +1843,10 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span4 feed-product__items',
+                onMouseEnter: () => this.showWishlist(3),
+                onMouseLeave: () => this.hideWishlist(3) },
+              this.state.isShowWishlist3 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-17.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1643,8 +1877,10 @@ var FeedProduct = React.createClass({
             { className: 'row-fluid' },
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items feed-product__items--border-top' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span4 feed-product__items feed-product__items--border-top',
+                onMouseEnter: () => this.showWishlist(4),
+                onMouseLeave: () => this.hideWishlist(4) },
+              this.state.isShowWishlist4 && React.createElement(ButtonWishlist, { checked: true }),
               React.createElement('img', { src: getImage('product-18.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1671,8 +1907,10 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items feed-product__items--border-top' },
-              React.createElement(ButtonWishlist, { checked: false }),
+              { className: 'span4 feed-product__items feed-product__items--border-top',
+                onMouseEnter: () => this.showWishlist(5),
+                onMouseLeave: () => this.hideWishlist(5) },
+              this.state.isShowWishlist5 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-19.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1699,7 +1937,9 @@ var FeedProduct = React.createClass({
             ),
             React.createElement(
               'div',
-              { className: 'span4 feed-product__items feed-product__items--border-top' },
+              { className: 'span4 feed-product__items feed-product__items--border-top',
+                onMouseEnter: () => this.showWishlist(6),
+                onMouseLeave: () => this.hideWishlist(6) },
               this.props.productCount > 6 ? React.createElement(
                 'div',
                 { className: 'feed-product__items--overlay' },
@@ -1709,7 +1949,7 @@ var FeedProduct = React.createClass({
                   '+',
                   this.props.productCount - 6
                 )
-              ) : React.createElement(ButtonWishlist, { checked: false }),
+              ) : this.state.isShowWishlist6 && React.createElement(ButtonWishlist, { checked: false }),
               React.createElement('img', { src: getImage('product-20.jpg'), className: 'feed-product__image' }),
               React.createElement(
                 'div',
@@ -1823,6 +2063,7 @@ var FeedSearchShop = React.createClass({
 
 
 
+
 var FeedSellerStory = React.createClass({
   displayName: 'FeedSellerStory',
 
@@ -1848,11 +2089,16 @@ var FeedSellerStory = React.createClass({
           { className: 'feed-seller-story__text-left' },
           'Peter Chandra Mantan Pegawai Migas Beralih Menjadi Penjual Air Minum di Petamburan.'
         ),
-        React.createElement('div', { className: 'feed-seller-story__text-right' })
+        React.createElement(
+          'div',
+          { className: 'feed-seller-story__text-right' },
+          React.createElement(ButtonShare, null)
+        )
       )
     );
   }
 });
+
 
 
 
@@ -1884,7 +2130,11 @@ var FeedTokopediaStory = React.createClass({
             { className: 'feed-tokopedia-story__text-left' },
             'Saat Generasi Bangsa Bergerak Menuju Perubahan yang Fantastik Gemilang Cahaya'
           ),
-          React.createElement('div', { className: 'feed-tokopedia-story__text-right' })
+          React.createElement(
+            'div',
+            { className: 'feed-tokopedia-story__text-right' },
+            React.createElement(ButtonShare, null)
+          )
         )
       )
     );
@@ -1895,200 +2145,290 @@ var FeedTokopediaStory = React.createClass({
 
 
 var FeedTopAdsProduct = React.createClass({
-    displayName: 'FeedTopAdsProduct',
+  displayName: 'FeedTopAdsProduct',
 
-    render: function () {
-        return React.createElement(
-            'div',
-            { className: 'feed-topads-product' },
-            React.createElement(
-                'div',
-                { className: 'feed-topads-product__header' },
-                'Promoted',
-                React.createElement('img', { alt: '', src: getImage('icon-info.png') })
-            ),
-            React.createElement(
-                'div',
-                { className: 'feed-topads-product__content' },
-                React.createElement(
-                    'div',
-                    { className: 'row-fluid' },
-                    React.createElement(
-                        'div',
-                        { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom' },
-                        React.createElement(ButtonWishlist, { checked: false }),
-                        React.createElement('img', { src: getImage('ta-1.jpg'), className: 'feed-topads-product__image' }),
-                        React.createElement(
-                            'div',
-                            { className: 'feed-topads-product__details' },
-                            React.createElement(
-                                'div',
-                                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
-                                React.createElement(
-                                    'div',
-                                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-                                    'Amarylis \'Snowflake\''
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'feed-topads-product__items--price' },
-                                React.createElement(
-                                    'label',
-                                    { className: 'fs-12 fw-600 orange-red' },
-                                    'Rp 45.000'
-                                )
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom' },
-                        React.createElement(ButtonWishlist, { checked: false }),
-                        React.createElement('img', { src: getImage('ta-2.jpg'), className: 'feed-topads-product__image' }),
-                        React.createElement(
-                            'div',
-                            { className: 'feed-topads-product__details' },
-                            React.createElement(
-                                'div',
-                                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
-                                React.createElement(
-                                    'div',
-                                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-                                    'Aloe Vera Jumbo'
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'feed-topads-product__items--price' },
-                                React.createElement(
-                                    'label',
-                                    { className: 'fs-12 fw-600 orange-red' },
-                                    'Rp 60.000'
-                                )
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom' },
-                        React.createElement(ButtonWishlist, { checked: false }),
-                        React.createElement('img', { src: getImage('ta-3.jpg'), className: 'feed-topads-product__image' }),
-                        React.createElement(
-                            'div',
-                            { className: 'feed-topads-product__details' },
-                            React.createElement(
-                                'div',
-                                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
-                                React.createElement(
-                                    'div',
-                                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-                                    'Acalypha Wilkesiana Blaze'
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'feed-topads-product__items--price' },
-                                React.createElement(
-                                    'label',
-                                    { className: 'fs-12 fw-600 orange-red' },
-                                    'Rp 45.000'
-                                )
-                            )
-                        )
-                    )
-                ),
-                React.createElement(
-                    'div',
-                    { className: 'row-fluid' },
-                    React.createElement(
-                        'div',
-                        { className: 'span4 feed-topads-product__items' },
-                        React.createElement(ButtonWishlist, { checked: false }),
-                        React.createElement('img', { src: getImage('ta-4.jpg'), className: 'feed-topads-product__image' }),
-                        React.createElement(
-                            'div',
-                            { className: 'feed-topads-product__details' },
-                            React.createElement(
-                                'div',
-                                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
-                                React.createElement(
-                                    'div',
-                                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-                                    'Srikaya Australia Jumbo 60cm'
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'feed-topads-product__items--price' },
-                                React.createElement(
-                                    'label',
-                                    { className: 'fs-12 fw-600 orange-red' },
-                                    'Rp 95.000'
-                                )
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'span4 feed-topads-product__items' },
-                        React.createElement(ButtonWishlist, { checked: true }),
-                        React.createElement('img', { src: getImage('ta-5.jpg'), className: 'feed-topads-product__image' }),
-                        React.createElement(
-                            'div',
-                            { className: 'feed-topads-product__details' },
-                            React.createElement(
-                                'div',
-                                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
-                                React.createElement(
-                                    'div',
-                                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-                                    'Jambu Air Dalhari 60cm'
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'feed-topads-product__items--price' },
-                                React.createElement(
-                                    'label',
-                                    { className: 'fs-12 fw-600 orange-red' },
-                                    'Rp 75.000'
-                                )
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'span4 feed-topads-product__items' },
-                        React.createElement(ButtonWishlist, { checked: false }),
-                        React.createElement('img', { src: getImage('ta-6.jpg'), className: 'feed-topads-product__image' }),
-                        React.createElement(
-                            'div',
-                            { className: 'feed-topads-product__details' },
-                            React.createElement(
-                                'div',
-                                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
-                                React.createElement(
-                                    'div',
-                                    { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
-                                    'Gowok (Kupa) 150cm'
-                                )
-                            ),
-                            React.createElement(
-                                'div',
-                                { className: 'feed-topads-product__items--price' },
-                                React.createElement(
-                                    'label',
-                                    { className: 'fs-12 fw-600 orange-red' },
-                                    'Rp 915.000'
-                                )
-                            )
-                        )
-                    )
-                )
-            )
-        );
+  getInitialState: function () {
+    return {
+      isShowWishlist1: false,
+      isShowWishlist2: false,
+      isShowWishlist3: false,
+      isShowWishlist4: false,
+      isShowWishlist5: false,
+      isShowWishlist6: false
+    };
+  },
+  showWishlist: function (elementNumber) {
+    switch (elementNumber) {
+      case 1:
+        this.setState({
+          isShowWishlist1: true
+        });
+        break;
+      case 2:
+        this.setState({
+          isShowWishlist2: true
+        });
+        break;
+      case 3:
+        this.setState({
+          isShowWishlist3: true
+        });
+        break;
+      case 4:
+        this.setState({
+          isShowWishlist4: true
+        });
+        break;
+      case 5:
+        this.setState({
+          isShowWishlist5: true
+        });
+        break;
+      case 6:
+        this.setState({
+          isShowWishlist6: true
+        });
+        break;
     }
+  },
+  hideWishlist: function (elementNumber) {
+    switch (elementNumber) {
+      case 1:
+        this.setState({
+          isShowWishlist1: false
+        });
+        break;
+      case 2:
+        this.setState({
+          isShowWishlist2: false
+        });
+        break;
+      case 3:
+        this.setState({
+          isShowWishlist3: false
+        });
+        break;
+      case 4:
+        this.setState({
+          isShowWishlist4: false
+        });
+        break;
+      case 5:
+        this.setState({
+          isShowWishlist5: false
+        });
+        break;
+      case 6:
+        this.setState({
+          isShowWishlist6: false
+        });
+        break;
+    }
+  },
+  render: function () {
+    return React.createElement(
+      'div',
+      { className: 'feed-topads-product' },
+      React.createElement(
+        'div',
+        { className: 'feed-topads-product__header' },
+        'Promoted',
+        React.createElement('img', { alt: '', src: getImage('icon-info.png') })
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-topads-product__content' },
+        React.createElement(
+          'div',
+          { className: 'row-fluid' },
+          React.createElement(
+            'div',
+            { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom',
+              onMouseEnter: () => this.showWishlist(1),
+              onMouseLeave: () => this.hideWishlist(1) },
+            this.state.isShowWishlist1 && React.createElement(ButtonWishlist, { checked: false }),
+            React.createElement('img', { src: getImage('ta-1.jpg'), className: 'feed-topads-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-topads-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Amarylis \'Snowflake\''
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-topads-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 45.000'
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom',
+              onMouseEnter: () => this.showWishlist(2),
+              onMouseLeave: () => this.hideWishlist(2) },
+            this.state.isShowWishlist2 && React.createElement(ButtonWishlist, { checked: false }),
+            React.createElement('img', { src: getImage('ta-2.jpg'), className: 'feed-topads-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-topads-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Aloe Vera Jumbo'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-topads-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 60.000'
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'span4 feed-topads-product__items feed-topads-product__items--border-bottom',
+              onMouseEnter: () => this.showWishlist(3),
+              onMouseLeave: () => this.hideWishlist(3) },
+            this.state.isShowWishlist3 && React.createElement(ButtonWishlist, { checked: false }),
+            React.createElement('img', { src: getImage('ta-3.jpg'), className: 'feed-topads-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-topads-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Acalypha Wilkesiana Blaze'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-topads-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 45.000'
+                )
+              )
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'row-fluid' },
+          React.createElement(
+            'div',
+            { className: 'span4 feed-topads-product__items',
+              onMouseEnter: () => this.showWishlist(4),
+              onMouseLeave: () => this.hideWishlist(4) },
+            this.state.isShowWishlist4 && React.createElement(ButtonWishlist, { checked: true }),
+            React.createElement('img', { src: getImage('ta-4.jpg'), className: 'feed-topads-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-topads-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Srikaya Australia Jumbo 60cm'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-topads-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 95.000'
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'span4 feed-topads-product__items',
+              onMouseEnter: () => this.showWishlist(5),
+              onMouseLeave: () => this.hideWishlist(5) },
+            this.state.isShowWishlist5 && React.createElement(ButtonWishlist, { checked: false }),
+            React.createElement('img', { src: getImage('ta-5.jpg'), className: 'feed-topads-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-topads-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Jambu Air Dalhari 60cm'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-topads-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 75.000'
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'span4 feed-topads-product__items',
+              onMouseEnter: () => this.showWishlist(6),
+              onMouseLeave: () => this.hideWishlist(6) },
+            this.state.isShowWishlist6 && React.createElement(ButtonWishlist, { checked: false }),
+            React.createElement('img', { src: getImage('ta-6.jpg'), className: 'feed-topads-product__image' }),
+            React.createElement(
+              'div',
+              { className: 'feed-topads-product__details' },
+              React.createElement(
+                'div',
+                { className: 'fs-12 fw-600 lh-17 feed-topads-product__items--name' },
+                React.createElement(
+                  'div',
+                  { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
+                  'Gowok (Kupa) 150cm'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'feed-topads-product__items--price' },
+                React.createElement(
+                  'label',
+                  { className: 'fs-12 fw-600 orange-red' },
+                  'Rp 915.000'
+                )
+              )
+            )
+          )
+        )
+      )
+    );
+  }
 });
 
 

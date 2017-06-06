@@ -1,5 +1,6 @@
 .feed-inspiration {
   border: 1px solid #E0E0E0;
+  border-radius: 3px;
   margin-bottom: 20px; }
   .feed-inspiration__header {
     padding: 16px 10px;

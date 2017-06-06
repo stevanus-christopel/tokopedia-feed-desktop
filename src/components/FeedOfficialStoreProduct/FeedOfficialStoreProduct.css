@@ -9,11 +9,15 @@
 
 .feed-official-store-product {
   background-color: #006030;
-  padding: 8px; }
+  padding: 8px;
+  border-radius: 0 0 3px 3px; }
   .feed-official-store-product__frame {
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    border-radius: 3px; }
   .feed-official-store-product__row {
     border-bottom: 1px solid #E0E0E0; }
+  .feed-official-store-product__banner-image {
+    border-radius: 3px 3px 0 0; }
   .feed-official-store-product .feed-official-store-product__title {
     background-color: #5A7CC2;
     border-radius: 3px 3px 0 0; }
