@@ -6,7 +6,7 @@ var FeedView = React.createClass({
   displayName: 'FeedView',
 
   componentDidMount: function () {
-    fetch('https://3-feature-m-staging.tokopedia.com/graphqli', {
+    fetch('https://m-staging.tokopedia.com/graphqli', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -154,6 +154,103 @@ var ButtonWishlist = React.createClass({
   render: function () {
     return React.createElement('img', { className: 'button-wishlist', alt: '', onClick: () => this.toggleCheck(), src: this.state.checked === true ? getImage('wishlist.png') : getImage('wishlist-empty.png') });
   }
+});
+
+
+
+var FeedEmpty = React.createClass({
+  displayName: 'FeedEmpty',
+
+  render: function () {
+    return React.createElement(
+      'div',
+      { className: 'feed-empty' },
+      React.createElement(
+        'div',
+        { className: 'feed-empty__image' },
+        React.createElement('img', { alt: '', src: getImage('empty-state.png') })
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-empty__text' },
+        React.createElement(
+          'h5',
+          { className: 'fs-14 fw-600' },
+          'Oops, feed masih kosong'
+        ),
+        React.createElement(
+          'p',
+          { className: 'fs-12' },
+          'Segera favoritkan toko yang Anda sukai untuk mendapatkan update produk terbaru disini.'
+        ),
+        React.createElement(
+          'button',
+          { type: 'button', className: 'btn btn-action' },
+          'Cari Toko'
+        )
+      )
+    );
+  }
+});
+
+
+
+var FeedHotList = React.createClass({
+	displayName: 'FeedHotList',
+
+	render: function () {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'div',
+				{ className: 'feed-hot-lists-full' },
+				React.createElement(
+					'div',
+					{ className: 'row-fluid feed-hot-lists__top-banner' },
+					React.createElement('img', { src: getImage('ramadhan-hotlist.png') })
+				),
+				React.createElement(
+					'div',
+					{ className: 'row-fluid feed-hot-lists-showcases' },
+					React.createElement(
+						'div',
+						{ className: 'span6 m-0 feed-hot-lists__items' },
+						React.createElement('img', { src: getImage('sunglasses-hl.png') })
+					),
+					React.createElement(
+						'div',
+						{ className: 'span6 m-0 feed-hot-lists__items' },
+						React.createElement('img', { src: getImage('makeup-hl.png') })
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row-fluid feed-hot-lists-showcases' },
+					React.createElement(
+						'div',
+						{ className: 'span6 m-0 feed-hot-lists__items' },
+						React.createElement('img', { src: getImage('pashmina-hl.png') })
+					),
+					React.createElement(
+						'div',
+						{ className: 'span6 m-0 feed-hot-lists__items' },
+						React.createElement('img', { src: getImage('aksesoris-hl.png') })
+					)
+				)
+			),
+			React.createElement(
+				'div',
+				{ className: 'row-fluid feed-hot-lists__top-banner' },
+				React.createElement('img', { src: getImage('kongkow-hotlist.png'), className: 'pt-20' })
+			),
+			React.createElement(
+				'div',
+				{ className: 'row-fluid feed-hot-lists__top-banner' },
+				React.createElement('img', { src: getImage('tampil-hotlist.png'), className: 'pt-20' })
+			)
+		);
+	}
 });
 
 
@@ -2075,6 +2172,109 @@ var FeedProductDetail = React.createClass({
 
 
 
+
+
+const MAX_PRODUCT_RATING = 5;
+
+var FeedProductDetailItem = React.createClass({
+  displayName: 'FeedProductDetailItem',
+
+  getInitialState: function () {
+    return {
+      image: this.props.image,
+      productName: this.props.productName,
+      productPrice: this.props.productPrice,
+      cashback: this.props.cashback,
+      grosir: this.props.grosir,
+      preorder: this.props.preorder,
+      refund: this.props.refund,
+      rating: this.props.rating
+    };
+  },
+
+  renderStars: function () {
+    let products = [];
+    const target = document.querySelectorAll('.feed-product-detail-items__product-rating');
+
+    for (let i = 0; i < this.props.rating; i++) {
+      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: 'on-' + i, src: getImage('rating-on.png') }));
+    }
+    for (let i = 0; i < MAX_PRODUCT_RATING - this.props.rating; i++) {
+      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: 'off-' + i, src: getImage('rating-off.png') }));
+    }
+
+    return products;
+  },
+
+  render: function () {
+    const isCashback = this.props.cashback == true;
+    const isGrosir = this.props.grosir == true;
+    const isPreOrderAble = this.props.preorder == true;
+    const isRefundAble = this.props.refund == true;
+
+    return React.createElement(
+      'div',
+      { className: 'feed-product-detail-frame' },
+      React.createElement(
+        'div',
+        { className: 'row-fluid relative p-10 feed-product-detail-items' },
+        React.createElement(
+          'div',
+          { className: 'pull-left mr-15 feed-product-detail-items__image-container' },
+          React.createElement(ButtonWishlist, { checked: false }),
+          React.createElement('img', { src: getImage(this.props.image), className: 'feed-product-detail-items__image' })
+        ),
+        React.createElement(
+          'div',
+          { className: 'feed-product-detail-items__detail-container' },
+          React.createElement(
+            'h2',
+            { className: 'fw-600 lh-18 fs-13 mb-5 feed-product-detail-items__product-name' },
+            this.props.productName
+          ),
+          React.createElement(
+            'h2',
+            { className: 'fw-600 lh-18 fs-13 mb-5 orange-red feed-product-detail-items__product-price' },
+            'Rp. ',
+            this.props.productPrice
+          ),
+          React.createElement(
+            'div',
+            { className: 'mb-5 feed-product-detail-items__product-rating' },
+            this.renderStars()
+          ),
+          React.createElement(
+            'div',
+            { className: 'mb-5 feed-product-detail__product-options' },
+            isCashback ? React.createElement(
+              'span',
+              { className: 'fs-10 lh-12 feed-product-detail-items__product-options--green' },
+              'Cashback 14%'
+            ) : '',
+            isGrosir ? React.createElement(
+              'span',
+              { className: 'fs-10 lh-12 ml-5 feed-product-detail-items__product-options--white' },
+              'Grosir'
+            ) : '',
+            isPreOrderAble ? React.createElement(
+              'span',
+              { className: 'fs-10 lh-12 ml-5 feed-product-detail-items__product-options--white' },
+              'PO'
+            ) : '',
+            isRefundAble ? React.createElement(
+              'span',
+              { className: 'ml-5' },
+              React.createElement('img', { src: getImage('refund.png'), className: 'feed-product-detail-items__product-options--refund' })
+            ) : ''
+          )
+        )
+      )
+    );
+  }
+});
+
+
+
 var FeedSearchShop = React.createClass({
   displayName: 'FeedSearchShop',
 
@@ -2099,43 +2299,6 @@ var FeedSearchShop = React.createClass({
           'p',
           { className: 'fs-12' },
           'Segera favoritkan toko yang Anda sukai.'
-        ),
-        React.createElement(
-          'button',
-          { type: 'button', className: 'btn btn-action' },
-          'Cari Toko'
-        )
-      )
-    );
-  }
-});
-
-
-
-var FeedEmpty = React.createClass({
-  displayName: 'FeedEmpty',
-
-  render: function () {
-    return React.createElement(
-      'div',
-      { className: 'feed-empty' },
-      React.createElement(
-        'div',
-        { className: 'feed-empty__image' },
-        React.createElement('img', { alt: '', src: getImage('empty-state.png') })
-      ),
-      React.createElement(
-        'div',
-        { className: 'feed-empty__text' },
-        React.createElement(
-          'h5',
-          { className: 'fs-14 fw-600' },
-          'Oops, feed masih kosong'
-        ),
-        React.createElement(
-          'p',
-          { className: 'fs-12' },
-          'Segera favoritkan toko yang Anda sukai untuk mendapatkan update produk terbaru disini.'
         ),
         React.createElement(
           'button',
@@ -2229,169 +2392,13 @@ var FeedTokopediaStory = React.createClass({
 
 
 
-var FeedHotList = React.createClass({
-	displayName: 'FeedHotList',
-
-	render: function () {
-		return React.createElement(
-			'div',
-			null,
-			React.createElement(
-				'div',
-				{ className: 'feed-hot-lists-full' },
-				React.createElement(
-					'div',
-					{ className: 'row-fluid feed-hot-lists__top-banner' },
-					React.createElement('img', { src: getImage('ramadhan-hotlist.png') })
-				),
-				React.createElement(
-					'div',
-					{ className: 'row-fluid feed-hot-lists-showcases' },
-					React.createElement(
-						'div',
-						{ className: 'span6 m-0 feed-hot-lists__items' },
-						React.createElement('img', { src: getImage('sunglasses-hl.png') })
-					),
-					React.createElement(
-						'div',
-						{ className: 'span6 m-0 feed-hot-lists__items' },
-						React.createElement('img', { src: getImage('makeup-hl.png') })
-					)
-				),
-				React.createElement(
-					'div',
-					{ className: 'row-fluid feed-hot-lists-showcases' },
-					React.createElement(
-						'div',
-						{ className: 'span6 m-0 feed-hot-lists__items' },
-						React.createElement('img', { src: getImage('pashmina-hl.png') })
-					),
-					React.createElement(
-						'div',
-						{ className: 'span6 m-0 feed-hot-lists__items' },
-						React.createElement('img', { src: getImage('aksesoris-hl.png') })
-					)
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'row-fluid feed-hot-lists__top-banner' },
-				React.createElement('img', { src: getImage('kongkow-hotlist.png'), className: 'pt-20' })
-			),
-			React.createElement(
-				'div',
-				{ className: 'row-fluid feed-hot-lists__top-banner' },
-				React.createElement('img', { src: getImage('tampil-hotlist.png'), className: 'pt-20' })
-			)
-		);
-	}
-});
-
-
-
-var FeedTopAdsShop = React.createClass({
-  displayName: 'FeedTopAdsShop',
-
-  render: function () {
-    return React.createElement(
-      'div',
-      { className: 'mb-20 feed-topads-shop' },
-      React.createElement(
-        'div',
-        { className: 'fs-12 pb-10 feed-topads-shop__header' },
-        React.createElement(
-          'div',
-          { className: 'pb-10 feed-topads-shop__text-promoted' },
-          'Promoted ',
-          React.createElement('img', { alt: '', src: getImage('icon-info.png') })
-        ),
-        React.createElement(
-          'div',
-          { className: 'va-middle inline-block feed-topads-shop__seller-photo' },
-          React.createElement('img', { src: getImage('tokopedia-avatar-square.png') })
-        ),
-        React.createElement(
-          'div',
-          { className: 'va-middle feed-topads-shop__seller-activity' },
-          React.createElement(
-            'span',
-            { className: 'fw-600' },
-            'Makeup Forever '
-          ),
-          React.createElement(
-            'div',
-            { className: 'fs-11 feed-topads-shop__seller-activity--time' },
-            'Bukan Produk Biasa'
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'feed-topads-shop__seller-favorite' },
-          React.createElement(
-            'button',
-            { className: 'btn' },
-            React.createElement('img', { alt: '', src: getImage('icon-plus.png') }),
-            'Favoritkan'
-          )
-        )
-      ),
-      React.createElement(
-        'div',
-        { className: 'feed-topads-shop__content' },
-        React.createElement(
-          'div',
-          { className: 'row-fluid' },
-          React.createElement(
-            'div',
-            { className: 'span6 feed-topads-shop__items' },
-            React.createElement('img', { src: getImage('tas-1.jpg'), className: 'feed-topads-shop__image feed-topads-shop__image--big' })
-          ),
-          React.createElement(
-            'div',
-            { className: 'span6 feed-topads-shop__showcases' },
-            React.createElement(
-              'div',
-              { className: 'pb-5 row-fluid' },
-              React.createElement(
-                'div',
-                { className: 'span6 feed-topads-shop__items' },
-                React.createElement('img', { src: getImage('tas-2.jpg'), className: 'feed-topads-shop__image' })
-              ),
-              React.createElement(
-                'div',
-                { className: 'span6 feed-topads-shop__items' },
-                React.createElement('img', { src: getImage('tas-3.jpg'), className: 'feed-topads-shop__image' })
-              )
-            ),
-            React.createElement(
-              'div',
-              { className: 'row-fluid' },
-              React.createElement(
-                'div',
-                { className: 'span6 feed-topads-shop__items' },
-                React.createElement('img', { src: getImage('tas-4.jpg'), className: 'feed-topads-shop__image' })
-              ),
-              React.createElement(
-                'div',
-                { className: 'span6 feed-topads-shop__items' },
-                React.createElement('img', { src: getImage('tas-5.jpg'), className: 'feed-topads-shop__image' })
-              )
-            )
-          )
-        )
-      )
-    );
-  }
-});
-
-
-
 
 var FeedTopAdsProduct = React.createClass({
   displayName: 'FeedTopAdsProduct',
 
   getInitialState: function () {
     return {
+      isShowPopOver: false,
       isShowWishlist1: false,
       isShowWishlist2: false,
       isShowWishlist3: false,
@@ -2468,6 +2475,17 @@ var FeedTopAdsProduct = React.createClass({
         break;
     }
   },
+  togglePopOver: function () {
+    if (!this.state.isShowPopover) {
+      document.onclick = this.togglePopover;
+    } else {
+      document.onclick = null;
+    }
+
+    this.setState({
+      isShowPopover: !this.state.isShowPopover
+    });
+  },
   render: function () {
     return React.createElement(
       'div',
@@ -2476,7 +2494,27 @@ var FeedTopAdsProduct = React.createClass({
         'div',
         { className: 'feed-topads-product__header' },
         'Promoted',
-        React.createElement('img', { alt: '', src: getImage('icon-info.png') })
+        React.createElement('img', { className: 'feed-topads-product__image-promoted', src: this.state.isShowPopover ? getImage('icon-info-ijo.png') : getImage('icon-info.png'), onClick: () => this.togglePopOver() }),
+        this.state.isShowPopover === true && React.createElement(
+          'div',
+          { className: 'p-20 relative feed-topads-product__popover' },
+          React.createElement('img', { className: 'feed-topads-product__popover--arrow', alt: '', src: getImage('arrow-left.png') }),
+          React.createElement(
+            'h2',
+            { className: 'fs-13 fw-normal mb-15 feed-topads-product__popover-text' },
+            'Promosi oleh TopAds yang muncul berdasarkan minat Anda.'
+          ),
+          React.createElement(
+            'div',
+            { className: 'feed-topads-product__popover-image-container' },
+            React.createElement('img', { src: getImage('announcement.png'), className: 'feed-topads-product__popover-image' })
+          ),
+          React.createElement(
+            'button',
+            { className: 'btn btn-action fw-normal feed-topads-product__popover-button' },
+            'Baca Selengkapnya'
+          )
+        )
       ),
       React.createElement(
         'div',
@@ -2676,100 +2714,131 @@ var FeedTopAdsProduct = React.createClass({
 
 
 
-
-
-const MAX_PRODUCT_RATING = 5;
-
-var FeedProductDetailItem = React.createClass({
-  displayName: 'FeedProductDetailItem',
+var FeedTopAdsShop = React.createClass({
+  displayName: 'FeedTopAdsShop',
 
   getInitialState: function () {
     return {
-      image: this.props.image,
-      productName: this.props.productName,
-      productPrice: this.props.productPrice,
-      cashback: this.props.cashback,
-      grosir: this.props.grosir,
-      preorder: this.props.preorder,
-      refund: this.props.refund,
-      rating: this.props.rating
+      isShowPopOver: false
     };
   },
-
-  renderStars: function () {
-    let products = [];
-    const target = document.querySelectorAll('.feed-product-detail-items__product-rating');
-
-    for (let i = 0; i < this.props.rating; i++) {
-      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: 'on-' + i, src: getImage('rating-on.png') }));
-    }
-    for (let i = 0; i < MAX_PRODUCT_RATING - this.props.rating; i++) {
-      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: 'off-' + i, src: getImage('rating-off.png') }));
+  togglePopOver: function () {
+    if (!this.state.isShowPopover) {
+      document.onclick = this.togglePopover;
+    } else {
+      document.onclick = null;
     }
 
-    return products;
+    this.setState({
+      isShowPopover: !this.state.isShowPopover
+    });
   },
 
   render: function () {
-    const isCashback = this.props.cashback == true;
-    const isGrosir = this.props.grosir == true;
-    const isPreOrderAble = this.props.preorder == true;
-    const isRefundAble = this.props.refund == true;
-
     return React.createElement(
       'div',
-      { className: 'feed-product-detail-frame' },
+      { className: 'mb-20 feed-topads-shop' },
       React.createElement(
         'div',
-        { className: 'row-fluid relative p-10 feed-product-detail-items' },
+        { className: 'fs-12 pb-10 feed-topads-shop__header' },
         React.createElement(
           'div',
-          { className: 'pull-left mr-15 feed-product-detail-items__image-container' },
-          React.createElement(ButtonWishlist, { checked: false }),
-          React.createElement('img', { src: getImage(this.props.image), className: 'feed-product-detail-items__image' })
+          { className: 'pb-10 feed-topads-shop__text-promoted' },
+          'Promoted',
+          React.createElement('img', { className: 'feed-topads-shop__image-promoted', src: this.state.isShowPopover ? getImage('icon-info-ijo.png') : getImage('icon-info.png'), onClick: () => this.togglePopOver() }),
+          this.state.isShowPopover === true && React.createElement(
+            'div',
+            { className: 'p-20 feed-topads-shop__popover' },
+            React.createElement('img', { className: 'feed-topads-shop__popover--arrow', alt: '', src: getImage('arrow-left.png') }),
+            React.createElement(
+              'h2',
+              { className: 'fs-13 fw-normal mb-15 feed-topads-shop__popover-text' },
+              'Promosi oleh TopAds yang muncul berdasarkan minat Anda.'
+            ),
+            React.createElement(
+              'div',
+              { className: 'feed-topads-shop__popover-image-container' },
+              React.createElement('img', { src: getImage('announcement.png'), className: 'feed-topads-shop__popover-image' })
+            ),
+            React.createElement(
+              'button',
+              { className: 'btn btn-action fw-normal feed-topads-shop__popover-button' },
+              'Baca Selengkapnya'
+            )
+          )
         ),
         React.createElement(
           'div',
-          { className: 'feed-product-detail-items__detail-container' },
+          { className: 'va-middle inline-block feed-topads-shop__seller-photo' },
+          React.createElement('img', { src: getImage('tokopedia-avatar-square.png') })
+        ),
+        React.createElement(
+          'div',
+          { className: 'va-middle feed-topads-shop__seller-activity' },
           React.createElement(
-            'h2',
-            { className: 'fw-600 lh-18 fs-13 mb-5 feed-product-detail-items__product-name' },
-            this.props.productName
-          ),
-          React.createElement(
-            'h2',
-            { className: 'fw-600 lh-18 fs-13 mb-5 orange-red feed-product-detail-items__product-price' },
-            'Rp. ',
-            this.props.productPrice
-          ),
-          React.createElement(
-            'div',
-            { className: 'mb-5 feed-product-detail-items__product-rating' },
-            this.renderStars()
+            'span',
+            { className: 'fw-600' },
+            'Makeup Forever '
           ),
           React.createElement(
             'div',
-            { className: 'mb-5 feed-product-detail__product-options' },
-            isCashback ? React.createElement(
-              'span',
-              { className: 'fs-10 lh-12 feed-product-detail-items__product-options--green' },
-              'Cashback 14%'
-            ) : '',
-            isGrosir ? React.createElement(
-              'span',
-              { className: 'fs-10 lh-12 ml-5 feed-product-detail-items__product-options--white' },
-              'Grosir'
-            ) : '',
-            isPreOrderAble ? React.createElement(
-              'span',
-              { className: 'fs-10 lh-12 ml-5 feed-product-detail-items__product-options--white' },
-              'PO'
-            ) : '',
-            isRefundAble ? React.createElement(
-              'span',
-              { className: 'ml-5' },
-              React.createElement('img', { src: getImage('refund.png'), className: 'feed-product-detail-items__product-options--refund' })
-            ) : ''
+            { className: 'fs-11 feed-topads-shop__seller-activity--time' },
+            'Bukan Produk Biasa'
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'feed-topads-shop__seller-favorite' },
+          React.createElement(
+            'button',
+            { className: 'btn' },
+            React.createElement('img', { alt: '', src: getImage('icon-plus.png') }),
+            'Favoritkan'
+          )
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-topads-shop__content' },
+        React.createElement(
+          'div',
+          { className: 'row-fluid' },
+          React.createElement(
+            'div',
+            { className: 'span6 feed-topads-shop__items' },
+            React.createElement('img', { src: getImage('tas-1.jpg'), className: 'feed-topads-shop__image feed-topads-shop__image--big' })
+          ),
+          React.createElement(
+            'div',
+            { className: 'span6 feed-topads-shop__showcases' },
+            React.createElement(
+              'div',
+              { className: 'pb-5 row-fluid' },
+              React.createElement(
+                'div',
+                { className: 'span6 feed-topads-shop__items' },
+                React.createElement('img', { src: getImage('tas-2.jpg'), className: 'feed-topads-shop__image' })
+              ),
+              React.createElement(
+                'div',
+                { className: 'span6 feed-topads-shop__items' },
+                React.createElement('img', { src: getImage('tas-3.jpg'), className: 'feed-topads-shop__image' })
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'row-fluid' },
+              React.createElement(
+                'div',
+                { className: 'span6 feed-topads-shop__items' },
+                React.createElement('img', { src: getImage('tas-4.jpg'), className: 'feed-topads-shop__image' })
+              ),
+              React.createElement(
+                'div',
+                { className: 'span6 feed-topads-shop__items' },
+                React.createElement('img', { src: getImage('tas-5.jpg'), className: 'feed-topads-shop__image' })
+              )
+            )
           )
         )
       )

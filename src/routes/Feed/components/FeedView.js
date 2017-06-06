@@ -18,7 +18,7 @@ import FeedTokopediaStory from '../../../components/FeedTokopediaStory'
 
 var FeedView = React.createClass({
   componentDidMount: function(){
-    fetch('https://3-feature-m-staging.tokopedia.com/graphqli', {
+    fetch('https://m-staging.tokopedia.com/graphqli', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',

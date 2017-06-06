@@ -35,6 +35,7 @@
 	<link rel="stylesheet" href="./css/dv3-sprite.css">
 	<link rel="stylesheet" href="./css/dv3-tab.css">
 	<link rel="stylesheet" href="./css/dv3.-admin-profile.css">
+	<link rel="stylesheet" href="./css/feed-detail.css">
 	<!--- <link rel="stylesheet" href="http://new.sh-steve.ndvl/css/dv3-font-tokopedia-20140421-min.css?v=1495506466" type="text/css"/> -->
 	<!--[if lt IE 9]>
 <script src="http://sh-steve.ndvl/scripts/html5shiv.min.js?v=1484550701"></script>
@@ -337,179 +338,12 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<input type="hidden" name="token" id="token" value="7f4f37b6847f2906db53d5caa9e4beb3">
-				<div class="sidebar-admin ">
-					<div id="accounts_client_host" value="http://accounts.st-sonny.ndvl:9900">
-					</div>
-					<div id="wallet_host" value="https://wallet-alpha.tokopedia.com">
-					</div>
-					<div id="side-profile" class="top-admin deposit-notif-parent">
-						<div class="clear-b display-table w-100p mb-10">
-							<div class="span3 pull-left mt-20 mb-5">
-								<a href="http://new.sh-steve.ndvl/people/34222"><img class="imgprofile img-35 img-200-circle" src="http://sh-steve.ndvl/img/cache/100-square/default_v3-usrnophoto1.png"
-									    alt="Davin Iskandar"></a>
-							</div>
-							<div class="span9 mt-15">
-								<span class="small-gray pull-left ml-0 word-break lh-40 ellipsis font-bold" style="display: block;width: 110px;"><a href="http://new.sh-steve.ndvl/people/34222?ref=accside">Davin Iskandar</a></span>
-							</div>
-						</div>
-					</div>
-					<div class="top-admin deposit-notif-container">
-						<div class="relative">
-							<a href="http://new.sh-steve.ndvl/deposit.pl?ref=dside" class="deposit-link-sidebar info-tooltip" title="Saldo Tokopedia"
-							    data-toggle="tooltip" data-original-title="Saldo Tokopedia">
-								<div class="span2">
-									<i class="icon-saldo-balance"></i>
-								</div>
-								<div class="span8 fs-11 ellipsis font-bold" id='include-deposit'>
-								</div>
-								<div class="white deposit-notif deposit-notif-saldo ellipsis pull-right display-block">
-								</div>
-							</a>
-						</div>
-						<div class="relative clear-b hide" id="toppoints-box">
-							<a href="http://new.sh-steve.ndvl/lp.pl?ref=topside" class="deposit-link-sidebar info-tooltip" title="TopPoints" data-toggle="tooltip"
-							    data-original-title="TopPoints">
-								<div class="span2">
-									<i class="icon-toppoints-balance"></i>
-								</div>
-								<div class="span8 fs-11 ellipsis font-bold" id='include-lp'>
-								</div>
-								<div class="white lp-notif deposit-notif-toppoint ellipsis pull-right display-block">
-								</div>
-							</a>
-						</div>
-						<div id="tokocash-balance-container" class="clear-b pb-0 mb-5 pt-0">
-						</div>
-						<div class="clear-b">
-							<a id="topup-saldo-button" href="https://pulsa.tokopedia.com/saldo/?utm_source=desktop&amp;utm_medium=link&amp;utm_campaign=top%20up%20saldo"
-							    class="topup-saldo-button btn-second btn-icon mt-5 mb-5 text-center none"><span>Top Up Saldo</span></a>
-						</div>
-						<div class="clear-b pb-10 pt-10">
-							<hr class="mt-0 mb-5" />
-						</div>
-						<div class="clear-b">
-							<p class="muted mt-0 mb-5 fs-12">
-								Anda belum memiliki toko
-							</p>
-							<a href="http://new.sh-steve.ndvl/myshop.pl?ref=shside" class="btn btn-action btn-small btn-block mb-10">Buka Toko</a>
-							<a
-							    href="https://seller.tokopedia.com?ref=lsside" class="" target="_blank">Pelajari lebih lanjut di seller center</a>
-						</div>
-						<div class="clear-b pb-10 pt-10">
-							<hr class="mt-0 mb-5" />
-						</div>
-					</div>
-					<ul id="accordion-admin" class="accordion left-nav-admin ">
-						<li id="side-inbox" class="accordion-group">
-							<div class="accordion-heading head">
-								<span>Kotak Masuk</span>
-							</div>
-							<div id="accordion-inbox" class="accordion-body collapse in">
-								<div class="accordion-inner inbox-unread-container">
-									<ul>
-										<li><a href="http://new.sh-steve.ndvl/inbox-message.pl?ref=msside">Pesan&nbsp;<span class='msg-unread-counter'></span></a></li>
-										<li><a href="http://new.sh-steve.ndvl/inbox-talk.pl?ref=tlside">Diskusi Produk&nbsp;<span class='talk-unread-counter'></span></a></li>
-										<li><a href="http://new.sh-steve.ndvl/inbox-reputation.pl?ref=rvside">Ulasan&nbsp;<span class='reputation-unread-counter'></span></a></li>
-										<li><a href="http://new.sh-steve.ndvl/inbox-ticket.pl?ref=ccside">Layanan Pengguna&nbsp;<span class='ticket-unread-counter'></span></a></li>
-										<li><a href="http://new.sh-steve.ndvl/resolution-center.pl?ref=resside">Pusat Resolusi&nbsp;<span class='res-buyer-unread-counter'></span></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="clear-b p-15 pt-10 pb-10">
-								<hr class="mt-0 mb-5">
-							</div>
-						</li>
-						<li class="accordion-group">
-							<div class="accordion-heading head">
-								<span>Profil Saya</span>
-							</div>
-							<div id="accordion-profile" class="accordion-body collapse in">
-								<div class="accordion-inner inbox-unread-container">
-									<ul>
-										<li><a href="http://new.sh-steve.ndvl/tx_payment_confirm.pl?ref=pcside">Pembelian<strong><span class='purchase-count-total'></span></strong></a></li>
-										<li><a href="http://new.sh-steve.ndvl/?tab=wishlist&ref=wside">Wishlist</a></li>
-										<li><a href="http://new.sh-steve.ndvl/fav-shop.pl?ref=fside">Toko Favorit</a></li>
-										<li><a href="http://new.sh-steve.ndvl/people/34222/edit?ref=setside">Pengaturan</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="clear-b p-15 pt-10 pb-10">
-								<hr class="mt-0 mb-5">
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="maincontent-admin maincontent-home">
-					<div class="row-fluid">
-						<div class="promo-banner__container pull-left">
-							<h1 class="pull-left mb-15 w-200">Promo</h1>
-							<a href="http://new.sh-steve.ndvl/promo" target="blank" class="fs-12 pull-right">Lihat Semua</a>
-						</div>
-						<div class="widget-digital__container pull-left">
-							<h1 class="pull-left mb-15">Pembayaran & Top Up</h1>
-							<a href="http://new.sh-steve.ndvl/pulsa/" target="blank" class="fs-12 pull-right">Lihat Semua</a>
-							<!-- BEGIN WIDGET PULSA KAI -->
-							<div id="widget-dmw" data-utm-source="desktop" data-utm-medium="widget" data-utm-campaign="home_after" style="display: inline-block; width: 100%;">
-							</div>
-							<!-- END WIDGET PULSA KAI -->
-							<!--<div class="gimmick-after mt-20 mb-20"><div class="row-fluid"><div class="pull-left mr-15 none after" id="gimmick-kai" ></div><div class="pull-left" id="gimmick-pulsa" ><div class="gimmick gimmick-form relative gimmick-no-hover"><div class="gimmick-form-container relative after"><div class="pull-left after" id="gimmick-pulsa-icon-container"><a href="http://pulsa-api.local:9001/recharge/frontend" id="gimmick-pulsa-icon" target="_blank"><img src="http://sh-steve.ndvl/img/gimmick_pulsa.png" class="pull-left ml-5" width="70"></a></div><div class="pull-left after" id="recharge-form-wrap"><p class="font-bold after" id="recharge-gimmick-title">Pulsa &amp; Paket Data</p><div class="pull-left pulsa-form"><form class="after" id="recharge_form" action="http://pulsa-api.local:9001/recharge/frontend" method="GET"><input type="hidden" name="operator_id" id="recharge_operator_id" /><input type="hidden" name="is_promo" id="recharge_is_promo" value="0" /><input type="hidden" name="action" value="init_data" /><input type="hidden" name="utm_source" value="desktop" /><input type="hidden" name="utm_medium" value="widget" /><div class="relative pull-left mr-15"><input type="tel" name="client_number" class="form-control after" id="recharge_client_number" onkeypress="return isNumberKey(event)" maxlength="14" placeholder="Masukkan Nomor Telepon"><img alt="" class="absolute after" id="recharge_operator_image"><div class="pulsa-error-tooltip" id="recharge-number-tooltip"></div></div><div id="nominal-select-wrapper" class="relative pull-left after"><div class="nominal-result-div"><ul class="inline after"><li id="nominal_result" class="after nominal-result-toggle pull-left ellipsis"></li><li class="mt-5 pull-right"><i class="icon-caret-down"></i></li></ul></div><select name="product_id" id="recharge_product_id" class="after	nominal-select absolute" disabled="disabled"><option value="" disabled="disabled" selected="selected">Pilih Nominal</option></select><div class="pulsa-error-tooltip" id="recharge-product-tooltip"></div></div><button type="submit" class="recharge-submit-btn pull-left btn bold lh-18 pl-20 pr-20 none" id="recharge-after-btn">Beli</button><button type="submit" class="recharge-submit-btn btn pull-left w-120" id="recharge-before-btn">Beli</button></form></div></div></div></div></div></div></div>-->
-							<script>
-								/*var recharge_choose_product         = '<option value="" disabled="disabled" selected="selected">' + "Pilih Nominal" + '</option>';var recharge_url                    = "http://pulsa-api.local:9001/recharge/frontend";var recharge_operator_image_folder  = "http://sh-steve.ndvl/img/recharge/operator/ ";recharge_operator_image_folder      = recharge_operator_image_folder.trim();var recharge_operator_url           = "http://pulsa-api.local:9001/recharge/operator/list";var recharge_product_url            = "http://pulsa-api.local:9001/recharge/product/list";var recharge_prefix_url             = "http://pulsa-api.local:9001/recharge/prefix/list";var recharge_last_order_url         = "http://pulsa-api.local:9001/recharge/frontend/ajax/getlastorder";var recharge_state                  = "after";*/
-							</script>
-						</div>
-					</div>
-					<div class="row-fluid">
-						<div class="row-fluid pull-left content-container mt-20">
-							<ul class="horizontal-tab-nav" id="tab-navigation">
-								<li id="b-prod-fav" class="active"><a href="http://new.sh-steve.ndvl/"><i class="sprite-tab sprite-tab-feed mr-5"></i>Feed</a></li>
-								<li id="b-prod-wish" class=""><a href="http://new.sh-steve.ndvl/?tab=wishlist&nref=wtab" id="tab-nav-inbox"><i class="sprite-tab sprite-tab-wishlist mr-5"></i>Wishlist</a></li>
-								<li id="b-hotlist" class=""><a href="http://new.sh-steve.ndvl/hotlist?nref=htab" id="tab-nav-inbox"><i class="sprite-tab sprite-tab-hotlist mr-5"></i>Hot List</a></li>
-								<li id="b-shop-fav" class=""><a href="http://new.sh-steve.ndvl/fav-shop.pl" id="tab-nav-inbox"><i class="sprite-tab sprite-tab-favorite mr-5"></i>Toko Favorit</a></li>
-								<li id="b-official-store" class=""><a href="http://new.sh-steve.ndvl/?tab=official" id="tab-nav-inbox"><i class="sprite-tab sprite-tab-official mr-5"></i>Official Store</a></li>
-								<li id="b-prod-last" class=""><a href="http://new.sh-steve.ndvl/?tab=recent" id="tab-nav-inbox"><i class="sprite-tab sprite-tab-recent mr-5"></i>Terakhir Dilihat</a></li>
-							</ul>
-							<div class="row-fluid clear-b mt-30 mb-40 shop-fav-empty hide">
-								<div class="span12">
-									<div class="pull-left data-empty_img">
-										<img src="http://sh-steve.ndvl/img/icon-toped-find-prod.png" class="w-150"></i>
-									</div>
-									<div class="pull-left data-empty_text">
-										<div class="fs-15 fw-600 mt-5">
-											Lihat produk dari toko favorit Anda di sini
-										</div>
-										<div class="fs-13 mt-5">
-											Segera favoritkan toko yang Anda sukai!
-										</div>
-										<div class="mt-10 pull-left">
-											<img src="../img/klik@2x.png" alt="Click me please" class="w-120">
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- TopAds Start -->
-							<div class="ta-inventory" id="promo" trigger="complete" is_userinfo_rcmd="true" src="fav_product" device="desktop" user_id="34222"
-							    ad_url="http://192.168.100.160:8765" tkpd_url="http://new.sh-steve.ndvl" tome_url="http://192.168.100.160:3002" template="home">
-							</div>
-							<div class="ta-inventory" id="shop-ads" trigger="complete" is_userinfo_rcmd="true" ep="shop" src="fav_product" device="desktop"
-							    user_id="34222" ad_url="http://192.168.100.160:8765" tkpd_url="http://new.sh-steve.ndvl" tome_url="http://192.168.100.160:3002"
-							    template="home">
-							</div>
-							<div class="ta-inventory" id="product-ads" trigger="complete" is_userinfo_rcmd="true" ep="product" src="fav_product" device="desktop"
-							    user_id="34222" ad_url="http://192.168.100.160:8765" tkpd_url="http://new.sh-steve.ndvl" tome_url="http://192.168.100.160:3002"
-							    template="home">
-							</div>
-							<!-- TopAds End -->
-							<div id="fav-product-grid" class="grid-shop-product promo-nf ml-20 promo-sponsor-top">
-							</div>
-							<div id="r3-nodata" class="ml-20">
-							</div>
+					
 
-							<div id='feed-root'>
-							</div>
+					<div id='feed-root'>
 
-						</div>
 					</div>
-				</div>
+
 			</div>
 			<div class="hopscotch-text hide">
 				<span class="btn-next">Berikutnya</span><span class="btn-prev">Sebelumnya</span><span class="btn-done">Selesai</span>
