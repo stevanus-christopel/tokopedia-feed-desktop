@@ -12,7 +12,7 @@ $color-border-grey: #E0E0E0;
 		font-size: 12px;
 	}
 	&__text-promoted {
-		& img {
+		.feed-topads-shop__image-promoted {
 			height: 13px;
 			position: relative;
 			bottom: 2px;
@@ -72,7 +72,48 @@ $color-border-grey: #E0E0E0;
 		}
 	}
 
-	
+	&__popover {
+		position: absolute;
+		z-index: 10;
+		background-color: #FFFFFF;
+		border: 1px solid $color-border-grey;
+		border-radius: 3px;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+		width: 340px;
+		height: 94px;
+		margin-left: 90px;
+    margin-top: -74px;
+	}
+
+	&__popover-text {
+		line-height: 22px;
+		color: rgba(0, 0, 0, 0.54);
+		width: 214px;
+		height: 44px;
+	}
+
+	&__popover-button {
+		width: 200px;
+		height: 40px;
+	}
+
+	&__popover-image {
+		width: 102px;
+		height: 66px;
+	}
+
+	&__popover-image-container {
+		position: absolute;
+    right: 20px;
+    top: 35px;
+	}
+
+	&__popover--arrow{
+		position: absolute;
+		width: 15px;
+    left: -13px;
+    top: 37%;
+	}
 }
 .feed-topads-shop__content div {
 	.feed-topads-shop {

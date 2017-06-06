@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "global": "^4.3.2",
+    "graphql": "^0.10.1",
+    "graphql-tag": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^6.1.2",

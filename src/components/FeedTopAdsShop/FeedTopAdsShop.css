@@ -6,7 +6,7 @@
     color: rgba(0, 0, 0, 0.38); }
   .feed-topads-shop__header {
     font-size: 12px; }
-  .feed-topads-shop__text-promoted img {
+  .feed-topads-shop__text-promoted .feed-topads-shop__image-promoted {
     height: 13px;
     position: relative;
     bottom: 2px;
@@ -48,6 +48,38 @@
     border-radius: 2px; }
     .feed-topads-shop__image--big {
       width: 264px; }
+  .feed-topads-shop__popover {
+    position: absolute;
+    z-index: 10;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    width: 340px;
+    height: 94px;
+    margin-left: 90px;
+    margin-top: -74px; }
+  .feed-topads-shop__popover-text {
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.54);
+    width: 214px;
+    height: 44px; }
+  .feed-topads-shop__popover-button {
+    width: 200px;
+    height: 40px; }
+  .feed-topads-shop__popover-image {
+    width: 102px;
+    height: 66px; }
+  .feed-topads-shop__popover-image-container {
+    position: absolute;
+    right: 20px;
+    top: 35px; }
+  .feed-topads-shop__popover--arrow {
+    position: absolute;
+    width: 15px;
+    left: -13px;
+    top: 37%; }
 
 .feed-topads-shop__content div .feed-topads-shop__showcases {
   margin-left: 8px; }

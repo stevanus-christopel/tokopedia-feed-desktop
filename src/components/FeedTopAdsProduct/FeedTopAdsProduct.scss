@@ -1,20 +1,22 @@
+$color-border-grey: #E0E0E0;
+
 .feed-topads-product {
-	border: 1px solid #E0E0E0;
+	border: 1px solid $color-border-grey;
 	border-radius: 3px;
 	margin-bottom: 20px;
 
 	&__header {
 		padding: 16px 10px;
-		border-bottom: 1px solid #E0E0E0;
+		border-bottom: 1px solid $color-border-grey;
         font-size: 12px;
         color: rgba(0, 0, 0, 0.38);
 
-        & img {
-            height: 13px;
-            position: relative;
-            bottom: 2px;
-            left: 5px;
-        }
+        .feed-topads-product__image-promoted {
+			height: 13px;
+			position: relative;
+			bottom: 2px;
+			left: 5px;
+		}
 	}
 
 	&__content {
@@ -33,10 +35,10 @@
 		position: relative;
 		margin: auto 0;
         padding: 8px;
-		border-right: 1px solid #E0E0E0;
+		border-right: 1px solid $color-border-grey;
 
         &--border-bottom {
-            border-bottom: 1px solid #E0E0E0;
+            border-bottom: 1px solid $color-border-grey;
         }
 
 		&:last-child {
@@ -47,10 +49,58 @@
 	&__details {
 		margin-top: 6px;
 	}
+
+	&__popover {
+		position: absolute;
+		z-index: 10;
+		background-color: #FFFFFF;
+		border: 1px solid $color-border-grey;
+		border-radius: 3px;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+		width: 340px;
+		height: 94px;
+		margin-left: 90px;
+		margin-top: -74px;
+	}
+
+	&__popover-text {
+		line-height: 22px;
+		color: rgba(0, 0, 0, 0.54);
+		width: 214px;
+		height: 44px;
+	}
+
+	&__popover-button {
+		width: 200px;
+		height: 40px;
+	}
+
+	&__popover-image {
+		width: 102px;
+		height: 66px;
+	}
+
+	&__popover-image-container {
+		position: absolute;
+    	right: 20px;
+    	top: 35px;
+	} 
+
+	&__popover--arrow{
+		position: absolute;
+		width: 15px;
+    	left: -13px;
+    	top: 37%;
+	}
+
 }
 
 .detail {
 	&__name {
 		height: 34px;
 	}
+}
+
+	.feed-topads-product{ 
+	
 }

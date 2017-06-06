@@ -7,6 +7,7 @@ import ButtonWishlist from '../ButtonWishlist';
 var FeedTopAdsProduct = React.createClass({
   getInitialState: function() {
     return {
+      isShowPopOver: false,
       isShowWishlist1: false,
       isShowWishlist2: false,
       isShowWishlist3: false,
@@ -83,12 +84,33 @@ var FeedTopAdsProduct = React.createClass({
         break;
     }
   },
+  togglePopOver: function() {
+    if(!this.state.isShowPopover) {
+      document.onclick = this.togglePopover;
+    } else {
+      document.onclick = null;
+    }
+
+    this.setState({
+      isShowPopover: !this.state.isShowPopover
+    });
+  },
   render: function() {
     return (
         <div className='feed-topads-product'>
-            <div className='feed-topads-product__header'>
-                Promoted
-                <img alt='' src={getImage('icon-info.png')} />
+            <div className='feed-topads-product__header'>Promoted
+                <img className='feed-topads-product__image-promoted' src={this.state.isShowPopover? getImage('icon-info-ijo.png') : getImage('icon-info.png') } onClick={() => this.togglePopOver()}/>
+                {
+                  this.state.isShowPopover === true &&
+                  <div className='p-20 relative feed-topads-product__popover'>
+                    <img className='feed-topads-product__popover--arrow' alt='' src={getImage('arrow-left.png')} />
+                    <h2 className='fs-13 fw-normal mb-15 feed-topads-product__popover-text'>Promosi oleh TopAds yang muncul berdasarkan minat Anda.</h2>
+                    <div className='feed-topads-product__popover-image-container'>
+                      <img src={getImage('announcement.png')} className='feed-topads-product__popover-image'/>
+                    </div>
+                    <button className='btn btn-action fw-normal feed-topads-product__popover-button'>Baca Selengkapnya</button>
+                  </div>
+                }
             </div>
 
             <div className='feed-topads-product__content'>					
