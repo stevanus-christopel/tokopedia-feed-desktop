@@ -7,6 +7,7 @@
 .feed__right-sidebar {
   display: inline-block;
   padding: 20px; }
+
 .feed__title{background-color:#add8e6;padding:10px}
 .feed-detail__main-content {
   display: inline-block;
@@ -23,8 +24,10 @@
   display: inline-block;
   padding: 20px; }
   .feed-detail__left-sidebar img {
-    width: 7px;
-    margin-right: 5px; }
+    position: relative;
+    bottom: 1px;
+    height: 12px;
+    margin-right: 12px; }
 
 button.button-share,
 .btn.button-share,

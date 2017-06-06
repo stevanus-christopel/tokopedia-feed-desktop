@@ -13,5 +13,7 @@
   display: inline-block;
   padding: 20px; }
   .feed-detail__left-sidebar img {
-    width: 7px;
-    margin-right: 5px; }
+    position: relative;
+    bottom: 1px;
+    height: 12px;
+    margin-right: 12px; }

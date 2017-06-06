@@ -9,7 +9,7 @@ import FeedDetailView from './routes/FeedDetailView';
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route exact path="/" component={Feed} />
+      <Route exact path="/" component={FeedDetailView} />
       <Route path="/detail" component={FeedDetailView} />
     </Switch>
   </Router>,

@@ -66,11 +66,15 @@ var FeedDetailView = React.createClass({
       React.createElement(
         'div',
         { className: 'mr-40 feed-detail__left-sidebar' },
-        React.createElement('img', { className: 'feed-detail__back-icon', src: './img/arrow-hijau.png', alt: '' }),
         React.createElement(
-          'span',
-          { className: 'fs-12 va-middle green' },
-          'Kembali ke Feed'
+          'a',
+          { href: 'javascript:window.history.back()' },
+          React.createElement('img', { className: 'feed-detail__back-icon', src: getImage('arrow-hijau.png'), alt: '' }),
+          React.createElement(
+            'span',
+            { className: 'fs-12 va-middle green' },
+            'Kembali ke Feed'
+          )
         )
       ),
       React.createElement(
