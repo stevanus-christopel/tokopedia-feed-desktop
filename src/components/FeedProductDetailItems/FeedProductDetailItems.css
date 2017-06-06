@@ -1,0 +1,27 @@
+.feed-product-detail-items__image {
+  width: 130px;
+  border: 1px solid #E0E0E0; }
+
+.feed-product-detail-items__product-name {
+  color: rgba(0, 0, 0, 0.7); }
+
+.feed-product-detail-items__product-options--green {
+  border-radius: 2px;
+  background-color: #42B549;
+  color: #FFFFFF;
+  padding: 2px 4px;
+  width: 79px;
+  height: 18px; }
+
+.feed-product-detail-items__product-options--white {
+  border: 1px solid #E0E0E0;
+  border-radius: 2px;
+  padding: 1px 4px;
+  width: 79px;
+  height: 18px; }
+
+.feed-product-detail-items__product-options--refund {
+  width: 17px; }
+
+.feed-product-detail-items__product-rating-stars {
+  width: 15px; }
