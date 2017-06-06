@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './FeedHotlist.css';
+import './FeedHotList.css';
 import getImage from '../../lib/utils.js';
 
-var FeedHotlist = React.createClass({
+var FeedHotList = React.createClass({
   render: function() {
     return (
       <div>
@@ -42,4 +42,4 @@ var FeedHotlist = React.createClass({
   }
 })
 
-export default FeedHotlist;
+export default FeedHotList;

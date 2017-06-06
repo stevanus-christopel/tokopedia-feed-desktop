@@ -191,8 +191,8 @@ var FeedEmpty = React.createClass({
 
 
 
-var FeedHotlist = React.createClass({
-	displayName: 'FeedHotlist',
+var FeedHotList = React.createClass({
+	displayName: 'FeedHotList',
 
 	render: function () {
 		return React.createElement(
