@@ -80,6 +80,10 @@
 		padding: 8px;
 		border-right: 1px solid #E0E0E0;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		&:last-child {
 			border-right: 1px solid #FFF;
 		}

@@ -61,6 +61,8 @@
     margin: auto 0;
     padding: 8px;
     border-right: 1px solid #E0E0E0; }
+    .feed-product__items:hover {
+      cursor: pointer; }
     .feed-product__items:last-child {
       border-right: 1px solid #FFF; }
     .feed-product__items--border-top {

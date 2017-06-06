@@ -84,6 +84,9 @@ var FeedProduct = React.createClass({
         break;
     }
   },
+  openDetailPage: function() {
+    window.location = '/feed-detail.pl';
+  },
   render: function() {
     return (
       <div className='feed-product'>
@@ -116,7 +119,8 @@ var FeedProduct = React.createClass({
             <div>
               <div className='row-fluid'
                 onMouseEnter={() => this.showWishlist(1)}
-                onMouseLeave={() => this.hideWishlist(1)}>
+                onMouseLeave={() => this.hideWishlist(1)}
+                onClick={() => this.openDetailPage()}>
                 <div className='span6 feed-product__items feed-product__items--border-bottom'>
                   <img src={getImage('product-0.jpg')} className='feed-product__image'/>
                 </div>
@@ -141,7 +145,8 @@ var FeedProduct = React.createClass({
               </div>
             </div> :
             this.props.productCount === 2 ?
-            <div className='row-fluid'>
+            <div className='row-fluid'
+              onClick={() => this.openDetailPage()}>
               <div className='span6 feed-product__items'
                 onMouseEnter={() => this.showWishlist(1)}
                 onMouseLeave={() => this.hideWishlist(1)}>
@@ -176,7 +181,8 @@ var FeedProduct = React.createClass({
               </div>
             </div> :
             this.props.productCount === 3 ?
-            <div className='row-fluid'>
+            <div className='row-fluid'
+              onClick={() => this.openDetailPage()}>
               <div className='span4 feed-product__items'
                 onMouseEnter={() => this.showWishlist(1)}
                 onMouseLeave={() => this.hideWishlist(1)}>
@@ -228,7 +234,8 @@ var FeedProduct = React.createClass({
             </div> :
             this.props.productCount === 4 ?
             <div>
-              <div className='row-fluid'>
+              <div className='row-fluid'
+                onClick={() => this.openDetailPage()}>
                 <div className='span6 feed-product__items'
                   onMouseEnter={() => this.showWishlist(1)}
                   onMouseLeave={() => this.hideWishlist(1)}>
@@ -262,7 +269,8 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
               </div>
-              <div className='row-fluid'>
+              <div className='row-fluid'
+                onClick={() => this.openDetailPage()}>
                 <div className='span6 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(3)}
                   onMouseLeave={() => this.hideWishlist(3)}>
@@ -299,7 +307,8 @@ var FeedProduct = React.createClass({
             </div> :
             this.props.productCount === 5 ?
             <div>
-              <div className='row-fluid'>
+              <div className='row-fluid'
+                onClick={() => this.openDetailPage()}>
                 <div className='span6 feed-product__items'
                   onMouseEnter={() => this.showWishlist(1)}
                   onMouseLeave={() => this.hideWishlist(1)}>
@@ -333,7 +342,8 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
               </div>
-              <div className='row-fluid'>
+              <div className='row-fluid'
+                onClick={() => this.openDetailPage()}>
                 <div className='span4 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(3)}
                   onMouseLeave={() => this.hideWishlist(3)}>
@@ -386,7 +396,8 @@ var FeedProduct = React.createClass({
             </div> :
             this.props.productCount >= 6 ?
             <div>
-              <div className='row-fluid'>
+              <div className='row-fluid'
+                onClick={() => this.openDetailPage()}>
                 <div className='span4 feed-product__items'
                   onMouseEnter={() => this.showWishlist(1)}
                   onMouseLeave={() => this.hideWishlist(1)}>
@@ -436,7 +447,8 @@ var FeedProduct = React.createClass({
                   </div>
                 </div>
               </div>
-              <div className='row-fluid'>
+              <div className='row-fluid'
+                onClick={() => this.openDetailPage()}>
                 <div className='span4 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(4)}
                   onMouseLeave={() => this.hideWishlist(4)}>
