@@ -6,20 +6,19 @@ var FeedView = React.createClass({
   displayName: 'FeedView',
 
   componentDidMount: function () {
-    /*fetch('/graphql', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: FeedQuery
-        }),
-        credentials: 'include'
-      })
-      .then(response => response.json())
-      .then(response => {
-        console.log(response);
-      })*/
+    fetch('https://3-feature-m-staging.tokopedia.com/graphqli', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        query: FeedQuery
+      }),
+      credentials: 'include'
+    }).then(response => response.json()).then(response => {
+      console.log('hello');
+      console.log(response);
+    });
   },
   render: function () {
     return React.createElement(
@@ -1227,6 +1226,9 @@ var FeedProduct = React.createClass({
         break;
     }
   },
+  openDetailPage: function () {
+    window.location = '/feed-detail.pl';
+  },
   render: function () {
     return React.createElement(
       'div',
@@ -1284,7 +1286,8 @@ var FeedProduct = React.createClass({
             'div',
             { className: 'row-fluid',
               onMouseEnter: () => this.showWishlist(1),
-              onMouseLeave: () => this.hideWishlist(1) },
+              onMouseLeave: () => this.hideWishlist(1),
+              onClick: () => this.openDetailPage() },
             React.createElement(
               'div',
               { className: 'span6 feed-product__items feed-product__items--border-bottom' },
@@ -1329,7 +1332,8 @@ var FeedProduct = React.createClass({
           )
         ) : this.props.productCount === 2 ? React.createElement(
           'div',
-          { className: 'row-fluid' },
+          { className: 'row-fluid',
+            onClick: () => this.openDetailPage() },
           React.createElement(
             'div',
             { className: 'span6 feed-product__items',
@@ -1392,7 +1396,8 @@ var FeedProduct = React.createClass({
           )
         ) : this.props.productCount === 3 ? React.createElement(
           'div',
-          { className: 'row-fluid' },
+          { className: 'row-fluid',
+            onClick: () => this.openDetailPage() },
           React.createElement(
             'div',
             { className: 'span4 feed-product__items',
@@ -1488,7 +1493,8 @@ var FeedProduct = React.createClass({
           null,
           React.createElement(
             'div',
-            { className: 'row-fluid' },
+            { className: 'row-fluid',
+              onClick: () => this.openDetailPage() },
             React.createElement(
               'div',
               { className: 'span6 feed-product__items',
@@ -1552,7 +1558,8 @@ var FeedProduct = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'row-fluid' },
+            { className: 'row-fluid',
+              onClick: () => this.openDetailPage() },
             React.createElement(
               'div',
               { className: 'span6 feed-product__items feed-product__items--border-top',
@@ -1619,7 +1626,8 @@ var FeedProduct = React.createClass({
           null,
           React.createElement(
             'div',
-            { className: 'row-fluid' },
+            { className: 'row-fluid',
+              onClick: () => this.openDetailPage() },
             React.createElement(
               'div',
               { className: 'span6 feed-product__items',
@@ -1683,7 +1691,8 @@ var FeedProduct = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'row-fluid' },
+            { className: 'row-fluid',
+              onClick: () => this.openDetailPage() },
             React.createElement(
               'div',
               { className: 'span4 feed-product__items feed-product__items--border-top',
@@ -1780,7 +1789,8 @@ var FeedProduct = React.createClass({
           null,
           React.createElement(
             'div',
-            { className: 'row-fluid' },
+            { className: 'row-fluid',
+              onClick: () => this.openDetailPage() },
             React.createElement(
               'div',
               { className: 'span4 feed-product__items',
@@ -1874,7 +1884,8 @@ var FeedProduct = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'row-fluid' },
+            { className: 'row-fluid',
+              onClick: () => this.openDetailPage() },
             React.createElement(
               'div',
               { className: 'span4 feed-product__items feed-product__items--border-top',
@@ -1983,10 +1994,13 @@ var FeedProduct = React.createClass({
 
 
 
+
+
 var FeedProductDetail = React.createClass({
   displayName: 'FeedProductDetail',
 
   render: function () {
+
     return React.createElement(
       'div',
       { className: 'feed-product-detail' },
@@ -1995,30 +2009,154 @@ var FeedProductDetail = React.createClass({
         { className: 'feed-product-detail__header' },
         React.createElement(
           'div',
-          { className: 'feed-product-detail__seller-photo' },
-          React.createElement('img', { alt: '', src: getImage('tokopedia-avatar-square.png') })
-        ),
-        React.createElement(
-          'div',
-          { className: 'feed-product-detail__seller-activity' },
+          { className: 'feed-product-detail__header-information' },
           React.createElement(
-            'span',
-            { className: 'fw-600' },
-            'Nana Shop Ekstraordinari '
-          ),
-          'ubah ',
-          React.createElement(
-            'span',
-            { className: 'fw-600' },
-            '2 produk'
+            'div',
+            { className: 'feed-product-detail__seller-photo' },
+            React.createElement('img', { alt: '', src: getImage('tokopedia-avatar-square.png') })
           ),
           React.createElement(
             'div',
-            { className: 'feed-product-detail__seller-activity--time' },
-            '3 jam'
-          )
+            { className: 'feed-product-detail__seller-activity' },
+            React.createElement(
+              'span',
+              { className: 'fw-600' },
+              'Nana Shop Ekstraordinari '
+            ),
+            'ubah ',
+            React.createElement(
+              'span',
+              { className: 'fw-600' },
+              '2 produk'
+            ),
+            React.createElement(
+              'div',
+              { className: 'feed-product-detail__seller-activity--time' },
+              'Kemarin pukul 15.23'
+            )
+          ),
+          React.createElement('div', { className: 'feed-product-detail__seller-share' })
         ),
-        React.createElement('div', { className: 'feed-product-detail__seller-share' })
+        React.createElement(
+          'div',
+          { className: 'row-fluid clearfix feed-product-detail__button-container' },
+          React.createElement(
+            'button',
+            { className: 'btn btn-action pull-left feed-product-detail__btn-open-store' },
+            'Kunjungi Toko'
+          ),
+          React.createElement(ButtonShare, null)
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'feed-product-detail__content' },
+        React.createElement(FeedProductDetailItems, {
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 3
+        })
+      )
+    );
+  }
+});
+
+
+
+
+
+const MAX_PRODUCT_RATING = 5;
+
+var FeedProductDetailItems = React.createClass({
+  displayName: 'FeedProductDetailItems',
+
+
+  getInitialState: function () {
+    return {
+      cashback: this.props.cashback,
+      grosir: this.props.grosir,
+      preorder: this.props.preorder,
+      refund: this.props.refund,
+      rating: this.props.rating
+    };
+  },
+  renderStars: function () {
+    let products = [];
+    const target = document.querySelectorAll('.feed-product-detail-items__product-rating');
+
+    for (let i = 0; i < this.props.rating; i++) {
+      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: i, src: getImage('rating-on.png') }));
+    }
+    for (let i = MAX_PRODUCT_RATING - this.props.rating + 1; i < MAX_PRODUCT_RATING; i++) {
+      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: i, src: getImage('rating-off.png') }));
+    }
+
+    return products;
+  },
+
+  render: function () {
+    const isCashback = this.props.cashback == true;
+    const isGrosir = this.props.grosir == true;
+    const isPreOrderAble = this.props.preorder == true;
+    const isRefundAble = this.props.refund == true;
+
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { className: 'row-fluid p-10 feed-product-detail-items' },
+        React.createElement(
+          'div',
+          { className: 'pull-left relative mr-15 feed-product-detail-items__image-container' },
+          React.createElement(ButtonWishlist, { checked: false }),
+          React.createElement('img', { src: getImage('product-2.jpg'), className: 'feed-product-detail-items__image' })
+        ),
+        React.createElement(
+          'div',
+          { className: 'feed-product-detail-items__detail-container' },
+          React.createElement(
+            'h2',
+            { className: 'fw-600 lh-18 fs-13 mb-5 feed-product-detail-items__product-name' },
+            'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+          ),
+          React.createElement(
+            'h2',
+            { className: 'fw-600 lh-18 fs-13 mb-5 orange-red' },
+            'Rp. 170.390'
+          ),
+          React.createElement(
+            'div',
+            { className: 'mb-5 feed-product-detail-items__product-rating' },
+            this.renderStars()
+          ),
+          React.createElement(
+            'div',
+            { className: 'mb-5 feed-product-detail__product-options' },
+            isCashback ? React.createElement(
+              'span',
+              { className: 'fs-10 lh-12 feed-product-detail-items__product-options--green' },
+              'Cashback 14%'
+            ) : '',
+            isGrosir ? React.createElement(
+              'span',
+              { className: 'fs-10 lh-12 ml-5 feed-product-detail-items__product-options--white' },
+              'Grosir'
+            ) : '',
+            isPreOrderAble ? React.createElement(
+              'span',
+              { className: 'fs-10 lh-12 ml-5 feed-product-detail-items__product-options--white' },
+              'PO'
+            ) : '',
+            isRefundAble ? React.createElement(
+              'span',
+              { className: 'ml-5' },
+              React.createElement('img', { src: getImage('refund.png'), className: 'feed-product-detail-items__product-options--refund' })
+            ) : ''
+          )
+        )
       )
     );
   }
