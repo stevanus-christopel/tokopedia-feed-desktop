@@ -65,6 +65,16 @@ var FeedDetailView = React.createClass({
       { className: 'feed-detail' },
       React.createElement(
         'div',
+        { className: 'mr-40 feed-detail__left-sidebar' },
+        React.createElement('img', { className: 'feed-detail__back-icon', src: './img/arrow-hijau.png', alt: '' }),
+        React.createElement(
+          'span',
+          { className: 'fs-12 va-middle green' },
+          'Kembali ke Feed'
+        )
+      ),
+      React.createElement(
+        'div',
         { className: 'feed-detail__main-content' },
         React.createElement(FeedProductDetail, null)
       ),
@@ -2052,11 +2062,104 @@ var FeedProductDetail = React.createClass({
         'div',
         { className: 'feed-product-detail__content' },
         React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
           cashback: true,
           grosir: true,
           preorder: true,
           refund: true,
           rating: 3
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 1
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 3
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 3
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 5
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 4
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 3
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 3
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 1
+        }),
+        React.createElement(FeedProductDetailItems, {
+          image: 'product-2.jpg',
+          productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
+          productPrice: '170.390',
+          cashback: true,
+          grosir: true,
+          preorder: true,
+          refund: true,
+          rating: 2
         })
       )
     );
@@ -2075,6 +2178,9 @@ var FeedProductDetailItems = React.createClass({
 
   getInitialState: function () {
     return {
+      image: this.props.image,
+      productName: this.props.productName,
+      productPrice: this.props.productPrice,
       cashback: this.props.cashback,
       grosir: this.props.grosir,
       preorder: this.props.preorder,
@@ -2087,10 +2193,10 @@ var FeedProductDetailItems = React.createClass({
     const target = document.querySelectorAll('.feed-product-detail-items__product-rating');
 
     for (let i = 0; i < this.props.rating; i++) {
-      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: i, src: getImage('rating-on.png') }));
+      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: 'on-' + i, src: getImage('rating-on.png') }));
     }
-    for (let i = MAX_PRODUCT_RATING - this.props.rating + 1; i < MAX_PRODUCT_RATING; i++) {
-      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: i, src: getImage('rating-off.png') }));
+    for (let i = 0; i < MAX_PRODUCT_RATING - this.props.rating; i++) {
+      products.push(React.createElement('img', { className: 'feed-product-detail-items__product-rating-stars', key: 'off-' + i, src: getImage('rating-off.png') }));
     }
 
     return products;
@@ -2104,15 +2210,15 @@ var FeedProductDetailItems = React.createClass({
 
     return React.createElement(
       'div',
-      null,
+      { className: 'feed-product-detail-frame' },
       React.createElement(
         'div',
-        { className: 'row-fluid p-10 feed-product-detail-items' },
+        { className: 'row-fluid relative p-10 feed-product-detail-items' },
         React.createElement(
           'div',
-          { className: 'pull-left relative mr-15 feed-product-detail-items__image-container' },
+          { className: 'pull-left mr-15 feed-product-detail-items__image-container' },
           React.createElement(ButtonWishlist, { checked: false }),
-          React.createElement('img', { src: getImage('product-2.jpg'), className: 'feed-product-detail-items__image' })
+          React.createElement('img', { src: getImage(this.props.image), className: 'feed-product-detail-items__image' })
         ),
         React.createElement(
           'div',
@@ -2120,16 +2226,17 @@ var FeedProductDetailItems = React.createClass({
           React.createElement(
             'h2',
             { className: 'fw-600 lh-18 fs-13 mb-5 feed-product-detail-items__product-name' },
-            'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
+            this.props.productName
           ),
           React.createElement(
             'h2',
-            { className: 'fw-600 lh-18 fs-13 mb-5 orange-red' },
-            'Rp. 170.390'
+            { className: 'fw-600 lh-18 fs-13 mb-0 orange-red' },
+            'Rp. ',
+            this.props.productPrice
           ),
           React.createElement(
             'div',
-            { className: 'mb-5 feed-product-detail-items__product-rating' },
+            { className: 'mb-0 feed-product-detail-items__product-rating' },
             this.renderStars()
           ),
           React.createElement(
