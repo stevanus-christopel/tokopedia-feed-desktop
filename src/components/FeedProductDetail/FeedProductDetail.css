@@ -42,3 +42,10 @@
     margin-left: 12px;
     margin-bottom: 6px;
     float: right; }
+  .feed-product-detail div div button-share__icon-container {
+    bottom: -53px;
+    right: 227px; }
+
+.feed-product-detail__button-container div .button-share__icon-container {
+  bottom: -53px;
+  right: 227px; }
