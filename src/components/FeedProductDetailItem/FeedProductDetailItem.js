@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './FeedProductDetailItems.css';
+import './FeedProductDetailItem.css';
 
 import ButtonWishlist from '../ButtonWishlist';
 
@@ -7,8 +7,7 @@ import getImage from '../../lib/utils.js';
 
 const MAX_PRODUCT_RATING = 5;
 
-var FeedProductDetailItems = React.createClass({
-
+var FeedProductDetailItem = React.createClass({
 	getInitialState: function() {
     return {
       image: this.props.image,
@@ -21,6 +20,7 @@ var FeedProductDetailItems = React.createClass({
 			rating: this.props.rating,
     };
   },
+
 	renderStars: function() {
 		let products = []
 		const target = document.querySelectorAll('.feed-product-detail-items__product-rating');
@@ -50,8 +50,8 @@ var FeedProductDetailItems = React.createClass({
             </div>
             <div className='feed-product-detail-items__detail-container'>
               <h2 className='fw-600 lh-18 fs-13 mb-5 feed-product-detail-items__product-name'>{this.props.productName}</h2>
-              <h2 className='fw-600 lh-18 fs-13 mb-0 orange-red'>Rp. {this.props.productPrice}</h2>
-              <div className='mb-0 feed-product-detail-items__product-rating'>
+              <h2 className='fw-600 lh-18 fs-13 mb-5 orange-red feed-product-detail-items__product-price'>Rp. {this.props.productPrice}</h2>
+              <div className='mb-5 feed-product-detail-items__product-rating'>
                 {this.renderStars()}
               </div>
               <div className='mb-5 feed-product-detail__product-options'>
@@ -67,4 +67,4 @@ var FeedProductDetailItems = React.createClass({
   }
 })
 
-export default FeedProductDetailItems;
+export default FeedProductDetailItem;

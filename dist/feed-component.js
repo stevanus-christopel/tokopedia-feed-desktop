@@ -2065,7 +2065,7 @@ var FeedProductDetail = React.createClass({
       React.createElement(
         'div',
         { className: 'feed-product-detail__content' },
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2075,7 +2075,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 3
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2085,7 +2085,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 1
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2095,7 +2095,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 3
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2105,7 +2105,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 3
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2115,7 +2115,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 5
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2125,7 +2125,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 4
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2135,7 +2135,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 3
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2145,7 +2145,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 3
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2155,7 +2155,7 @@ var FeedProductDetail = React.createClass({
           refund: true,
           rating: 1
         }),
-        React.createElement(FeedProductDetailItems, {
+        React.createElement(FeedProductDetailItem, {
           image: 'product-2.jpg',
           productName: 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10',
           productPrice: '170.390',
@@ -2176,9 +2176,8 @@ var FeedProductDetail = React.createClass({
 
 const MAX_PRODUCT_RATING = 5;
 
-var FeedProductDetailItems = React.createClass({
-  displayName: 'FeedProductDetailItems',
-
+var FeedProductDetailItem = React.createClass({
+  displayName: 'FeedProductDetailItem',
 
   getInitialState: function () {
     return {
@@ -2192,6 +2191,7 @@ var FeedProductDetailItems = React.createClass({
       rating: this.props.rating
     };
   },
+
   renderStars: function () {
     let products = [];
     const target = document.querySelectorAll('.feed-product-detail-items__product-rating');
@@ -2234,13 +2234,13 @@ var FeedProductDetailItems = React.createClass({
           ),
           React.createElement(
             'h2',
-            { className: 'fw-600 lh-18 fs-13 mb-0 orange-red' },
+            { className: 'fw-600 lh-18 fs-13 mb-5 orange-red feed-product-detail-items__product-price' },
             'Rp. ',
             this.props.productPrice
           ),
           React.createElement(
             'div',
-            { className: 'mb-0 feed-product-detail-items__product-rating' },
+            { className: 'mb-5 feed-product-detail-items__product-rating' },
             this.renderStars()
           ),
           React.createElement(

@@ -512,12 +512,14 @@ img.button-wishlist {
 .feed-product-detail-items__product-options--refund {
   width: 17px; }
 
-.feed-product-detail-items__product-rating-stars {
-  width: 12px;
-  height: 12px;
-  padding-left: 2px; }
-  .feed-product-detail-items__product-rating-stars:first-child {
-    padding-left: 0px; }
+.feed-product-detail-items__product-rating {
+  margin-top: -3px; }
+  .feed-product-detail-items__product-rating-stars {
+    width: 12px;
+    height: 12px;
+    padding-left: 2px; }
+    .feed-product-detail-items__product-rating-stars:first-child {
+      padding-left: 0px; }
 
 .feed-product-detail-items__image-container img {
   right: 20px; }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './FeedProductDetail.css';
 
 import ButtonShare from '../ButtonShare';
-import FeedProductDetailItems from './../FeedProductDetailItems';
+import FeedProductDetailItem from './../FeedProductDetailItem';
 
 import getImage from '../../lib/utils.js';
 
@@ -32,7 +32,7 @@ var FeedProductDetail = React.createClass({
         </div>
         
         <div className='feed-product-detail__content'>
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -43,7 +43,7 @@ var FeedProductDetail = React.createClass({
             rating ={3}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -54,7 +54,7 @@ var FeedProductDetail = React.createClass({
             rating ={1}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -65,7 +65,7 @@ var FeedProductDetail = React.createClass({
             rating ={3}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -76,7 +76,7 @@ var FeedProductDetail = React.createClass({
             rating ={3}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -87,7 +87,7 @@ var FeedProductDetail = React.createClass({
             rating ={5}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -98,7 +98,7 @@ var FeedProductDetail = React.createClass({
             rating ={4}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -109,7 +109,7 @@ var FeedProductDetail = React.createClass({
             rating ={3}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -120,7 +120,7 @@ var FeedProductDetail = React.createClass({
             rating ={3}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'
@@ -131,7 +131,7 @@ var FeedProductDetail = React.createClass({
             rating ={1}
           />
 
-          <FeedProductDetailItems 
+          <FeedProductDetailItem 
             image = 'product-2.jpg'
             productName = 'Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10'
             productPrice = '170.390'

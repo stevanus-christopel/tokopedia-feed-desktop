@@ -39,12 +39,17 @@ $color-border-grey: #E0E0E0;
 			} 
 	}
 
-	&__product-rating-stars {
-		width: 12px;
-		height: 12px;
-		padding-left: 2px;
-		&:first-child {
-			padding-left: 0px;
+	&__product-rating {
+		margin-top: -3px;
+
+		&-stars {
+			width: 12px;
+			height: 12px;
+			padding-left: 2px;
+
+			&:first-child {
+				padding-left: 0px;
+			}
 		}
 	}
 }
