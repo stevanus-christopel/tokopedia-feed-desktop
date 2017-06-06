@@ -4,13 +4,13 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 import Feed from './routes/Feed';
-import FeedDetailView from './routes/FeedDetailView';
+import FeedDetail from './routes/FeedDetail';
 
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route exact path="/" component={FeedDetailView} />
-      <Route path="/detail" component={FeedDetailView} />
+      <Route exact path="/" component={FeedDetail} />
+      <Route path="/detail" component={FeedDetail} />
     </Switch>
   </Router>,
   document.getElementById('feed-root')
