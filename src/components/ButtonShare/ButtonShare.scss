@@ -9,12 +9,12 @@ button.button-share,
     width: 100px;
     font-weight: 600;
     box-sizing: border-box;
+    margin-bottom: 12px;
 }
 
 .button-share {
     &__icon-container {
         width: 245px;
-        margin-top: 12px;
         position: absolute;
         right: -80px;
         z-index: 10;
