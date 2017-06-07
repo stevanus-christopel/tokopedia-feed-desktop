@@ -132,13 +132,13 @@ var FeedProduct = React.createClass({
               <div className='row-fluid'>
                 <div className='span12 feed-product__items pt-0'>
                   <div className='feed-product__details'>
-                    <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                    <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                       Sajadah Travel Tiara 024 Blue - Ramadhan Fashion
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 89.100</label>
+                      <label className='fs-13 fw-600 orange-red'>Rp 89.100</label>
                     </div>
                   </div>
                 </div>
@@ -153,13 +153,13 @@ var FeedProduct = React.createClass({
                 { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
                 <img src={getImage('product-1.jpg')} className='feed-product__image'/>
                 <div className='feed-product__details'>
-                  <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                  <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                     <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                     Bantex Mouse Pad Blue #1788 01
                     </div>
                   </div>
                   <div className='feed-product__items--price'>
-                    <label className='fs-12 fw-600 orange-red'>Rp 24.970</label>
+                    <label className='fs-13 fw-600 orange-red'>Rp 24.970</label>
                   </div>
                 </div>
               </div>
@@ -169,13 +169,13 @@ var FeedProduct = React.createClass({
                 { this.state.isShowWishlist2 && <ButtonWishlist checked={false} />}
                 <img src={getImage('product-2.jpg')} className='feed-product__image'/>
                 <div className='feed-product__details'>
-                  <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                  <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                     <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                     Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10
                     </div>
                   </div>
                   <div className='feed-product__items--price'>
-                    <label className='fs-12 fw-600 orange-red'>Rp 170.390</label>
+                    <label className='fs-13 fw-600 orange-red'>Rp 170.390</label>
                   </div>
                 </div>
               </div>
