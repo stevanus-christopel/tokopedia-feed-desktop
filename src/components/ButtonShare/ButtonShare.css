@@ -9,11 +9,12 @@ button.button-share,
   width: 100px;
   font-weight: 600;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  margin-bottom: 12px;
+  outline: none; }
 
 .button-share__icon-container {
   width: 245px;
-  margin-top: 12px;
   position: absolute;
   right: -80px;
   z-index: 10;
