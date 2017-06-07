@@ -12,6 +12,8 @@ $color-border-grey: #E0E0E0;
 		font-size: 12px;
 	}
 	&__text-promoted {
+		cursor: pointer;
+		width: 80px;
 		.feed-topads-shop__image-promoted {
 			height: 13px;
 			position: relative;

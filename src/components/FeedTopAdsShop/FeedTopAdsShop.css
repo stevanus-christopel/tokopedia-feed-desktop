@@ -6,11 +6,14 @@
     color: rgba(0, 0, 0, 0.38); }
   .feed-topads-shop__header {
     font-size: 12px; }
-  .feed-topads-shop__text-promoted .feed-topads-shop__image-promoted {
-    height: 13px;
-    position: relative;
-    bottom: 2px;
-    left: 5px; }
+  .feed-topads-shop__text-promoted {
+    cursor: pointer;
+    width: 80px; }
+    .feed-topads-shop__text-promoted .feed-topads-shop__image-promoted {
+      height: 13px;
+      position: relative;
+      bottom: 2px;
+      left: 5px; }
   .feed-topads-shop__seller-photo img {
     width: 52px;
     border: 1px solid #E0E0E0;

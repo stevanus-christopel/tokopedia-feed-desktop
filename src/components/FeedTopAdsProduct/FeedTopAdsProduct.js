@@ -85,10 +85,10 @@ var FeedTopAdsProduct = React.createClass({
     }
   },
   togglePopOver: function() {
-    if(!this.state.isShowPopover) {
-      document.onclick = this.togglePopover;
+    if(!this.state.isShowPopOver) {
+      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = this.togglePopOver;
     } else {
-      document.onclick = null;
+      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = null;
     }
 
     this.setState({
@@ -98,8 +98,9 @@ var FeedTopAdsProduct = React.createClass({
   render: function() {
     return (
         <div className='feed-topads-product'>
-            <div className='feed-topads-product__header'>Promoted
-                <img className='feed-topads-product__image-promoted' src={this.state.isShowPopover? getImage('icon-info-ijo.png') : getImage('icon-info.png') } onClick={() => this.togglePopOver()}/>
+            <div className='feed-topads-product__header'>
+              <div className='fs-12 feed-topads-shop__text-promoted' onClick={() => this.togglePopOver()}>Promoted 
+                <img className='feed-topads-product__image-promoted' src={this.state.isShowPopover? getImage('icon-info-ijo.png') : getImage('icon-info.png') } />
                 {
                   this.state.isShowPopover === true &&
                   <div className='p-20 relative feed-topads-product__popover'>
@@ -111,6 +112,7 @@ var FeedTopAdsProduct = React.createClass({
                     <button className='btn btn-action fw-normal feed-topads-product__popover-button'>Baca Selengkapnya</button>
                   </div>
                 }
+              </div>
             </div>
 
             <div className='feed-topads-product__content'>					

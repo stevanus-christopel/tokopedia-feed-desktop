@@ -9,7 +9,11 @@ $color-border-grey: #E0E0E0;
 		padding: 16px 10px;
 		border-bottom: 1px solid $color-border-grey;
         font-size: 12px;
-        color: rgba(0, 0, 0, 0.38);
+
+		&__text-promoted {
+			cursor: pointer;
+			color: rgba(0, 0, 0, 0.38);
+		}
 
         .feed-topads-product__image-promoted {
 			height: 13px;
