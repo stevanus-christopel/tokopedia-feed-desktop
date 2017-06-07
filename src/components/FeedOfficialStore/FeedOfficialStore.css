@@ -6,7 +6,7 @@
     border-bottom: 1px solid #E0E0E0; }
   .feed-official-store__items-image {
     padding: 8px;
-    max-width: 169px; }
+    max-width: 100%; }
   .feed-official-store__link-more {
     height: 45px;
     line-height: 45px; }

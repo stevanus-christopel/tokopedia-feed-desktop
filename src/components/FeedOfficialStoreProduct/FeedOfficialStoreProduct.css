@@ -39,7 +39,7 @@
     .feed-official-store-product .feed-official-store-product__items--store {
       border-top: 1.3px dashed #E0E0E0; }
   .feed-official-store-product .feed-official-store-product__image {
-    max-width: 164px;
+    max-width: 100%;
     padding-bottom: 6px; }
     .feed-official-store-product .feed-official-store-product__image-container-store {
       padding: 9px;
