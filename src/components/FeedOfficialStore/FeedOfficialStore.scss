@@ -11,12 +11,12 @@ $color-border-grey: #E0E0E0;
 
 	&__items-image {
 		padding: 8px;
-		max-width: 169px;
+		max-width: 100%;
 	}
 	
 	&__link-more {
-			height: 45px;
-			line-height: 45px;
+		height: 45px;
+		line-height: 45px;
 	}
 }
 

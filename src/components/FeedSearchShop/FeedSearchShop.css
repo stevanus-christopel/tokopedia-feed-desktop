@@ -36,8 +36,22 @@
   .feed-search-shop {
     width: 441px;
     padding: 35px 20px; }
+    .feed-search-shop__image {
+      width: 120px;
+      image-rendering: optimizeSpeed;
+      /*                     */
+      image-rendering: -moz-crisp-edges;
+      /* Firefox             */
+      image-rendering: -o-crisp-edges;
+      /* Opera               */
+      image-rendering: -webkit-optimize-contrast;
+      /* Chrome (and Safari) */
+      image-rendering: optimize-contrast;
+      /* CSS3 Proposed       */
+      -ms-interpolation-mode: nearest-neighbor;
+      /* IE8+                */ }
     .feed-search-shop__text {
-      width: 53%;
-      margin-left: 20px; }
+      width: 65%;
+      margin-left: 10px; }
       .feed-search-shop__text button.btn {
         width: 120px; } }

@@ -2,12 +2,32 @@
 	&__main-content {
 		display: inline-block;
 		vertical-align: top;
-		width: 560px;
 		padding: 20px;
 	}
 
 	&__right-sidebar {
 		display: inline-block;
 		padding: 20px;
+		box-sizing: border-box;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.feed  {
+		&__main-content {
+			width: 560px;
+		}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.feed  {
+		&__main-content {
+			width: 441px;
+		}
+
+		&__right-sidebar {
+			width: 255px;
+		}
 	}
 }

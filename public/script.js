@@ -24,7 +24,6 @@ $(document).ready(function(){
 				scrollLeft: next
 			}, 250);
 
-
 			$('.feed-marketing-promo__arrow--left').addClass("hidden");
 			$('.feed-marketing-promo__arrow--right').css("display","block");
 		})
