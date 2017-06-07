@@ -17,7 +17,7 @@ var FeedMarketingPromo = React.createClass({
 		MARKETING_PROMO_TOAST_CONTAINER[0].classList.add('show')
 		setTimeout(() => {
 			MARKETING_PROMO_TOAST_CONTAINER[0].classList.remove('show')
-		}, 1000)
+		}, 2000)
 	},
   render: function() {
     return (
