@@ -8,6 +8,11 @@ var ButtonShare = React.createClass({
       isShowPopover: false
     };
   },
+  isPopoverShowed: function() {
+    if(this.state.isShowPopover === true) {
+      this.setState({ isShowPopover: false})
+    }
+  },
   // togglePopover: function() {
   //   if(!this.state.isShowPopover) {
   //     document.getElementsByClassName('button-share__icon-container').onmouseover = this.togglePopover;
@@ -22,7 +27,7 @@ var ButtonShare = React.createClass({
   render: function() {
     return (
       <div onMouseLeave={() => this.setState({isShowPopover: false})}>
-        <button className='btn button-share' onMouseOver={() => this.setState({isShowPopover: true})}>
+        <button className='btn button-share' onClick={() => this.isPopoverShowed()} onMouseOver={() => this.setState({isShowPopover: true})}>
             <img className='button-share--icon' alt='' src={getImage('icon-btn-share.png')} /> Bagikan
         </button>
         {

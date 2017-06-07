@@ -10,7 +10,8 @@ button.button-share,
   font-weight: 600;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: 12px; }
+  margin-bottom: 12px;
+  outline: none; }
 
 .button-share__icon-container {
   width: 245px;
