@@ -12,7 +12,7 @@
     .feed-topads-product__header .feed-topads-product__image-promoted {
       height: 13px;
       position: relative;
-      bottom: 2px;
+      bottom: 1px;
       left: 5px; }
   .feed-topads-product__content .row-fluid .span4 {
     -webkit-box-sizing: border-box;
