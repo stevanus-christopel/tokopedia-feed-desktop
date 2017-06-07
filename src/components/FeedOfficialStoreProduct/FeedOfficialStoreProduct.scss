@@ -55,6 +55,10 @@ $color-black-primary: rgba(0, 0, 0, 0.7);
 				border-right: none;
 			}
 
+			img {
+				border-radius: 2px;
+			}
+
 			&--name {
 				height: 34px;
 				color: $color-black-primary; 

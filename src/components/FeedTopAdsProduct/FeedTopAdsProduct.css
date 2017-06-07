@@ -24,6 +24,8 @@
     margin: auto 0;
     padding: 8px;
     border-right: 1px solid #E0E0E0; }
+    .feed-topads-product__items img {
+      border-radius: 2px; }
     .feed-topads-product__items--border-bottom {
       border-bottom: 1px solid #E0E0E0; }
     .feed-topads-product__items:last-child {

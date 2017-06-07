@@ -29,6 +29,8 @@
     border-right: 1px solid #E0E0E0; }
     .feed-official-store-product .feed-official-store-product__items:last-child {
       border-right: none; }
+    .feed-official-store-product .feed-official-store-product__items img {
+      border-radius: 2px; }
     .feed-official-store-product .feed-official-store-product__items--name {
       height: 34px;
       color: rgba(0, 0, 0, 0.7); }

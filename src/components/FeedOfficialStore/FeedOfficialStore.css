@@ -19,3 +19,5 @@
     border-right: 1px solid #E0E0E0; }
     .feed-official-store__showcase .feed-official-store__items:last-child {
       border-right: none; }
+    .feed-official-store__showcase .feed-official-store__items img {
+      border-radius: 2px; }

@@ -37,6 +37,10 @@ $color-border-grey: #E0E0E0;
         padding: 8px;
 		border-right: 1px solid $color-border-grey;
 
+		img {
+			border-radius: 2px;
+		}
+
         &--border-bottom {
             border-bottom: 1px solid $color-border-grey;
         }
