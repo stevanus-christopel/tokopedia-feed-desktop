@@ -42,11 +42,15 @@
     max-width: 164px;
     padding-bottom: 6px; }
     .feed-official-store-product .feed-official-store-product__image-container-store {
-      padding: 9px; }
+      padding: 9px;
+      margin-right: 3px; }
     .feed-official-store-product .feed-official-store-product__image-store {
       max-width: 30px;
       border-radius: 2px;
       border: 1px solid #E0E0E0; }
+  .feed-official-store-product .feed-official-store-product__text label {
+    position: relative;
+    bottom: 2px; }
   .feed-official-store-product .feed-official-store-product__link-more {
     height: 45px;
     line-height: 45px;

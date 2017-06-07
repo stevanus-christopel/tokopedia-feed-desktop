@@ -242,13 +242,13 @@ var FeedProduct = React.createClass({
                   { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
                   <img src={getImage('product-6.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
-                    <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                    <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                       Bantex Ink Jet Photo Paper A4 Premium (10 sheets) 225gr
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 74.030</label>
+                      <label className='fs-13 fw-600 orange-red'>Rp 74.030</label>
                     </div>
                   </div>
                 </div>
@@ -258,13 +258,13 @@ var FeedProduct = React.createClass({
                   { this.state.isShowWishlist2 && <ButtonWishlist checked={false} />}
                   <img src={getImage('product-7.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
-                    <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                    <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                       Bantex Ink Jet Photo Paper A3 Premium (10 sheets) 225gr
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 157.850</label>
+                      <label className='fs-13 fw-600 orange-red'>Rp 157.850</label>
                     </div>
                   </div>
                 </div>
@@ -277,13 +277,13 @@ var FeedProduct = React.createClass({
                   { this.state.isShowWishlist3 && <ButtonWishlist checked={false} />}
                   <img src={getImage('product-8.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
-                    <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                    <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                       Bantex Ink Jet Photo Paper A4 Glossy (10 sheets) 180gr #8001
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 53.750</label>
+                      <label className='fs-13 fw-600 orange-red'>Rp 53.750</label>
                     </div>
                   </div>
                 </div>
@@ -293,13 +293,13 @@ var FeedProduct = React.createClass({
                   { this.state.isShowWishlist4 && <ButtonWishlist checked={true} />}
                   <img src={getImage('product-9.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
-                    <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                    <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                       Bantex Matt Coated Ink Jet Paper A4(60 sheets) 95gr
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 95.370</label>
+                      <label className='fs-13 fw-600 orange-red'>Rp 95.370</label>
                     </div>
                   </div>
                 </div>
@@ -315,13 +315,13 @@ var FeedProduct = React.createClass({
                   { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
                   <img src={getImage('product-10.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
-                    <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                    <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                       Bantex Matt Coated Ink Jet Paper A4(30 sheets) 95gr #8001
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 59.510</label>
+                      <label className='fs-13 fw-600 orange-red'>Rp 59.510</label>
                     </div>
                   </div>
                 </div>
@@ -331,13 +331,13 @@ var FeedProduct = React.createClass({
                   { this.state.isShowWishlist2 && <ButtonWishlist checked={false} />}
                   <img src={getImage('product-11.jpg')} className='feed-product__image'/>
                   <div className='feed-product__details'>
-                    <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
+                    <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
                       Linex Drawing Tube DT 124 70cm (124cm) Black #4848 10
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 281.490</label>
+                      <label className='fs-13 fw-600 orange-red'>Rp 281.490</label>
                     </div>
                   </div>
                 </div>

@@ -1,9 +1,8 @@
 .feed-empty {
 	border: 1px solid #E0E0E0;
 	border-radius: 3px;
-	padding: 35px;
-	padding-right: 30px;
 	margin-bottom: 20px;
+	box-sizing: border-box;
 
 	&__image {
 		display: inline-block;
@@ -18,7 +17,6 @@
 	&__text {
 		display: inline-block;
 		vertical-align: middle;
-		width: 55%;
 		margin-left: 40px;
 
 		& h5 {
@@ -31,8 +29,39 @@
 		}
 
 		& button.btn {
-			width: 200px;
 			padding: 9px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.feed-empty {
+		width: 560px;
+		padding: 35px;
+		padding-right: 30px;
+
+		&__text {
+			width: 55%;
+
+			& button.btn {
+				width: 200px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.feed-empty {
+		width: 441px;
+		padding: 35px 20px;
+
+		&__text {
+			width: 53%;
+			margin-left: 20px;
+
+			& button.btn {
+				width: 120px;
+			}
 		}
 	}
 }
