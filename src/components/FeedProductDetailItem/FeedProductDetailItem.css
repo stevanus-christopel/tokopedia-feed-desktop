@@ -5,7 +5,8 @@
 
 .feed-product-detail-items__image {
   width: 130px;
-  border: 1px solid #E0E0E0; }
+  border: 1px solid #E0E0E0;
+  border-radius: 2px; }
 
 .feed-product-detail-items__product-name {
   color: rgba(0, 0, 0, 0.7); }

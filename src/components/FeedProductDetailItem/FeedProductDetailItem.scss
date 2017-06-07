@@ -12,6 +12,7 @@ $color-border-grey: #E0E0E0;
 	&__image {
 			width: 130px;
 			border: 1px solid $color-border-grey;
+			border-radius: 2px;
 	}
 
 	&__product-name {
