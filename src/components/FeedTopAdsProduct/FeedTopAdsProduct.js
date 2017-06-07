@@ -86,9 +86,9 @@ var FeedTopAdsProduct = React.createClass({
   },
   togglePopOver: function() {
     if(!this.state.isShowPopOver) {
-      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = this.togglePopOver;
+      document.onclick = this.togglePopOver;
     } else {
-      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = null;
+      document.onclick = null;
     }
 
     this.setState({
