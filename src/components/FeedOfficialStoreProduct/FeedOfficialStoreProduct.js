@@ -31,7 +31,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									<div className='span3 feed-official-store-product__image-container-store'>
 										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
-									<div className='span8 pt-15'>
+									<div className='span8 pt-15 feed-official-store-product__text'>
 										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
@@ -53,7 +53,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									<div className='span3 feed-official-store-product__image-container-store'>
 										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
-									<div className='span8 pt-15'>
+									<div className='span8 pt-15 feed-official-store-product__text'>
 										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
@@ -75,7 +75,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									<div className='span3 feed-official-store-product__image-container-store'>
 										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
-									<div className='span8 pt-15'>
+									<div className='span8 pt-15 feed-official-store-product__text'>
 										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
@@ -103,7 +103,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									<div className='span3 feed-official-store-product__image-container-store'>
 										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
-									<div className='span8 pt-15'>
+									<div className='span8 pt-15 feed-official-store-product__text'>
 										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
@@ -125,7 +125,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									<div className='span3 feed-official-store-product__image-container-store'>
 										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
-									<div className='span8 pt-15'>
+									<div className='span8 pt-15 feed-official-store-product__text'>
 										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>
@@ -147,7 +147,7 @@ var FeedOfficialStoreProduct = React.createClass({
 									<div className='span3 feed-official-store-product__image-container-store'>
 										<img src={getImage('tokopedia-avatar-square.png')} className='feed-official-store-product__image-store'/>
 									</div>
-									<div className='span8 pt-15'>
+									<div className='span8 pt-15 feed-official-store-product__text'>
 										<label className='fs-11 text-black07'> Tokopedia</label>
 									</div>
 								</div>

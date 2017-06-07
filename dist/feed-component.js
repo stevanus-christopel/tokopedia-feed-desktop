@@ -102,9 +102,9 @@ var ButtonShare = React.createClass({
   },
   togglePopover: function () {
     if (!this.state.isShowPopover) {
-      document.onclick = this.togglePopover;
+      document.onmouseover = this.togglePopover;
     } else {
-      document.onclick = null;
+      document.onmouseover = null;
     }
 
     this.setState({
@@ -117,7 +117,7 @@ var ButtonShare = React.createClass({
       null,
       React.createElement(
         'button',
-        { className: 'btn button-share', onClick: () => this.togglePopover() },
+        { className: 'btn button-share', onMouseOver: () => this.togglePopover() },
         React.createElement('img', { className: 'button-share--icon', alt: '', src: getImage('icon-btn-share.png') }),
         ' Bagikan'
       ),
@@ -146,13 +146,16 @@ var ButtonWishlist = React.createClass({
       checked: this.props.checked
     };
   },
-  toggleCheck: function () {
+  toggleCheck: function (e) {
     this.setState({
       checked: !this.state.checked
     });
+    console.log(e);
+    e.stopPropagation();
+    e.preventDefault();
   },
   render: function () {
-    return React.createElement('img', { className: 'button-wishlist', alt: '', onClick: () => this.toggleCheck(), src: this.state.checked === true ? getImage('wishlist.png') : getImage('wishlist-empty.png') });
+    return React.createElement('img', { className: 'button-wishlist', alt: '', onClick: e => this.toggleCheck(e), src: this.state.checked === true ? getImage('wishlist.png') : getImage('wishlist-empty.png') });
   }
 });
 
@@ -552,31 +555,6 @@ const SLIDE_CONTAINER = document.getElementsByClassName('feed-marketing-promo__c
 var FeedMarketingPromo = React.createClass({
 	displayName: 'FeedMarketingPromo',
 
-
-	// sideScroll: function(element, direction, speed, distance, step) {
-	// 	var scrollAmount = 0;
-	//   var slideTimer = setInterval(function(){
-	//       if(direction == 'left'){
-	//           element.scrollLeft -= step;
-	//       } else {
-	// 				console.log(element)
-	// 				console.log(element.scrollLeft)
-	//           element.scrollLeft += step;
-	//       }
-	//       scrollAmount += step;
-	//       if(scrollAmount >= distance){
-	//           window.clearInterval(slideTimer);
-	//       }
-	//   }, speed);
-	// },
-	// slide: function() {
-	// 	console.log('kanan')
-	// 	this.sideScroll(document.getElementsByClassName('feed-marketing-promo__content'), 'right', 25, 100, 10)
-	// },
-	// slideBack: function() {
-	// 	this.sideScroll(document.getElementsByClassName('feed-marketing-promo__content'),'left',25,100,10);
-	// },
-
 	render: function () {
 		return React.createElement(
 			'div',
@@ -892,12 +870,12 @@ var FeedOfficialStoreProduct = React.createClass({
 									{ className: 'feed-official-store-product__items--store' },
 									React.createElement(
 										'div',
-										{ className: 'span4 feed-official-store-product__image-container-store' },
+										{ className: 'span3 feed-official-store-product__image-container-store' },
 										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
-										{ className: 'span8 pt-15' },
+										{ className: 'span8 pt-15 feed-official-store-product__text' },
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
@@ -937,12 +915,12 @@ var FeedOfficialStoreProduct = React.createClass({
 									{ className: 'feed-official-store-product__items--store' },
 									React.createElement(
 										'div',
-										{ className: 'span4 feed-official-store-product__image-container-store' },
+										{ className: 'span3 feed-official-store-product__image-container-store' },
 										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
-										{ className: 'span8 pt-15' },
+										{ className: 'span8 pt-15 feed-official-store-product__text' },
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
@@ -982,12 +960,12 @@ var FeedOfficialStoreProduct = React.createClass({
 									{ className: 'feed-official-store-product__items--store' },
 									React.createElement(
 										'div',
-										{ className: 'span4 feed-official-store-product__image-container-store' },
+										{ className: 'span3 feed-official-store-product__image-container-store' },
 										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
-										{ className: 'span8 pt-15' },
+										{ className: 'span8 pt-15 feed-official-store-product__text' },
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
@@ -1035,12 +1013,12 @@ var FeedOfficialStoreProduct = React.createClass({
 									{ className: 'feed-official-store-product__items--store' },
 									React.createElement(
 										'div',
-										{ className: 'span4 feed-official-store-product__image-container-store' },
+										{ className: 'span3 feed-official-store-product__image-container-store' },
 										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
-										{ className: 'span8 pt-15' },
+										{ className: 'span8 pt-15 feed-official-store-product__text' },
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
@@ -1080,12 +1058,12 @@ var FeedOfficialStoreProduct = React.createClass({
 									{ className: 'feed-official-store-product__items--store' },
 									React.createElement(
 										'div',
-										{ className: 'span4 feed-official-store-product__image-container-store' },
+										{ className: 'span3 feed-official-store-product__image-container-store' },
 										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
-										{ className: 'span8 pt-15' },
+										{ className: 'span8 pt-15 feed-official-store-product__text' },
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
@@ -1125,12 +1103,12 @@ var FeedOfficialStoreProduct = React.createClass({
 									{ className: 'feed-official-store-product__items--store' },
 									React.createElement(
 										'div',
-										{ className: 'span4 feed-official-store-product__image-container-store' },
+										{ className: 'span3 feed-official-store-product__image-container-store' },
 										React.createElement('img', { src: getImage('tokopedia-avatar-square.png'), className: 'feed-official-store-product__image-store' })
 									),
 									React.createElement(
 										'div',
-										{ className: 'span8 pt-15' },
+										{ className: 'span8 pt-15 feed-official-store-product__text' },
 										React.createElement(
 											'label',
 											{ className: 'fs-11 text-black07' },
@@ -1325,7 +1303,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__details' },
                 React.createElement(
                   'div',
-                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                   React.createElement(
                     'div',
                     { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1337,7 +1315,7 @@ var FeedProduct = React.createClass({
                   { className: 'feed-product__items--price' },
                   React.createElement(
                     'label',
-                    { className: 'fs-12 fw-600 orange-red' },
+                    { className: 'fs-13 fw-600 orange-red' },
                     'Rp 89.100'
                   )
                 )
@@ -1360,7 +1338,7 @@ var FeedProduct = React.createClass({
               { className: 'feed-product__details' },
               React.createElement(
                 'div',
-                { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                 React.createElement(
                   'div',
                   { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1372,7 +1350,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__items--price' },
                 React.createElement(
                   'label',
-                  { className: 'fs-12 fw-600 orange-red' },
+                  { className: 'fs-13 fw-600 orange-red' },
                   'Rp 24.970'
                 )
               )
@@ -1390,7 +1368,7 @@ var FeedProduct = React.createClass({
               { className: 'feed-product__details' },
               React.createElement(
                 'div',
-                { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                 React.createElement(
                   'div',
                   { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1402,7 +1380,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__items--price' },
                 React.createElement(
                   'label',
-                  { className: 'fs-12 fw-600 orange-red' },
+                  { className: 'fs-13 fw-600 orange-red' },
                   'Rp 170.390'
                 )
               )
@@ -1521,7 +1499,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__details' },
                 React.createElement(
                   'div',
-                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                   React.createElement(
                     'div',
                     { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1533,7 +1511,7 @@ var FeedProduct = React.createClass({
                   { className: 'feed-product__items--price' },
                   React.createElement(
                     'label',
-                    { className: 'fs-12 fw-600 orange-red' },
+                    { className: 'fs-13 fw-600 orange-red' },
                     'Rp 74.030'
                   )
                 )
@@ -1551,7 +1529,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__details' },
                 React.createElement(
                   'div',
-                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                   React.createElement(
                     'div',
                     { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1563,7 +1541,7 @@ var FeedProduct = React.createClass({
                   { className: 'feed-product__items--price' },
                   React.createElement(
                     'label',
-                    { className: 'fs-12 fw-600 orange-red' },
+                    { className: 'fs-13 fw-600 orange-red' },
                     'Rp 157.850'
                   )
                 )
@@ -1586,7 +1564,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__details' },
                 React.createElement(
                   'div',
-                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                   React.createElement(
                     'div',
                     { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1598,7 +1576,7 @@ var FeedProduct = React.createClass({
                   { className: 'feed-product__items--price' },
                   React.createElement(
                     'label',
-                    { className: 'fs-12 fw-600 orange-red' },
+                    { className: 'fs-13 fw-600 orange-red' },
                     'Rp 53.750'
                   )
                 )
@@ -1616,7 +1594,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__details' },
                 React.createElement(
                   'div',
-                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                   React.createElement(
                     'div',
                     { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1628,7 +1606,7 @@ var FeedProduct = React.createClass({
                   { className: 'feed-product__items--price' },
                   React.createElement(
                     'label',
-                    { className: 'fs-12 fw-600 orange-red' },
+                    { className: 'fs-13 fw-600 orange-red' },
                     'Rp 95.370'
                   )
                 )
@@ -1654,7 +1632,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__details' },
                 React.createElement(
                   'div',
-                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                   React.createElement(
                     'div',
                     { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1666,7 +1644,7 @@ var FeedProduct = React.createClass({
                   { className: 'feed-product__items--price' },
                   React.createElement(
                     'label',
-                    { className: 'fs-12 fw-600 orange-red' },
+                    { className: 'fs-13 fw-600 orange-red' },
                     'Rp 59.510'
                   )
                 )
@@ -1684,7 +1662,7 @@ var FeedProduct = React.createClass({
                 { className: 'feed-product__details' },
                 React.createElement(
                   'div',
-                  { className: 'fs-12 fw-600 lh-17 feed-product__items--name' },
+                  { className: 'fs-13 fw-600 lh-17 feed-product__items--name' },
                   React.createElement(
                     'div',
                     { className: 'detail__name js-ellipsis', 'data-js-ellipsis-limit': '15' },
@@ -1696,7 +1674,7 @@ var FeedProduct = React.createClass({
                   { className: 'feed-product__items--price' },
                   React.createElement(
                     'label',
-                    { className: 'fs-12 fw-600 orange-red' },
+                    { className: 'fs-13 fw-600 orange-red' },
                     'Rp 281.490'
                   )
                 )
@@ -2476,10 +2454,10 @@ var FeedTopAdsProduct = React.createClass({
     }
   },
   togglePopOver: function () {
-    if (!this.state.isShowPopover) {
-      document.onclick = this.togglePopover;
+    if (!this.state.isShowPopOver) {
+      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = this.togglePopOver;
     } else {
-      document.onclick = null;
+      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = null;
     }
 
     this.setState({
@@ -2493,26 +2471,30 @@ var FeedTopAdsProduct = React.createClass({
       React.createElement(
         'div',
         { className: 'feed-topads-product__header' },
-        'Promoted',
-        React.createElement('img', { className: 'feed-topads-product__image-promoted', src: this.state.isShowPopover ? getImage('icon-info-ijo.png') : getImage('icon-info.png'), onClick: () => this.togglePopOver() }),
-        this.state.isShowPopover === true && React.createElement(
+        React.createElement(
           'div',
-          { className: 'p-20 relative feed-topads-product__popover' },
-          React.createElement('img', { className: 'feed-topads-product__popover--arrow', alt: '', src: getImage('arrow-left.png') }),
-          React.createElement(
-            'h2',
-            { className: 'fs-13 fw-normal mb-15 feed-topads-product__popover-text' },
-            'Promosi oleh TopAds yang muncul berdasarkan minat Anda.'
-          ),
-          React.createElement(
+          { className: 'fs-12 feed-topads-shop__text-promoted', onClick: () => this.togglePopOver() },
+          'Promoted',
+          React.createElement('img', { className: 'feed-topads-product__image-promoted', src: this.state.isShowPopover ? getImage('icon-info-ijo.png') : getImage('icon-info.png') }),
+          this.state.isShowPopover === true && React.createElement(
             'div',
-            { className: 'feed-topads-product__popover-image-container' },
-            React.createElement('img', { src: getImage('announcement.png'), className: 'feed-topads-product__popover-image' })
-          ),
-          React.createElement(
-            'button',
-            { className: 'btn btn-action fw-normal feed-topads-product__popover-button' },
-            'Baca Selengkapnya'
+            { className: 'p-20 relative feed-topads-product__popover' },
+            React.createElement('img', { className: 'feed-topads-product__popover--arrow', alt: '', src: getImage('arrow-left.png') }),
+            React.createElement(
+              'h2',
+              { className: 'fs-13 fw-normal mb-15 feed-topads-product__popover-text' },
+              'Promosi oleh TopAds yang muncul berdasarkan minat Anda.'
+            ),
+            React.createElement(
+              'div',
+              { className: 'feed-topads-product__popover-image-container' },
+              React.createElement('img', { src: getImage('announcement.png'), className: 'feed-topads-product__popover-image' })
+            ),
+            React.createElement(
+              'button',
+              { className: 'btn btn-action fw-normal feed-topads-product__popover-button' },
+              'Baca Selengkapnya'
+            )
           )
         )
       ),
@@ -2723,10 +2705,10 @@ var FeedTopAdsShop = React.createClass({
     };
   },
   togglePopOver: function () {
-    if (!this.state.isShowPopover) {
-      document.onclick = this.togglePopover;
+    if (!this.state.isShowPopOver) {
+      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = this.togglePopOver;
     } else {
-      document.onclick = null;
+      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = null;
     }
 
     this.setState({
@@ -2743,9 +2725,9 @@ var FeedTopAdsShop = React.createClass({
         { className: 'fs-12 pb-10 feed-topads-shop__header' },
         React.createElement(
           'div',
-          { className: 'pb-10 feed-topads-shop__text-promoted' },
+          { className: 'pb-10 feed-topads-shop__text-promoted', onClick: () => this.togglePopOver() },
           'Promoted',
-          React.createElement('img', { className: 'feed-topads-shop__image-promoted', src: this.state.isShowPopover ? getImage('icon-info-ijo.png') : getImage('icon-info.png'), onClick: () => this.togglePopOver() }),
+          React.createElement('img', { className: 'feed-topads-shop__image-promoted', src: this.state.isShowPopover ? getImage('icon-info-ijo.png') : getImage('icon-info.png') }),
           this.state.isShowPopover === true && React.createElement(
             'div',
             { className: 'p-20 feed-topads-shop__popover' },

@@ -1,9 +1,9 @@
 .feed-search-shop {
   border: 1px solid #E0E0E0;
   border-radius: 3px;
-  padding: 35px;
-  padding-right: 30px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
   .feed-search-shop__image {
     display: inline-block;
     vertical-align: middle;
@@ -13,7 +13,6 @@
   .feed-search-shop__text {
     display: inline-block;
     vertical-align: middle;
-    width: 55%;
     margin-left: 40px; }
     .feed-search-shop__text h5 {
       margin-bottom: 6px; }
@@ -21,5 +20,24 @@
       margin-bottom: 12px;
       color: rgba(0, 0, 0, 0.54); }
     .feed-search-shop__text button.btn {
-      width: 200px;
       padding: 9px; }
+
+@media only screen and (min-width: 1200px) {
+  .feed-search-shop {
+    width: 560px;
+    padding: 35px;
+    padding-right: 30px; }
+    .feed-search-shop__text {
+      width: 55%; }
+      .feed-search-shop__text button.btn {
+        width: 200px; } }
+
+@media only screen and (max-width: 1199px) {
+  .feed-search-shop {
+    width: 441px;
+    padding: 35px 20px; }
+    .feed-search-shop__text {
+      width: 53%;
+      margin-left: 20px; }
+      .feed-search-shop__text button.btn {
+        width: 120px; } }

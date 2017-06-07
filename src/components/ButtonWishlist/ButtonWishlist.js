@@ -8,14 +8,17 @@ var ButtonWishlist = React.createClass({
       checked: this.props.checked
     };
   },
-  toggleCheck: function() {
+  toggleCheck: function(e) {
     this.setState({
       checked: !this.state.checked
     });
+    console.log(e);
+    e.stopPropagation();
+    e.preventDefault();
   },
   render: function() {
     return (
-      <img className='button-wishlist' alt='' onClick={() => this.toggleCheck()} src={
+      <img className='button-wishlist' alt='' onClick={(e) => this.toggleCheck(e)} src={
           this.state.checked === true ?
           getImage('wishlist.png') :
           getImage('wishlist-empty.png')
