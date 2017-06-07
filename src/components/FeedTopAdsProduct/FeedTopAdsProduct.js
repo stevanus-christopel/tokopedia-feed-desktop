@@ -84,22 +84,11 @@ var FeedTopAdsProduct = React.createClass({
         break;
     }
   },
-  togglePopOver: function() {
-    if(!this.state.isShowPopOver) {
-      document.onclick = this.togglePopOver;
-    } else {
-      document.onclick = null;
-    }
-
-    this.setState({
-      isShowPopover: !this.state.isShowPopover
-    });
-  },
   render: function() {
     return (
         <div className='feed-topads-product'>
             <div className='feed-topads-product__header'>
-              <div className='fs-12 feed-topads-shop__text-promoted' onClick={() => this.togglePopOver()}>Promoted 
+              <div className='fs-12 feed-topads-shop__text-promoted' onMouseOver={() => this.setState({isShowPopover: true})} onMouseLeave={() => this.setState({isShowPopover: false})} >Promoted 
                 <img className='feed-topads-product__image-promoted' src={this.state.isShowPopover? getImage('icon-info-ijo.png') : getImage('icon-info.png') } />
                 {
                   this.state.isShowPopover === true &&
