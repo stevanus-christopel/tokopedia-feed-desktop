@@ -10,9 +10,9 @@ var ButtonShare = React.createClass({
   },
   togglePopover: function() {
     if(!this.state.isShowPopover) {
-      document.onclick = this.togglePopover;
+      document.onmouseover = this.togglePopover;
     } else {
-      document.onclick = null;
+      document.onmouseover = null;
     }
 
     this.setState({
@@ -22,7 +22,7 @@ var ButtonShare = React.createClass({
   render: function() {
     return (
       <div>
-        <button className='btn button-share' onClick={() => this.togglePopover()}>
+        <button className='btn button-share' onMouseOver={() => this.togglePopover()}>
             <img className='button-share--icon' alt='' src={getImage('icon-btn-share.png')} /> Bagikan
         </button>
         {
