@@ -7,32 +7,7 @@ var marketingPromoItems = document.getElementsByClassName('feed-marketing-promo_
 
 const SLIDE_CONTAINER = document.getElementsByClassName('feed-marketing-promo__content');
 
-var FeedMarketingPromo = React.createClass({
-	
-	// sideScroll: function(element, direction, speed, distance, step) {
-	// 	var scrollAmount = 0;
-  //   var slideTimer = setInterval(function(){
-  //       if(direction == 'left'){
-  //           element.scrollLeft -= step;
-  //       } else {
-	// 				console.log(element)
-	// 				console.log(element.scrollLeft)
-  //           element.scrollLeft += step;
-  //       }
-  //       scrollAmount += step;
-  //       if(scrollAmount >= distance){
-  //           window.clearInterval(slideTimer);
-  //       }
-  //   }, speed);
-	// },
-	// slide: function() {
-	// 	console.log('kanan')
-	// 	this.sideScroll(document.getElementsByClassName('feed-marketing-promo__content'), 'right', 25, 100, 10)
-	// },
-	// slideBack: function() {
-	// 	this.sideScroll(document.getElementsByClassName('feed-marketing-promo__content'),'left',25,100,10);
-	// },
-	
+var FeedMarketingPromo = React.createClass({	
   render: function() {
     return (
       <div className='mb-20 feed-marketing-promo'>

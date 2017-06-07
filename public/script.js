@@ -9,7 +9,7 @@ $(document).ready(function(){
 			
 			target.animate({
 				scrollLeft: next
-			}, 600);
+			}, 250);
 
 			$('.feed-marketing-promo__arrow--left').css("display","block");
 			$('.feed-marketing-promo__arrow--right').css("display","none");
@@ -22,7 +22,7 @@ $(document).ready(function(){
 			var next = now - step;
 			target.animate({
 				scrollLeft: next
-			}, 600);
+			}, 250);
 
 
 			$('.feed-marketing-promo__arrow--left').addClass("hidden");
