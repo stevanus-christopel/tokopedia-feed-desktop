@@ -26,10 +26,16 @@
 		vertical-align: middle;
 		padding-left: 10px;
 		font-size: 14px;
+		width: 60%;
+
+		&--text {
+			line-height: 16px;
+			white-space: normal;
+		}
 
 		&--time {
 			font-size: 11px;
-			line-height: 1rem;
+			line-height: 20px;
 			color: rgba(0, 0, 0, 0.38);
 		}
 	}
@@ -92,6 +98,10 @@
 			border-right: 1px solid #FFF;
 		}
 
+		&--no-border-right {
+			border-right: 1px solid #FFF;
+		}
+
 		&--border-top {
 			border-top: 1px solid #E0E0E0;
 		}
@@ -125,5 +135,9 @@
 
 	&__details {
 		margin-top: 6px;
+	}
+
+	.detail__name {
+		overflow: hidden;
 	}
 }

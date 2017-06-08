@@ -18,6 +18,8 @@
     border-bottom: 1px solid #E0E0E0; }
   .feed-official-store-product__banner-image {
     border-radius: 3px 3px 0 0; }
+  .feed-official-store-product .detail__name {
+    overflow: hidden; }
   .feed-official-store-product .feed-official-store-product__title {
     background-color: #5A7CC2;
     border-radius: 3px 3px 0 0; }
@@ -33,6 +35,7 @@
       border-radius: 2px; }
     .feed-official-store-product .feed-official-store-product__items--name {
       height: 34px;
+      overflow: hidden;
       color: rgba(0, 0, 0, 0.7); }
     .feed-official-store-product .feed-official-store-product__items-details {
       padding: 8px 8px 0 8px; }
@@ -55,3 +58,7 @@
     height: 45px;
     line-height: 45px;
     text-align: center; }
+
+@media (max-width: 1199px) {
+  .feed-official-store-product__text {
+    padding-left: 10px; } }

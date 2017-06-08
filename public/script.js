@@ -26,7 +26,7 @@ $(document).ready(function(){
 			}, 250);
 		})
 	}
-
+	
 	var x, down, left;
 
 	target.mousedown(function(e) {
@@ -66,6 +66,5 @@ $(document).ready(function(){
 				$('.feed-marketing-promo__arrow--left').removeClass("hidden");
 		}
 	});	
-
 });
 

@@ -17,42 +17,79 @@ import FeedSellerStory from '../../../components/FeedSellerStory'
 import FeedTokopediaStory from '../../../components/FeedTokopediaStory'
 
 var FeedView = React.createClass({
+  getParameterByName: function (name, url) {
+    var self = this;
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  },
   componentDidMount: function(){
-    fetch('https://m-staging.tokopedia.com/graphqli', {
+    var obj = {"limit": 3,"userID": 5510345,"cursor": ""};
+    this.fetchData(obj);
+  },
+  fetchData: function(obj){
+    var self = this;
+    let header = new Headers({
+        'Content-Type': 'application/jsonp',
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin':'*'
+    });
+    return fetch('http://localhost:3000/graphql', {
         method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        mode: 'cors',
+        headers: header,
         body: JSON.stringify({
-          query: FeedQuery
+          query: FeedQuery,
+          variable: obj
         }),
         credentials: 'include'
       })
       .then(response => response.json())
       .then(response => {
         console.log('hello')
-        console.log(response);
       })
   },
   render: function() {
     return (
       <div className='feed'>
         <div className='feed__main-content'>
-          <FeedEmpty />
-          <FeedTopAdsShop />
-          <FeedProduct productCount={1} />
-          <FeedProduct productCount={2} />
-          <FeedOfficialStoreProduct />
-          <FeedProduct productCount={3} />
-          <FeedMarketingPromo />
-          <FeedProduct productCount={4} />
-          <FeedProduct productCount={5} />
-          <FeedProduct productCount={6} />
-          <FeedSearchShop />
-          <FeedProduct productCount={7} />
-          <FeedOfficialStore />
-          <FeedInspiration />
-          <FeedTopAdsProduct />
+          {
+            this.getParameterByName('p') === 'empty' ?
+            <div>
+              <FeedEmpty />
+              <FeedTopAdsShop />
+              <FeedTopAdsShop />
+              <FeedTopAdsShop />
+            </div> :
+            this.getParameterByName('p') === 'less' ?
+            <div>
+              <FeedSearchShop />
+              <FeedTopAdsShop />
+              <FeedProduct productCount={1} />
+              <FeedProduct productCount={2} />
+              <FeedOfficialStoreProduct />
+              <FeedTopAdsShop />
+              <FeedTopAdsShop />
+            </div> :
+            <div>
+              <FeedProduct productCount={1} />
+              <FeedProduct productCount={2} />
+              <FeedOfficialStoreProduct />
+              <FeedProduct productCount={3} />
+              <FeedMarketingPromo />
+              <FeedProduct productCount={4} />
+              <FeedProduct productCount={5} />
+              <FeedProduct productCount={6} />
+              <FeedProduct productCount={7} />
+              <FeedOfficialStore />
+              <FeedInspiration />
+              <FeedTopAdsProduct />
+            </div>
+          }
           <FeedTokopediaStory />
           <FeedSellerStory />
         </div>
