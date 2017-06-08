@@ -593,14 +593,34 @@ var marketingPromoContainer = document.getElementsByClassName('feed-marketing-pr
 var marketingPromoItems = document.getElementsByClassName('feed-marketing-promo__content-items');
 
 const SLIDE_CONTAINER = document.getElementsByClassName('feed-marketing-promo__content');
-
+const MARKETING_PROMO_TOAST_CONTAINER = document.getElementsByClassName('feed-marketing-promo__toast-container');
 var FeedMarketingPromo = React.createClass({
 	displayName: 'FeedMarketingPromo',
 
+	getInitialState: function () {
+		return {
+			isCopyCode: false
+		};
+	},
+	copyPromoCode: function () {
+		MARKETING_PROMO_TOAST_CONTAINER[0].classList.add('show');
+		setTimeout(() => {
+			MARKETING_PROMO_TOAST_CONTAINER[0].classList.remove('show');
+		}, 2000);
+	},
 	render: function () {
 		return React.createElement(
 			'div',
 			{ className: 'mb-20 feed-marketing-promo' },
+			React.createElement(
+				'div',
+				{ className: 'feed-marketing-promo__toast-container' },
+				React.createElement(
+					'div',
+					{ className: 'fs-12 inline-block' },
+					'Kode anda telah disalin'
+				)
+			),
 			React.createElement(
 				'div',
 				{ className: 'p-10 feed-marketing-promo__header' },
@@ -696,7 +716,7 @@ var FeedMarketingPromo = React.createClass({
 										{ className: 'pull-left feed-marketing-promo__btn-container' },
 										React.createElement(
 											'button',
-											{ className: 'btn btn-action feed-marketing-promo__btn-save-promo' },
+											{ className: 'btn btn-action feed-marketing-promo__btn-save-promo', onClick: () => this.copyPromoCode() },
 											'Salin'
 										)
 									)
