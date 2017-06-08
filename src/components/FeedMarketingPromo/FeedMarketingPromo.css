@@ -5,6 +5,23 @@
   height: 100%;
   position: relative;
   overflow: hidden; }
+  .feed-marketing-promo__toast-container {
+    z-index: 99999;
+    position: fixed;
+    width: 234px;
+    padding: 16px;
+    background-color: #333333;
+    color: #FFF;
+    opacity: 0;
+    top: 12%;
+    left: 36.5%;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  .feed-marketing-promo__toast-close {
+    width: 9px;
+    margin-top: 7px;
+    margin-left: 10px; }
   .feed-marketing-promo__seller-photo img {
     width: 52px;
     border: 1px solid #E0E0E0;
@@ -26,9 +43,15 @@
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    overflow-x: scroll; }
+    overflow-x: scroll;
+    margin-bottom: 25px; }
     .feed-marketing-promo__content-image {
       height: 169px; }
+  .feed-marketing-promo__footer {
+    position: absolute;
+    margin-top: -41px;
+    background: white;
+    width: 100%; }
   .feed-marketing-promo__content-items {
     margin: 0;
     position: relative;
@@ -106,3 +129,9 @@
 
 .hidden {
   visibility: hidden; }
+
+.show {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }

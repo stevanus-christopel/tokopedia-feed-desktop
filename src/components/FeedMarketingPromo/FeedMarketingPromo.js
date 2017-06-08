@@ -6,11 +6,28 @@ var marketingPromoContainer = document.getElementsByClassName('feed-marketing-pr
 var marketingPromoItems = document.getElementsByClassName('feed-marketing-promo__content-items')
 
 const SLIDE_CONTAINER = document.getElementsByClassName('feed-marketing-promo__content');
-
-var FeedMarketingPromo = React.createClass({	
+const MARKETING_PROMO_TOAST_CONTAINER = document.getElementsByClassName('feed-marketing-promo__toast-container');
+var FeedMarketingPromo = React.createClass({
+	getInitialState: function() {
+    return {
+      isCopyCode: false,
+    };
+  },
+	copyPromoCode: function() {
+		MARKETING_PROMO_TOAST_CONTAINER[0].classList.add('show')
+		setTimeout(() => {
+			MARKETING_PROMO_TOAST_CONTAINER[0].classList.remove('show')
+		}, 2000)
+	},
   render: function() {
     return (
       <div className='mb-20 feed-marketing-promo'>
+
+				<div className='feed-marketing-promo__toast-container'>
+					<div className='fs-12 inline-block'>Kode anda telah disalin</div>
+					{/*<img className='pull-right feed-marketing-promo__toast-close' src={getImage('x.png')} />
+					<div className='pull-right fs-12 lh-11 ml-50 bold inline-block'>Batalkan</div>*/}
+				</div>
 				
 				<div className='p-10 feed-marketing-promo__header'>
           <div className='va-middle inline-block feed-marketing-promo__seller-photo'>
@@ -28,7 +45,7 @@ var FeedMarketingPromo = React.createClass({
 						<img src={getImage('group-32.png')}/>
 					</div>
         </div>
-
+				
 				<div className='feed-marketing-promo__content'>
           <div className='row-fluid feed-marketing-promo__content-items'>
             <div className='feed-marketing-promo__content-container'>
@@ -47,7 +64,7 @@ var FeedMarketingPromo = React.createClass({
 											</div>
 										</div>
 										<div className='pull-left feed-marketing-promo__btn-container'>
-											<button className='btn btn-action feed-marketing-promo__btn-save-promo'>Salin</button>
+											<button className='btn btn-action feed-marketing-promo__btn-save-promo' onClick={() => this.copyPromoCode()}>Salin</button>
 										</div>
 									</div>
 								</div>
@@ -73,7 +90,7 @@ var FeedMarketingPromo = React.createClass({
 											</div>
 										</div>
 										<div className='pull-left feed-marketing-promo__btn-container'>
-											<button className='btn btn-action feed-marketing-promo__btn-save-promo'>Salin</button>
+											<button className='btn btn-action feed-marketing-promo__btn-save-promo' >Salin</button>
 										</div>
 									</div>
 								</div>
