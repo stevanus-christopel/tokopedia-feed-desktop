@@ -95,8 +95,8 @@ var FeedProduct = React.createClass({
             <img alt='' src={getImage('tokopedia-avatar-square.png')} />
           </div>
           <div className='feed-product__seller-activity'>
-            <span className='fw-600'>Nana Shop Ekstraordinari </span>
-            ubah <span className='fw-600'>{this.props.productCount} produk</span>
+            <div className='feed-product__seller-activity--text'><span className='fw-600'>Nana Shop Ekstraordinari </span>
+            ubah <span className='fw-600'>{this.props.productCount} produk</span></div>
             <div className='feed-product__seller-activity--time'>3 jam</div>
           </div>
           {
@@ -121,7 +121,7 @@ var FeedProduct = React.createClass({
                 onMouseEnter={() => this.showWishlist(1)}
                 onMouseLeave={() => this.hideWishlist(1)}
                 onClick={() => this.openDetailPage()}>
-                <div className='span6 feed-product__items feed-product__items--border-bottom'>
+                <div className='span6 feed-product__items feed-product__items--border-bottom feed-product__items--no-border-right'>
                   <img src={getImage('product-0.jpg')} className='feed-product__image'/>
                 </div>
                 <div className='span6 feed-product__items feed-product__items--border-bottom'>

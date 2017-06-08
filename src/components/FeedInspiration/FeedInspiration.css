@@ -27,3 +27,5 @@
       border-right: 1px solid #FFF; }
   .feed-inspiration__details {
     margin-top: 6px; }
+  .feed-inspiration .detail__name {
+    overflow: hidden; }

@@ -100,15 +100,14 @@ $color-border-grey: #E0E0E0;
     	left: -13px;
     	top: 37%;
 	}
-
+	
+	.detail__name {
+		overflow: hidden;
+	}
 }
 
 .detail {
 	&__name {
 		height: 34px;
 	}
-}
-
-	.feed-topads-product{ 
-	
 }

@@ -19,9 +19,13 @@
       font-size: 13px;
       line-height: 18px;
       color: rgba(0, 0, 0, 0.7);
-      font-weight: 600; }
+      font-weight: 600;
+      height: 38px;
+      overflow: hidden; }
     .feed-seller-story__text-right {
       display: inline-block;
       vertical-align: middle;
       text-align: right;
-      width: 25%; }
+      width: 25%;
+      position: relative;
+      top: 6px; }

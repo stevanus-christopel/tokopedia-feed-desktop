@@ -5,19 +5,38 @@
 var FeedView = React.createClass({
   displayName: 'FeedView',
 
+  getParameterByName: function (name, url) {
+    var self = this;
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  },
   componentDidMount: function () {
-    fetch('https://m-staging.tokopedia.com/graphqli', {
+    var obj = { "limit": 3, "userID": 5510345, "cursor": "" };
+    this.fetchData(obj);
+  },
+  fetchData: function (obj) {
+    var self = this;
+    let header = new Headers({
+      'Content-Type': 'application/jsonp',
+      'Accept': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    });
+    return fetch('http://localhost:3000/graphql', {
       method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      mode: 'cors',
+      headers: header,
       body: JSON.stringify({
-        query: FeedQuery
+        query: FeedQuery,
+        variable: obj
       }),
       credentials: 'include'
     }).then(response => response.json()).then(response => {
       console.log('hello');
-      console.log(response);
     });
   },
   render: function () {
@@ -27,21 +46,39 @@ var FeedView = React.createClass({
       React.createElement(
         'div',
         { className: 'feed__main-content' },
-        React.createElement(FeedEmpty, null),
-        React.createElement(FeedTopAdsShop, null),
-        React.createElement(FeedProduct, { productCount: 1 }),
-        React.createElement(FeedProduct, { productCount: 2 }),
-        React.createElement(FeedOfficialStoreProduct, null),
-        React.createElement(FeedProduct, { productCount: 3 }),
-        React.createElement(FeedMarketingPromo, null),
-        React.createElement(FeedProduct, { productCount: 4 }),
-        React.createElement(FeedProduct, { productCount: 5 }),
-        React.createElement(FeedProduct, { productCount: 6 }),
-        React.createElement(FeedSearchShop, null),
-        React.createElement(FeedProduct, { productCount: 7 }),
-        React.createElement(FeedOfficialStore, null),
-        React.createElement(FeedInspiration, null),
-        React.createElement(FeedTopAdsProduct, null),
+        this.getParameterByName('p') === 'empty' ? React.createElement(
+          'div',
+          null,
+          React.createElement(FeedEmpty, null),
+          React.createElement(FeedTopAdsShop, null),
+          React.createElement(FeedTopAdsShop, null),
+          React.createElement(FeedTopAdsShop, null)
+        ) : this.getParameterByName('p') === 'less' ? React.createElement(
+          'div',
+          null,
+          React.createElement(FeedSearchShop, null),
+          React.createElement(FeedTopAdsShop, null),
+          React.createElement(FeedProduct, { productCount: 1 }),
+          React.createElement(FeedProduct, { productCount: 2 }),
+          React.createElement(FeedOfficialStoreProduct, null),
+          React.createElement(FeedTopAdsShop, null),
+          React.createElement(FeedTopAdsShop, null)
+        ) : React.createElement(
+          'div',
+          null,
+          React.createElement(FeedProduct, { productCount: 1 }),
+          React.createElement(FeedProduct, { productCount: 2 }),
+          React.createElement(FeedOfficialStoreProduct, null),
+          React.createElement(FeedProduct, { productCount: 3 }),
+          React.createElement(FeedMarketingPromo, null),
+          React.createElement(FeedProduct, { productCount: 4 }),
+          React.createElement(FeedProduct, { productCount: 5 }),
+          React.createElement(FeedProduct, { productCount: 6 }),
+          React.createElement(FeedProduct, { productCount: 7 }),
+          React.createElement(FeedOfficialStore, null),
+          React.createElement(FeedInspiration, null),
+          React.createElement(FeedTopAdsProduct, null)
+        ),
         React.createElement(FeedTokopediaStory, null),
         React.createElement(FeedSellerStory, null)
       ),
@@ -100,24 +137,29 @@ var ButtonShare = React.createClass({
       isShowPopover: false
     };
   },
-  togglePopover: function () {
-    if (!this.state.isShowPopover) {
-      document.onmouseover = this.togglePopover;
-    } else {
-      document.onmouseover = null;
+  isPopoverShowed: function () {
+    if (this.state.isShowPopover === true) {
+      this.setState({ isShowPopover: false });
     }
-
-    this.setState({
-      isShowPopover: !this.state.isShowPopover
-    });
   },
+  // togglePopover: function() {
+  //   if(!this.state.isShowPopover) {
+  //     document.getElementsByClassName('button-share__icon-container').onmouseover = this.togglePopover;
+  //   } else {
+  //     document.getElementsByClassName('button-share__icon-container').onmouseover = null;
+  //   }
+
+  //   this.setState({
+  //     isShowPopover: !this.state.isShowPopover
+  //   });
+  // },
   render: function () {
     return React.createElement(
       'div',
-      null,
+      { onMouseLeave: () => this.setState({ isShowPopover: false }) },
       React.createElement(
         'button',
-        { className: 'btn button-share', onMouseOver: () => this.togglePopover() },
+        { className: 'btn button-share', onClick: () => this.isPopoverShowed(), onMouseOver: () => this.setState({ isShowPopover: true }) },
         React.createElement('img', { className: 'button-share--icon', alt: '', src: getImage('icon-btn-share.png') }),
         ' Bagikan'
       ),
@@ -1237,16 +1279,20 @@ var FeedProduct = React.createClass({
           'div',
           { className: 'feed-product__seller-activity' },
           React.createElement(
-            'span',
-            { className: 'fw-600' },
-            'Nana Shop Ekstraordinari '
-          ),
-          'ubah ',
-          React.createElement(
-            'span',
-            { className: 'fw-600' },
-            this.props.productCount,
-            ' produk'
+            'div',
+            { className: 'feed-product__seller-activity--text' },
+            React.createElement(
+              'span',
+              { className: 'fw-600' },
+              'Nana Shop Ekstraordinari '
+            ),
+            'ubah ',
+            React.createElement(
+              'span',
+              { className: 'fw-600' },
+              this.props.productCount,
+              ' produk'
+            )
           ),
           React.createElement(
             'div',
@@ -1282,7 +1328,7 @@ var FeedProduct = React.createClass({
               onClick: () => this.openDetailPage() },
             React.createElement(
               'div',
-              { className: 'span6 feed-product__items feed-product__items--border-bottom' },
+              { className: 'span6 feed-product__items feed-product__items--border-bottom feed-product__items--no-border-right' },
               React.createElement('img', { src: getImage('product-0.jpg'), className: 'feed-product__image' })
             ),
             React.createElement(
@@ -2455,9 +2501,9 @@ var FeedTopAdsProduct = React.createClass({
   },
   togglePopOver: function () {
     if (!this.state.isShowPopOver) {
-      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = this.togglePopOver;
+      document.onclick = this.togglePopOver;
     } else {
-      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = null;
+      document.onclick = null;
     }
 
     this.setState({
@@ -2706,9 +2752,9 @@ var FeedTopAdsShop = React.createClass({
   },
   togglePopOver: function () {
     if (!this.state.isShowPopOver) {
-      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = this.togglePopOver;
+      document.onclick = this.togglePopOver;
     } else {
-      document.getElementsByClassName('feed-topads-shop__text-promoted').onclick = null;
+      document.onclick = null;
     }
 
     this.setState({

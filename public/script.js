@@ -28,4 +28,31 @@ $(document).ready(function(){
 			$('.feed-marketing-promo__arrow--right').css("display","block");
 		})
 	}
+
+	var ellipsisText = function (e, etc) {
+		var wordArray = e.innerHTML.split(" ");
+		/* If string doesn't have whitespace */
+		if(wordArray.length == 1) {
+			if(e.getAttribute('data-js-ellipsis-limit') && wordArray[0].length > e.getAttribute('data-js-ellipsis-limit')){
+				e.innerHTML = wordArray[wordArray.length - 1].substring(0, e.getAttribute('data-js-ellipsis-limit')) + '...';
+			}
+			return;
+		}
+		while (e.scrollHeight > e.offsetHeight) {
+			if(wordArray.length > 1){
+				wordArray.pop();
+			}
+			else {
+				return;
+			}
+			e.innerHTML = wordArray.join(" ") + (etc || "...");
+		}
+	};
+
+	/* Call function ellipsisMultipleLineText for all element with class js-line-clamp */
+	function format_ellipsis() {
+		[].forEach.call(document.querySelectorAll(".js-ellipsis"), function(elem) {
+			ellipsisText(elem);
+		});
+	}
 });

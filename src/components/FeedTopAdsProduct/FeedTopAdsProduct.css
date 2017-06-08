@@ -66,6 +66,8 @@
     width: 15px;
     left: -13px;
     top: 37%; }
+  .feed-topads-product .detail__name {
+    overflow: hidden; }
 
 .detail__name {
   height: 34px; }
