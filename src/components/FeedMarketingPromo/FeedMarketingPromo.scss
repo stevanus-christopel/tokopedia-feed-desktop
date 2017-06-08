@@ -146,6 +146,15 @@ $toast-animation-seconds: 0.5s;
 		padding: 8px 18px;
 		border-radius: 2px;
 		border: 1px dashed $color-border-grey;
+		display: inline-block;
+	}
+
+	&__code-container {
+		padding-top: 15px;
+	}
+
+	&__code-label {
+		display: block;
 	}
 
 	&__code-text {
@@ -153,8 +162,10 @@ $toast-animation-seconds: 0.5s;
 	}
 
 	&__btn-save-promo {
+		display: inline-block;
 		width: 51px;
 		height: 40px;
+		margin-bottom: 2px;
 	}
 
 	&__btn-container {
@@ -187,4 +198,41 @@ $toast-animation-seconds: 0.5s;
 .show {
 	opacity: 1;
 	transition: all $toast-animation-seconds ease;
+}
+
+@media (max-width: 1199px) {
+	.feed-marketing-promo {
+		&__content-container {
+			width: 383px;
+		}
+
+		&__content-list {
+			width: 381px;
+		}
+
+		&__content-image {
+			height: 102px;
+		}
+
+		&__content-title {
+			width: 360px;
+		}
+
+		&__code-container {
+			padding-top: 0;
+		}
+
+		&__code-label {
+			display: inline-block;
+			padding-right: 5px;
+		}
+
+		&__code-box {
+			width: 220px;
+		}
+
+		&__btn-save-promo {
+			width: 61px;
+		}
+	}
 }

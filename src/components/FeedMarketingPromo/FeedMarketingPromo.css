@@ -104,12 +104,19 @@
   .feed-marketing-promo__code-box {
     padding: 8px 18px;
     border-radius: 2px;
-    border: 1px dashed #E0E0E0; }
+    border: 1px dashed #E0E0E0;
+    display: inline-block; }
+  .feed-marketing-promo__code-container {
+    padding-top: 15px; }
+  .feed-marketing-promo__code-label {
+    display: block; }
   .feed-marketing-promo__code-text {
     color: rgba(0, 0, 0, 0.7); }
   .feed-marketing-promo__btn-save-promo {
+    display: inline-block;
     width: 51px;
-    height: 40px; }
+    height: 40px;
+    margin-bottom: 2px; }
   .feed-marketing-promo__btn-container {
     padding: 37px 8px 19px 5px; }
   .feed-marketing-promo__arrow--right {
@@ -135,3 +142,22 @@
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
+
+@media (max-width: 1199px) {
+  .feed-marketing-promo__content-container {
+    width: 383px; }
+  .feed-marketing-promo__content-list {
+    width: 381px; }
+  .feed-marketing-promo__content-image {
+    height: 102px; }
+  .feed-marketing-promo__content-title {
+    width: 360px; }
+  .feed-marketing-promo__code-container {
+    padding-top: 0; }
+  .feed-marketing-promo__code-label {
+    display: inline-block;
+    padding-right: 5px; }
+  .feed-marketing-promo__code-box {
+    width: 220px; }
+  .feed-marketing-promo__btn-save-promo {
+    width: 61px; } }
