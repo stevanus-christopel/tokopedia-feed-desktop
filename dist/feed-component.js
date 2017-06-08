@@ -56,10 +56,11 @@ var FeedView = React.createClass({
         ) : this.getParameterByName('p') === 'less' ? React.createElement(
           'div',
           null,
-          React.createElement(FeedSearchShop, null),
-          React.createElement(FeedTopAdsShop, null),
           React.createElement(FeedProduct, { productCount: 1 }),
           React.createElement(FeedProduct, { productCount: 2 }),
+          React.createElement(FeedProduct, { productCount: 3 }),
+          React.createElement(FeedSearchShop, null),
+          React.createElement(FeedMarketingPromo, null),
           React.createElement(FeedOfficialStoreProduct, null),
           React.createElement(FeedTopAdsShop, null),
           React.createElement(FeedTopAdsShop, null)
@@ -67,6 +68,7 @@ var FeedView = React.createClass({
           'div',
           null,
           React.createElement(FeedProduct, { productCount: 1 }),
+          React.createElement(FeedTopAdsShop, null),
           React.createElement(FeedProduct, { productCount: 2 }),
           React.createElement(FeedOfficialStoreProduct, null),
           React.createElement(FeedProduct, { productCount: 3 }),
@@ -246,7 +248,7 @@ var FeedHotList = React.createClass({
 	render: function () {
 		return React.createElement(
 			'div',
-			null,
+			{ className: 'feed-hot-list' },
 			React.createElement(
 				'div',
 				{ className: 'feed-hot-lists-full' },
@@ -589,11 +591,9 @@ var FeedInspiration = React.createClass({
 
 
 
-var marketingPromoContainer = document.getElementsByClassName('feed-marketing-promo__content');
-var marketingPromoItems = document.getElementsByClassName('feed-marketing-promo__content-items');
-
 const SLIDE_CONTAINER = document.getElementsByClassName('feed-marketing-promo__content');
 const MARKETING_PROMO_TOAST_CONTAINER = document.getElementsByClassName('feed-marketing-promo__toast-container');
+
 var FeedMarketingPromo = React.createClass({
 	displayName: 'FeedMarketingPromo',
 
@@ -607,6 +607,8 @@ var FeedMarketingPromo = React.createClass({
 		setTimeout(() => {
 			MARKETING_PROMO_TOAST_CONTAINER[0].classList.remove('show');
 		}, 2000);
+		console.log(MARKETING_PROMO_TOAST_CONTAINER[0].scrollWidth);
+		console.log(MARKETING_PROMO_TOAST_CONTAINER[0].clientWidth);
 	},
 	render: function () {
 		return React.createElement(
@@ -695,28 +697,24 @@ var FeedMarketingPromo = React.createClass({
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left pt-15 pl-10 feed-marketing-promo__code-container' },
+										{ className: 'pull-left pl-10 feed-marketing-promo__code-container' },
 										React.createElement(
 											'span',
-											{ className: 'fs-12 fw-normal' },
+											{ className: 'fs-12 fw-normal feed-marketing-promo__code-label' },
 											'Kode :'
 										),
 										React.createElement(
 											'div',
-											{ className: 'feed-marketing-promo__code-box' },
+											{ className: 'ta-center feed-marketing-promo__code-box' },
 											React.createElement(
 												'span',
 												{ className: 'fs-13 fw-600 feed-marketing-promo__code-text' },
 												'XLPROMO41A'
 											)
-										)
-									),
-									React.createElement(
-										'div',
-										{ className: 'pull-left feed-marketing-promo__btn-container' },
+										),
 										React.createElement(
 											'button',
-											{ className: 'btn btn-action feed-marketing-promo__btn-save-promo', onClick: () => this.copyPromoCode() },
+											{ className: 'btn btn-action ml-5 feed-marketing-promo__btn-save-promo', onClick: () => this.copyPromoCode() },
 											'Salin'
 										)
 									)
@@ -762,28 +760,87 @@ var FeedMarketingPromo = React.createClass({
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left pt-15 pl-15 feed-marketing-promo__code-container' },
+										{ className: 'pull-left pl-10 feed-marketing-promo__code-container' },
 										React.createElement(
 											'span',
-											{ className: 'fs-12 fw-normal' },
+											{ className: 'fs-12 fw-normal feed-marketing-promo__code-label' },
 											'Kode :'
 										),
 										React.createElement(
 											'div',
-											{ className: 'feed-marketing-promo__code-box' },
+											{ className: 'ta-center feed-marketing-promo__code-box' },
 											React.createElement(
 												'span',
 												{ className: 'fs-13 fw-600 feed-marketing-promo__code-text' },
 												'XLPROMO41A'
 											)
+										),
+										React.createElement(
+											'button',
+											{ className: 'btn btn-action ml-5 feed-marketing-promo__btn-save-promo', onClick: () => this.copyPromoCode() },
+											'Salin'
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				React.createElement(
+					'div',
+					{ className: 'row-fluid feed-marketing-promo__content-items' },
+					React.createElement(
+						'div',
+						{ className: 'feed-marketing-promo__content-container' },
+						React.createElement(
+							'div',
+							{ className: 'feed-marketing-promo__content-frame' },
+							React.createElement(
+								'div',
+								{ className: 'feed-marketing-promo__content-list' },
+								React.createElement('img', { src: getImage('promo-banner.jpg'), className: 'feed-marketing-promo__content-image' }),
+								React.createElement(
+									'div',
+									{ className: 'row-fluid' },
+									React.createElement(
+										'div',
+										{ className: 'pull-left feed-marketing-promo__content-details' },
+										React.createElement(
+											'div',
+											{ className: 'fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title' },
+											'Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%'
+										),
+										React.createElement(
+											'h3',
+											{ className: 'fs-12 fw-normal feed-marketing-promo__content-promo' },
+											React.createElement(
+												'span',
+												null,
+												'Periode: '
+											),
+											'25 Januari 2017'
 										)
 									),
 									React.createElement(
 										'div',
-										{ className: 'pull-left feed-marketing-promo__btn-container' },
+										{ className: 'pull-left pl-10 feed-marketing-promo__code-container' },
+										React.createElement(
+											'span',
+											{ className: 'fs-12 fw-normal feed-marketing-promo__code-label' },
+											'Kode :'
+										),
+										React.createElement(
+											'div',
+											{ className: 'ta-center feed-marketing-promo__code-box' },
+											React.createElement(
+												'span',
+												{ className: 'fs-13 fw-600 feed-marketing-promo__code-text' },
+												'XLPROMO41A'
+											)
+										),
 										React.createElement(
 											'button',
-											{ className: 'btn btn-action feed-marketing-promo__btn-save-promo' },
+											{ className: 'btn btn-action ml-5 feed-marketing-promo__btn-save-promo', onClick: () => this.copyPromoCode() },
 											'Salin'
 										)
 									)
@@ -2519,17 +2576,6 @@ var FeedTopAdsProduct = React.createClass({
         break;
     }
   },
-  togglePopOver: function () {
-    if (!this.state.isShowPopOver) {
-      document.onclick = this.togglePopOver;
-    } else {
-      document.onclick = null;
-    }
-
-    this.setState({
-      isShowPopover: !this.state.isShowPopover
-    });
-  },
   render: function () {
     return React.createElement(
       'div',
@@ -2539,7 +2585,7 @@ var FeedTopAdsProduct = React.createClass({
         { className: 'feed-topads-product__header' },
         React.createElement(
           'div',
-          { className: 'fs-12 feed-topads-shop__text-promoted', onClick: () => this.togglePopOver() },
+          { className: 'fs-12 feed-topads-shop__text-promoted', onMouseOver: () => this.setState({ isShowPopover: true }), onMouseLeave: () => this.setState({ isShowPopover: false }) },
           'Promoted',
           React.createElement('img', { className: 'feed-topads-product__image-promoted', src: this.state.isShowPopover ? getImage('icon-info-ijo.png') : getImage('icon-info.png') }),
           this.state.isShowPopover === true && React.createElement(
@@ -2770,18 +2816,6 @@ var FeedTopAdsShop = React.createClass({
       isShowPopOver: false
     };
   },
-  togglePopOver: function () {
-    if (!this.state.isShowPopOver) {
-      document.onclick = this.togglePopOver;
-    } else {
-      document.onclick = null;
-    }
-
-    this.setState({
-      isShowPopover: !this.state.isShowPopover
-    });
-  },
-
   render: function () {
     return React.createElement(
       'div',
@@ -2791,7 +2825,7 @@ var FeedTopAdsShop = React.createClass({
         { className: 'fs-12 pb-10 feed-topads-shop__header' },
         React.createElement(
           'div',
-          { className: 'pb-10 feed-topads-shop__text-promoted', onClick: () => this.togglePopOver() },
+          { className: 'mb-10 feed-topads-shop__text-promoted', onMouseOver: () => this.setState({ isShowPopover: true }), onMouseLeave: () => this.setState({ isShowPopover: false }) },
           'Promoted',
           React.createElement('img', { className: 'feed-topads-shop__image-promoted', src: this.state.isShowPopover ? getImage('icon-info-ijo.png') : getImage('icon-info.png') }),
           this.state.isShowPopover === true && React.createElement(

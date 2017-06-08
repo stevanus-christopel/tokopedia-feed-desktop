@@ -5,7 +5,7 @@ import getImage from '../../lib/utils.js';
 var FeedHotList = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className='feed-hot-list'>
 				<div className='feed-hot-lists-full'>
 					<div className='row-fluid feed-hot-lists__top-banner'>
 						<img src={getImage('ramadhan-hotlist.png')}/>

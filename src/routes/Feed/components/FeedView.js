@@ -67,16 +67,18 @@ var FeedView = React.createClass({
             </div> :
             this.getParameterByName('p') === 'less' ?
             <div>
-              <FeedSearchShop />
-              <FeedTopAdsShop />
               <FeedProduct productCount={1} />
               <FeedProduct productCount={2} />
+              <FeedProduct productCount={3} />
+              <FeedSearchShop />
+              <FeedMarketingPromo />
               <FeedOfficialStoreProduct />
               <FeedTopAdsShop />
               <FeedTopAdsShop />
             </div> :
             <div>
               <FeedProduct productCount={1} />
+              <FeedTopAdsShop />
               <FeedProduct productCount={2} />
               <FeedOfficialStoreProduct />
               <FeedProduct productCount={3} />
