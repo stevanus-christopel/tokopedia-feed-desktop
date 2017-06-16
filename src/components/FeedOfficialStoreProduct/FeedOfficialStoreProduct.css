@@ -8,7 +8,7 @@
   color: rgba(0, 0, 0, 0.7); }
 
 .feed-official-store-product {
-  background-color: #006030;
+  background-color: #E0E0E0;
   padding: 8px;
   border-radius: 0 0 3px 3px; }
   .feed-official-store-product__frame {
@@ -17,7 +17,16 @@
   .feed-official-store-product__row {
     border-bottom: 1px solid #E0E0E0; }
   .feed-official-store-product__banner-image {
-    border-radius: 3px 3px 0 0; }
+    border-radius: 3px 3px 0 0;
+    width: 100%;
+    height: auto;
+    max-height: 148px;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor; }
   .feed-official-store-product .detail__name {
     overflow: hidden; }
   .feed-official-store-product .feed-official-store-product__title {
@@ -51,9 +60,12 @@
       max-width: 30px;
       border-radius: 2px;
       border: 1px solid #E0E0E0; }
-  .feed-official-store-product .feed-official-store-product__text label {
-    position: relative;
-    bottom: 2px; }
+  .feed-official-store-product .feed-official-store-product__text {
+    height: 42px;
+    overflow: hidden; }
+    .feed-official-store-product .feed-official-store-product__text label {
+      position: relative;
+      bottom: 2px; }
   .feed-official-store-product .feed-official-store-product__link-more {
     height: 45px;
     line-height: 45px;

@@ -9,30 +9,42 @@ var FeedOfficialStore = React.createClass({
 				<h1 className='fw-600 fs-16 lh-16 feed-official-store__title'>Official Store</h1>
 				<div className='row-fluid feed-official-store__showcase'>
 					<div className='span4 feed-official-store__items'>
-						<img src={getImage('lg-logo.png')} className='feed-official-store__items-image'/>
+						<a href={this.props.feed.content.official_store[0].shop_defaultv3_url}>
+							<img src={this.props.feed.content.official_store[0].microsite_url} className='feed-official-store__items-image'/>
+						</a>
 					</div>
 					<div className='span4 feed-official-store__items'>
-						<img src={getImage('garnier-logo.png')} className='feed-official-store__items-image'/>
+						<a href={this.props.feed.content.official_store[1].shop_defaultv3_url}>
+							<img src={this.props.feed.content.official_store[1].microsite_url} className='feed-official-store__items-image'/>
+						</a>
 					</div>
 					<div className='span4 feed-official-store__items'>
-						<img src={getImage('garmin-logo.png')} className='feed-official-store__items-image'/>
+						<a href={this.props.feed.content.official_store[2].shop_defaultv3_url}>
+							<img src={this.props.feed.content.official_store[2].microsite_url} className='feed-official-store__items-image'/>
+						</a>
 					</div>
 				</div>
 
 				<div className='row-fluid feed-official-store__showcase'>
 					<div className='span4 feed-official-store__items'>
-						<img src={getImage('microsoft-logo.png')} className='feed-official-store__items-image'/>
+						<a href={this.props.feed.content.official_store[2].shop_defaultv3_url}>
+							<img src={this.props.feed.content.official_store[3].microsite_url} className='feed-official-store__items-image'/>
+						</a>
 					</div>
 					<div className='span4 feed-official-store__items'>
-						<img src={getImage('momnbab-logo.png')} className='feed-official-store__items-image'/>
+						<a href={this.props.feed.content.official_store[2].shop_defaultv3_url}>
+							<img src={this.props.feed.content.official_store[3].microsite_url} className='feed-official-store__items-image'/>
+						</a>
 					</div>
 					<div className='span4 feed-official-store__items'>
-						<img src={getImage('makarizo-logo.png')} className='feed-official-store__items-image'/>
+						<a href={this.props.feed.content.official_store[2].shop_defaultv3_url}>
+							<img src={this.props.feed.content.official_store[3].microsite_url} className='feed-official-store__items-image'/>
+						</a>
 					</div>
 				</div>
 
 				<div className='ta-center row-fluid feed-official-store__link-more'>
-					<a href="#">Lihat Semua</a>
+					<a href="https://www.tokopedia.com/official-store">Lihat Semua</a>
 				</div>
       </div>
     );

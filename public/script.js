@@ -85,14 +85,14 @@ function scrollResponsiveFeedHandler() {
 			width = "319px";
 			left = "initial";
 
-			if($(".footer-wrapper").visible(true)) {
+			if($(".footer-main").visible(true)) {
 				bottom = "600px";
 			}
 		} else {
 			width = "215px";
 			left = ($(".feed__main-content").offset().left - $(window).scrollLeft()) + $(".feed__main-content").width() + 60  + "px";
 
-			if($(".footer-wrapper").visible(true)) {
+			if($(".footer-main").visible(true)) {
 				bottom = "600px";
 			}
 		}
@@ -104,4 +104,8 @@ function scrollResponsiveFeedHandler() {
 			"width": width
 		});
 	}
+}
+	
+function settingTime() {
+	return "HELLO";
 }

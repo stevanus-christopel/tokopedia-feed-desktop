@@ -20,6 +20,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "react": "^15.5.4",
+    "react-apollo": "^1.4.2",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",

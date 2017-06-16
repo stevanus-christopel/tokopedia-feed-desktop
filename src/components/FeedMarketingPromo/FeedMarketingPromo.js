@@ -16,17 +16,13 @@ var FeedMarketingPromo = React.createClass({
 		setTimeout(() => {
 			MARKETING_PROMO_TOAST_CONTAINER[0].classList.remove('show')
 		}, 2000)
-		console.log(MARKETING_PROMO_TOAST_CONTAINER[0].scrollWidth)
-		console.log(MARKETING_PROMO_TOAST_CONTAINER[0].clientWidth)
 	},
   render: function() {
     return (
       <div className='mb-20 feed-marketing-promo'>
 
-				<div className='feed-marketing-promo__toast-container'>
+				<div className='feed-marketing-promo__toast-container ta-center'>
 					<div className='fs-12 inline-block'>Kode anda telah disalin</div>
-					{/*<img className='pull-right feed-marketing-promo__toast-close' src={getImage('x.png')} />
-					<div className='pull-right fs-12 lh-11 ml-50 bold inline-block'>Batalkan</div>*/}
 				</div>
 				
 				<div className='p-10 feed-marketing-promo__header'>
@@ -47,82 +43,49 @@ var FeedMarketingPromo = React.createClass({
         </div>
 				
 				<div className='feed-marketing-promo__content'>
-          <div className='row-fluid feed-marketing-promo__content-items'>
-            <div className='feed-marketing-promo__content-container'>
-							<div className='feed-marketing-promo__content-frame'>
-								<div className='feed-marketing-promo__content-list'>
-									<img src={getImage('promo-banner.jpg')} className='feed-marketing-promo__content-image'/>
-									<div className='row-fluid'>
-										<div className='pull-left feed-marketing-promo__content-details'>
-											<div className='fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title'>Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%</div>
-											<h3 className='fs-12 fw-normal feed-marketing-promo__content-promo'><span>Periode: </span>25 Januari 2017</h3>
-										</div>
-										<div className='pull-left pl-10 feed-marketing-promo__code-container'>
-											<span className='fs-12 fw-normal feed-marketing-promo__code-label'>Kode :</span>
-											<div className='ta-center feed-marketing-promo__code-box'>
-												<span className='fs-13 fw-600 feed-marketing-promo__code-text'>XLPROMO41A</span>
+					{
+						this.props.feed.content.promotions.map(function(promo) {
+							return (
+							<div className='row-fluid feed-marketing-promo__content-items' key={ promo.id }>
+								<div className='feed-marketing-promo__content-container'>
+									<div className='feed-marketing-promo__content-frame'>
+										<div className='feed-marketing-promo__content-list'>
+											<a href={promo.url}>
+												<img src={ promo.feature_image } className='feed-marketing-promo__content-image'/>
+											</a>
+											<div className='row-fluid'>
+												<div className='pull-left feed-marketing-promo__content-details'>
+													<div className='fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title'
+													dangerouslySetInnerHTML={{__html: promo.description}}>
+													</div>
+													<h3 className='fs-12 fw-normal feed-marketing-promo__content-promo mb-0'><span>Periode: </span>
+													{  promo.periode }</h3>
+												</div>
+												{ promo.code.length != 0 &&
+													<div className='pull-left pl-10 feed-marketing-promo__code-container mb-10'>
+														<span className='fs-12 fw-normal feed-marketing-promo__code-label'>Kode :</span>
+														<div className='ta-center feed-marketing-promo__code-box'>
+															<span className='fs-13 fw-600 feed-marketing-promo__code-text'>{ promo.code }</span>
+														</div>
+														<button className='btn btn-action ml-5 feed-marketing-promo__btn-save-promo'
+														onClick={() => this.copyPromoCode()}>Salin</button>
+													</div>
+												}
 											</div>
-											<button className='btn btn-action ml-5 feed-marketing-promo__btn-save-promo' onClick={() => this.copyPromoCode()}>Salin</button>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-          </div>
-
-
-					<div className='row-fluid feed-marketing-promo__content-items'>
-            <div className='feed-marketing-promo__content-container'>
-							<div className='feed-marketing-promo__content-frame'>
-								<div className='feed-marketing-promo__content-list'>
-									<img src={getImage('banner-149.jpg')} className='feed-marketing-promo__content-image'/>
-									<div className='row-fluid'>
-										<div className='pull-left feed-marketing-promo__content-details'>
-											<div className='fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title'>Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%</div>
-											<h3 className='fs-12 fw-normal feed-marketing-promo__content-promo'><span>Periode: </span>25 Januari 2017</h3>
-										</div>
-										<div className='pull-left pl-10 feed-marketing-promo__code-container'>
-											<span className='fs-12 fw-normal feed-marketing-promo__code-label'>Kode :</span>
-											<div className='ta-center feed-marketing-promo__code-box'>
-												<span className='fs-13 fw-600 feed-marketing-promo__code-text'>XLPROMO41A</span>
-											</div>
-											<button className='btn btn-action ml-5 feed-marketing-promo__btn-save-promo' onClick={() => this.copyPromoCode()}>Salin</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-          </div>
-
-					<div className='row-fluid feed-marketing-promo__content-items'>
-            <div className='feed-marketing-promo__content-container'>
-							<div className='feed-marketing-promo__content-frame'>
-								<div className='feed-marketing-promo__content-list'>
-									<img src={getImage('promo-banner.jpg')} className='feed-marketing-promo__content-image'/>
-									<div className='row-fluid'>
-										<div className='pull-left feed-marketing-promo__content-details'>
-											<div className='fs-13 lh-20 fw-normal m-0 pb-10 feed-marketing-promo__content-title'>Beli paket data XL di Tokopedia assad lebih sdsi hemat, diskon hingga 41%</div>
-											<h3 className='fs-12 fw-normal feed-marketing-promo__content-promo'><span>Periode: </span>25 Januari 2017</h3>
-										</div>
-										<div className='pull-left pl-10 feed-marketing-promo__code-container'>
-											<span className='fs-12 fw-normal feed-marketing-promo__code-label'>Kode :</span>
-											<div className='ta-center feed-marketing-promo__code-box'>
-												<span className='fs-13 fw-600 feed-marketing-promo__code-text'>XLPROMO41A</span>
-											</div>
-											<button className='btn btn-action ml-5 feed-marketing-promo__btn-save-promo' onClick={() => this.copyPromoCode()}>Salin</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-          </div>
-
-
+							</div>)
+						}, this)
+					}
+					
         </div>
 
-				<div className='ta-center p-10 feed-marketing-promo__footer'>
-					<a href="#">Lihat semua promo</a>
-				</div>
+				<a href="https://www.tokopedia.com/promo/">
+					<div className='ta-center p-10 feed-marketing-promo__footer'>
+						Lihat semua promo
+					</div>
+				</a>
 				
       </div>
     );

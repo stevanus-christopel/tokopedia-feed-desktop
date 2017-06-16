@@ -1,0 +1,14 @@
+.feed-error {
+  border: 1px solid #E0E0E0;
+  border-radius: 3px;
+  padding: 24px;
+  text-align: center; }
+  .feed-error p {
+    font-size: 12px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.54);
+    margin-bottom: 17px; }
+  .feed-error button.btn {
+    width: 200px;
+    padding: 9px;
+    font-size: 13px; }

@@ -16,16 +16,13 @@ $color-black-primary: rgba(0, 0, 0, 0.7);
 }
 
 .feed-official-store-product {
-	// border: 1px solid $color-border-grey;
-	// border: 1px solid black;
-	background-color: #006030;
+	background-color: #E0E0E0;
 	padding: 8px;
 	border-radius: 0 0 3px 3px;
 
 	&__frame {
 		background-color: #FFFFFF;
 		border-radius: 3px;
-		// border: 1px solid $color-border-grey;
 	}
 
 	&__row {
@@ -34,6 +31,15 @@ $color-black-primary: rgba(0, 0, 0, 0.7);
 
 	&__banner-image {
 		border-radius: 3px 3px 0 0;
+		width: 100%;
+		height: auto;
+		max-height: 148px;
+		image-rendering: optimizeSpeed;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -o-crisp-edges;
+		image-rendering: -webkit-optimize-contrast;
+		image-rendering: optimize-contrast;
+		-ms-interpolation-mode: nearest-neighbor;
 	}
 
 	.detail__name {
@@ -95,6 +101,9 @@ $color-black-primary: rgba(0, 0, 0, 0.7);
 		}
 
 		&__text {
+			height: 42px;
+			overflow: hidden;
+			
 			& label {
 				position: relative;
 				bottom: 2px;

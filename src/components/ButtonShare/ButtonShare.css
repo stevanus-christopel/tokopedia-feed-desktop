@@ -13,6 +13,31 @@ button.button-share,
   margin-bottom: 12px;
   outline: none; }
 
+.button-share__toast-container {
+  z-index: 99999;
+  position: fixed;
+  width: 234px;
+  padding: 16px;
+  background-color: #333333;
+  color: #FFF;
+  opacity: 0;
+  top: 12%;
+  left: 36.5%;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  border-radius: 3px; }
+  .button-share__toast-container.show {
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+
+.button-share__toast-close {
+  width: 9px;
+  margin-top: 7px;
+  margin-left: 10px; }
+
 .button-share__icon-container {
   width: 245px;
   position: absolute;
@@ -30,6 +55,8 @@ button.button-share,
     margin-right: 8px; }
     .button-share__icon-container img.button-share--link:last-child {
       margin-right: 0; }
+    .button-share__icon-container img.button-share--link:hover {
+      cursor: pointer; }
   .button-share__icon-container img.button-share--arrow {
     width: 20px;
     height: 13px;

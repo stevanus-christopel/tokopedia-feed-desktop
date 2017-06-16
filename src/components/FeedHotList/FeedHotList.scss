@@ -1,36 +1,21 @@
-$color-border-grey: #E0E0E0;
-
 .feed-hot-list {
-}
+	&__title {
+		font-size: 16px;
+		color: rgba(0, 0, 0, 0.7);
+		font-weight: 600;
+		margin: 0;
 
-.feed-hot-lists {
-	&-showcases {
-		border-bottom: 1px solid $color-border-grey;
-
-		&:last-child {
-			border-bottom: none;
+		& hr {
+			border: 1.5px solid #FF5722;
+			margin: 0;
+			margin-top: 10px;
+			margin-bottom: 25px;
+			width: 34px;
 		}
 	}
-	&__top-banner {
-		max-width: 317px;
-	}
 
-	&-full {
-		border: 1px solid $color-border-grey;
+	&__image {
+		width: 100%;
+		margin-bottom: 10px;
 	}
-
-	&__items {
-		width: 50%;
-		max-width: 158.5px;
-	}
-}
-
-.feed-hot-lists-showcases {
-	.feed-hot-lists__items {
-		width: 50%;
-		border-right: 1px solid $color-border-grey;
-		&:last-child {
-			border-right: none;
-		}
-	}	
 }

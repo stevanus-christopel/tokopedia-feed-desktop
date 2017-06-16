@@ -9,9 +9,13 @@ $color-border-grey: #E0E0E0;
 		border-bottom: 1px solid $color-border-grey;
 	}
 
+	&__items {
+		text-align: center;
+	}
+
 	&__items-image {
 		padding: 8px;
-		max-width: 100%;
+		max-width: 85%;
 	}
 	
 	&__link-more {
@@ -35,8 +39,5 @@ $color-border-grey: #E0E0E0;
 				border-radius: 2px;
 			}
 		}
-
-		
-
 	}
 }

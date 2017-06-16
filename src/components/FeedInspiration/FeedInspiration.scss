@@ -36,6 +36,7 @@
             border-bottom: 1px solid #E0E0E0;
         }
 
+		&--white-border-right,
 		&:last-child {
 		    border-right: 1px solid #FFF;
 		}
@@ -43,6 +44,15 @@
 
 	&__details {
 		margin-top: 6px;
+		color: rgba(0, 0, 0, 0.7);
+
+		& a {
+			color: rgba(0, 0, 0, 0.7);
+
+			&.orange-red {
+				color: #ff5722;
+			}
+		}
 	}
 
 	.detail__name {

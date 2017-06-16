@@ -17,7 +17,8 @@
     left: 36.5%;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    border-radius: 3px; }
   .feed-marketing-promo__toast-close {
     width: 9px;
     margin-top: 7px;
@@ -46,7 +47,7 @@
     overflow-x: scroll;
     margin-bottom: 25px; }
     .feed-marketing-promo__content-image {
-      height: 169px; }
+      width: 100%; }
   .feed-marketing-promo__footer {
     position: absolute;
     margin-top: -41px;
@@ -85,8 +86,8 @@
   .feed-marketing-promo__content-frame {
     padding: 0 10px; }
   .feed-marketing-promo__content-list {
+    min-height: 314px;
     width: 488px;
-    height: 266px;
     border: 1px solid #E0E0E0;
     border-radius: 2px;
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -97,19 +98,24 @@
   .feed-marketing-promo__content-details {
     padding: 10px; }
   .feed-marketing-promo__content-title {
-    width: 261px;
-    color: rgba(0, 0, 0, 0.7); }
+    width: 468px;
+    color: rgba(0, 0, 0, 0.7);
+    height: 45px;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
   .feed-marketing-promo__content-promo {
     color: rgba(0, 0, 0, 0.38); }
   .feed-marketing-promo__code-box {
     padding: 8px 18px;
     border-radius: 2px;
     border: 1px dashed #E0E0E0;
-    display: inline-block; }
-  .feed-marketing-promo__code-container {
-    padding-top: 15px; }
+    display: inline-block;
+    width: 330px;
+    margin-right: 5px; }
   .feed-marketing-promo__code-label {
-    display: block; }
+    display: inline-block;
+    padding-right: 5px; }
   .feed-marketing-promo__code-text {
     color: rgba(0, 0, 0, 0.7); }
   .feed-marketing-promo__btn-save-promo {
@@ -147,17 +153,13 @@
   .feed-marketing-promo__content-container {
     width: 383px; }
   .feed-marketing-promo__content-list {
+    min-height: 275px;
     width: 381px; }
   .feed-marketing-promo__content-image {
-    height: 102px; }
+    width: 100%; }
   .feed-marketing-promo__content-title {
     width: 360px; }
-  .feed-marketing-promo__code-container {
-    padding-top: 0; }
-  .feed-marketing-promo__code-label {
-    display: inline-block;
-    padding-right: 5px; }
   .feed-marketing-promo__code-box {
-    width: 220px; }
+    width: 215px; }
   .feed-marketing-promo__btn-save-promo {
     width: 61px; } }

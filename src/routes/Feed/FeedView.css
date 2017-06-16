@@ -11,10 +11,12 @@
 
 @media only screen and (min-width: 1200px) {
   .feed__main-content {
-    width: 560px; } }
+    width: 560px; }
+  .feed__right-sidebar {
+    width: 355px; } }
 
 @media only screen and (max-width: 1199px) {
   .feed__main-content {
     width: 441px; }
   .feed__right-sidebar {
-    width: 255px; } }
+    width: 268px; } }

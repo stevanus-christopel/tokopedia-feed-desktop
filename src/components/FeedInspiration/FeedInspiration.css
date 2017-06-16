@@ -23,9 +23,14 @@
       border-radius: 2px; }
     .feed-inspiration__items--border-bottom {
       border-bottom: 1px solid #E0E0E0; }
-    .feed-inspiration__items:last-child {
+    .feed-inspiration__items--white-border-right, .feed-inspiration__items:last-child {
       border-right: 1px solid #FFF; }
   .feed-inspiration__details {
-    margin-top: 6px; }
+    margin-top: 6px;
+    color: rgba(0, 0, 0, 0.7); }
+    .feed-inspiration__details a {
+      color: rgba(0, 0, 0, 0.7); }
+      .feed-inspiration__details a.orange-red {
+        color: #ff5722; }
   .feed-inspiration .detail__name {
     overflow: hidden; }

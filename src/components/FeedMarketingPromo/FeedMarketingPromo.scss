@@ -14,20 +14,21 @@ $toast-animation-seconds: 0.5s;
 		z-index: 99999;
 		position: fixed;
 		width: 234px;
-    padding: 16px;
+    	padding: 16px;
 		background-color: #333333;
 		color: #FFF;
 		opacity: 0;
 		top: 12%;
-    left: 36.5%;
+    	left: 36.5%;
 		// margin-top: -70px;
-    // margin-left: 190px;
+    	// margin-left: 190px;
 		transition: all $toast-animation-seconds ease;
+		border-radius: 3px;
 	}
 	&__toast-close{
 		width: 9px;
-    margin-top: 7px;
-    margin-left: 10px;
+		margin-top: 7px;
+		margin-left: 10px;
 	}
 	&__seller-photo {
 		& img {
@@ -62,7 +63,7 @@ $toast-animation-seconds: 0.5s;
   // -ms-overflow-style: -ms-autohiding-scrollbar;
 
 		&-image {
-			height: 169px;
+			width: 100%;
 		}
 	}
 
@@ -118,8 +119,8 @@ $toast-animation-seconds: 0.5s;
 	}
 
 	&__content-list {
+		min-height: 314px;
 		width: 488px;
-		height: 266px;
 		border: 1px solid $color-border-grey;
 		border-radius: 2px;
 		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -134,8 +135,11 @@ $toast-animation-seconds: 0.5s;
 	}
 
 	&__content-title {
-		width: 261px;
+		width: 468px;
 		color: rgba(0, 0, 0, 0.7);
+		height: 45px;
+    	overflow: hidden;
+    	box-sizing: border-box;
 	}
 
 	&__content-promo {
@@ -147,14 +151,13 @@ $toast-animation-seconds: 0.5s;
 		border-radius: 2px;
 		border: 1px dashed $color-border-grey;
 		display: inline-block;
-	}
-
-	&__code-container {
-		padding-top: 15px;
+		width: 330px;
+		margin-right: 5px;
 	}
 
 	&__code-label {
-		display: block;
+		display: inline-block;
+		padding-right: 5px;
 	}
 
 	&__code-text {
@@ -174,10 +177,10 @@ $toast-animation-seconds: 0.5s;
 
 	&__arrow--right {
 		position: absolute;
-    z-index: 999;
-    width: 32px;
-    top: 45%;
-    right: 5px;
+		z-index: 999;
+		width: 32px;
+		top: 45%;
+		right: 5px;
 		cursor: pointer;
 	}
 
@@ -207,28 +210,20 @@ $toast-animation-seconds: 0.5s;
 		}
 
 		&__content-list {
+			min-height: 275px;
 			width: 381px;
 		}
 
 		&__content-image {
-			height: 102px;
+			width: 100%;
 		}
 
 		&__content-title {
 			width: 360px;
 		}
 
-		&__code-container {
-			padding-top: 0;
-		}
-
-		&__code-label {
-			display: inline-block;
-			padding-right: 5px;
-		}
-
 		&__code-box {
-			width: 220px;
+			width: 215px;
 		}
 
 		&__btn-save-promo {

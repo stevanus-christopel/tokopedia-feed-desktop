@@ -84,25 +84,35 @@ var FeedProduct = React.createClass({
         break;
     }
   },
+  openPage: function(url) {
+    window.location = url;
+  },
   openDetailPage: function() {
-    window.location = '/feed-detail.pl';
+    window.location = 'http://new.sh-steve.ndvl/feed-detail.pl';
   },
   render: function() {
     return (
-      <div className='feed-product'>
+      <div className='feed-product' id={`feedplus-container-${this.props.feed.id}`}>
         <div className='feed-product__header'>
           <div className='feed-product__seller-photo'>
-            <img alt='' src={getImage('tokopedia-avatar-square.png')} />
+            <img alt='' src={this.props.feed.source.shop.avatar} />
           </div>
           <div className='feed-product__seller-activity'>
-            <div className='feed-product__seller-activity--text'><span className='fw-600'>Nana Shop Ekstraordinari </span>
-            ubah <span className='fw-600'>{this.props.productCount} produk</span></div>
+            <div className='feed-product__seller-activity--text'>
+              <span className='fw-600 feed-product__seller-activity--text-shop'
+              onClick={() => this.openPage(this.props.feed.source.shop.url)}>{this.props.feed.source.shop.name} </span>
+            { this.props.feed.content.status_activity.activity + ' ' } 
+            <span className='fw-600 feed-product__seller-activity--text-product'
+            onClick={() => this.openDetailPage()}>
+              { this.props.feed.content.status_activity.amount + ' produk' }
+            </span>
+            </div>
             <div className='feed-product__seller-activity--time'>3 jam</div>
           </div>
           {
-            this.props.productCount > 1 ?
+            this.props.feed.content.total_product > 1 ?
             <div className='feed-product__seller-share'>
-              <ButtonShare />
+              <ButtonShare item={ this.props.feed } />
             </div> :
             <div className='feed-product__seller-buy'>
               <button className='btn'>
@@ -115,18 +125,21 @@ var FeedProduct = React.createClass({
         <div className='feed-product__content'>		
 
           {
-            this.props.productCount === 1 ?
+            this.props.feed.content.total_product === 1 ?
             <div>
               <div className='row-fluid'
                 onMouseEnter={() => this.showWishlist(1)}
                 onMouseLeave={() => this.hideWishlist(1)}
-                onClick={() => this.openDetailPage()}>
+                onClick={() => this.openPage(this.props.feed.content.products[0].url)}>
                 <div className='span6 feed-product__items feed-product__items--border-bottom feed-product__items--no-border-right'>
-                  <img src={getImage('product-0.jpg')} className='feed-product__image'/>
+                  <img src={this.props.feed.content.products[0].image_single} className='feed-product__image'/>
                 </div>
                 <div className='span6 feed-product__items feed-product__items--border-bottom'>
-                    { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
-                  <img src="http://placehold.it/300x300" className='feed-product__image'/>
+                    { this.state.isShowWishlist1 && <ButtonWishlist checked={this.props.feed.content.products[0].wishlist} />}
+                  <div className='feed-product__items--empty'>
+                    <img src={getImage('no-image-available.png')} />
+                    <div>Foto lain tidak tersedia</div>
+                  </div>
                 </div>
               </div>
               <div className='row-fluid'>
@@ -134,350 +147,361 @@ var FeedProduct = React.createClass({
                   <div className='feed-product__details'>
                     <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Sajadah Travel Tiara 024 Blue - Ramadhan Fashion
+                      {this.props.feed.content.products[0].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-13 fw-600 orange-red'>Rp 89.100</label>
+                      <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[0].price}</label>
                     </div>
                   </div>
                 </div>
               </div>
             </div> :
-            this.props.productCount === 2 ?
-            <div className='row-fluid'
-              onClick={() => this.openDetailPage()}>
+            this.props.feed.content.total_product === 2 ?
+            <div className='row-fluid'>
               <div className='span6 feed-product__items'
                 onMouseEnter={() => this.showWishlist(1)}
-                onMouseLeave={() => this.hideWishlist(1)}>
-                { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
-                <img src={getImage('product-1.jpg')} className='feed-product__image'/>
+                onMouseLeave={() => this.hideWishlist(1)}
+                onClick={() => this.openPage(this.props.feed.content.products[0].url)}>
+                { this.state.isShowWishlist1 && <ButtonWishlist checked={this.props.feed.content.products[0].wishlist} />}
+                <img src={this.props.feed.content.products[0].image_single} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                     <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                    Bantex Mouse Pad Blue #1788 01
+                    {this.props.feed.content.products[0].name}
                     </div>
                   </div>
                   <div className='feed-product__items--price'>
-                    <label className='fs-13 fw-600 orange-red'>Rp 24.970</label>
+                    <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[0].price}</label>
                   </div>
                 </div>
               </div>
               <div className='span6 feed-product__items'
                 onMouseEnter={() => this.showWishlist(2)}
-                onMouseLeave={() => this.hideWishlist(2)}>
-                { this.state.isShowWishlist2 && <ButtonWishlist checked={false} />}
-                <img src={getImage('product-2.jpg')} className='feed-product__image'/>
+                onMouseLeave={() => this.hideWishlist(2)}
+                onClick={() => this.openPage(this.props.feed.content.products[1].url)}>
+                { this.state.isShowWishlist2 && <ButtonWishlist checked={this.props.feed.content.products[1].wishlist} />}
+                <img src={this.props.feed.content.products[1].image_single} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                     <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                    Linex Drawing Tube DT 74 40cm (74cm) Black #4884 10
+                    {this.props.feed.content.products[1].name}
                     </div>
                   </div>
                   <div className='feed-product__items--price'>
-                    <label className='fs-13 fw-600 orange-red'>Rp 170.390</label>
+                    <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[1].price}</label>
                   </div>
                 </div>
               </div>
             </div> :
-            this.props.productCount === 3 ?
-            <div className='row-fluid'
-              onClick={() => this.openDetailPage()}>
+            this.props.feed.content.total_product === 3 ?
+            <div className='row-fluid'>
               <div className='span4 feed-product__items'
                 onMouseEnter={() => this.showWishlist(1)}
-                onMouseLeave={() => this.hideWishlist(1)}>
-                { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
-                <img src={getImage('product-3.jpg')} className='feed-product__image'/>
+                onMouseLeave={() => this.hideWishlist(1)}
+                onClick={() => this.openPage(this.props.feed.content.products[0].url)}>
+                { this.state.isShowWishlist1 && <ButtonWishlist checked={this.props.feed.content.products[0].wishlist} />}
+                <img src={this.props.feed.content.products[0].image} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                     <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                    Bantex Stitching Artist Portfolio A1 Black #8006 10
+                    {this.props.feed.content.products[0].name}
                     </div>
                   </div>
                   <div className='feed-product__items--price'>
-                    <label className='fs-12 fw-600 orange-red'>Rp 448.470</label>
+                    <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[0].price}</label>
                   </div>
                 </div>
               </div>
               <div className='span4 feed-product__items'
                 onMouseEnter={() => this.showWishlist(2)}
-                onMouseLeave={() => this.hideWishlist(2)}>
-                { this.state.isShowWishlist2 && <ButtonWishlist checked={false} />}
-                <img src={getImage('product-4.jpg')} className='feed-product__image'/>
+                onMouseLeave={() => this.hideWishlist(2)}
+                onClick={() => this.openPage(this.props.feed.content.products[1].url)}>
+                { this.state.isShowWishlist2 && <ButtonWishlist checked={this.props.feed.content.products[1].wishlist} />}
+                <img src={this.props.feed.content.products[1].image} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                     <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                    Bantex Stitching Artist Portfolio A1 Black #8005 10
+                    {this.props.feed.content.products[1].name}
                     </div>
                   </div>
                   <div className='feed-product__items--price'>
-                    <label className='fs-12 fw-600 orange-red'>Rp 341.220</label>
+                    <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[1].price}</label>
                   </div>
                 </div>
               </div>
               <div className='span4 feed-product__items'
                 onMouseEnter={() => this.showWishlist(3)}
-                onMouseLeave={() => this.hideWishlist(3)}>
-                { this.state.isShowWishlist3 && <ButtonWishlist checked={false} />}
-                <img src={getImage('product-5.jpg')} className='feed-product__image'/>
+                onMouseLeave={() => this.hideWishlist(3)}
+                onClick={() => this.openPage(this.props.feed.content.products[2].url)}>
+                { this.state.isShowWishlist3 && <ButtonWishlist checked={this.props.feed.content.products[2].wishlist} />}
+                <img src={this.props.feed.content.products[2].image} className='feed-product__image'/>
                 <div className='feed-product__details'>
                   <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                     <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                     Bantex Stitching Artist Portfolio A1 Black #8003 10
+                     {this.props.feed.content.products[2].name}
                     </div>
                   </div>
                   <div className='feed-product__items--price'>
-                    <label className='fs-12 fw-600 orange-red'>Rp 289.520</label>
+                    <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[2].price}</label>
                   </div>
                 </div>
               </div>
             </div> :
-            this.props.productCount === 4 ?
+            this.props.feed.content.total_product === 4 ?
             <div>
-              <div className='row-fluid'
-                onClick={() => this.openDetailPage()}>
+              <div className='row-fluid'>
                 <div className='span6 feed-product__items'
                   onMouseEnter={() => this.showWishlist(1)}
-                  onMouseLeave={() => this.hideWishlist(1)}>
-                  { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-6.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(1)}
+                  onClick={() => this.openPage(this.props.feed.content.products[0].url)}>
+                  { this.state.isShowWishlist1 && <ButtonWishlist checked={this.props.feed.content.products[0].wishlist} />}
+                  <img src={this.props.feed.content.products[0].image_single} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Ink Jet Photo Paper A4 Premium (10 sheets) 225gr
+                      {this.props.feed.content.products[0].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-13 fw-600 orange-red'>Rp 74.030</label>
+                      <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[0].price}</label>
                     </div>
                   </div>
                 </div>
                 <div className='span6 feed-product__items'
                   onMouseEnter={() => this.showWishlist(2)}
-                  onMouseLeave={() => this.hideWishlist(2)}>
-                  { this.state.isShowWishlist2 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-7.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(2)}
+                  onClick={() => this.openPage(this.props.feed.content.products[1].url)}>
+                  { this.state.isShowWishlist2 && <ButtonWishlist checked={this.props.feed.content.products[1].wishlist} />}
+                  <img src={this.props.feed.content.products[1].image_single} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Ink Jet Photo Paper A3 Premium (10 sheets) 225gr
+                      {this.props.feed.content.products[1].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-13 fw-600 orange-red'>Rp 157.850</label>
+                      <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[1].price}</label>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className='row-fluid'
-                onClick={() => this.openDetailPage()}>
+              <div className='row-fluid'>
                 <div className='span6 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(3)}
-                  onMouseLeave={() => this.hideWishlist(3)}>
-                  { this.state.isShowWishlist3 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-8.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(3)}
+                  onClick={() => this.openPage(this.props.feed.content.products[2].url)}>
+                  { this.state.isShowWishlist3 && <ButtonWishlist checked={this.props.feed.content.products[2].wishlist} />}
+                  <img src={this.props.feed.content.products[2].image_single} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Ink Jet Photo Paper A4 Glossy (10 sheets) 180gr #8001
+                      {this.props.feed.content.products[2].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-13 fw-600 orange-red'>Rp 53.750</label>
+                      <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[2].price}</label>
                     </div>
                   </div>
                 </div>
                 <div className='span6 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(4)}
-                  onMouseLeave={() => this.hideWishlist(4)}>
-                  { this.state.isShowWishlist4 && <ButtonWishlist checked={true} />}
-                  <img src={getImage('product-9.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(4)}
+                  onClick={() => this.openPage(this.props.feed.content.products[3].url)}>
+                  { this.state.isShowWishlist4 && <ButtonWishlist checked={this.props.feed.content.products[3].wishlist} />}
+                  <img src={this.props.feed.content.products[3].image_single} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Matt Coated Ink Jet Paper A4(60 sheets) 95gr
+                      {this.props.feed.content.products[3].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-13 fw-600 orange-red'>Rp 95.370</label>
+                      <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[3].price}</label>
                     </div>
                   </div>
                 </div>
               </div>
             </div> :
-            this.props.productCount === 5 ?
+            this.props.feed.content.total_product === 5 ?
             <div>
-              <div className='row-fluid'
-                onClick={() => this.openDetailPage()}>
+              <div className='row-fluid'>
                 <div className='span6 feed-product__items'
                   onMouseEnter={() => this.showWishlist(1)}
-                  onMouseLeave={() => this.hideWishlist(1)}>
-                  { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-10.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(1)}
+                  onClick={() => this.openPage(this.props.feed.content.products[0].url)}>
+                  { this.state.isShowWishlist1 && <ButtonWishlist checked={this.props.feed.content.products[0].wishlist} />}
+                  <img src={this.props.feed.content.products[0].image_single} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Matt Coated Ink Jet Paper A4(30 sheets) 95gr #8001
+                      {this.props.feed.content.products[0].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-13 fw-600 orange-red'>Rp 59.510</label>
+                      <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[0].price}</label>
                     </div>
                   </div>
                 </div>
                 <div className='span6 feed-product__items'
                   onMouseEnter={() => this.showWishlist(2)}
-                  onMouseLeave={() => this.hideWishlist(2)}>
-                  { this.state.isShowWishlist2 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-11.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(2)}
+                  onClick={() => this.openPage(this.props.feed.content.products[1].url)}>
+                  { this.state.isShowWishlist2 && <ButtonWishlist checked={this.props.feed.content.products[1].wishlist} />}
+                  <img src={this.props.feed.content.products[1].image_single} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-13 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Linex Drawing Tube DT 124 70cm (124cm) Black #4848 10
+                      {this.props.feed.content.products[1].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-13 fw-600 orange-red'>Rp 281.490</label>
+                      <label className='fs-13 fw-600 orange-red'>{this.props.feed.content.products[1].price}</label>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className='row-fluid'
-                onClick={() => this.openDetailPage()}>
+              <div className='row-fluid'>
                 <div className='span4 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(3)}
-                  onMouseLeave={() => this.hideWishlist(3)}>
-                  { this.state.isShowWishlist3 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-12.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(3)}
+                  onClick={() => this.openPage(this.props.feed.content.products[2].url)}>
+                  { this.state.isShowWishlist3 && <ButtonWishlist checked={this.props.feed.content.products[2].wishlist} />}
+                  <img src={this.props.feed.content.products[2].image} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Slanted Sign Holder A8 Transparent #8857 08
+                      {this.props.feed.content.products[2].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 11.770</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[2].price}</label>
                     </div>
                   </div>
                 </div>
                 <div className='span4 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(4)}
-                  onMouseLeave={() => this.hideWishlist(4)}>
-                  { this.state.isShowWishlist4 && <ButtonWishlist checked={true} />}
-                  <img src={getImage('product-13.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(4)}
+                  onClick={() => this.openPage(this.props.feed.content.products[3].url)}>
+                  { this.state.isShowWishlist4 && <ButtonWishlist checked={this.props.feed.content.products[3].wishlist} />}
+                  <img src={this.props.feed.content.products[3].image} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Slanted Holder Transparent #8856 08
+                      {this.props.feed.content.products[3].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 34.320</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[3].price}</label>
                     </div>
                   </div>
                 </div>
                 <div className='span4 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(5)}
-                  onMouseLeave={() => this.hideWishlist(5)}>
-                  { this.state.isShowWishlist5 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-14.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(5)}
+                  onClick={() => this.openPage(this.props.feed.content.products[4].url)}>
+                  { this.state.isShowWishlist5 && <ButtonWishlist checked={this.props.feed.content.products[4].wishlist} />}
+                  <img src={this.props.feed.content.products[4].image} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Stand Holder A4 Transparent #8854 08
+                      {this.props.feed.content.products[4].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 87.890</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[4].price}</label>
                     </div>
                   </div>
                 </div>
               </div>
             </div> :
-            this.props.productCount >= 6 ?
+            this.props.feed.content.total_product >= 6 ?
             <div>
-              <div className='row-fluid'
-                onClick={() => this.openDetailPage()}>
+              <div className='row-fluid'>
                 <div className='span4 feed-product__items'
                   onMouseEnter={() => this.showWishlist(1)}
-                  onMouseLeave={() => this.hideWishlist(1)}>
-                  { this.state.isShowWishlist1 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-15.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(1)}
+                  onClick={() => this.openPage(this.props.feed.content.products[0].url)}>
+                  { this.state.isShowWishlist1 && <ButtonWishlist checked={this.props.feed.content.products[0].wishlist} />}
+                  <img src={this.props.feed.content.products[0].image} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Slanted Sign Holder A5 Transparent #8853 08
+                      {this.props.feed.content.products[0].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 48.480</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[0].price}</label>
                     </div>
                   </div>
                 </div>
                 <div className='span4 feed-product__items'
                   onMouseEnter={() => this.showWishlist(2)}
-                  onMouseLeave={() => this.hideWishlist(2)}>
-                  { this.state.isShowWishlist2 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-16.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(2)}
+                  onClick={() => this.openPage(this.props.feed.content.products[1].url)}>
+                  { this.state.isShowWishlist2 && <ButtonWishlist checked={this.props.feed.content.products[1].wishlist} />}
+                  <img src={this.props.feed.content.products[1].image} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Slanted Sign Holder A4 Transparent #8852 08
+                      {this.props.feed.content.products[1].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 75.240</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[1].price}</label>
                     </div>
                   </div>
                 </div>
                 <div className='span4 feed-product__items'
                   onMouseEnter={() => this.showWishlist(3)}
-                  onMouseLeave={() => this.hideWishlist(3)}>
-                  { this.state.isShowWishlist3 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-17.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(3)}
+                  onClick={() => this.openPage(this.props.feed.content.products[2].url)}>
+                  { this.state.isShowWishlist3 && <ButtonWishlist checked={this.props.feed.content.products[2].wishlist} />}
+                  <img src={this.props.feed.content.products[2].image} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Adhesive A4 Pocket (5pcs/pack) #8877 00
+                      {this.props.feed.content.products[2].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 97.020</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[2].price}</label>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className='row-fluid'
-                onClick={() => this.openDetailPage()}>
+              <div className='row-fluid'>
                 <div className='span4 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(4)}
-                  onMouseLeave={() => this.hideWishlist(4)}>
-                  { this.state.isShowWishlist4 && <ButtonWishlist checked={true} />}
-                  <img src={getImage('product-18.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(4)}
+                  onClick={() => this.openPage(this.props.feed.content.products[3].url)}>
+                  { this.state.isShowWishlist4 && <ButtonWishlist checked={this.props.feed.content.products[3].wishlist} />}
+                  <img src={this.props.feed.content.products[3].image} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Adhesive Business Card (10 pcs/pack) #8876 00
+                      {this.props.feed.content.products[3].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 27.830</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[3].price}</label>
                     </div>
                   </div>
                 </div>
                 <div className='span4 feed-product__items feed-product__items--border-top'
                   onMouseEnter={() => this.showWishlist(5)}
-                  onMouseLeave={() => this.hideWishlist(5)}>
-                  { this.state.isShowWishlist5 && <ButtonWishlist checked={false} />}
-                  <img src={getImage('product-19.jpg')} className='feed-product__image'/>
+                  onMouseLeave={() => this.hideWishlist(5)}
+                  onClick={() => this.openPage(this.props.feed.content.products[4].url)}>
+                  { this.state.isShowWishlist5 && <ButtonWishlist checked={this.props.feed.content.products[4].wishlist} />}
+                  <img src={this.props.feed.content.products[4].image} className='feed-product__image'/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Slanted Sign Holder A8 Transparent #8875 08
+                      {this.props.feed.content.products[4].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 30.712</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[4].price}</label>
                     </div>
                   </div>
                 </div>
@@ -485,21 +509,23 @@ var FeedProduct = React.createClass({
                     onMouseEnter={() => this.showWishlist(6)}
                     onMouseLeave={() => this.hideWishlist(6)}>
                   {
-                    this.props.productCount > 6 ?
-                    <div className='feed-product__items--overlay'>
-                      <span>+{ (this.props.productCount - 6) }</span>
+                    this.props.feed.content.total_product > 6 ?
+                    <div className='feed-product__items--overlay'
+                    onClick={() => this.openDetailPage()}>
+                      <span>+{ (this.props.feed.content.total_product - 6) }</span>
                     </div> :
-                    this.state.isShowWishlist6 && <ButtonWishlist checked={false} />
+                    this.state.isShowWishlist6 && <ButtonWishlist checked={this.props.feed.content.products[5].wishlist} />
                   }
-                  <img src={getImage('product-20.jpg')} className='feed-product__image'/>
+                  <img src={this.props.feed.content.products[5].image} className='feed-product__image'
+                  onClick={() => this.openPage(this.props.feed.content.products[5].url)}/>
                   <div className='feed-product__details'>
                     <div className='fs-12 fw-600 lh-17 feed-product__items--name'>
                       <div className="detail__name js-ellipsis" data-js-ellipsis-limit="15">
-                      Bantex Adhesive Filling Strips (10pcs/pack) #8875 00
+                      {this.props.feed.content.products[5].name}
                       </div>
                     </div>
                     <div className='feed-product__items--price'>
-                      <label className='fs-12 fw-600 orange-red'>Rp 23.650</label>
+                      <label className='fs-12 fw-600 orange-red'>{this.props.feed.content.products[5].price}</label>
                     </div>
                   </div>
                 </div>
