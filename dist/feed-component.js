@@ -17,23 +17,22 @@ var FeedView = React.createClass({
   },
   componentDidMount: function () {
     var obj = { "limit": 3, "userID": 5510345, "cursor": "", "page": 1 };
-    //this.fetchData(obj);
+    this.fetchData(obj);
   },
-  /*fetchData: function(obj){
+  fetchData: function (obj) {
     var self = this;
-    fetch('https://4-feature-m-staging.tokopedia.com/graphql', {
-        method: 'POST',
-        credentials: 'include',
-        body: JSON.stringify({
-          query: FeedQuery,
-          variables: obj
-        }),
+    fetch('https://2-feature-m-staging.tokopedia.com/graphql', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({
+        query: FeedQuery,
+        variables: obj
       })
-      .then(response => {
-        console.log('berhasil')
-        return response
-      })
-  },*/
+    }).then(response => {
+      console.log('berhasil');
+      return response;
+    });
+  },
   renderFeed: function () {
     var feeds = this.getSampleData().data.feed;
     return feeds.data.map(function (item) {
@@ -67,6 +66,7 @@ var FeedView = React.createClass({
           React.createElement(FeedOfficialStoreEmpty, null),
           React.createElement(FeedTopAdsShop, null),
           React.createElement(FeedTopAdsShop, null),
+          React.createElement(FeedTopAdsProduct, null),
           React.createElement(FeedError, null)
         ) : this.getParameterByName('p') === 'less' ? React.createElement(
           'div',
@@ -960,16 +960,6 @@ var FeedView = React.createClass({
     };
   }
 });
-
-  options: {
-    variables: {
-      limit: 3,
-      userID: 5510345,
-      cursor: "",
-      page: 1
-    }
-  }
-})(FeedView)*/
 
 
 
@@ -3376,113 +3366,6 @@ var FeedTopAdsProduct = React.createClass({
         break;
     }
   },
-  componentDidMount: function () {
-    this.embedTopads.setAttribute('trigger', this.props.trigger);
-    this.embedTopads.setAttribute('is_userinfo_rcmd', this.props.isUserinfoRcmd);
-    this.embedTopads.setAttribute('ep', this.props.ep);
-    this.embedTopads.setAttribute('item', this.props.item);
-    this.embedTopads.setAttribute('device', this.props.device);
-    this.embedTopads.setAttribute('template', 'm_feed_plus');
-    this.embedTopads.setAttribute('page', this.props.page);
-    // this.embedTopads.setAttribute('token', this.props.token)
-    this.embedTopads.setAttribute('user_id', this.props.userID);
-    this.embedTopads.setAttribute('ad_url', 'http://ta.ar-antonius.ndvl');
-
-    taHandler.pushStates([{ id: `promo-${this.props.page}` }]); // eslint-disable-line no-undef
-  },
-  render: function () {
-    return React.createElement('div', {
-      ref: node => this.embedTopads = node,
-      className: 'ta-inventory',
-      id: `promo-${this.props.page}`
-    });
-  }
-});
-
-
-
-var FeedTopAdsProduct = React.createClass({
-  displayName: 'FeedTopAdsProduct',
-
-  getInitialState: function () {
-    return {
-      isShowPopOver: false,
-      isShowWishlist1: false,
-      isShowWishlist2: false,
-      isShowWishlist3: false,
-      isShowWishlist4: false,
-      isShowWishlist5: false,
-      isShowWishlist6: false
-    };
-  },
-  showWishlist: function (elementNumber) {
-    switch (elementNumber) {
-      case 1:
-        this.setState({
-          isShowWishlist1: true
-        });
-        break;
-      case 2:
-        this.setState({
-          isShowWishlist2: true
-        });
-        break;
-      case 3:
-        this.setState({
-          isShowWishlist3: true
-        });
-        break;
-      case 4:
-        this.setState({
-          isShowWishlist4: true
-        });
-        break;
-      case 5:
-        this.setState({
-          isShowWishlist5: true
-        });
-        break;
-      case 6:
-        this.setState({
-          isShowWishlist6: true
-        });
-        break;
-    }
-  },
-  hideWishlist: function (elementNumber) {
-    switch (elementNumber) {
-      case 1:
-        this.setState({
-          isShowWishlist1: false
-        });
-        break;
-      case 2:
-        this.setState({
-          isShowWishlist2: false
-        });
-        break;
-      case 3:
-        this.setState({
-          isShowWishlist3: false
-        });
-        break;
-      case 4:
-        this.setState({
-          isShowWishlist4: false
-        });
-        break;
-      case 5:
-        this.setState({
-          isShowWishlist5: false
-        });
-        break;
-      case 6:
-        this.setState({
-          isShowWishlist6: false
-        });
-        break;
-    }
-  },
   render: function () {
     return React.createElement(
       'div',
@@ -3710,6 +3593,113 @@ var FeedTopAdsProduct = React.createClass({
         )
       )
     );
+  }
+});
+
+
+
+var FeedTopAdsProduct = React.createClass({
+  displayName: 'FeedTopAdsProduct',
+
+  getInitialState: function () {
+    return {
+      isShowPopOver: false,
+      isShowWishlist1: false,
+      isShowWishlist2: false,
+      isShowWishlist3: false,
+      isShowWishlist4: false,
+      isShowWishlist5: false,
+      isShowWishlist6: false
+    };
+  },
+  showWishlist: function (elementNumber) {
+    switch (elementNumber) {
+      case 1:
+        this.setState({
+          isShowWishlist1: true
+        });
+        break;
+      case 2:
+        this.setState({
+          isShowWishlist2: true
+        });
+        break;
+      case 3:
+        this.setState({
+          isShowWishlist3: true
+        });
+        break;
+      case 4:
+        this.setState({
+          isShowWishlist4: true
+        });
+        break;
+      case 5:
+        this.setState({
+          isShowWishlist5: true
+        });
+        break;
+      case 6:
+        this.setState({
+          isShowWishlist6: true
+        });
+        break;
+    }
+  },
+  hideWishlist: function (elementNumber) {
+    switch (elementNumber) {
+      case 1:
+        this.setState({
+          isShowWishlist1: false
+        });
+        break;
+      case 2:
+        this.setState({
+          isShowWishlist2: false
+        });
+        break;
+      case 3:
+        this.setState({
+          isShowWishlist3: false
+        });
+        break;
+      case 4:
+        this.setState({
+          isShowWishlist4: false
+        });
+        break;
+      case 5:
+        this.setState({
+          isShowWishlist5: false
+        });
+        break;
+      case 6:
+        this.setState({
+          isShowWishlist6: false
+        });
+        break;
+    }
+  },
+  componentDidMount: function () {
+    this.embedTopads.setAttribute('trigger', this.props.trigger);
+    this.embedTopads.setAttribute('is_userinfo_rcmd', this.props.isUserinfoRcmd);
+    this.embedTopads.setAttribute('ep', this.props.ep);
+    this.embedTopads.setAttribute('item', this.props.item);
+    this.embedTopads.setAttribute('device', this.props.device);
+    this.embedTopads.setAttribute('template', 'm_feed_plus');
+    this.embedTopads.setAttribute('page', this.props.page);
+    // this.embedTopads.setAttribute('token', this.props.token)
+    this.embedTopads.setAttribute('user_id', this.props.userID);
+    this.embedTopads.setAttribute('ad_url', 'http://ta.ar-antonius.ndvl');
+
+    taHandler.pushStates([{ id: `promo-${this.props.page}` }]); // eslint-disable-line no-undef
+  },
+  render: function () {
+    return React.createElement('div', {
+      ref: node => this.embedTopads = node,
+      className: 'ta-inventory',
+      id: `promo-${this.props.page}`
+    });
   }
 });
 

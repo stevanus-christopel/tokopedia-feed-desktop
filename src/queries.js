@@ -54,11 +54,6 @@ const FeedQuery = gql`
               url
               min_transcation
             }
-            status_activity {
-              source
-              activity
-              amount
-            }
             official_store {
               shop_id
               shop_defaultv3_url
@@ -91,6 +86,14 @@ const FeedQuery = gql`
                   }
                 }
               }
+              redirect_url_mobile
+              redirect_url_desktop
+            }
+            status_activity
+            new_status_activity {
+              source
+              activity
+              amount
             }
           }
         }
@@ -118,6 +121,7 @@ const FeedQuery = gql`
             id
             name
             url
+            app_url
             image_url
             price
           }

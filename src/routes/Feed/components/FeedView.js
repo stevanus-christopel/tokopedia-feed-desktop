@@ -31,13 +31,17 @@ var FeedView = React.createClass({
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   },
   componentDidMount: function(){
-    var obj = {"limit": 3,"userID": 5510345,"cursor": "", "page" : 1};
-    //this.fetchData(obj);
+    var obj = {"limit": 3,"userID": 5510345,"cursor": "", "page" : 1, "operationName": ""};
+    this.fetchData(obj);
   },
-  /*fetchData: function(obj){
+  fetchData: function(obj){
     var self = this;
-    fetch('https://4-feature-m-staging.tokopedia.com/graphql', {
+    fetch('https://2-feature-m-staging.tokopedia.com/graphql', {
         method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
         credentials: 'include',
         body: JSON.stringify({
           query: FeedQuery,
@@ -45,10 +49,10 @@ var FeedView = React.createClass({
         }),
       })
       .then(response => {
-        console.log('berhasil')
+        console.log(response)
         return response
       })
-  },*/
+  },
   renderFeed: function() {
     var feeds = this.getSampleData().data.feed;
     return feeds.data.map(function(item) {
@@ -81,6 +85,16 @@ var FeedView = React.createClass({
               <FeedOfficialStoreEmpty />
               <FeedTopAdsShop />
               <FeedTopAdsShop />
+              {/*<FeedTopAdsProduct
+                trigger='complete'
+                isUserinfoRcmd='true'
+                ep='product'
+                item='6,1'
+                device='desktop'
+                page={1}
+                currentPage={1}
+                userID={5510345}
+              />*/}
               <FeedError />
             </div> :
             this.getParameterByName('p') === 'less' ?
@@ -96,17 +110,27 @@ var FeedView = React.createClass({
             </div> :
             <div>
               { this.renderFeed() }
+              {<FeedTopAdsShop
+                trigger='complete'
+                isUserinfoRcmd='true'
+                ep='shop'
+                item='7,1'
+                device='desktop'
+                page={2}
+                currentPage={1}
+                userID={5510345}
+              />}
               { this.renderInspiration() }
-              {/*<FeedTopAdsProduct
+              {<FeedTopAdsProduct
                 trigger='complete'
                 isUserinfoRcmd='true'
                 ep='product'
-                item='6'
+                item='7,1'
                 device='desktop'
                 page={1}
                 currentPage={1}
                 userID={5510345}
-              />*/}
+              />}
             </div>
           }
         </div>
@@ -1060,7 +1084,8 @@ var FeedView = React.createClass({
       userID: 5510345,
       cursor: "",
       page: 1
-    }
+    },
+    operationName: 'Query'
   }
 })(FeedView)*/
 
