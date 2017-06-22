@@ -93,7 +93,7 @@ var FeedView = React.createClass({
                 device='desktop'
                 page={1}
                 currentPage={1}
-                userID={5510345}
+                userID={34070}
               />*/}
               <FeedError />
             </div> :
@@ -118,7 +118,7 @@ var FeedView = React.createClass({
                 device='desktop'
                 page={2}
                 currentPage={1}
-                userID={5510345}
+                userID={34070}
               />}
               { this.renderInspiration() }
               {<FeedTopAdsProduct
@@ -129,7 +129,7 @@ var FeedView = React.createClass({
                 device='desktop'
                 page={1}
                 currentPage={1}
-                userID={5510345}
+                userID={34070}
               />}
             </div>
           }
